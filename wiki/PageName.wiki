@@ -1,4 +1,0 @@
-#labels Featured,Phase-Requirements
-= Use Case 1 =
-
-Add your content here.
