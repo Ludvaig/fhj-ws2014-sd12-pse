@@ -32,6 +32,6 @@
 
   * Temmel (Teammanager)
   * Mitteregger (Entwickler )
-  * Dulzky ()
-  * Lindlbauer ()
+  * Dulzky (Entwickler)
+  * Lindlbauer (Entwickler)
   * Wendl (Tester)
