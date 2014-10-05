@@ -1,6 +1,12 @@
 #labels Featured
 = Group 1 =
 
+  * Seidl (Team Manager, ...)
+  * Kranabetter (Configuration Manager, ...)
+  * Ascher (Entwickler, ...)
+  * Lamb (Entwickler, ...)
+  * Kamper (Tester, ...)
+  * Reitner (Entwickler, ...)
 
 = Group 2 =
 
@@ -9,7 +15,3 @@
 
 
 = Group 4 =
-
-
-= Group 5 =
-
