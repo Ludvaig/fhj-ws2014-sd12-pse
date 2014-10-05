@@ -27,3 +27,11 @@
   * Tot
   * Mayer
   * Viehberger
+
+= Group 4 =
+
+  * Temmel (Teammanager)
+  * Mitteregger (Entwickler )
+  * Dulzky ()
+  * Lindlbauer ()
+  * Wendl (Tester)
