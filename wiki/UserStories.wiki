@@ -60,9 +60,9 @@ Acceptance:
  * ich möchte entscheiden können, wer meinen Beitrag sehen kann (Freunde, Gruppe, öffentlich)
 
 * Communities (G4):
- Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
+Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
- Acceptance:
-  * Dem User werden die Communities werden angezeigt.
-  * Nicht abonnierte Communities werden nicht angezeigt.
-  * Der User kann nach Communities suchen.
+Acceptance:
+ * Dem User werden die Communities werden angezeigt.
+ * Nicht abonnierte Communities werden nicht angezeigt.
+ * Der User kann nach Communities suchen.
