@@ -39,8 +39,8 @@
 Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort anmelden können, um auf die Startseite, die für mich personalisiert ist, zu gelangen.
 
 Acceptance:
-* erfolgreicher Login
-* personalisierter Datenstream wird angezeigt
+ * erfolgreicher Login
+ * personalisierter Datenstream wird angezeigt
 mein Name wird angezeigt
 ein Logout-Button ist verfügbar
 mein Profilbild wird angezeigt
@@ -58,4 +58,3 @@ Beiträge von Freunden
 Beiträge, die mir gefallen, möchte ich mit einem Like versehen können
 bei für mich interessaten Beiträgen möchte ich kommentieren können
 ich möchte entscheiden können, wer meinen Beitrag sehen kann (Freunde, Gruppe, öffentlich)
-
