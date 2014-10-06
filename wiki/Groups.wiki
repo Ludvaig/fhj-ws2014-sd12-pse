@@ -11,13 +11,13 @@
 
 = Group 2 =
 
-  * Spörk
-  * Hagelmüller
-  * Huber
-  * Palade
-  * Schuberth
-  * Marcher
-  * Fritz
+  * Spörk (Entwickler)
+  * Hagelmüller (Entwickler)
+  * Huber (Lead Entwickler)
+  * Palade (Entwickler)
+  * Schuberth (Team Manager)
+  * Marcher (Tester)
+  * Fritz (Configurations Manager)
 
 = Group 3 =
 
