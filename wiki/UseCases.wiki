@@ -1,12 +1,2 @@
 #labels Featured,Phase-Requirements
-= Use Case 1 =
-
-Add your content here.
-
-= Use Case 2 =
-
-Add your content here.
-
-= Use Case 3 =
-
-Add your content here.
+Siehe UserStories
