@@ -45,3 +45,19 @@ mein Name wird angezeigt
 ein Logout-Button ist verfügbar
 mein Profilbild wird angezeigt
 über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+
+* Newsfeed (G4)
+Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen.
+
+Acceptance:
+Der Newsfeed beinhaltet folgende Informationen:
+Gruppenrelevante Aktvitäten 
+eigene Beiträge
+Beiträge von Freunden
+öffentliche Beiträge
+Beiträge, die mir gefallen, möchte ich mit einem Like versehen können
+bei für mich interessaten Beiträgen möchte ich kommentieren können
+ich möchte entscheiden können, wer meinen Beitrag sehen kann (Freunde, Gruppe, öffentlich)
+
+
+
