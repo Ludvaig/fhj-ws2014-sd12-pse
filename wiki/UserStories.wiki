@@ -3,34 +3,34 @@
  * Der User kann über eine Schaltfläche seinen Kommentar posten.
  * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
 
-Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können. (G2)
+*Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können. (G2)*
  * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
 
-Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun. (G2)
+*Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun. (G2)*
  * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
  * Der User kann seine Bewertung jederzeit verändern. 
 
-Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)
+*Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
  * Der User kann seine Kontaktinformation bearbeiten 
  * Der User kann seine persönlichen Interessen bearbeiten
 
-Als Admin möchte ich Gruppen freischalten können, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)
+*Als Admin möchte ich Gruppen freischalten können, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
  * Der Admin hat die Kontrolle über das Entstehen neuer Gruppen. 
 
-Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)
+*Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
  * Durch Hinzufügen der Email-Adresse als Tag wird der Empfänger der Nachricht bestimmt.
 
-Als Portal-Admin möchte ich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)
+*Als Portal-Admin möchte ich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
 
-Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)
+*Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
  * Der User sieht alle Activity Streams der globalen Communities.
 
-Als User  möchte ich andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)
+*Als User  möchte ich andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)*
  * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
 
-Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können. (G2)
+*Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können. (G2)*
  * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
 
-Als User möchte ich mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)
+*Als User möchte ich mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
  * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
