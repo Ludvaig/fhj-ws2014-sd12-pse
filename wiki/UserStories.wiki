@@ -66,3 +66,23 @@ Acceptance:
  * Dem User werden die Communities werden angezeigt.
  * Nicht abonnierte Communities werden nicht angezeigt.
  * Der User kann nach Communities suchen.
+
+* Userinformation (G4): Als User möchte ich Fotos zum Portal hochladen können.
+
+Acceptance:
+  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
+  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
+  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
+
+* Userinformation (G4): Als User möchte ich meine Fotos aus dem Portal löschen können.
+
+Acceptance:
+  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
+  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+  * Das gelöschte Foto wird aus der Liste entfernt.
+
+* Verwaltungsbereich (Administratoren) (G4): Als Portal-Administrator möchte ich  Fotos aller User löschen können.
+
+Acceptance:
+  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+  * Das gelöschte Foto wird aus der Liste entfernt.
