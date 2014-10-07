@@ -100,3 +100,7 @@ Akrzeptanzkriterien:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
   * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
   * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
+
+* Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann. (G1)
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
