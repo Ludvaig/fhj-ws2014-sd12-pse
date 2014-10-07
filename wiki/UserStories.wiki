@@ -86,3 +86,10 @@ Acceptance:
 Acceptance:
   * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
   * Das gelöschte Foto wird aus der Liste entfernt.
+
+* Userinformation (G4): Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.
+
+Acceptance:
+  * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
+  * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
+  * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
