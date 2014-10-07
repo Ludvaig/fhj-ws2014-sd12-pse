@@ -93,3 +93,10 @@ Acceptance:
   * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
   * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
   * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
+
+* Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können (G1).
+
+Akrzeptanzkriterien:
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
+  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
