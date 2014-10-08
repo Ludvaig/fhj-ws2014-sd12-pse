@@ -29,10 +29,10 @@
 *Als User  möchte ich auf der Userseite andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)*
  * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
 
-*Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können. (G2)*
+*Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream). (G2)*
  * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
 
-*Als User möchte ich mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
+*Als User möchte ich auf er Userseite mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
  * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
 
 *Login (G4)
