@@ -20,7 +20,7 @@
 *Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
  * Durch Hinzufügen der Email-Adresse als Tag wird der Empfänger der Nachricht bestimmt.
 
-*Als Portal-Admin möchte ich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+*Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
 
 *Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
