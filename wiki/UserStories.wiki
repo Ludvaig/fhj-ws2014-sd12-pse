@@ -14,7 +14,7 @@
  * Der User kann seine Kontaktinformation bearbeiten 
  * Der User kann seine persönlichen Interessen bearbeiten
 
-*Als Admin möchte ich einen eigenen Bereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+*Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
  * Der Adminbereich soll nur für Admins erreichbar sein. 
 
 *Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
