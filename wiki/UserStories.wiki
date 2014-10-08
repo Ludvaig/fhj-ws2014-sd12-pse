@@ -36,7 +36,7 @@
  * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
 
 *Login (G4)
-Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort anmelden können, um auf die Startseite, die für mich personalisiert ist, zu gelangen.
+Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.
 
 Acceptance:
  * erfolgreicher Login
@@ -51,19 +51,19 @@ Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unt
 
 Acceptance:
  * Der Newsfeed beinhaltet folgende Informationen:
- * Gruppenrelevante Aktvitäten 
+ * Gruppenrelevante Aktivitäten 
  * eigene Beiträge
  * Beiträge von Freunden
  * öffentliche Beiträge
  * Beiträge, die mir gefallen, möchte ich mit einem Like versehen können
- * bei für mich interessaten Beiträgen möchte ich kommentieren können
+ * bei für mich interessanten Beiträgen möchte ich kommentieren können
  * ich möchte entscheiden können, wer meinen Beitrag sehen kann (Freunde, Gruppe, öffentlich)
 
 * Communities (G4):
 Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
 Acceptance:
- * Dem User werden die Communities werden angezeigt.
+ * Dem User werden die Communities angezeigt.
  * Nicht abonnierte Communities werden nicht angezeigt.
  * Der User kann nach Communities suchen.
 
