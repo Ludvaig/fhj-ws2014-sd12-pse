@@ -11,10 +11,10 @@
 
 = Group 2 =
 
+  * Schuberth (Team Manager)
   * Spörk (Entwickler)
   * Hagelmüller (Entwickler)
   * Fritz (Configurations Manager)
-  * Schuberth (Team Manager)
   * Huber (Lead Entwickler)
   * Palade (Entwickler)
   * Marcher (Tester)
