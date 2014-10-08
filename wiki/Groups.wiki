@@ -13,11 +13,12 @@
 
   * Spörk (Entwickler)
   * Hagelmüller (Entwickler)
+  * Fritz (Configurations Manager)
+  * Schuberth (Team Manager)
   * Huber (Lead Entwickler)
   * Palade (Entwickler)
-  * Schuberth (Team Manager)
   * Marcher (Tester)
-  * Fritz (Configurations Manager)
+  
 
 = Group 3 =
 
