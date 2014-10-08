@@ -108,4 +108,4 @@ Akrzeptanzkriterien:
   * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
 
-*Gruppe 3:* https://houston.fh-joanneum.at/etherpad_swd12/p/pse_grp1_user_stories
+*Gruppe 3:* https://houston.fh-joanneum.at/etherpad_swd12/p/pse_grp3
