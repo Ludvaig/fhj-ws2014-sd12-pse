@@ -1,9 +1,9 @@
 #labels Featured,Phase-Requirements
-*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communities Seite). (G2)*
+*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
  * Der User kann über eine Schaltfläche seinen Kommentar posten.
  * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
 
-*Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können. (G2)*
+*Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (. (G2)*
  * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
 
 *Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun. (G2)* 
