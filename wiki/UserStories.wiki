@@ -73,7 +73,7 @@ Acceptance:
  * mein Profilbild wird angezeigt
  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
 
-*Als User will ich mit echten verifizierten Personen auf der Plattform interagieren.
+*Als User will ich mit echten verifizierten Personen auf der Plattform interagieren. (G1)*
 
 Acceptance:
  * Bei der Registrierung muss die angegebene E-Mail Adresse verifiziert werden
