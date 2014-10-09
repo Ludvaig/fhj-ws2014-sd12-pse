@@ -107,5 +107,91 @@ Akrzeptanzkriterien:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
   * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
-
+----------------------------------------------------------------------------
 *Gruppe 3:* https://houston.fh-joanneum.at/etherpad_swd12/p/pse_grp3
+# Startseite
+
+UserStory1:
+Als User möchte ich die aktuellen Dokumente angezeigt bekommen.
+- Nach Erstellung / Änderung sortiert
+- Über direktlink abrufbar
+
+UserStory2:
+Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen
+- Nach aktualität sortiert
+
+UserStory3:
+Als Admin möchte ich neue News erstellen / editieren können
+- Schnelles / einfaches erstellen neuer Neuigkeiten
+- Einfacher Upload für Dateien (Bilder)
+
+# Activity Stream
+UserStory1:
+Als User möchte ich ein Nachricht auf den Activity Stream schreiben können.
+-Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
+-Sicherstellen das die Nachricht auch wieder gelöscht werden kann.
+-Sicherstellen das die Nachricht von einem Admin / Portal Admin gelöscht werden kann.
+
+UserStory2:
+Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können.
+-Sicherstellen das die Nachricht/der Kommentar auch wieder entliked werden kann.
+
+UserStory3:
+Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können.
+-Sicherstellen das der Kommentar auch editiert/ausgebessert werden kann.
+-Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
+-Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann.
+
+# Userinformationen und Userseite
+
+UserStory1:
+Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können.
+- Auswahl aus der Liste aller verfügbaren User
+- Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
+
+UserStory2:
+Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können
+- Möglichkeit zur Auswahl eines oder mehrerer Kontakt
+- Hinweis zur Bestätigung vor dem tatsächlichen entfernen
+
+UserStory3:
+Als User möchte ich meine Kontatkdaten bearbeiten können
+- Möglichkeit zum Wechseln vom Benutzerprofil in den Editiermodus
+- Speichern der Daten in der Datenbank bei Bestätigung
+- Validierung der eingegebenen 
+
+# Communities
+
+UserStory1:
+Als User möchte ich Zugriff auf eine Übersichtsseite haben
+-Sicherstellen, dass auf der Übersichtsseite alle öffentlichen und privaten Communities angezeigt werden.
+-Sicherstellen, dass auf der Übersichtsseite die Communities eines bestimmten Users angezeigt werden.
+-Sicherstellen, dass man mit einem "Zurück zur Übersicht"-Button auf die Übersichtsseite zurückkehren kann.
+
+UserStory2:
+Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.
+-Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden.
+-Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können.
+-Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können.
+
+UserStory3:
+Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben
+-Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind
+
+# Services
+
+UserStory1: Als User möchte ich einen Antrag für eine Dienstreise stellen. 
+- Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert. 
+- User kommt bekommt Rückmeldung über den Speichererfolg des Antrags 
+- User wird rückgeleitet zur Übersicht der Dienstreiseanträge  
+
+UserStory2: Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
+ - Einträge der Dienstreisen werden in tabellarischer Form angezeigt. 
+ - Es werden nicht mehr als 10 pro Seite angezeigt. 
+ - Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.  
+ 
+ UserStory3: Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP 
+ - Wochenarbeitszeit pro User wird übertragen 
+ - Monatsarbeitszeit pro User wird übertragen 
+ - Error Information bei falscher UserID wird übertragen
+----------------------------------------------------------------------------
