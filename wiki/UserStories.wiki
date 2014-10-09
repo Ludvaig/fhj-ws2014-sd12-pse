@@ -1,4 +1,5 @@
 #labels Featured,Phase-Requirements
+
 *Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
 
 Acceptance:
@@ -62,6 +63,7 @@ Acceptance:
  * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
 
 *Login*
+
 *Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
 
 Acceptance:
@@ -239,7 +241,7 @@ Acceptance:
 Acceptance:
   * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
   * Es werden nicht mehr als 10 pro Seite angezeigt.
-  * Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.
+  * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
 
 *Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
 
@@ -247,3 +249,4 @@ Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
   * Monatsarbeitszeit pro User wird übertragen
   * Error Information bei falscher UserID wird übertragen
+  
