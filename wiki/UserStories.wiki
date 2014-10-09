@@ -184,15 +184,15 @@ Akrzeptanzkriterien:
 
 *Als User möchte ich einen Antrag für eine Dienstreise stellen.*
 
-  * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert. 
-  * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags 
-  * User wird rückgeleitet zur Übersicht der Dienstreiseanträge  
+  * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+  * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+  * User wird rückgeleitet zur Übersicht der Dienstreiseanträge
 
 *Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
 
-  * Einträge der Dienstreisen werden in tabellarischer Form angezeigt. 
-  * Es werden nicht mehr als 10 pro Seite angezeigt. 
-  * Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.  
+  * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+  * Es werden nicht mehr als 10 pro Seite angezeigt.
+  * Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.
 
  *Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
 
