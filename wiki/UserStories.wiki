@@ -1,5 +1,4 @@
 #labels Featured,Phase-Requirements
-
 *Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
 
 Acceptance:
@@ -242,7 +241,7 @@ Acceptance:
   * Es werden nicht mehr als 10 pro Seite angezeigt.
   * Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.
 
- *Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
+*Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
 
 Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
