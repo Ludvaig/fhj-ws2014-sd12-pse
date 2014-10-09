@@ -109,23 +109,22 @@ Akrzeptanzkriterien:
 
 ----------------------------------------------------------------------------
 *Gruppe 3:* https://houston.fh-joanneum.at/etherpad_swd12/p/pse_grp3
+
 # Startseite
 
-UserStory1:
-Als User möchte ich die aktuellen Dokumente angezeigt bekommen.
-- Nach Erstellung / Änderung sortiert
-- Über direktlink abrufbar
+*UserStory1: Als User möchte ich die aktuellen Dokumente angezeigt bekommen.*
+*Nach Erstellung / Änderung sortiert
+*Über direktlink abrufbar
 
-UserStory2:
-Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen
-- Nach aktualität sortiert
+*UserStory2: Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen*
+*Nach aktualität sortiert
 
-UserStory3:
-Als Admin möchte ich neue News erstellen / editieren können
-- Schnelles / einfaches erstellen neuer Neuigkeiten
-- Einfacher Upload für Dateien (Bilder)
+*UserStory3: Als Admin möchte ich neue News erstellen / editieren können*
+*Schnelles / einfaches erstellen neuer Neuigkeiten
+*Einfacher Upload für Dateien (Bilder)
 
 # Activity Stream
+
 UserStory1:
 Als User möchte ich ein Nachricht auf den Activity Stream schreiben können.
 -Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
