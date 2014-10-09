@@ -1,69 +1,9 @@
 #labels Featured,Phase-Requirements
-*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
-
-Acceptance:
- * Der User kann über eine Schaltfläche seinen Kommentar posten.
- * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
-
-*Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2)*
- 
-Acceptance:
- * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
- 
-
-*Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)* 
-
-Acceptance:
- * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
- * Der User kann seine Bewertung jederzeit verändern. 
-
-
-
-*Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
-
-Acceptance:
- * Der User kann seine Kontaktinformation bearbeiten 
- * Der User kann seine persönlichen Interessen bearbeiten
-
-
-*Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
-
-Acceptance:
- * Der Adminbereich soll nur für Admins erreichbar sein. 
-
-*Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
-
-Acceptance:
- * Durch Hinzufügen der Email-Adresse als Tag wird der Empfänger der Nachricht bestimmt.
-
-*Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
-
-Acceptance:
- * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
-
-*Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
- 
-Acceptance:
-  * Der User sieht alle Activity Streams der globalen Communities.
-
-*Als User  möchte ich auf der Userseite andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)*
-
-Acceptance:
- * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
-
-*Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream). (G2)*
-
-Acceptance:
- * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
-
-*Als User möchte ich auf der Userseite mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
-
-Acceptance:
- * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
+*Allgemeine Anmerkung: Bitte die Userstories durchnummerieren nach der Uerbarbeitung. Einfach machen durch (USx) usw. am Beginn der Userstory*
 
 *Login*
 
-*Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
+*(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
 
 Acceptance:
  * erfolgreicher Login
@@ -73,14 +13,60 @@ Acceptance:
  * mein Profilbild wird angezeigt
  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
 
-*Als User will ich mit echten verifizierten Personen auf der Plattform interagieren. (G1)*
+*Anmerkungen CKrenn:*
+ * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
+ * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
+
+*Startseite:*
+
+*(US2) Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
+ 
+Acceptance:
+  * Der User sieht alle Activity Streams der globalen Communities.
+
+*(US3) Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben (G3)*
 
 Acceptance:
- * Bei der Registrierung muss die angegebene E-Mail Adresse verifiziert werden
- * Die Anmeldung ist nur nach der Bestätigung der E-Mail erfolgreich
- * Bei der Anmeldung muss Text von einem Bild eingegeben werden, um sicherzustellen, das sich eine Person Registriert.
+  * Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind 
 
-* Newsfeed:*
+*Anmerkungen CKrenn:*
+ * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
+
+*(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen (G3)*
+
+Acceptance:
+  * Nach Erstellung / Änderung sortiert
+  * Über direktlink abrufbar
+
+*(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen (G3)*
+
+Acceptance:
+  * Nach aktualität sortiert
+
+*Als Admin möchte ich neue News erstellen / editieren können (G3)*
+
+Acceptance:
+  * Schnelles / einfaches erstellen neuer Neuigkeiten
+  * Einfacher Upload für Dateien (Bilder)
+
+*(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können (G1).*
+
+Acceptance:
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
+  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
+
+* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann. (G1)*
+
+Acceptance:
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
+
+
+*Newsfeed:*
+
+*Anmerkungen CKrenn zum Feed generell:*
+ * Hier geht meist nicht ganz hervor, wo ich was darf (im zentralen Feed, oder in der Community. bitte noch detaillieren und ggf verschieben.
 
 *Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen. (G4)*
 
@@ -94,85 +80,11 @@ Acceptance:
  * bei für mich interessanten Beiträgen möchte ich kommentieren können
  * ich möchte entscheiden können, wer meinen Beitrag sehen kann (Freunde, Gruppe, öffentlich)
 
-* Communities:*
+*Anmerkungen CKrenn:*
+ * Gehört das zur Startseite? dann bitte dorthin schieben
+ * Was ist mit entscheiden gemeint @tagging fuer User, Community beim Erstellen?
 
-*Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)*
-
-Acceptance:
- * Dem User werden die Communities angezeigt.
- * Nicht abonnierte Communities werden nicht angezeigt.
- * Der User kann nach Communities suchen.
-
-* Userinformation:*  
-*Als User möchte ich Fotos zum Portal hochladen können. (G4)*
-
-Acceptance:
-  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
-  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
-  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
-
-* Userinformation: 
-
-*Als User möchte ich meine Fotos aus dem Portal löschen können. (G4)*
-
-Acceptance:
-  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
-  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
-  * Das gelöschte Foto wird aus der Liste entfernt.
-
-* Verwaltungsbereich (Administratoren):* 
-
-Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
-
-Acceptance:
-  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
-  * Das gelöschte Foto wird aus der Liste entfernt.
-
-* Userinformation:* 
-
-*Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
-
-Acceptance:
-  * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
-  * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
-  * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
-
-* Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können (G1).*
-
-Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
-  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
-
-* Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann. (G1)*
-
-Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
-
-
-*Startseite:*
-
-*Als User möchte ich die aktuellen Dokumente angezeigt bekommen (G3)*
-
-Acceptance:
-  * Nach Erstellung / Änderung sortiert
-  * Über direktlink abrufbar
-
-*Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen (G3)*
-
-Acceptance:
-  * Nach aktualität sortiert
-
-*Als Admin möchte ich neue News erstellen / editieren können (G3)*
-
-Acceptance:
-  * Schnelles / einfaches erstellen neuer Neuigkeiten
-  * Einfacher Upload für Dateien (Bilder)
-
-*Activity Stream:*
-
-*Als User möchte ich ein Nachricht auf den Activity Stream schreiben können. (G3)*
+*Als User möchte ich eine Nachricht auf den Activity Stream schreiben können. (G3)*
 
 Acceptance:
   * Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
@@ -191,7 +103,85 @@ Acceptance:
   * Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
   * Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann. 
 
-*Userinformationen und Userseite:*
+*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
+
+Acceptance:
+ * Der User kann über eine Schaltfläche seinen Kommentar posten.
+ * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
+
+*Anmerkungen CKrenn:*
+ * Betrifft das die Startseite oder eine Community?
+ 
+
+*Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2)*
+ 
+Acceptance:
+ * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
+
+*Anmerkungen CKrenn:*
+ * Betrifft das die Startseite oder eine Community?
+ * Bei Acceptance ergänzen, dass man andere Kommentare nicht editieren kann
+ 
+*Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)* 
+
+Acceptance:
+ * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ * Der User kann seine Bewertung jederzeit verändern. 
+
+*Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
+
+Acceptance:
+ * Durch Hinzufügen der Email-Adresse als @Tag wird der Empfänger der Nachricht bestimmt.
+
+*Anmerkungen CKrenn:*
+ *  Acceptance: als @Tag ergänzt 
+
+
+* Userinformation (Profilseite, Userseite),*  
+
+*Anmerkungen CKrenn:*
+ * Sollte eigentlich Profilseite sein, hab ich ergänzt.
+
+
+*Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
+
+Acceptance:
+ * Der User kann seine Kontaktinformation bearbeiten 
+ * Der User kann seine persönlichen Interessen bearbeiten
+
+*Anmerkungen CKrenn:*
+ * Gut wäre hier noch die Daten zu erwähnen, die man editieren kann, vermutlich Duplicate mit nachfolgender User Story - bitte zusammenfuehren.
+
+
+*Als User möchte ich auf der Userseite mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
+
+Acceptance:
+ * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
+
+*Als User möchte ich Fotos zum Portal hochladen können. (G4)*
+
+Acceptance:
+  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
+  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
+  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
+
+*Anmerkungen CKrenn:*
+ * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
+ * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
+
+*Als User möchte ich meine Fotos aus dem Portal löschen können. (G4)*
+
+Acceptance:
+  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+  * Das gelöschte Foto wird aus der Liste entfernt.
+
+*Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
+
+Acceptance:
+  * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
+  * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
+  * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
+
 
 *Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können. (G3)*
 
@@ -212,8 +202,51 @@ Acceptance:
   * Speichern der Daten in der Datenbank bei Bestätigung
   * Validierung der eingegebenen 
 
-*Communities:*
+*Als User  möchte ich auf der Userseite andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)*
 
+Acceptance:
+ * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
+
+*Anmerkungen CKrenn:*
+* User Story nicht ganz richtig: Ich moechte mich vernetzen und deren Aktivitäten = Feedeinträge (so nicht privat oder in privaten Communities) - ev. Story ganz als Acceptance in einer der oberen User Stories ergänzen
+
+
+*Verwaltungsbereich*
+
+*Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+
+Acceptance:
+ * Der Adminbereich soll nur für Admins erreichbar sein. 
+
+Anmerkungen CKrenn:
+ * Satz etwas verdreht. Gruppen = Communities bitte korrigieren.
+ * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
+
+
+*Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+
+Acceptance:
+ * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
+
+Anmerkungen CKrenn:
+ * Hier würde die User Story weiterfassen - naemlich das ganze editieren nicht nur die Gültigkeit
+
+* Verwaltungsbereich (Administratoren):* 
+
+Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
+
+Acceptance:
+ *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+ *Das gelöschte Foto wird aus der Liste entfernt. 
+
+Anmerkungen CKrenn:
+ * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
+
+* Communities:*
+
+*Anmerkungen CKrenn:*
+ * Mir fehlt generell eine Userstory zum Beantragen einer Community. Bitte ergänzen
+ 
 *Als User möchte ich Zugriff auf eine Übersichtsseite haben (G3)*
 
 Acceptance:
@@ -228,10 +261,26 @@ Acceptance:
   * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können.
   * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können.
 
-*Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben (G3)*
+*Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)*
 
 Acceptance:
-  * Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind 
+ * Dem User werden die Communities angezeigt.
+ * Nicht abonnierte Communities werden nicht angezeigt.
+ * Der User kann nach Communities suchen.
+
+
+*Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream). (G2)*
+
+Acceptance:
+ * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
+
+*Anmerkungen CKrenn:*
+ * Wo sehe ich das? Startseite ?Auf der Community-übersichtsseite -> bitte ergänzen oder mit nachfolgender User Story vereinen (ist wahrsch. ein Duplicate).
+ * Hier mit Überschrift Startseite (ist der Bezug da)
+
+
+
+
 
 *Services:*
 
