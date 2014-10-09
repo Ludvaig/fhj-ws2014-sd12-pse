@@ -193,7 +193,7 @@ Akrzeptanzkriterien:
   * Einträge der Dienstreisen werden in tabellarischer Form angezeigt. 
   * Es werden nicht mehr als 10 pro Seite angezeigt. 
   * Bei verlassen der Übersicht wird der User auf die Services Seite verlinkt.  
- 
+
  *Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
 
   * Wochenarbeitszeit pro User wird übertragen
