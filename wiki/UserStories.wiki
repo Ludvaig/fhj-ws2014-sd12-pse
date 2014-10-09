@@ -1,5 +1,4 @@
 #labels Featured,Phase-Requirements
-
 *Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
 
 Acceptance:
@@ -73,6 +72,13 @@ Acceptance:
  * ein Logout-Button ist verfügbar
  * mein Profilbild wird angezeigt
  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+
+*Als User will ich mit echten verifizierten Personen auf der Plattform interagieren.
+
+Acceptance:
+ * Bei der Registrierung muss die angegebene E-Mail Adresse verifiziert werden
+ * Die Anmeldung ist nur nach der Bestätigung der E-Mail erfolgreich
+ * Bei der Anmeldung muss Text von einem Bild eingegeben werden, um sicherzustellen, das sich eine Person Registriert.
 
 * Newsfeed:*
 
