@@ -22,6 +22,13 @@ Acceptance:
  * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
  * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
 
+*(US1.1) Als User will ich mit echten verifizierten Personen auf der Plattform interagieren. (G1)*
+
+Acceptance:
+ * Bei der Registrierung muss die angegebene E-Mail Adresse verifiziert werden
+ * Die Anmeldung ist nur nach der Bestätigung der E-Mail erfolgreich
+ * Bei der Anmeldung muss Text von einem Bild eingegeben werden, um sicherzustellen, das sich eine Person Registriert.
+
 *Startseite:*
 
 *(US2) Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
