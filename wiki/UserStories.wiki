@@ -1,5 +1,10 @@
 #labels Featured,Phase-Requirements
-*Allgemeine Anmerkung: Bitte die Userstories durchnummerieren nach der Uerbarbeitung. Einfach machen durch (USx) usw. am Beginn der Userstory*
+*Allgemeine Anmerkungen: 
+ * Bitte die Userstories durchnummerieren nach der Uerbarbeitung. Einfach machen durch (USx) usw. am Beginn der Userstory
+ * Bitte doppelte User Stories vereinheitlichen
+ * Sonst siehe Detailkommentare
+
+
 
 *Login*
 
@@ -246,6 +251,8 @@ Anmerkungen CKrenn:
 
 *Anmerkungen CKrenn:*
  * Mir fehlt generell eine Userstory zum Beantragen einer Community. Bitte ergänzen
+ * Mir fehlt eine User Story, die beschreibt wie eine public / private Community aufgebaut ist. Bitte ergänzen
+ * Mir fehlt eine User Story, die beschreibt wie man Mitglied einer öffentlichen / privaten Community wird. Bitte ergänzen
  
 *Als User möchte ich Zugriff auf eine Übersichtsseite haben (G3)*
 
@@ -268,15 +275,15 @@ Acceptance:
  * Nicht abonnierte Communities werden nicht angezeigt.
  * Der User kann nach Communities suchen.
 
-
 *Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream). (G2)*
 
 Acceptance:
  * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
 
 *Anmerkungen CKrenn:*
- * Wo sehe ich das? Startseite ?Auf der Community-übersichtsseite -> bitte ergänzen oder mit nachfolgender User Story vereinen (ist wahrsch. ein Duplicate).
- * Hier mit Überschrift Startseite (ist der Bezug da)
+ * Duplicate zu vorhergehender Userstory
+
+ 
 
 
 
