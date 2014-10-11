@@ -13,10 +13,15 @@ Wunschbereich von Gruppe 2
 Acceptance:
 
 - erfolgreicher Login
-- Startseite  wird angezeigt    
+
+- Startseite  wird angezeigt  
+  
 - mein Name wird angezeigt
+
 - ein Logout-Button ist verfügbar
+
 - über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+
 - bei ungültiger Kombination von Passwort und Username erfolgt kein Login
 
 
