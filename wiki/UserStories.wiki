@@ -5,9 +5,9 @@
  * Sonst siehe Detailkommentare
 
 ---------------------------------------------------------------------
-*Userseite und Userinformation*
+*Userseite und Userinformation (GRUPPE2)*
+Wunschbereich von Gruppe 2
 
-Gruppe 2:
 (US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)
 Acceptance:
 
@@ -59,13 +59,13 @@ Acceptance:
 - Möglichkeit zur Auswahl eines oder mehrerer Kontakte
 - Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
 - Ohne Bestätigung wird der Kontakt nicht gelöscht.
-**************************************************************
-**************************************************************
+
+Hinweis: US17 / 23 / 24 - wurden wegen Redundanzen entfernt
 --------------------------------------------------------------
 
 *Login*
 
-*(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
+*(US1 - ausgewählt/angepasst durch Gruppe 2) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
 
 Acceptance:
  * erfolgreicher Login
@@ -212,7 +212,7 @@ Acceptance:
  * Sollte eigentlich Profilseite sein, hab ich ergänzt.
 
 
-*(US16)Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
+*(US16 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
 
 Acceptance:
  * Der User kann seine Kontaktinformation bearbeiten 
@@ -221,7 +221,7 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Gut wäre hier noch die Daten zu erwähnen, die man editieren kann, vermutlich Duplicate mit nachfolgender User Story - bitte zusammenfuehren.
 
-*(US18)Als User möchte ich Fotos zum Portal hochladen können. (G4)*
+*(US18- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Fotos zum Portal hochladen können. (G4)*
 
 Acceptance:
   * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
@@ -232,13 +232,13 @@ Acceptance:
  * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
  * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
 
-*(US19)Als User möchte ich meine Fotos aus dem Portal löschen können. (G4)*
+*(US19 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine Fotos aus dem Portal löschen können. (G4)*
 
 Acceptance:
   * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
   * Das gelöschte Foto wird aus der Liste entfernt.
 
-*(US20)Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
+*(US20- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
 
 Acceptance:
   * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
@@ -246,13 +246,13 @@ Acceptance:
   * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
 
-*(US21)Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können. (G3)*
+*(US21- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können. (G3)*
 
 Acceptance:
   * Auswahl aus der Liste aller verfügbaren User
   * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
 
-*(US22)Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können (G3)*
+*(US22 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können (G3)*
 
   Acceptance:
   * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
