@@ -217,12 +217,6 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Gut wäre hier noch die Daten zu erwähnen, die man editieren kann, vermutlich Duplicate mit nachfolgender User Story - bitte zusammenfuehren.
 
-
-*(US17)Als User möchte ich auf der Userseite mein Profil speichern können, damit ich meine Daten nicht immer neu eingeben muss.  (G2)*
-
-Acceptance:
- * Die Profildaten müssen aus den Feldern Vorname, Nachname, E-Mail-Adresse und Telefonnummer bestehen. 
-
 *(US18)Als User möchte ich Fotos zum Portal hochladen können. (G4)*
 
 Acceptance:
@@ -259,21 +253,6 @@ Acceptance:
   Acceptance:
   * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
   * Hinweis zur Bestätigung vor dem tatsächlichen entfernen
-
-*(US23)Als User möchte ich meine Kontatkdaten bearbeiten können (G3)*
-
-  Acceptance:
-  * Möglichkeit zum Wechseln vom Benutzerprofil in den Editiermodus
-  * Speichern der Daten in der Datenbank bei Bestätigung
-  * Validierung der eingegebenen 
-
-*(US24)Als User  möchte ich auf der Userseite andere User zu meiner Kontaktliste hinzufügen, um schneller auf deren Kontaktdaten zugreifen zu können. (G2)*
-
-Acceptance:
- * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
-
-*Anmerkungen CKrenn:*
-* User Story nicht ganz richtig: Ich moechte mich vernetzen und deren Aktivitäten = Feedeinträge (so nicht privat oder in privaten Communities) - ev. Story ganz als Acceptance in einer der oberen User Stories ergänzen
 
 
 *Verwaltungsbereich*
@@ -371,4 +350,3 @@ Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
   * Monatsarbeitszeit pro User wird übertragen
   * Error Information bei falscher UserID wird übertragen
-
