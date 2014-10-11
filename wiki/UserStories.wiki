@@ -12,12 +12,12 @@ Wunschbereich von Gruppe 2
 
 Acceptance:
 
-- erfolgreicher Login
-- Startseite  wird angezeigt    
-- mein Name wird angezeigt
-- ein Logout-Button ist verfügbar
-- über einen Link werde ich zu meinen Account-Informationen weitergeleitet
-- bei ungültiger Kombination von Passwort und Username erfolgt kein Login
+* erfolgreicher Login
+* Startseite  wird angezeigt    
+* mein Name wird angezeigt
+* ein Logout-Button ist verfügbar
+* über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+* bei ungültiger Kombination von Passwort und Username erfolgt kein Login
 
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
