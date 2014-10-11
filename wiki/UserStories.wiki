@@ -52,6 +52,7 @@ Acceptance:
 - Das gelöschte Profilfoto wird nicht mehr angezeigt.
 
 *(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
+
 Acceptance:
     
 - Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
