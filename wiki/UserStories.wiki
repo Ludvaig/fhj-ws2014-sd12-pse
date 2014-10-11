@@ -318,4 +318,60 @@ Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
   * Monatsarbeitszeit pro User wird übertragen
   * Error Information bei falscher UserID wird übertragen
+
+
+Gruppe 2:
+(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)
+Acceptance:
+
+- erfolgreicher Login
+- Startseite  wird angezeigt    
+- mein Name wird angezeigt
+- ein Logout-Button ist verfügbar
+- über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+- bei ungültiger Kombination von Passwort und Username erfolgt kein Login
+
+
+(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)
+Acceptance:
+
+- Die Profildaten müssen aus den Feldern E-Mail-Adresse und Telefonnummer bestehen.
+- Speichern der Daten in der Datenbank bei Bestätigung
+- Validierung der eingegebenen Daten
+
+(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können. (G4)
+Acceptance:
+
+- Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
+- Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
+
+
+(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können. (G4)
+Acceptance:
+
+- Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
+- Das gelöschte Profilfoto wird nicht mehr angezeigt.
+
+(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)
+Acceptance:
+    
+- Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
+- Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
+- Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
+
+(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können. (G3)
+Acceptance:
+
+- Auswahl aus der Liste aller verfügbaren User
+- Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
+- Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
+
+(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können (G3)
+Acceptance:
+
+- Möglichkeit zur Auswahl eines oder mehrerer Kontakte
+- Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
+- Ohne Bestätigung wird der Kontakt nicht gelöscht.
+
+
   
