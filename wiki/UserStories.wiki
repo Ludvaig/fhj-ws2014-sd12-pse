@@ -59,7 +59,7 @@ Acceptance:
 - Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
 - Ohne Bestätigung wird der Kontakt nicht gelöscht.
 
----- 
+====================================================================
 
 *Login*
 
