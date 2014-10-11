@@ -9,6 +9,7 @@
 Wunschbereich von Gruppe 2
 
 (US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)
+
 Acceptance:
 
 - erfolgreicher Login
