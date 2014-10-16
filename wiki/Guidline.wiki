@@ -1,6 +1,6 @@
 #summary Best practice and agreements.
 
-Guidline:
+*Guidline:*
 ---------
 
 Note: 
