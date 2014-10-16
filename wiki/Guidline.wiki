@@ -14,7 +14,7 @@ https://codeload.github.com/jboss-developer/jboss-eap-quickstarts/zip/6.3.0.GA
 When development environment is ready for all we change all the configuration from the example "org.jboss.as.quickstart.hibernate4" to our own package sources "at.fhj.swd" and remove the example.
 
 *Best practice:*
-* Please don't commit anything witout a log entry!
-* Do not commit directories like "target", ".settings" (or any other eclipse project files). Everybod should manage its IDE environment by himself and can have differnt contents in it.
-* Try to compile using command line of maven. Because the pom.xml file is for all of us the same we will get the same result!
-* Please feel free to add content to the readme file or create wiki entries for special implementations.
+ * Please don't commit anything witout a log entry!
+ * Do not commit directories like "target", ".settings" (or any other eclipse project files). Everybod should manage its IDE environment by himself and can have differnt contents in it.
+ * Try to compile using command line of maven. Because the pom.xml file is for all of us the same we will get the same result!
+ * Please feel free to add content to the readme file or create wiki entries for special implementations.
