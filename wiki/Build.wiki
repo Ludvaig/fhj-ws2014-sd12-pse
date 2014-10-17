@@ -88,10 +88,9 @@ https://docs.jboss.org/wildfly/plugins/maven/latest/
  * wildfly:execute-commands executes commands on the running server.
 
 
---------
+------------
 
-
-Tips for Fedora VM
+*Tips for Fedora VM*
 if your wildfly server throw the exception:
 [Failed to start service jboss.serverManagement.controller.management.http]
 start your VM in network bridged mode to solve this issue
