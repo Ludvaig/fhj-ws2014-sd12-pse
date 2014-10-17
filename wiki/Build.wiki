@@ -3,7 +3,7 @@
 *Requirements:*
 ------------
 
- * JDK 1.7 or later
+ * JDK 1.7 or later  (Fedro-VM: yum install java-1.7.0-openjdk)
  * wildfly-8.1.0
 To set up the build environment:
  * apache-maven-3.2.3
