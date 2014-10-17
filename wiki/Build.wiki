@@ -55,7 +55,8 @@ You find this tag at the end of the file.
         .....
 }}}       
 If you want to add a remote server as well customize the "wildfly-remote" profile and activate it under "activeProfiles" at the end of the file.
-  
+
+to deploy the war file run ${JBOSS_HOME}/bin/jboss-cli.sh
 
 *Maven goals:*
 ------------
