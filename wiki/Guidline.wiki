@@ -22,3 +22,4 @@ When development environment is ready for all we change all the configuration fr
  * Source code documentations (JavaDoc) in English.
  * Authors are responsible for theyr classes.
  * Do not change code formating of an existing file.
+ * No task definitions in the issues section.
