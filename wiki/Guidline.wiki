@@ -21,3 +21,4 @@ When development environment is ready for all we change all the configuration fr
  * Store importand informations in the doc directory!
  * Source code documentations (JavaDoc) in English.
  * Authors are responsible for theyr classes.
+ * Do not change code formating of an existing file.
