@@ -15,11 +15,10 @@ When development environment is ready for all we change all the configuration fr
 
 *Best practice:*
  * Please don't commit anything witout a log entry!
- * Do not commit directories like "target", ".settings" (or any other eclipse project files). Everybod should manage its IDE environment by himself and can have differnt contents in it.
- * Try to compile using command line of maven. Because the pom.xml file is for all of us the same we will get the same result!
- * Please feel free to add content to the readme file or create wiki entries for special implementations.
- * Store importand informations in the doc directory!
+ * Do not commit directories like "target", "bin", ".settings" or any other eclipse project files. Everybod should manage its IDE environment by himself and can have differnt contents in it.
+ * Please feel free to add content to the readme.txt file or create wiki entries for special implementations.
+ * Store important informations and documents in the "doc" directory!
  * Source code documentations (JavaDoc) in English.
- * Authors are responsible for theyr classes.
- * Do not change code formating of an existing file.
+ * Authors are responsible for their classes.
+ * Do not change code formating of an existing file for proper SVN merge views.
  * No task definitions in the issues section.
