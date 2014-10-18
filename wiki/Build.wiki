@@ -51,8 +51,9 @@ You find this tag at the end of the file.
 <profile>
 	<id>wildfly-local</id>
 	<properties>
-	<wildfly-home>X:/SDKs/</wildfly-home>
-        .....
+		<wildfly-home>X:/SDKs/</wildfly-home>
+        </properties>
+</profile>
 }}}       
 If you want to add a remote server as well customize the "wildfly-remote" profile and activate it under "activeProfiles" at the end of the file.
 
