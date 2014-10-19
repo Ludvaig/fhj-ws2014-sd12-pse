@@ -117,7 +117,7 @@ Acceptance:
 - Der User kann nach Communities suchen. 
 - Suchmöglichkeiten:
   - Dropdown-Menü der existierenden Communities
-  - Textfeld mit Suche über Community name
+  - Textfeld mit Suche über Community Name
 
 
 *(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)
@@ -132,9 +132,10 @@ Acceptance:
 
 Acceptance:
 
-    Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
-    Es werden nicht mehr als 10 pro Seite angezeigt.
-    Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt. 
+- Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+- Es werden nicht mehr als 10 pro Seite angezeigt.
+- Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
+- Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
 
 --------------------------------------------------------------
 --------------------------------------------------------------
