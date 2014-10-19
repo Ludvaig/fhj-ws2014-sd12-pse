@@ -105,8 +105,8 @@ Acceptance:
 
 Acceptance:
 
-- Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
-- Der User kann seine Bewertung jederzeit verändern. 
+ - Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ - Der User kann seine Bewertung jederzeit verändern. 
 
 *(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)
 
