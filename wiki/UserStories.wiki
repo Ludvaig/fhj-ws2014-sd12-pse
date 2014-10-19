@@ -87,7 +87,7 @@ Hinweis: US17 / 23 / 24 - wurden wegen Redundanzen entfernt
 Wunschbereich von Gruppe 4
 
 
-*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)
+*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream). (G2)
 
 Acceptance:
 
@@ -97,8 +97,8 @@ Acceptance:
 
 *(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2) Acceptance:
 
-- Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können
 - Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
+
 
 
 *(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)
@@ -112,18 +112,21 @@ Acceptance:
 
 Acceptance:
 
-    Dem User werden die Communities angezeigt.
-    Nicht abonnierte Communities werden nicht angezeigt.
-    Der User kann nach Communities suchen. 
+- Dem User werden die Communities angezeigt.
+- Nicht abonnierte Communities werden nicht angezeigt.
+- Der User kann nach Communities suchen. 
+- Suchmöglichkeiten:
+  - Dropdown-Menü der existierenden Communities
+  - Textfeld mit Suche über Community name
 
 
 *(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)
 
 Acceptance:
 
-    Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
-    User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
-    User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
+- Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+- User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+- User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
 *(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten. (G3)
 
