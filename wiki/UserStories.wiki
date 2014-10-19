@@ -87,7 +87,7 @@ Hinweis: US17 / 23 / 24 - wurden wegen Redundanzen entfernt
 Wunschbereich von Gruppe 4
 
 
-(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)
+*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)
 
 Acceptance:
 
@@ -98,7 +98,7 @@ Anmerkungen CKrenn:
 
     Betrifft das die Startseite oder eine Community? 
 
-(US13)Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2) Acceptance:
+*(US13)Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2) Acceptance:
 
     Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten. 
 
@@ -107,14 +107,14 @@ Anmerkungen CKrenn:
     Betrifft das die Startseite oder eine Community?
     Bei Acceptance ergänzen, dass man andere Kommentare nicht editieren kann 
 
-(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)
+*(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)
 
 Acceptance:
 
     Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
     Der User kann seine Bewertung jederzeit verändern. 
 
-(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)
+*(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)
 
 Acceptance:
 
@@ -123,7 +123,7 @@ Acceptance:
     Der User kann nach Communities suchen. 
 
 
-(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)
+*(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)
 
 Acceptance:
 
@@ -131,7 +131,7 @@ Acceptance:
     User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
     User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
-(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten. (G3)
+*(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten. (G3)
 
 Acceptance:
 
