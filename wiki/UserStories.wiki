@@ -169,13 +169,6 @@ Acceptance:
 Anmerkungen CKrenn:
  * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
 
-* Communities:*
-
-*Anmerkungen CKrenn:*
- * Mir fehlt generell eine Userstory zum Beantragen einer Community. Bitte ergänzen
- * Mir fehlt eine User Story, die beschreibt wie eine public / private Community aufgebaut ist. Bitte ergänzen
- * Mir fehlt eine User Story, die beschreibt wie man Mitglied einer öffentlichen / privaten Community wird. Bitte ergänzen
-
 --------------------------------------------------------------
 
 *Login*
