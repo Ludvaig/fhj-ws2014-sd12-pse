@@ -30,12 +30,6 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
 
-*(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
-
-Acceptance:
- * Schnelles / einfaches erstellen neuer Neuigkeiten
- * Einfacher Upload für Dateien (Bilder)
-
 *Newsfeed:*
 
 *Anmerkungen CKrenn zum Feed generell:*
@@ -253,6 +247,12 @@ Acceptance:
 
 Anmerkungen CKrenn:
  * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
+
+*(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
+
+Acceptance:
+ * Schnelles / einfaches erstellen neuer Neuigkeiten
+ * Einfacher Upload für Dateien (Bilder)
 
 --------------------------------------------------------------
 ==Gruppe 4==
