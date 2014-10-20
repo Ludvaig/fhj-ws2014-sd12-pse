@@ -36,7 +36,6 @@ Acceptance:
  * Schnelles / einfaches erstellen neuer Neuigkeiten
  * Einfacher Upload für Dateien (Bilder)
 
-
 *Newsfeed:*
 
 *Anmerkungen CKrenn zum Feed generell:*
