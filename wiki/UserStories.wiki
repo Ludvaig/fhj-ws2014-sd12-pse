@@ -145,10 +145,7 @@ Acceptance:
  * ein Logout-Button ist verfügbar
  * mein Profilbild wird angezeigt
  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
-
-Anmerkungen CKrenn:
- * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
- * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
+ * mit falschen Login Daten ist ein Login nicht möglich
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
@@ -157,25 +154,11 @@ Acceptance:
  * Speichern der Daten in der Datenbank bei Bestätigung
  * Validierung der eingegebenen Daten
 
-*(US16 Konflikt) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
-
-Acceptance:
- * Der User kann seine Kontaktinformation bearbeiten 
- * Der User kann seine persönlichen Interessen bearbeiten
-
-*Anmerkungen CKrenn:*
- * Gut wäre hier noch die Daten zu erwähnen, die man editieren kann, vermutlich Duplicate mit nachfolgender User Story - bitte zusammenfuehren.
-
 *(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
 
 Acceptance:
  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
-
-
-*Anmerkungen CKrenn:*
- * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
- * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
 
 *(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können.*
 
