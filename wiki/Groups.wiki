@@ -24,9 +24,9 @@
 
   * Hösele (Team Manager)
   * Frech (Lead Entwickler)
-  * Kotremba (FrontEnd Entwickler)
-  * Tot (BackEnd Entwickler)
-  * Mayer (BackEnd Entwickler)
+  * Kotremba (FrontEnd-Entwickler)
+  * Tot (BackEnd-Entwickler)
+  * Mayer (BackEnd-Entwickler)
   * Viehberger (Testing)
 
 = Group 4 =
