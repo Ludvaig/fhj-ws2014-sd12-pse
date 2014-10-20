@@ -31,11 +31,6 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
 
-*(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen*
-
-Acceptance:
-  * Nach aktualität sortiert
-
 *(US5.1)Als Admin möchte ich neue News erstellen / editieren können*
 
 Acceptance:
@@ -272,6 +267,13 @@ Acceptance:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
   * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
+===Newsfeed===
+
+*(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen.*
+
+Acceptance:
+  * Nach aktualität sortiert
+
 --------------------------------------------------------------
 ==Gruppe 2==
 
@@ -439,13 +441,13 @@ Acceptance:
 *(US29) Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
 
 Acceptance:  
-  * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden.
-  * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können.
-  * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können.
+  * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden
+  * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können
+  * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können
 
 ==Services==
 
-*(US34) Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
+*(US34) Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP.*
 
 Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
