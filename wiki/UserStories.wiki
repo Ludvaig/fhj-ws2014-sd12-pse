@@ -220,22 +220,18 @@ Acceptance:
 
 ===Verwaltungsbereich===
 
-*(US25) Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
+*(US25) Als Admin möchte ich im Verwaltungsbereich Communities anlegen und freischalten, um User mit gleichen Interessen eine Gruppe erstellen zu können.*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
+ * Neue Communities sollen nicht freigeschaltet sein
+ * Die Freischaltung soll durch den Admin wiederrufbar sein.
 
-Anmerkungen CKrenn:
- * Satz etwas verdreht. Gruppen = Communities bitte korrigieren.
- * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
-
-*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
+*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich einen News-Eintrages editieren und dessen Gültigkeitszeitraum bestimmen können.*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
-
-Anmerkungen CKrenn:
- * Hier würde die User Story weiterfassen - naemlich das ganze editieren nicht nur die Gültigkeit
+ * News Einträge sollen durch den Administrator bearbeitbar sein.
 
 ===Verwaltungsbereich (Administratoren)===
 
