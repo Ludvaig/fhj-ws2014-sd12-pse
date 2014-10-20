@@ -4,9 +4,8 @@
  * Bitte doppelte User Stories vereinheitlichen
  * Sonst siehe Detailkommentare
 
----------------------------------------------------------------------
-
 =Stories Unzugeordnet=
+---------------------------------------------------------------------
 
 *Login*
 
