@@ -167,37 +167,6 @@ Acceptance:
  * Sicherstellen, dass auf der Übersichtsseite die Communities eines bestimmten Users angezeigt werden.
  * Sicherstellen, dass man mit einem "Zurück zur Übersicht"-Button auf die Übersichtsseite zurückkehren kann.
 
-*(US30 - ausgewählt/angepasst durch Gruppe 4)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.*
-
-Acceptance:
- * Dem User werden die Communities angezeigt.
- * Nicht abonnierte Communities werden nicht angezeigt.
- * Der User kann nach Communities suchen.
-
-*(US31) Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream).*
-
-Acceptance:
- * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
-
-*Anmerkungen CKrenn:*
- * Duplicate zu vorhergehender Userstory
-
-*Services:*
-
-* (US32 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich einen Antrag für eine Dienstreise stellen.*
-
-Acceptance:
- * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
- * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
- * User wird rückgeleitet zur Übersicht der Dienstreiseanträge
-
-*(US33 - ausgewählt/angepasst durch Gruppe 4) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
-
-Acceptance:
- * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
- * Es werden nicht mehr als 10 pro Seite angezeigt.
- * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
-
 =Stories Iteration 1=
 
 --------------------------------------------------------------
