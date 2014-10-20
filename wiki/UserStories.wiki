@@ -426,47 +426,43 @@ Acceptance:
 
 
 
-*(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
+*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
 
 Acceptance:
-
- - Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+  * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
  - Der User kann seine Bewertung jederzeit verändern. 
 
-*(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
+*(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
 Acceptance:
+  * Dem User werden die Communities angezeigt.
+  * Nicht abonnierte Communities werden nicht angezeigt.
+  * Der User kann nach Communities suchen. 
+  * Suchmöglichkeiten:
+    * Dropdown-Menü der existierenden Communities
+    * Textfeld mit Suche über Community Name
 
-- Dem User werden die Communities angezeigt.
-- Nicht abonnierte Communities werden nicht angezeigt.
-- Der User kann nach Communities suchen. 
-- Suchmöglichkeiten:
-  - Dropdown-Menü der existierenden Communities
-  - Textfeld mit Suche über Community Name
-
-*(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen.
-
-Acceptance:
-
-- Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
-- User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
-- User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
-
-*(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
+*(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.*
 
 Acceptance:
+  * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+  * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+  * User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
-- Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
-- Es werden nicht mehr als 10 pro Seite angezeigt.
-- Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
-- Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
+*(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
+
+Acceptance:
+  * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+  * Es werden nicht mehr als 10 pro Seite angezeigt.
+  * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
+  * Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
 
 --------------------------------------------------------------
 =Stories Iteration 2=
 
 ==Services==
 
-*(US34)Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
+*(US34) Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
 
 Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
