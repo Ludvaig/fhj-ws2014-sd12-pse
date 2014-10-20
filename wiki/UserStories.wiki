@@ -450,6 +450,12 @@ Acceptance:
   * Es werden nicht mehr als 10 pro Seite angezeigt.
   * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
 
+--------------------------------------------------------------
+
+=Zukünftige Features=
+
+
+
 *(US34)Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
 
 Acceptance:
