@@ -209,12 +209,6 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
 
-*(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen*
-
-Acceptance:
-  * Nach Erstellung / Änderung sortiert
-  * Über direktlink abrufbar
-
 *(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen*
 
 Acceptance:
@@ -225,19 +219,6 @@ Acceptance:
 Acceptance:
   * Schnelles / einfaches erstellen neuer Neuigkeiten
   * Einfacher Upload für Dateien (Bilder)
-
-*(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können.*
-
-Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
-  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
-
-* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann.*
-
-Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
 
 *Newsfeed:*
@@ -449,6 +430,31 @@ Acceptance:
   * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
   * Es werden nicht mehr als 10 pro Seite angezeigt.
   * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
+
+=Stories Iteration 1=
+
+==Gruppe 1==
+
+===Dokumenten Bibliothek===
+
+*(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen*
+
+Acceptance:
+  * Nach Erstellung / Änderung sortiert
+  * Über direktlink abrufbar
+
+*(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können.*
+
+Acceptance:
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
+  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
+
+* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann.*
+
+Acceptance:
+  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
 --------------------------------------------------------------
 
