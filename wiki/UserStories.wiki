@@ -235,14 +235,12 @@ Acceptance:
 
 ===Verwaltungsbereich (Administratoren)===
 
-*(US27) Als Portal-Administrator möchte ich  Fotos aller User löschen können.*
+*(US27) Als Portal-Administrator möchte ich neue hochgeladene Fotos vor der Veröffentlichung freischalten.*
 
 Acceptance:
- * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
- * Das gelöschte Foto wird aus der Liste entfernt. 
-
-Anmerkungen CKrenn:
- * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
+ * Ein neu hochgeladenes Foto wird auf der User Seite nicht angezeigt.
+ * Der Admin Bereich bietet die Möglichkeit neu hochgeladene Fotos freizuschalten.
+ * Fotos sind nach der Freischaltung für alle User sichtbar.
 
 *(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
 
