@@ -25,7 +25,7 @@ Acceptance:
 - bei ungültiger Kombination von Passwort und Username erfolgt kein Login
 
 
-*(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
+*(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
 Acceptance:
 
@@ -35,7 +35,7 @@ Acceptance:
 
 - Validierung der eingegebenen Daten
 
-*(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können. (G4)*
+*(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
 
 Acceptance:
 
@@ -43,7 +43,7 @@ Acceptance:
 - Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
 
 
-*(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können. (G4)*
+*(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können.*
 
 Acceptance:
 
@@ -51,7 +51,7 @@ Acceptance:
 
 - Das gelöschte Profilfoto wird nicht mehr angezeigt.
 
-*(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
+*(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
 
 Acceptance:
     
@@ -61,7 +61,7 @@ Acceptance:
 
 - Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
-*(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können. (G3)*
+*(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können.*
 
 Acceptance:
 
@@ -71,7 +71,7 @@ Acceptance:
 
 - Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
 
-*(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können (G3)*
+*(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können*
 
 Acceptance:
 
@@ -87,7 +87,7 @@ Hinweis: US17 / 23 / 24 - wurden wegen Redundanzen entfernt
 Wunschbereich von Gruppe 4
 
 
-*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream). (G2)
+*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
 Acceptance:
 
@@ -95,20 +95,20 @@ Acceptance:
 - Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben. 
 
 
-*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2) Acceptance:
+*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). Acceptance:
 
 - Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
 
 
 
-*(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)
+*(US14)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
 
 Acceptance:
 
  - Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
  - Der User kann seine Bewertung jederzeit verändern. 
 
-*(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen. (G4)
+*(US30)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
 Acceptance:
 
@@ -120,7 +120,7 @@ Acceptance:
   - Textfeld mit Suche über Community Name
 
 
-*(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)
+*(US32)Als User möchte ich einen Antrag für eine Dienstreise stellen.
 
 Acceptance:
 
@@ -128,7 +128,7 @@ Acceptance:
 - User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
 - User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
-*(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten. (G3)
+*(US33)Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
 
 Acceptance:
 
@@ -140,7 +140,7 @@ Acceptance:
 --------------------------------------------------------------
 *Verwaltungsbereich (ausgewählt durch Gruppe 3)*
 
-*(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+*(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
@@ -150,7 +150,7 @@ Anmerkungen CKrenn:
  * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
 
 
-*(US26)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+*(US26)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -160,7 +160,7 @@ Anmerkungen CKrenn:
 
 * Verwaltungsbereich (Administratoren):* 
 
-(US27)Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
+(US27)Als Portal-Administrator möchte ich  Fotos aller User löschen können.*
 
 Acceptance:
  *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
@@ -173,7 +173,7 @@ Anmerkungen CKrenn:
 
 *Login*
 
-*(US1 - ausgewählt/angepasst durch Gruppe 2) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können. (G4)*
+*(US1 - ausgewählt/angepasst durch Gruppe 2) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
 
 Acceptance:
  * erfolgreicher Login
@@ -187,7 +187,7 @@ Acceptance:
  * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
  * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
 
-*(US1.1) Als User will ich mit echten verifizierten Personen auf der Plattform interagieren. (G1)*
+*(US1.1) Als User will ich mit echten verifizierten Personen auf der Plattform interagieren.*
 
 Acceptance:
  * Bei der Registrierung muss die angegebene E-Mail Adresse verifiziert werden
@@ -196,12 +196,12 @@ Acceptance:
 
 *Startseite:*
 
-*(US2) Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können. (G2)*
+*(US2) Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können.*
  
 Acceptance:
   * Der User sieht alle Activity Streams der globalen Communities.
 
-*(US3) Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben (G3)*
+*(US3) Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben*
 
 Acceptance:
   * Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind 
@@ -209,31 +209,31 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
 
-*(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen (G3)*
+*(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen*
 
 Acceptance:
   * Nach Erstellung / Änderung sortiert
   * Über direktlink abrufbar
 
-*(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen (G3)*
+*(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen*
 
 Acceptance:
   * Nach aktualität sortiert
 
-*(US5.1)Als Admin möchte ich neue News erstellen / editieren können (G3)*
+*(US5.1)Als Admin möchte ich neue News erstellen / editieren können*
 
 Acceptance:
   * Schnelles / einfaches erstellen neuer Neuigkeiten
   * Einfacher Upload für Dateien (Bilder)
 
-*(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können (G1).*
+*(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können.*
 
 Acceptance:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
   * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
   * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
 
-* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann. (G1)*
+* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann.*
 
 Acceptance:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
@@ -245,7 +245,7 @@ Acceptance:
 *Anmerkungen CKrenn zum Feed generell:*
  * Hier geht meist nicht ganz hervor, wo ich was darf (im zentralen Feed, oder in der Community. bitte noch detaillieren und ggf verschieben.
 
-*(US8)Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen. (G4)*
+*(US8)Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen.*
 
 Acceptance:
  * Der Newsfeed beinhaltet folgende Informationen:
@@ -261,26 +261,26 @@ Acceptance:
  * Gehört das zur Startseite? dann bitte dorthin schieben
  * Was ist mit entscheiden gemeint @tagging fuer User, Community beim Erstellen?
 
-*(US9)Als User möchte ich eine Nachricht auf den Activity Stream schreiben können. (G3)*
+*(US9)Als User möchte ich eine Nachricht auf den Activity Stream schreiben können.*
 
 Acceptance:
   * Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
   * Sicherstellen das die Nachricht auch wieder gelöscht werden kann.
   * Sicherstellen das die Nachricht von einem Admin / Portal Admin gelöscht werden kann.
 
-*(US10)Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können. (G3)*
+*(US10)Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können.*
 
 Acceptance:
   * Sicherstellen das die Nachricht/der Kommentar auch wieder entliked werden kann.
 
-*(US11)Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können. (G3)*
+*(US11)Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können.*
 
 Acceptance:
   * Sicherstellen das der Kommentar auch editiert/ausgebessert werden kann.
   * Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
   * Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann. 
 
-(US12 - ausgewählt/angepasst durch Gruppe 4)*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream). (G2)*
+(US12 - ausgewählt/angepasst durch Gruppe 4)*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream).*
 
 Acceptance:
  * Der User kann über eine Schaltfläche seinen Kommentar posten.
@@ -290,7 +290,7 @@ Acceptance:
  * Betrifft das die Startseite oder eine Community?
  
 
-*(US13 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). (G2)*
+*(US13 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).*
  
 Acceptance:
  * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
@@ -299,13 +299,13 @@ Acceptance:
  * Betrifft das die Startseite oder eine Community?
  * Bei Acceptance ergänzen, dass man andere Kommentare nicht editieren kann
  
-*(US14 - ausgewählt/angepasst durch Gruppe 4)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream). (G2)* 
+*(US14 - ausgewählt/angepasst durch Gruppe 4)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).* 
 
 Acceptance:
  * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
  * Der User kann seine Bewertung jederzeit verändern. 
 
-*(US15)Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können. (G2)*
+*(US15)Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können.*
 
 Acceptance:
  * Durch Hinzufügen der Email-Adresse als @Tag wird der Empfänger der Nachricht bestimmt.
@@ -320,7 +320,7 @@ Acceptance:
  * Sollte eigentlich Profilseite sein, hab ich ergänzt.
 
 
-*(US16 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten. (G2)*
+*(US16 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
 Acceptance:
  * Der User kann seine Kontaktinformation bearbeiten 
@@ -329,7 +329,7 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Gut wäre hier noch die Daten zu erwähnen, die man editieren kann, vermutlich Duplicate mit nachfolgender User Story - bitte zusammenfuehren.
 
-*(US18- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Fotos zum Portal hochladen können. (G4)*
+*(US18- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Fotos zum Portal hochladen können.*
 
 Acceptance:
   * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
@@ -340,13 +340,13 @@ Acceptance:
  * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
  * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
 
-*(US19 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine Fotos aus dem Portal löschen können. (G4)*
+*(US19 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine Fotos aus dem Portal löschen können.*
 
 Acceptance:
   * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
   * Das gelöschte Foto wird aus der Liste entfernt.
 
-*(US20- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen. (G4)*
+*(US20- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
 
 Acceptance:
   * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
@@ -354,13 +354,13 @@ Acceptance:
   * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
 
-*(US21- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können. (G3)*
+*(US21- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können.*
 
 Acceptance:
   * Auswahl aus der Liste aller verfügbaren User
   * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
 
-*(US22 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können (G3)*
+*(US22 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können*
 
   Acceptance:
   * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
@@ -369,7 +369,7 @@ Acceptance:
 
 *Verwaltungsbereich (ausgewählt durch Gruppe 3)*
 
-*(US25 - ausgewählt/angepasst durch Gruppe 3)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+*(US25 - ausgewählt/angepasst durch Gruppe 3)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
@@ -379,7 +379,7 @@ Anmerkungen CKrenn:
  * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
 
 
-*(US26 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+*(US26 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -389,7 +389,7 @@ Anmerkungen CKrenn:
 
 * Verwaltungsbereich (Administratoren):* 
 
-(US27 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
+(US27 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Administrator möchte ich  Fotos aller User löschen können.*
 
 Acceptance:
  *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
@@ -405,7 +405,7 @@ Anmerkungen CKrenn:
  * Mir fehlt eine User Story, die beschreibt wie eine public / private Community aufgebaut ist. Bitte ergänzen
  * Mir fehlt eine User Story, die beschreibt wie man Mitglied einer öffentlichen / privaten Community wird. Bitte ergänzen
  
-*(US28)Als User möchte ich Zugriff auf eine Übersichtsseite haben (G3)*
+*(US28)Als User möchte ich Zugriff auf eine Übersichtsseite haben*
 
 Acceptance:
   * Sicherstellen, dass auf der Übersichtsseite alle öffentlichen und privaten Communities angezeigt werden.
@@ -436,14 +436,14 @@ Acceptance:
 
 *Services:*
 
-*(US32 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich einen Antrag für eine Dienstreise stellen. (G3)*
+*(US32 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich einen Antrag für eine Dienstreise stellen.*
 
 Acceptance:
   * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
   * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
   * User wird rückgeleitet zur Übersicht der Dienstreiseanträge
 
-*(US33 - ausgewählt/angepasst durch Gruppe 4) Als User möchte ich einen Überblick über meine Dienstreisen erhalten. (G3)*
+*(US33 - ausgewählt/angepasst durch Gruppe 4) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
 
 Acceptance:
   * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
@@ -452,11 +452,11 @@ Acceptance:
 
 --------------------------------------------------------------
 
-=Offene Stories=
+=Stories Iteration 2=
 
 ==Services==
 
-*(US34)Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
+*(US34)Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP*
 
 Acceptance:
   * Wochenarbeitszeit pro User wird übertragen
