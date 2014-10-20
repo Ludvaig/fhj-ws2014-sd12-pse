@@ -6,7 +6,6 @@
 
 ---------------------------------------------------------------------
 
-
 *Login*
 
 *(US1.1) Als User will ich mit echten verifizierten Personen auf der Plattform interagieren.*
@@ -21,21 +20,21 @@ Acceptance:
 *(US2) Als User möchte ich auf der Startseite des Web-Portals alle globalen und lokalen Nachrichten (deren Community man angehört) des Activity Streams sehen können, um die aktuellen Nachrichten lesen zu können.*
  
 Acceptance:
-  * Der User sieht alle Activity Streams der globalen Communities.
+ * Der User sieht alle Activity Streams der globalen Communities.
 
-*(US3) Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben*
+*(US3) Als User möchte ich im Startseiten-Stream Zugriff auf den den Community-Stream haben.*
 
 Acceptance:
-  * Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind 
+ * Sicherstellen, dass die Inhalte des Community-Streams im Startseiten-Stream sichtbar sind 
 
 *Anmerkungen CKrenn:*
  * Acceptance - Was fehlt: User sieht nur Inhalte die er sehen darf (keine privaten Communities ausser er ist Member) zusammenführen mit vorheriger Community.
 
-*(US5.1)Als Admin möchte ich neue News erstellen / editieren können*
+*(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
 
 Acceptance:
-  * Schnelles / einfaches erstellen neuer Neuigkeiten
-  * Einfacher Upload für Dateien (Bilder)
+ * Schnelles / einfaches erstellen neuer Neuigkeiten
+ * Einfacher Upload für Dateien (Bilder)
 
 
 *Newsfeed:*
@@ -43,7 +42,7 @@ Acceptance:
 *Anmerkungen CKrenn zum Feed generell:*
  * Hier geht meist nicht ganz hervor, wo ich was darf (im zentralen Feed, oder in der Community. bitte noch detaillieren und ggf verschieben.
 
-*(US8)Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen.*
+*(US8) Wenn ich als User angemeldet bin, möchte ich den Newsfeed mit den aktuellen Unternehmensinformationen sehen.*
 
 Acceptance:
  * Der Newsfeed beinhaltet folgende Informationen:
@@ -59,49 +58,24 @@ Acceptance:
  * Gehört das zur Startseite? dann bitte dorthin schieben
  * Was ist mit entscheiden gemeint @tagging fuer User, Community beim Erstellen?
 
-*(US9)Als User möchte ich eine Nachricht auf den Activity Stream schreiben können.*
+*(US9) Als User möchte ich eine Nachricht auf den Activity Stream schreiben können.*
 
 Acceptance:
-  * Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
-  * Sicherstellen das die Nachricht auch wieder gelöscht werden kann.
-  * Sicherstellen das die Nachricht von einem Admin / Portal Admin gelöscht werden kann.
+ * Sicherstellen das die Nachricht auch editiert/ausgebessert werden kann.
+ * Sicherstellen das die Nachricht auch wieder gelöscht werden kann.
+ * Sicherstellen das die Nachricht von einem Admin / Portal Admin gelöscht werden kann.
 
 *(US10)Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können.*
 
 Acceptance:
-  * Sicherstellen das die Nachricht/der Kommentar auch wieder entliked werden kann.
+ * Sicherstellen das die Nachricht/der Kommentar auch wieder entliked werden kann.
 
 *(US11)Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können.*
 
 Acceptance:
-  * Sicherstellen das der Kommentar auch editiert/ausgebessert werden kann.
-  * Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
-  * Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann. 
-
-(US12 - ausgewählt/angepasst durch Gruppe 4)*Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream).*
-
-Acceptance:
- * Der User kann über eine Schaltfläche seinen Kommentar posten.
- * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
-
-*Anmerkungen CKrenn:*
- * Betrifft das die Startseite oder eine Community?
- 
-
-*(US13 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).*
- 
-Acceptance:
- * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
-
-*Anmerkungen CKrenn:*
- * Betrifft das die Startseite oder eine Community?
- * Bei Acceptance ergänzen, dass man andere Kommentare nicht editieren kann
- 
-*(US14 - ausgewählt/angepasst durch Gruppe 4)Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).* 
-
-Acceptance:
- * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
- * Der User kann seine Bewertung jederzeit verändern. 
+ * Sicherstellen das der Kommentar auch editiert/ausgebessert werden kann.
+ * Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
+ * Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann. 
 
 *(US15)Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können.*
 
@@ -386,9 +360,7 @@ Anmerkungen CKrenn:
 --------------------------------------------------------------
 ==Gruppe 4==
 
-*Communities und Dienstreise (GRUPPE4)*
-Wunschbereich von Gruppe 4
-
+===Communities und Dienstreise===
 
 *(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
@@ -401,8 +373,6 @@ Acceptance:
 *(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). Acceptance:
 
 - Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
-
-
 
 *(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
 
@@ -435,21 +405,48 @@ Acceptance:
   * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
   * Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
 
+===Newsfeed===
+
+*(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream).*
+
+Acceptance:
+ * Der User kann über eine Schaltfläche seinen Kommentar posten.
+ * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben.
+
+*Anmerkungen CKrenn:*
+ * Betrifft das die Startseite oder eine Community?
+ 
+
+*(US13) Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).*
+ 
+Acceptance:
+ * Der User kann über eine Editierschaltfläche, seinen ausgewählten Kommentar, bearbeiten.
+
+*Anmerkungen CKrenn:*
+ * Betrifft das die Startseite oder eine Community?
+ * Bei Acceptance ergänzen, dass man andere Kommentare nicht editieren kann
+ 
+*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).* 
+
+Acceptance:
+ * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ * Der User kann seine Bewertung jederzeit verändern. 
+
 --------------------------------------------------------------
 =Stories Iteration 2=
 
 *(US29) Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
 
 Acceptance:  
-  * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden
-  * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können
-  * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können
+ * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden
+ * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können
+ * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können
 
 ==Services==
 
 *(US34) Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP.*
 
 Acceptance:
-  * Wochenarbeitszeit pro User wird übertragen
-  * Monatsarbeitszeit pro User wird übertragen
-  * Error Information bei falscher UserID wird übertragen
+ * Wochenarbeitszeit pro User wird übertragen
+ * Monatsarbeitszeit pro User wird übertragen
+ * Error Information bei falscher UserID wird übertragen
