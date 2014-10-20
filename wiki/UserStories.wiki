@@ -9,20 +9,6 @@
 
 *Login*
 
-*(US1 - ausgewählt/angepasst durch Gruppe 2) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
-
-Acceptance:
- * erfolgreicher Login
- * personalisierter Datenstream wird angezeigt
- * mein Name wird angezeigt
- * ein Logout-Button ist verfügbar
- * mein Profilbild wird angezeigt
- * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
-
-*Anmerkungen CKrenn:*
- * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
- * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
-
 *(US1.1) Als User will ich mit echten verifizierten Personen auf der Plattform interagieren.*
 
 Acceptance:
@@ -308,6 +294,9 @@ Acceptance:
   * mein Profilbild wird angezeigt
   * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
 
+Anmerkungen CKrenn:
+  * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
+  * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
