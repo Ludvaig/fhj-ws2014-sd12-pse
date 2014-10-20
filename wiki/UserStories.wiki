@@ -215,13 +215,6 @@ Acceptance:
   * Sicherstellen, dass auf der Übersichtsseite die Communities eines bestimmten Users angezeigt werden.
   * Sicherstellen, dass man mit einem "Zurück zur Übersicht"-Button auf die Übersichtsseite zurückkehren kann.
 
-*(US29)Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
-
-Acceptance:  
-  * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden.
-  * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können.
-  * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können.
-
 *(US30 - ausgewählt/angepasst durch Gruppe 4)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.*
 
 Acceptance:
@@ -442,6 +435,13 @@ Acceptance:
 
 --------------------------------------------------------------
 =Stories Iteration 2=
+
+*(US29) Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
+
+Acceptance:  
+  * Sicherstellen, dass nur die eigenen sowie alle öffentlichen Communities angezeigt werden.
+  * Sicherstellen, dass die Inhalte der Übersichtsseite nach relevante Kriterien sortiert werden können.
+  * Sicherstellen, dass die Inhalte des Community-Streams nach Datum sortiert werden können.
 
 ==Services==
 
