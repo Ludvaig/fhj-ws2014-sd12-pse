@@ -452,9 +452,9 @@ Acceptance:
 
 --------------------------------------------------------------
 
-=Zukünftige Features=
+=Offene Stories=
 
-
+==Services==
 
 *(US34)Als Drittanbieter möchte ich eine Schnittstelle zur Zeiterfassung über SOAP (G3)*
 
