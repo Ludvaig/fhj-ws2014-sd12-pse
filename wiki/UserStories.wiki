@@ -356,6 +356,7 @@ Acceptance:
 
 =Stories Iteration 1=
 
+--------------------------------------------------------------
 ==Gruppe 1==
 
 ===Dokumenten Bibliothek===
@@ -379,6 +380,7 @@ Acceptance:
   * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
   * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
+--------------------------------------------------------------
 ==Gruppe 2==
 
 *Userseite und Userinformation*
@@ -456,12 +458,14 @@ Acceptance:
 
 - Ohne Bestätigung wird der Kontakt nicht gelöscht.
 
+--------------------------------------------------------------
 ==Gruppe 3==
 
+--------------------------------------------------------------
 ==Gruppe 4==
 
---------------------------------------------------------------
 
+--------------------------------------------------------------
 =Stories Iteration 2=
 
 ==Services==
