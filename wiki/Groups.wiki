@@ -22,12 +22,12 @@
 
 = Group 3 =
 
-  * Hösele
-  * Frech
-  * Kotremba
-  * Tot
-  * Mayer
-  * Viehberger
+  * Hösele (Team Manager)
+  * Frech (Lead Entwickler)
+  * Kotremba (FrontEnd Entwickler)
+  * Tot (BackEnd Entwickler)
+  * Mayer (BackEnd Entwickler)
+  * Viehberger (Testing)
 
 = Group 4 =
 
