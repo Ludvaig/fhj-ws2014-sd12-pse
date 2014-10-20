@@ -172,12 +172,6 @@ Acceptance:
  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
 
-*(US18 Konflikt) Als User möchte ich Fotos zum Portal hochladen können.*
-
-Acceptance:
- * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
- * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
- * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
 
 *Anmerkungen CKrenn:*
  * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
@@ -209,12 +203,6 @@ Acceptance:
  * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
  * Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
  * Ohne Bestätigung wird der Kontakt nicht gelöscht.
-
-*(US22 Konflikt) Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können*
-
-Acceptance:
- * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
- * Hinweis zur Bestätigung vor dem tatsächlichen entfernen
 
 --------------------------------------------------------------
 ==Gruppe 3==
