@@ -138,6 +138,37 @@ Acceptance:
 - Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
 
 --------------------------------------------------------------
+*Verwaltungsbereich (ausgewählt durch Gruppe 3)*
+
+*(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+
+Acceptance:
+ * Der Adminbereich soll nur für Admins erreichbar sein. 
+
+Anmerkungen CKrenn:
+ * Satz etwas verdreht. Gruppen = Communities bitte korrigieren.
+ * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
+
+
+*(US26)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+
+Acceptance:
+ * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
+
+Anmerkungen CKrenn:
+ * Hier würde die User Story weiterfassen - naemlich das ganze editieren nicht nur die Gültigkeit
+
+* Verwaltungsbereich (Administratoren):* 
+
+(US27)Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
+
+Acceptance:
+ *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+ *Das gelöschte Foto wird aus der Liste entfernt. 
+
+Anmerkungen CKrenn:
+ * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
+
 --------------------------------------------------------------
 
 *Login*
@@ -336,7 +367,7 @@ Acceptance:
   * Hinweis zur Bestätigung vor dem tatsächlichen entfernen
 
 
-*Verwaltungsbereich*
+*Verwaltungsbereich (ausgewählt durch Gruppe 3)*
 
 *(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
 
