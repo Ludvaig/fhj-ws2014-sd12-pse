@@ -111,19 +111,6 @@ Acceptance:
  * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
  * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
 
-*(US19 - ausgewählt/angepasst durch Gruppe 2) Als User möchte ich meine Fotos aus dem Portal löschen können.*
-
-Acceptance:
-  * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
-  * Das gelöschte Foto wird aus der Liste entfernt.
-
-*(US20- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
-
-Acceptance:
-  * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
-  * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
-  * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
-
 *(US21- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können.*
 
 Acceptance:
