@@ -65,28 +65,27 @@ Acceptance:
  * Sicherstellen das die Nachricht auch wieder gelöscht werden kann.
  * Sicherstellen das die Nachricht von einem Admin / Portal Admin gelöscht werden kann.
 
-*(US10)Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können.*
+*(US10) Als User möchte ich Nachrichten/Kommentare auf dem Activity Stream liken können.*
 
 Acceptance:
  * Sicherstellen das die Nachricht/der Kommentar auch wieder entliked werden kann.
 
-*(US11)Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können.*
+*(US11) Als User möchte ich zu Nachrichten auf dem Activity Stream Kommentare schreiben können.*
 
 Acceptance:
  * Sicherstellen das der Kommentar auch editiert/ausgebessert werden kann.
  * Sicherstellen das der Kommentar auch wieder gelöscht werden kann.
  * Sicherstellen das der Kommentar von einem Admin / Portal Admin gelöscht werden kann. 
 
-*(US15)Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können.*
+*(US15) Als User möchte ich im Activity-Stream private Nachrichten an andere User schicken können, um nur mit bestimmten Nutzern kommunizieren zu können.*
 
 Acceptance:
  * Durch Hinzufügen der Email-Adresse als @Tag wird der Empfänger der Nachricht bestimmt.
 
 *Anmerkungen CKrenn:*
- *  Acceptance: als @Tag ergänzt 
+ * Acceptance: als @Tag ergänzt 
 
-
-* Userinformation (Profilseite, Userseite),*  
+* Userinformation (Profilseite, Userseite)* 
 
 *Anmerkungen CKrenn:*
  * Sollte eigentlich Profilseite sein, hab ich ergänzt.
@@ -104,15 +103,15 @@ Acceptance:
 *(US18- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich Fotos zum Portal hochladen können.*
 
 Acceptance:
-  * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
-  * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
-  * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
+ * Dem User werden Fotos als Liste mit Namen und Vorschau angezeigt
+ * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystem zugreift
+ * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
 
 *Anmerkungen CKrenn:*
  * Eigentlich war ein Profilbild gemeint und nicht allg. Fotos
  * Acceptance zu Erfolg Misserfolg, ok, aber relativ detailliert im Vergleich zu anderen UserStories
 
-*(US19 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich meine Fotos aus dem Portal löschen können.*
+*(US19 - ausgewählt/angepasst durch Gruppe 2) Als User möchte ich meine Fotos aus dem Portal löschen können.*
 
 Acceptance:
   * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
@@ -125,23 +124,21 @@ Acceptance:
   * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
   * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
-
 *(US21- ausgewählt/angepasst durch Gruppe 2) Als User möchte ich einen neuen Kontakt zu meinen Kontakten hinzufügen können.*
 
 Acceptance:
-  * Auswahl aus der Liste aller verfügbaren User
-  * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
+ * Auswahl aus der Liste aller verfügbaren User
+ * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
 
 *(US22 - ausgewählt/angepasst durch Gruppe 2)Als User möchte ich einen oder mehtere bestehende Kontakte entfernen können*
 
-  Acceptance:
-  * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
-  * Hinweis zur Bestätigung vor dem tatsächlichen entfernen
-
+Acceptance:
+ * Möglichkeit zur Auswahl eines oder mehrerer Kontakt
+ * Hinweis zur Bestätigung vor dem tatsächlichen entfernen
 
 *Verwaltungsbereich (ausgewählt durch Gruppe 3)*
 
-*(US25 - ausgewählt/angepasst durch Gruppe 3)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
+* (US25 - ausgewählt/angepasst durch Gruppe 3)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
@@ -150,8 +147,7 @@ Anmerkungen CKrenn:
  * Satz etwas verdreht. Gruppen = Communities bitte korrigieren.
  * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
 
-
-*(US26 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
+* (US26 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -177,12 +173,12 @@ Anmerkungen CKrenn:
  * Mir fehlt eine User Story, die beschreibt wie eine public / private Community aufgebaut ist. Bitte ergänzen
  * Mir fehlt eine User Story, die beschreibt wie man Mitglied einer öffentlichen / privaten Community wird. Bitte ergänzen
  
-*(US28)Als User möchte ich Zugriff auf eine Übersichtsseite haben*
+*(US28) Als User möchte ich Zugriff auf eine Übersichtsseite haben*
 
 Acceptance:
-  * Sicherstellen, dass auf der Übersichtsseite alle öffentlichen und privaten Communities angezeigt werden.
-  * Sicherstellen, dass auf der Übersichtsseite die Communities eines bestimmten Users angezeigt werden.
-  * Sicherstellen, dass man mit einem "Zurück zur Übersicht"-Button auf die Übersichtsseite zurückkehren kann.
+ * Sicherstellen, dass auf der Übersichtsseite alle öffentlichen und privaten Communities angezeigt werden.
+ * Sicherstellen, dass auf der Übersichtsseite die Communities eines bestimmten Users angezeigt werden.
+ * Sicherstellen, dass man mit einem "Zurück zur Übersicht"-Button auf die Übersichtsseite zurückkehren kann.
 
 *(US30 - ausgewählt/angepasst durch Gruppe 4)Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.*
 
@@ -191,7 +187,7 @@ Acceptance:
  * Nicht abonnierte Communities werden nicht angezeigt.
  * Der User kann nach Communities suchen.
 
-*(US31)Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream).*
+*(US31) Als User möchte ich alle privaten (bei denen ich Mitglied bin) und alle öffentlichen Community-Seiten sehen können, um Beiträge in den Communities lesen zu können (Activity Stream).*
 
 Acceptance:
  * Der Benutzer sieht nach erfolgreicher Anmeldung eine Liste mit allen für ihn verfügbaren Communities.
@@ -201,19 +197,19 @@ Acceptance:
 
 *Services:*
 
-*(US32 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich einen Antrag für eine Dienstreise stellen.*
+* (US32 - ausgewählt/angepasst durch Gruppe 4)Als User möchte ich einen Antrag für eine Dienstreise stellen.*
 
 Acceptance:
-  * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
-  * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
-  * User wird rückgeleitet zur Übersicht der Dienstreiseanträge
+ * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+ * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+ * User wird rückgeleitet zur Übersicht der Dienstreiseanträge
 
 *(US33 - ausgewählt/angepasst durch Gruppe 4) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
 
 Acceptance:
-  * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
-  * Es werden nicht mehr als 10 pro Seite angezeigt.
-  * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
+ * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+ * Es werden nicht mehr als 10 pro Seite angezeigt.
+ * Bei Verlassen der Übersicht wird der User auf die Services Seite verlinkt.
 
 =Stories Iteration 1=
 
@@ -225,28 +221,28 @@ Acceptance:
 *(US4) Als User möchte ich die aktuellen Dokumente angezeigt bekommen*
 
 Acceptance:
-  * Nach Erstellung / Änderung sortiert
-  * Über direktlink abrufbar
+ * Nach Erstellung / Änderung sortiert
+ * Über direktlink abrufbar
 
 *(US6) Als Administrator möchte ich auf der Startseite Dateien zur Dokumentenbibliothek hinzufügen oder löschen können, damit die anderen diese lesen bzw. herunterladen können.*
 
 Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
-  * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
+ * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+ * Bei diesem Bereich befindet sich eine Schaltfläche, der einen Dialog öffnet, um eine Datei zu wählen, die hinaufgeladen werden soll.
+ * Jeder Listeneintrag besitzt eine Schaltfläche, mit der dieser bei Klick gelöscht wird
 
-* (US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann.*
+*(US7) Als Benutzer möchte ich auf der Startseite Dateien aus der Dokumentenbibliothek herunterladen können, damit ich diese auf meinem Rechner lesen kann.*
 
 Acceptance:
-  * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
-  * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
+ * Ein Bereich auf der Startseite ist sichtbar, in dem ich die Liste der bereits verfügbaren Dokumente sehe
+ * Bei Klick auf ein Element in der Liste wird dieses heruntergeladen
 
 ===Newsfeed===
 
 *(US5) Als User möchte ich die aktuellen News des Unternehmens angezeigt bekommen.*
 
 Acceptance:
-  * Nach aktualität sortiert
+ * Nach aktualität sortiert
 
 --------------------------------------------------------------
 ==Gruppe 2==
@@ -256,79 +252,63 @@ Acceptance:
 *(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
 
 Acceptance:
-  * erfolgreicher Login
-  * personalisierter Datenstream wird angezeigt
-  * mein Name wird angezeigt
-  * ein Logout-Button ist verfügbar
-  * mein Profilbild wird angezeigt
-  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
+ * erfolgreicher Login
+ * personalisierter Datenstream wird angezeigt
+ * mein Name wird angezeigt
+ * ein Logout-Button ist verfügbar
+ * mein Profilbild wird angezeigt
+ * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
 
 Anmerkungen CKrenn:
-  * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
-  * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
+ * Diese User Story vom Detaillierungsgrad her koennen sie als Referenz für Acceptance-Kriterien nehmen.
+ * Was fehlt hier dennoch: Negativfall -> ist hier essentiell
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
 Acceptance:
-
-- Die Profildaten müssen aus den Feldern E-Mail-Adresse und Telefonnummer bestehen.
-
-- Speichern der Daten in der Datenbank bei Bestätigung
-
-- Validierung der eingegebenen Daten
+ * Die Profildaten müssen aus den Feldern E-Mail-Adresse und Telefonnummer bestehen.
+ * Speichern der Daten in der Datenbank bei Bestätigung
+ * Validierung der eingegebenen Daten
 
 *(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
 
 Acceptance:
-
-- Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
-- Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
-
+ * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
+ * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
 
 *(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können.*
 
 Acceptance:
-
-- Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
-
-- Das gelöschte Profilfoto wird nicht mehr angezeigt.
+ * Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
+ * Das gelöschte Profilfoto wird nicht mehr angezeigt.
 
 *(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
 
-Acceptance:
-    
-- Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
-
-- Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
-
-- Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
+Acceptance:   
+ * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
+ * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
+ * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
 *(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können.*
 
 Acceptance:
-
-- Auswahl aus der Liste aller verfügbaren User
-
-- Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
-
-- Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
+ * Auswahl aus der Liste aller verfügbaren User
+ * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
+ * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden.
 
 *(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können*
 
 Acceptance:
-
-- Möglichkeit zur Auswahl eines oder mehrerer Kontakte
-
-- Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
-
-- Ohne Bestätigung wird der Kontakt nicht gelöscht.
+ * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
+ * Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
+ * Ohne Bestätigung wird der Kontakt nicht gelöscht.
 
 --------------------------------------------------------------
 ==Gruppe 3==
 
-*Verwaltungsbereich*
+===Verwaltungsbereich===
 
-*(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
+*(US25) Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können.*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
@@ -337,8 +317,7 @@ Anmerkungen CKrenn:
  * Satz etwas verdreht. Gruppen = Communities bitte korrigieren.
  * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
 
-
-*(US26)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
+*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen.*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -346,13 +325,13 @@ Acceptance:
 Anmerkungen CKrenn:
  * Hier würde die User Story weiterfassen - naemlich das ganze editieren nicht nur die Gültigkeit
 
-* Verwaltungsbereich (Administratoren):* 
+===Verwaltungsbereich (Administratoren)===
 
-(US27)Als Portal-Administrator möchte ich  Fotos aller User löschen können.*
+*(US27) Als Portal-Administrator möchte ich  Fotos aller User löschen können.*
 
 Acceptance:
- *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
- *Das gelöschte Foto wird aus der Liste entfernt. 
+ * Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
+ * Das gelöschte Foto wird aus der Liste entfernt. 
 
 Anmerkungen CKrenn:
  * Mit dieser User Story tue ich mir schwer, ist das wirklich so gewollt, das Feature war eher das Anhängen eines Profilfotos und das eigene Löschen. Siehe auch UserProfil.
@@ -362,48 +341,47 @@ Anmerkungen CKrenn:
 
 ===Communities und Dienstreise===
 
-*(US12)Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
+*(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
 Acceptance:
+ * Der User kann über eine Schaltfläche seinen Kommentar zu einem Community-Beitrag posten
+ * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben. 
 
-- Der User kann über eine Schaltfläche seinen Kommentar zu einem Community-Beitrag posten
-- Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben. 
+*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
 
-
-*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream). Acceptance:
-
-- Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
+Acceptance:
+ * Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
 
 *(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
 
 Acceptance:
-  * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
- - Der User kann seine Bewertung jederzeit verändern. 
+ * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ * Der User kann seine Bewertung jederzeit verändern. 
 
 *(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
 Acceptance:
-  * Dem User werden die Communities angezeigt.
-  * Nicht abonnierte Communities werden nicht angezeigt.
-  * Der User kann nach Communities suchen. 
-  * Suchmöglichkeiten:
-    * Dropdown-Menü der existierenden Communities
-    * Textfeld mit Suche über Community Name
+ * Dem User werden die Communities angezeigt.
+ * Nicht abonnierte Communities werden nicht angezeigt.
+ * Der User kann nach Communities suchen. 
+ * Suchmöglichkeiten:
+  * Dropdown-Menü der existierenden Communities
+  * Textfeld mit Suche über Community Name
 
 *(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.*
 
 Acceptance:
-  * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
-  * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
-  * User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
+ * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+ * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+ * User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
 *(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
 
 Acceptance:
-  * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
-  * Es werden nicht mehr als 10 pro Seite angezeigt.
-  * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
-  * Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
+ * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+ * Es werden nicht mehr als 10 pro Seite angezeigt.
+ * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
+ * Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
 
 ===Newsfeed===
 
@@ -416,7 +394,6 @@ Acceptance:
 *Anmerkungen CKrenn:*
  * Betrifft das die Startseite oder eine Community?
  
-
 *(US13) Als User möchte ich meine eigenen Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).*
  
 Acceptance:
