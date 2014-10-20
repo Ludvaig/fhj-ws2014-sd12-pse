@@ -298,21 +298,15 @@ Acceptance:
 
 *Userseite und Userinformation*
 
-* (US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
+*(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
 
 Acceptance:
-
-- erfolgreicher Login
-
-- Startseite  wird angezeigt  
-  
-- mein Name wird angezeigt
-
-- ein Logout-Button ist verfügbar
-
-- über einen Link werde ich zu meinen Account-Informationen weitergeleitet
-
-- bei ungültiger Kombination von Passwort und Username erfolgt kein Login
+  * erfolgreicher Login
+  * personalisierter Datenstream wird angezeigt
+  * mein Name wird angezeigt
+  * ein Logout-Button ist verfügbar
+  * mein Profilbild wird angezeigt
+  * über einen Link werde ich zu meinen Account-Informationen weitergeleitet
 
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
