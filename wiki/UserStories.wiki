@@ -376,7 +376,7 @@ Acceptance:
 
 *Verwaltungsbereich (ausgewählt durch Gruppe 3)*
 
-*(US25)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
+*(US25 - ausgewählt/angepasst durch Gruppe 3)Als Admin möchte ich im Verwaltungsbereich in dem ich Gruppen freischalten kann, damit User mit gleichen Interessen eine Gruppe bilden können. (G2)*
 
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
@@ -386,7 +386,7 @@ Anmerkungen CKrenn:
  * Acceptance: Überlegen, ob das alles ist. Was passiert mit bereits freigeschalteten Communities? -> 
 
 
-*(US26)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
+*(US26 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Admin möchte ich im Unternehmens-Newsbereich den Gültigkeitszeitraum des News-Eintrages bestimmen können, um alte News automatisch zu verwerfen. (G2)*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -396,7 +396,7 @@ Anmerkungen CKrenn:
 
 * Verwaltungsbereich (Administratoren):* 
 
-(US27)Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
+(US27 - ausgewählt/angepasst durch Gruppe 3)Als Portal-Administrator möchte ich  Fotos aller User löschen können. (G4)*
 
 Acceptance:
  *Ein ausgewähltes Foto kann durch Klicken auf den Lösch-Button entfernt werden.
@@ -440,8 +440,6 @@ Acceptance:
 
 *Anmerkungen CKrenn:*
  * Duplicate zu vorhergehender Userstory
-
- 
 
 *Services:*
 
