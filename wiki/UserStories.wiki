@@ -291,6 +291,8 @@ Acceptance:
 --------------------------------------------------------------
 =Stories Iteration 2=
 
+---------------------------------------------------------------------
+
 ==Gruppe 2==
 
 *(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
@@ -311,6 +313,9 @@ Acceptance:
 
 
 ==Ende Gruppe 2==
+
+---------------------------------------------------------------------
+
 
 *(US29) Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
 
