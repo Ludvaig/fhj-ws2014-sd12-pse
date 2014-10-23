@@ -138,6 +138,8 @@ Acceptance:
 
 *(US1) Als ein beim Portal bereits registrierter User möchte ich mich mit Benutzernamen und Passwort auf meine personalisierte Startseite einloggen können.*
 
+*Storypoints: 8*
+
 Acceptance:
  * erfolgreicher Login
  * personalisierter Datenstream wird angezeigt
@@ -149,24 +151,17 @@ Acceptance:
 
 *(US16) Als User möchte ich meine eigene Userseite bearbeiten können, um die eigenen persönlichen Daten aktuell zu halten.*
 
+
+*Storypoints: 13*
+
 Acceptance:
  * Die Profildaten müssen aus den Feldern E-Mail-Adresse und Telefonnummer bestehen.
  * Speichern der Daten in der Datenbank bei Bestätigung
  * Validierung der eingegebenen Daten
 
-*(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
-
-Acceptance:
- * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
- * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
-
-*(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können.*
-
-Acceptance:
- * Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
- * Das gelöschte Profilfoto wird nicht mehr angezeigt.
-
 *(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
+
+*Storypoints: 5*
 
 Acceptance:   
  * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
@@ -295,6 +290,27 @@ Acceptance:
 
 --------------------------------------------------------------
 =Stories Iteration 2=
+
+==Gruppe 2==
+
+*(US18) Als User möchte ich mein Profilbild zur meiner Userseite hochladen können.*
+
+*Storypoints: 13*
+
+Acceptance:
+ * Der Upload erfolgt über einen Auswahldialog, der auf das Filesystemzugreift
+ * Erfolg bzw. Misserfolg wird dem User über einen Feedback-Dialog angezeigt
+
+*(US19) Als User möchte ich mein Profilbild aus dem Portal löschen können.*
+
+*Storypoints: 3*
+
+Acceptance:
+ * Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
+ * Das gelöschte Profilfoto wird nicht mehr angezeigt.
+
+
+==Ende Gruppe 2==
 
 *(US29) Als User möchte ich in der Lage sein, die Übersichtsseite zu personalisieren.*
 
