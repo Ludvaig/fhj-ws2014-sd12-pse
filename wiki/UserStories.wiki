@@ -300,7 +300,7 @@ Acceptance:
 
 *(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können.*
 
-*Storypoints: *
+*Storypoints: 5*
 
 Acceptance:
  * Auswahl aus der Liste aller verfügbaren User
@@ -309,7 +309,7 @@ Acceptance:
 
 *(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können*
 
-*Storypoints: *
+*Storypoints: 5*
 
 Acceptance:
  * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
