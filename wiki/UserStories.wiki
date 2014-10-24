@@ -168,19 +168,6 @@ Acceptance:
  * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
  * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
-*(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können.*
-
-Acceptance:
- * Auswahl aus der Liste aller verfügbaren User
- * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
- * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden. (Konflikt)
-
-*(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können*
-
-Acceptance:
- * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
- * Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
- * Ohne Bestätigung wird der Kontakt nicht gelöscht.
 
 --------------------------------------------------------------
 ==Gruppe 3==
@@ -310,6 +297,24 @@ Acceptance:
 Acceptance:
  * Ein ausgewähltes Foto kann durch Klicken auf den Löschen-Button entfernt werden.
  * Das gelöschte Profilfoto wird nicht mehr angezeigt.
+
+*(US21) Als User möchte ich einen neuen Kontakt zu meinen persönlichen/privaten Kontakten hinzufügen können.*
+
+*Storypoints: *
+
+Acceptance:
+ * Auswahl aus der Liste aller verfügbaren User
+ * Keine Bestätigung beim hinzufügen, sondern direktes hinzufügen
+ * Jedes Profil enthält ein „Hinzufügen“-Button um zu einer Kontaktliste aufgenommen zu werden. (Konflikt)
+
+*(US22) Als User möchte ich einen oder mehrere bestehende Kontakte entfernen können*
+
+*Storypoints: *
+
+Acceptance:
+ * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
+ * Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
+ * Ohne Bestätigung wird der Kontakt nicht gelöscht.
 
 
 ==Ende Gruppe 2==
