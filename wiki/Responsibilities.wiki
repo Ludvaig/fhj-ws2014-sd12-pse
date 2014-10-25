@@ -13,5 +13,7 @@
 
 == Group 3 ==
 
+ * Admin and PortalAdmin
+ * Administration Sites
 
 == Group 4 ==
