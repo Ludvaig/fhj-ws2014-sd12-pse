@@ -176,12 +176,16 @@ Acceptance:
 
 *(US25) Als Admin möchte ich im Verwaltungsbereich Communities anlegen und freischalten, um User mit gleichen Interessen eine Gruppe erstellen zu können.*
 
+*Storypoints: 5*
+
 Acceptance:
  * Der Adminbereich soll nur für Admins erreichbar sein. 
  * Neue Communities sollen nicht freigeschaltet sein
  * Die Freischaltung soll durch den Admin wiederrufbar sein.
 
 *(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich einen News-Eintrages editieren und dessen Gültigkeitszeitraum bestimmen können.*
+
+*Storypoints: 8*
 
 Acceptance:
  * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
@@ -191,12 +195,16 @@ Acceptance:
 
 *(US27) Als Portal-Administrator möchte ich neue hochgeladene Fotos vor der Veröffentlichung freischalten.*
 
+*Storypoints: 5*
+
 Acceptance:
  * Ein neu hochgeladenes Foto wird auf der User Seite nicht angezeigt.
  * Der Admin Bereich bietet die Möglichkeit neu hochgeladene Fotos freizuschalten.
  * Fotos sind nach der Freischaltung für alle User sichtbar.
 
 *(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
+
+*Storypoints: 6*
 
 Acceptance:
  * Schnelles / einfaches erstellen neuer Neuigkeiten
