@@ -36,6 +36,18 @@ Simple Login page mainly for testing purposes.
                <h:messages globalOnly="true"/>
             </h:panelGrid>
          </p>
+         <p>
+            <h:panelGrid columns="3">
+               <h:commandButton id="insertMax" action="#{loginController.insertUserMax}" value="insert user:max pw:muster" /> 
+               <h:messages globalOnly="true"/>
+            </h:panelGrid>
+         </p>
+         <p>
+            <h:panelGrid columns="3">
+               <h:commandButton id="registerMax" action="#{loginController.registerUserMax}" value="register user max" /> 
+               <h:messages globalOnly="true"/>
+            </h:panelGrid>
+         </p>
       </h:form>
 </h:body>
 </html>
