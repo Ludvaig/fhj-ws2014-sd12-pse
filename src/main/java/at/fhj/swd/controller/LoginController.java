@@ -70,16 +70,4 @@ public class LoginController {
 					"insert failed"));
 		}
 	}
-
-	public void registerUserMax() {
-		try {
-			userService.registerUser("max", "muster");
-
-		} catch (Exception e) {
-			String errorMessage = e.getLocalizedMessage();
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, errorMessage,
-					"registration failed"));
-		}
-	}
 }
