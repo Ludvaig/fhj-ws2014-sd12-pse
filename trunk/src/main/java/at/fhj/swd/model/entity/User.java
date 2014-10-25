@@ -22,7 +22,7 @@ public class User {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id = null;
 
-	@Column
+	@Column(unique=true)
 	private String username;
 
 	@Column
@@ -70,6 +70,14 @@ public class User {
 
 	public void setUsername(final String username) {
 		this.username = username;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+	
+	public void setPassword(final String password) {
+		this.password = password;
 	}
 
 	public String getEmail() {
