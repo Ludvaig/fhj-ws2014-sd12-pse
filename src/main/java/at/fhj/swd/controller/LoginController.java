@@ -5,13 +5,15 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.UserService;
 
 /***
  * 
- * @author Steven Hagelmüller 
+ * @author Steven Hagelmï¿½ller
  * 
- * Controller for the Login page. Uses the 'UserService' class for authentication.
+ *         Controller for the Login page. Uses the 'UserService' class for
+ *         authentication.
  * 
  */
 @Model
@@ -27,7 +29,7 @@ public class LoginController {
 
 	public void login() {
 		try {
-				
+
 			userService.registerUser(username, password);
 
 			facesContext.addMessage(null, new FacesMessage(
@@ -40,5 +42,32 @@ public class LoginController {
 					FacesMessage.SEVERITY_ERROR, errorMessage,
 					"Login unsuccessful"));
 		}
+	}
+
+	public void insertUserMax() {
+		try {
+			User user = new User();
+			user.setUsername("max");
+			user.setPassword("muster");
+			userService.insertUser(user);
+		} catch (Exception e) {
+			String errorMessage = e.getLocalizedMessage();
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, errorMessage,
+					"insert failed"));
+		}
+	}
+
+	public void registerUserMax() {
+		try {
+			userService.registerUser("max", "muster");
+
+		} catch (Exception e) {
+			String errorMessage = e.getLocalizedMessage();
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, errorMessage,
+					"registration failed"));
+		}
+
 	}
 }
