@@ -24,5 +24,10 @@ public interface UserService {
 	 * the method will return null
 	 * */
 	User getRegisteredUser();
+	
+	/**
+	 * insert new User to Database
+	 * */
+	void insertUser(User user);
 
 }

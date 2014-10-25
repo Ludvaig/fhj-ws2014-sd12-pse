@@ -30,17 +30,26 @@ public class UserServiceImpl implements UserService {
 		if(password == null)
 			throw new NullPointerException("password could not be null");
 		
-		Boolean registerd = userDAO.proveUserPassswordCombination(username,
+		User user = userDAO.proveUserPassswordCombination(username,
 				password);
-		if (registerd == false) {
+		
+		//set the registered user
+		registeredUser = user;
+		
+		//throw exception if registration failed
+		if (user == null) {
 			throw new RuntimeException("not registerd");
 		}
-		registeredUser = new User();
 	}
 
 	@Override
 	public User getRegisteredUser() {
 		return registeredUser;
+	}
+
+	@Override
+	public void insertUser(User user) {
+		userDAO.insert(user);
 	}
 
 }
