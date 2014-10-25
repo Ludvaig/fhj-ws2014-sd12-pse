@@ -13,7 +13,9 @@ public interface UserDAO {
 	 * prove if the given combination of user name
 	 * and password is valid
 	 * */
-	Boolean proveUserPassswordCombination(String userName,String password);
+	User proveUserPassswordCombination(String userName,String password);
 	
 	void insert(User user);
+	
+	User loadUserByName(String username);
 }
