@@ -22,11 +22,11 @@ Simple Login page mainly for testing purposes.
        
          <h:panelGrid columns="3">
             <h:outputLabel for="username" value="Username:"/>
-            <h:inputText id="username" value="#{username}" />
+            <h:inputText id="username" value="#{authInfo.username}" />
             <h:message for="username"/>
 
             <h:outputLabel for="password" value="Password:"/>
-            <h:inputText id="password" value="#{password}" />
+            <h:inputText id="password" value="#{authInfo.password}" />
             <h:message for="password"/>
          </h:panelGrid>
 
