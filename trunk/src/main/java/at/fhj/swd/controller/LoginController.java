@@ -57,17 +57,18 @@ public class LoginController {
 		}
 	}
 	
-	public void insertUserMax() {
+	public void insertUser() {
 		try {
 			User user = new User();
-			user.setUsername("max");
-			user.setPassword("muster");
+			user.setUsername(authInfo.getUsername());
+			user.setPassword(authInfo.getPassword());
 			userService.insertUser(user);
+
 		} catch (Exception e) {
 			String errorMessage = e.getLocalizedMessage();
 			facesContext.addMessage(null, new FacesMessage(
 					FacesMessage.SEVERITY_ERROR, errorMessage,
-					"insert failed"));
+					"Login unsuccessful."));
 		}
 	}
 }

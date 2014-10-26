@@ -33,13 +33,26 @@ Simple Login page mainly for testing purposes.
          <p>
             <h:panelGrid columns="3">
                <h:commandButton id="login" action="#{loginController.login}" value="Login" /> 
+               <h:commandButton id="insertMax" action="#{loginController.insertUser}" value="Insert user" /> 
                <h:messages globalOnly="true"/>
             </h:panelGrid>
          </p>
-         <p>
-               <h:commandButton id="insertMax" action="#{loginController.insertUserMax}" value="insert user:max pw:muster" /> 
-         </p>
+        
 
       </h:form>
+      
+          <p> 
+	         1)enter user name and password, press "Insert user" to store a new User in database
+		 </p>
+         <p> 
+	     	 2)enter user name and password, press login to register user
+		 </p>
+         <p> 
+	     	 after that the UserService.getRegisteredUser() will return the registered user (from step 2)
+	         use _a or _pa at the end of the user name to create an admin or portal admin user
+	         with UserService.UserIsAdmin and the UserService.UserIsPortalAdmin you can check the privileges of the user
+         </p> 
+
+
 </h:body>
 </html>
