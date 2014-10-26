@@ -1,7 +1,5 @@
 package at.fhj.swd.model.service;
 
-import javax.ejb.Stateful;
-
 import at.fhj.swd.model.entity.User;
 
 /**
@@ -30,4 +28,13 @@ public interface UserService {
 	 * */
 	void insertUser(User user);
 
+	/**
+	 * check if User is Admin
+	 * */
+	boolean UserIsAdmin(User user);
+	
+	/**
+	 * check if User is Portaladmin
+	 * */
+	boolean UserIsPortalAdmin(User user);	
 }

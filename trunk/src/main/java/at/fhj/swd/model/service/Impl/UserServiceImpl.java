@@ -52,4 +52,14 @@ public class UserServiceImpl implements UserService {
 		userDAO.insert(user);
 	}
 
+	@Override
+	public boolean UserIsAdmin(User user) {
+		return user.getUsername().endsWith("_a");
+	}
+
+	@Override
+	public boolean UserIsPortalAdmin(User user) {
+		return user.getUsername().endsWith("_pa");
+	}
+
 }
