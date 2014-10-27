@@ -17,6 +17,10 @@ Acceptance:
 
 Bewertung: 3.33
 
+Umsetzung:
+
+Status: 
+
 *(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
 
 Acceptance: 
@@ -24,6 +28,11 @@ Acceptance:
  * Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
 
 Bewertung: 3.33
+
+Umsetzung:
+
+Status: 
+
 
 *(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Community Stream - Activity Stream).
 
@@ -33,6 +42,11 @@ Acceptance:
  * Der User kann seine Bewertung jederzeit verändern. 
 
 Bewertung: 3.16
+
+Umsetzung:
+
+Status: 
+
 
 *(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
@@ -47,6 +61,11 @@ Acceptance:
 
 Bewertung: 2.5
 
+Umsetzung:
+
+Status: 
+
+
 *(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.
 
 Acceptance:
@@ -57,6 +76,11 @@ Acceptance:
 
 Bewertung: 2.33
 
+Umsetzung:
+
+Status: 
+
+----------------------------------------------------------
 
 = Iteration 2 =
 
@@ -70,3 +94,7 @@ Acceptance:
  *  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
 
 Bewertung: 3.16
+
+Umsetzung:
+
+Status: 
