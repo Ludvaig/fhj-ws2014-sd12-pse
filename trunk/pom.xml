@@ -59,6 +59,12 @@
       <id>JBoss Repository</id>
       <url>https://repository.jboss.org/nexus/content/groups/public/</url>
     </repository>
+    
+   	<repository>
+		<id>primefaces-repository</id>
+		<name>Primefaces repository</name>
+		<url>http://repository.primefaces.org</url>
+	</repository>
   </repositories>
   
   <dependencyManagement>
@@ -155,6 +161,13 @@
       <version>${version.junit}</version>
       <scope>test</scope>
     </dependency>
+    
+ 	<!-- Primefaces -->
+	<dependency>
+		<groupId>org.primefaces</groupId>
+		<artifactId>primefaces</artifactId>
+		<version>5.1</version>
+	</dependency>
   
   </dependencies>
   
