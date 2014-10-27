@@ -1,5 +1,9 @@
 #User Stories - Gruppe 4
 
+= Allgemeines =
+
+Bewertungsskala 1 - 5 (Schulnotensystem)
+
 = Iteration 1 =
 
 *Communities und Dienstreise
