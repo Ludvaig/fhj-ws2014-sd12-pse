@@ -8,6 +8,32 @@ Bewertungsskala 1 - 5 (Schulnotensystem)
 
 == Communities == 
 
+
+
+
+*(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
+
+Acceptance:
+
+ * Dem User werden die Communities angezeigt.
+ * Nicht abonnierte Communities werden nicht angezeigt.
+ * Der User kann nach Communities suchen.
+ * Suchmöglichkeiten:
+   * Dropdown-Menü der existierenden Communities
+   * Textfeld mit Suche über Community Name 
+
+Bewertung: 2.5
+
+Umsetzung:
+
+Status: 
+
+
+
+----------------------------------------------------------
+
+= Iteration 2 =
+
 *(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
 Acceptance:
@@ -47,19 +73,20 @@ Umsetzung:
 
 Status: 
 
+----------------------------------------------------------
 
-*(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
+= wird nicht umgesetzt =
+
+*(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
 
 Acceptance:
 
- * Dem User werden die Communities angezeigt.
- * Nicht abonnierte Communities werden nicht angezeigt.
- * Der User kann nach Communities suchen.
- * Suchmöglichkeiten:
-   * Dropdown-Menü der existierenden Communities
-   * Textfeld mit Suche über Community Name 
+ * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+ * Es werden nicht mehr als 10 pro Seite angezeigt.
+ * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
+ *  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
 
-Bewertung: 2.5
+Bewertung: 3.16
 
 Umsetzung:
 
@@ -80,22 +107,4 @@ Bewertung: 2.33
 Umsetzung:
 
 Status: 
-
-----------------------------------------------------------
-
-= Iteration 2 =
-
-*(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
-
-Acceptance:
-
- * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
- * Es werden nicht mehr als 10 pro Seite angezeigt.
- * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
- *  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
-
-Bewertung: 3.16
-
-Umsetzung:
-
-Status: 
+ 
