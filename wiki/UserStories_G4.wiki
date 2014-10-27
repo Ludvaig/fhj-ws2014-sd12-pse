@@ -99,6 +99,8 @@ Status:
 
 = wird nicht umgesetzt =
 
+== Dienstreise ==
+
 *(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
 
 Acceptance:
@@ -114,7 +116,7 @@ Umsetzung:
 
 Status: 
 
-== Dienstreise ==
+
 
 *(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.
 
