@@ -6,7 +6,7 @@ Bewertungsskala 1 - 5 (Schulnotensystem)
 
 = Iteration 1 =
 
-*Communities und Dienstreise
+== Communities == 
 
 *(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
@@ -65,6 +65,7 @@ Umsetzung:
 
 Status: 
 
+== Dienstreise ==
 
 *(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.
 
