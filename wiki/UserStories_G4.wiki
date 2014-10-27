@@ -11,9 +11,11 @@ Acceptance:
     Der User kann über eine Schaltfläche seinen Kommentar zu einem Community-Beitrag posten
     Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben. 
 
+Bewertung: 3.33
+
 (US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
 
-Acceptance:
+Acceptance: 3.33
 
     Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
 
