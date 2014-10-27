@@ -17,16 +17,16 @@ Bewertung: 3.33
 
 Acceptance: 
 
- - Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
+ * Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
 
 Bewertung: 3.33
 
-*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
+*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Community Stream - Activity Stream).
 
 Acceptance:
 
- - Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
- - Der User kann seine Bewertung jederzeit verändern. 
+ * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ * Der User kann seine Bewertung jederzeit verändern. 
 
 Bewertung: 3.16
 
@@ -34,12 +34,12 @@ Bewertung: 3.16
 
 Acceptance:
 
- - Dem User werden die Communities angezeigt.
- - Nicht abonnierte Communities werden nicht angezeigt.
- - Der User kann nach Communities suchen.
- - Suchmöglichkeiten:
-   - Dropdown-Menü der existierenden Communities
-   - Textfeld mit Suche über Community Name 
+ * Dem User werden die Communities angezeigt.
+ * Nicht abonnierte Communities werden nicht angezeigt.
+ * Der User kann nach Communities suchen.
+ * Suchmöglichkeiten:
+   * Dropdown-Menü der existierenden Communities
+   * Textfeld mit Suche über Community Name 
 
 Bewertung: 2.5
 
@@ -47,9 +47,9 @@ Bewertung: 2.5
 
 Acceptance:
 
- - Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
- - User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
- - User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
+ * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+ * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+ * User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
 
 Bewertung: 2.33
 
@@ -57,10 +57,10 @@ Bewertung: 2.33
 
 Acceptance:
 
- - Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
- - Es werden nicht mehr als 10 pro Seite angezeigt.
- - Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
- -  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
+ * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+ * Es werden nicht mehr als 10 pro Seite angezeigt.
+ * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
+ *  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
 
 Bewertung: 3.16
 
