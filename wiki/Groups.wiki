@@ -32,7 +32,8 @@
 = Group 4 =
 
   * Temmel (Teammanager)
-  * Mitteregger (Entwickler )
+  * Mitteregger (Entwickler)
   * Dulzky (Entwickler)
   * Lindlbauer (Entwickler)
   * Wendl (Tester)
+  * Siharath (Entwickler)
