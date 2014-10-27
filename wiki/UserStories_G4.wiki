@@ -13,46 +13,56 @@ Acceptance:
 
 Bewertung: 3.33
 
-(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
+*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
 
-Acceptance: 3.33
+Acceptance: 
 
-    Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
+ - Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten. 
 
-(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
+Bewertung: 3.33
 
-Acceptance:
-
-    Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
-    Der User kann seine Bewertung jederzeit verändern. 
-
-(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
+*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
 
 Acceptance:
 
-    Dem User werden die Communities angezeigt.
-    Nicht abonnierte Communities werden nicht angezeigt.
-    Der User kann nach Communities suchen.
-    Suchmöglichkeiten:
-        Dropdown-Menü der existierenden Communities
-        Textfeld mit Suche über Community Name 
+ - Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
+ - Der User kann seine Bewertung jederzeit verändern. 
 
-(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.
+Bewertung: 3.16
+
+*(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
 Acceptance:
 
-    Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
-    User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
-    User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
+ - Dem User werden die Communities angezeigt.
+ - Nicht abonnierte Communities werden nicht angezeigt.
+ - Der User kann nach Communities suchen.
+ - Suchmöglichkeiten:
+   - Dropdown-Menü der existierenden Communities
+   - Textfeld mit Suche über Community Name 
 
-(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
+Bewertung: 2.5
+
+*(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.
 
 Acceptance:
 
-    Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
-    Es werden nicht mehr als 10 pro Seite angezeigt.
-    Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
-    Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
+ - Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
+ - User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
+ - User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
+
+Bewertung: 2.33
+
+*(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.
+
+Acceptance:
+
+ - Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
+ - Es werden nicht mehr als 10 pro Seite angezeigt.
+ - Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet.
+ -  Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde. 
+
+Bewertung: 3.16
 
 
 = Iteration 2 =
