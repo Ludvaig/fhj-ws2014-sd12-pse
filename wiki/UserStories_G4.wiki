@@ -4,7 +4,7 @@
 
 *Communities und Dienstreise
 
-(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
+*(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
 
 Acceptance:
 
