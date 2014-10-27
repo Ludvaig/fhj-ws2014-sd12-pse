@@ -213,50 +213,9 @@ Acceptance:
 --------------------------------------------------------------
 ==Gruppe 4==
 
-===Communities und Dienstreise===
+https://code.google.com/p/fhj-ws2014-sd12-pse/w/edit/UserStories_G4
 
-*(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Community Stream - Activity Stream).
-
-Acceptance:
- * Der User kann über eine Schaltfläche seinen Kommentar zu einem Community-Beitrag posten
- * Der User hat die Möglichkeit über ein Textfeld Kommentare einzugeben. 
-
-*(US13) Als User möchte ich meine eigenen Community-Kommentar-Beiträge editieren, um Änderungen vornehmen zu können (Communitie Stream - Activity Stream).
-
-Acceptance:
- * Der User kann über eine Editierschaltfläche seinen ausgewählten Community-Kommentar-Beitrag bearbeiten.
-
-*(US14) Als User kann ich Beiträge positiv bzw. negativ bewerten, um meine persönliche Meinung kundzutun (Communitie Stream - Activity Stream).
-
-Acceptance:
- * Der User kann für sich sichtbare Beiträge bewerten. (Gefällt mir, Gefällt mir nicht)
- * Der User kann seine Bewertung jederzeit verändern. 
-
-*(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
-
-Acceptance:
- * Dem User werden die Communities angezeigt.
- * Nicht abonnierte Communities werden nicht angezeigt.
- * Der User kann nach Communities suchen. 
- * Suchmöglichkeiten:
-  * Dropdown-Menü der existierenden Communities
-  * Textfeld mit Suche über Community Name
-
-*(US32) Als User möchte ich einen Antrag für eine Dienstreise stellen.*
-
-Acceptance:
- * Daten aus dem Antrag (Infos zur Dienstreise) werden in der Datenbank gespeichert.
- * User kommt bekommt Rückmeldung über den Speichererfolg des Antrags
- * User wird rückgeleitet zur Übersicht der Dienstreiseanträge 
-
-*(US33) Als User möchte ich einen Überblick über meine Dienstreisen erhalten.*
-
-Acceptance:
- * Einträge der Dienstreisen werden in tabellarischer Form angezeigt.
- * Es werden nicht mehr als 10 pro Seite angezeigt.
- * Bei Verlassen der Übersicht wird der User auf die Services Seite umgeleitet. 
- * Optional: Popup-Fenster mit Meldung, falls noch keine Dienstreise angelegt wurde.
-
+--------------------------------------------------------------
 ===Newsfeed===
 
 *(US12) Als User möchte ich zu einem Community-Beitrag einen Kommentar schreiben, um meine Meinung mitzuteilen (Communitie Stream - Activity Stream).*
