@@ -1,7 +1,10 @@
 package at.fhj.swd.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -27,14 +30,46 @@ public class UserSiteController implements Serializable
 	private static final long serialVersionUID = 1L;
 		
 	@Inject
-	private UserService userService;
+	UserService userService;
 	
-	private User user;
+	User user;
+	
+	private List<User> contacts;
+	
+	private User selectedUser;
 	
 	
 	public UserSiteController()
 	{
+		contacts = new ArrayList<User>();
+	}
+	
+	@PostConstruct
+	public void init()
+	{	
+		user = userService.getRegisteredUser();
 		
+		User user1 = new User();
+		user1.setId(10l);
+		user1.setUsername("Testuser 1");
+		user1.setPassword("TeSt");
+		user1.setEmail("testuser1@test.test");
+		
+		User user2 = new User();
+		user2.setId(11l);
+		user2.setUsername("Testuser 2");
+		user2.setPassword("TeSt");
+		user2.setEmail("testuser2@test.test");
+		
+		User user3 = new User();
+		user3.setId(12l);
+		user3.setUsername("Testuser 3");
+		user3.setPassword("TeSt");
+		user3.setEmail("testuser3@test.test");
+		
+		contacts.add(user1);
+		contacts.add(user2);
+		contacts.add(user3);
 	}
 	
 	/**
@@ -42,9 +77,7 @@ public class UserSiteController implements Serializable
 	 * @return current users username or No Name Available if the user is null
 	 */
 	public String getUsername()
-	{
-		user = userService.getRegisteredUser();
-		
+	{		
 		if(user == null)
 		{
 			return "No Name Available";
@@ -61,8 +94,6 @@ public class UserSiteController implements Serializable
 	 */
 	public String getEmail()
 	{
-		user = userService.getRegisteredUser();
-		
 		if(user == null)
 		{
 			return "no.mail@vailable.yet";
@@ -80,12 +111,27 @@ public class UserSiteController implements Serializable
 	 */
 	public void editUser(ActionEvent actionEvent)
 	{
-		addMessage("UserName changed!");
+		addMessage("Hi there!");
 	}
 	
 	private void addMessage(String summary) {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);
         FacesContext.getCurrentInstance().addMessage(null, message);
     }
+	
+	public List<User> getContacts()
+	{
+		return contacts;
+	}
+	
+	public User getSelectedUser()
+	{
+		return selectedUser;
+	}
+	
+	public void setSelectedUser(User selectedUser)
+	{
+		this.selectedUser = selectedUser;
+	}
 
 }
