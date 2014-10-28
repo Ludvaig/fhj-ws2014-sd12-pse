@@ -20,7 +20,7 @@ Simple usersite
 <h:body>
 
 	<h:form>
-		<h3>USERSITE</h3>
+		<h3>USER</h3>
 		
 		<table>
 			<tr>
@@ -41,7 +41,35 @@ Simple usersite
 	
 	<p:growl id="growl" life="2000" />
 	
-	<p:commandButton value="edit username" id="editUsername" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="edit" id="editUsername" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+    
+	<br/>
+	<br/>
+	
+	<h:form id="contactForm" style="width:400px">
+		<p:dataList value="#{userSiteController.contacts}" var="contact" type="ordered">
+		      <f:facet name="header">
+		          Contacts
+		      </f:facet>
+		      #{contact.username}, #{contact.email}
+		</p:dataList>
+	</h:form>
+	
+	<br/>
+	
+	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	
+	<!--  p:dataList value="#{userSiteController.contacts}" var="contacts" type="unordered" itemType="none" paginator="true" rows="10" styleClass="paginated">
+	      <f:facet name="header">
+	          Contacts
+	      </f:facet>
+	      <p:commandLink update=":form:contactDetail" oncomplete="PF('carDialog').show()" title="View Detail" styleClass="ui-icon ui-icon-search" style="float:left;margin-right:10px">
+	         <f:setPropertyActionListener value="#{user}" target="#{userSiteController.selectedUser}" />
+	         <h:outputText value="#{user.username}, #{user.email}" />
+	     </p:commandLink>
+	     <h:outputText value="#{user.username}, #{user.email}" style="display:inline-block"/>
+	 </p:dataList>-->
     
 </h:body>
 </html>
