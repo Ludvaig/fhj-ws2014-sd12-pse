@@ -23,6 +23,7 @@ Acceptance:
 Bewertung: 2.5
 
 Umsetzung:
+Mockup: Source path:  svn/  trunk/ doc/ Gruppe4/ mockup_us30.png
 
 Status: 
 
