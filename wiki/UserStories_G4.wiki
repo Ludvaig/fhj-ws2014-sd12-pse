@@ -37,7 +37,7 @@ Acceptance:
 Bewertung: 2.5
 
 Umsetzung:
-
+Mockup: Source path:  svn/  trunk/ doc/ Gruppe4/ mockup_us_35_26.png
 Status: 
 
 *(US36) Als User befinde ich mich in der Community-Beitrags-Übersicht einer Community und lege einen neuen Community-Beitrag an.
@@ -51,7 +51,7 @@ Acceptance:
 Bewertung: 2.5
 
 Umsetzung:
-
+Mockup: Source path:  svn/  trunk/ doc/ Gruppe4/ mockup_us_35_26.png
 Status: 
 
 ----------------------------------------------------------
