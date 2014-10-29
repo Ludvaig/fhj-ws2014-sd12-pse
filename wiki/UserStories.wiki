@@ -193,7 +193,7 @@ Acceptance:
 
 ===Verwaltungsbereich (Administratoren)===
 
-*(US27) Als Portal-Administrator möchte ich neue hochgeladene Fotos vor der Veröffentlichung freischalten.*
+*(US27) Als Portal-Administrator möchte ich neue hochgeladene Fotos am User Profil vor der Veröffentlichung freischalten.*
 
 *Storypoints: 5*
 
@@ -201,6 +201,8 @@ Acceptance:
  * Ein neu hochgeladenes Foto wird auf der User Seite nicht angezeigt.
  * Der Admin Bereich bietet die Möglichkeit neu hochgeladene Fotos freizuschalten.
  * Fotos sind nach der Freischaltung für alle User sichtbar.
+
+Abhängigkeit: US16, Gruppe 2
 
 *(US5.1) Als Admin möchte ich neue News erstellen / editieren können*
 
