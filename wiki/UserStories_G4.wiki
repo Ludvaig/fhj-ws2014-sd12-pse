@@ -7,7 +7,7 @@ Bewertungsskala 1 - 5 (Schulnotensystem)
 = Iteration 1 =
 
 == Communities == 
-ER-Diagram: Source path:  svn/  trunk/ doc/ Gruppe4/ ER-Diagramm.png
+ER-Diagram: Source path:  svn/  trunk/ doc/ Gruppe4/ ER-Diagramm.png (fertig umgesetzt)
 
 *(US30) Wenn ich als User angemeldet bin, möchte ich eine Überblick über abonnierte Communities sehen.
 
