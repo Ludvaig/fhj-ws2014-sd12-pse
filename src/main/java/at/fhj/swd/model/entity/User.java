@@ -1,28 +1,33 @@
 package at.fhj.swd.model.entity;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /**
- * user class from an central storage
- * (for example active directory)
- * user with the same id are always equal
+ * user class from an central storage (for example active directory) user with
+ * the same id are always equal
  * 
  * @author Jörg Huber
  */
 
 @Entity
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id = null;
 
-	@Column(unique=true)
+	@Column(unique = true)
 	private String username;
 
 	@Column
@@ -30,6 +35,14 @@ public class User {
 
 	@Column
 	private String email;
+
+	@ManyToMany
+	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
+	private Collection<Community> communities;
+
+	public User() {
+		communities = new ArrayList<Community>();
+	}
 
 	public Long getId() {
 		return this.id;
@@ -71,11 +84,11 @@ public class User {
 	public void setUsername(final String username) {
 		this.username = username;
 	}
-	
+
 	public String getPassword() {
 		return this.password;
 	}
-	
+
 	public void setPassword(final String password) {
 		this.password = password;
 	}
@@ -88,4 +101,12 @@ public class User {
 		this.email = email;
 	}
 
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.getClass().getName()).append(
+				String.format(
+						": Id='%s', username='%s', password='%s', email='%s'!",
+						id, username, password, email));
+		return sb.toString();
+	}
 }
