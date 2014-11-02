@@ -20,29 +20,41 @@ Simple usersite
 <h:body>
 
 	<h:form>
-		<h3>USER</h3>
+		<p:panel header="User" style="width:400px">
 		
 		<table>
 			<tr>
 				<td>Username:</td>
-				<td><h:outputText value="#{userSiteController.username}" /></td>
+				<td>
+					<p:inputText id="userName" value="#{userSiteController.username}" label="Username">
+	            	</p:inputText>
+				</td>
 			</tr>
 			<tr>
 				<td>email:</td>
-				<td><h:outputText value="#{userSiteController.email}" /></td>
+				<td>
+					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email">
+	            	</p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>phone:</td>
+				<td>
+					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber">
+	                	<f:validateLength minimum="3" maximum="8" />
+	            	</p:inputText>
+				</td>
 			</tr>
 		</table>
 
-		
+		</p:panel>
 	</h:form>
-	
+		
+	<p:growl id="growl" life="5000" />
 	<br/>
-	<br/>
-	
-	<p:growl id="growl" life="2000" />
-	
-	<p:commandButton value="edit" id="editUsername" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
-    
+		
+	<p:commandButton value="Save" id="editUserdata" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	   
 	<br/>
 	<br/>
 	
@@ -59,6 +71,10 @@ Simple usersite
 	
 	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
 	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	
+	
+	<!-- selection of contacts is not part of the first iteration and so the following part is commented out-->
+	
 	
 	<!--  p:dataList value="#{userSiteController.contacts}" var="contacts" type="unordered" itemType="none" paginator="true" rows="10" styleClass="paginated">
 	      <f:facet name="header">
