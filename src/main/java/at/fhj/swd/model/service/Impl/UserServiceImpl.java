@@ -59,6 +59,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User getRegisteredUser(String token) {
+		
+		//check if token is valid
+		if(token == null || token.length()< 5)
+			return null;
+		
 		return userDAO.loadUserByToken(token);
 	}
 

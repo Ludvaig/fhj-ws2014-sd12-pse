@@ -6,7 +6,7 @@ import at.fhj.swd.model.entity.User;
  * service to load information
  * about user objects
  * 
- * @author Jörg Huber
+ * @author Joerg Huber
  */
 public interface UserService {
 	
