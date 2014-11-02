@@ -35,6 +35,9 @@ public class User {
 
 	@Column
 	private String email;
+	
+	@Column(unique = true)
+	private String token;
 
 	@ManyToMany
 	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
@@ -99,6 +102,14 @@ public class User {
 
 	public void setEmail(final String email) {
 		this.email = email;
+	}
+	
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public String toString() {

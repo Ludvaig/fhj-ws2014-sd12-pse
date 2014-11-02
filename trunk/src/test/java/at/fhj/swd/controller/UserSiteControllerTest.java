@@ -5,11 +5,13 @@ import junit.framework.TestCase;
 
 public class UserSiteControllerTest extends TestCase
 {
+	private final static String authToken = "authToken";
+	
 	public void testgetUsernameWithoutUser_success()
 	{
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.init();
 				
 		// Tests
@@ -20,7 +22,7 @@ public class UserSiteControllerTest extends TestCase
 	{
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.init();
 				
 		// Tests
@@ -34,7 +36,7 @@ public class UserSiteControllerTest extends TestCase
 		
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.userService.registerUser(username, password);
 		userSiteController.init();
 				
@@ -49,7 +51,7 @@ public class UserSiteControllerTest extends TestCase
 		
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.userService.registerUser(username, password);
 		userSiteController.init();
 				
@@ -61,7 +63,7 @@ public class UserSiteControllerTest extends TestCase
 	{
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.init();
 		
 		// Tests
@@ -72,7 +74,7 @@ public class UserSiteControllerTest extends TestCase
 	{
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.init();
 		
 		// Tests
@@ -87,9 +89,9 @@ public class UserSiteControllerTest extends TestCase
 		
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.userService.registerUser(username, password);
-		userSiteController.userService.getRegisteredUser().setEmail(email);
+		userSiteController.userService.getRegisteredUser(authToken).setEmail(email);
 		userSiteController.init();
 
 		// Tests
@@ -104,9 +106,9 @@ public class UserSiteControllerTest extends TestCase
 		
 		UserSiteController userSiteController = new UserSiteController();
 		
-		userSiteController.userService = new UserServiceTestStup();
+		userSiteController.userService = new UserServiceTestStub();
 		userSiteController.userService.registerUser(username, password);
-		userSiteController.userService.getRegisteredUser().setEmail(email);
+		userSiteController.userService.getRegisteredUser(authToken).setEmail(email);
 		userSiteController.init();
 
 		// Tests

@@ -34,7 +34,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void insert(User user) {
+	public void persist(User user) {
 		em.persist(user);
 	}
 
@@ -43,6 +43,21 @@ public class UserDAOImpl implements UserDAO {
 		List<User> users = em
 				.createQuery("from User user where user.username=:username",
 						User.class).setParameter("username", username)
+				.getResultList();
+
+		if (users.size() == 1) {
+			return users.get(0);
+		} else if (users.size() == 0) {
+			return null;
+		}
+		throw new RuntimeException("inavlid database state in user table");
+	}
+
+	@Override
+	public User loadUserByToken(String token) {
+		List<User> users = em
+				.createQuery("from User user where user.token=:token",
+						User.class).setParameter("token", token)
 				.getResultList();
 
 		if (users.size() == 1) {

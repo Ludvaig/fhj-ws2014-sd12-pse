@@ -1,6 +1,10 @@
 package at.fhj.swd.model.service.Impl;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
+
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import at.fhj.swd.model.data.UserDAO;
@@ -12,44 +16,54 @@ import at.fhj.swd.model.service.UserService;
  * 
  * @author Jörg Huber
  * */
-
-@Stateful
+@Stateless
 public class UserServiceImpl implements UserService {
-
-	private User registeredUser;
 
 	@Inject
 	private UserDAO userDAO;
 
 	@Override
-	public void registerUser(String username, String password) {
-		
-		//prove input data
-		if(username == null)
+	public String registerUser(String username, String password) {
+
+		// prove if input data are set
+		if (username == null)
 			throw new NullPointerException("username could not be null");
-		if(password == null)
+		if (password == null)
 			throw new NullPointerException("password could not be null");
-		
-		User user = userDAO.proveUserPassswordCombination(username,
-				password);
-		
-		//set the registered user
-		registeredUser = user;
-		
-		//throw exception if registration failed
+
+		// check if the user password combination is correct
+		User user = userDAO.proveUserPassswordCombination(username, password);
+
+		// throw exception if registration failed
 		if (user == null) {
 			throw new RuntimeException("not registerd");
 		}
+
+		// Generate a new token
+		String token = GetNewToken();
+
+		// store token to user
+		user.setToken(token);
+
+		// persist the user
+		userDAO.persist(user);
+		
+		return token;
+	}
+
+	private String GetNewToken() {
+		SecureRandom random = new SecureRandom();
+		return new BigInteger(130, random).toString(32);
 	}
 
 	@Override
-	public User getRegisteredUser() {
-		return registeredUser;
+	public User getRegisteredUser(String token) {
+	return userDAO.loadUserByToken(token);
 	}
 
 	@Override
 	public void insertUser(User user) {
-		userDAO.insert(user);
+		userDAO.persist(user);
 	}
 
 	@Override

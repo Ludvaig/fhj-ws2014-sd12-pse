@@ -12,16 +12,16 @@ public interface UserService {
 	
 	/**
 	 * register user with user name and password
-	 * on success this method will return true
+	 * a new token will be created
 	 * */
-	void registerUser(String userName,String password);
+	String registerUser(String userName,String password);
 	
 	/**
 	 * get the registered user
 	 * if the user has not registered yet
 	 * the method will return null
 	 * */
-	User getRegisteredUser();
+	User getRegisteredUser(String token);
 	
 	/**
 	 * insert new User to Database

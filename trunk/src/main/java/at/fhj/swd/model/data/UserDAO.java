@@ -15,7 +15,18 @@ public interface UserDAO {
 	 * */
 	User proveUserPassswordCombination(String userName,String password);
 	
-	void insert(User user);
+	/**
+	 * persist a User to database
+	 **/
+	void persist(User user);
 	
+	/**
+	 *load a User by his user name
+	 */
 	User loadUserByName(String username);
+	
+	/**
+	 *load a User by his token
+	 */
+	User loadUserByToken(String token);
 }
