@@ -5,10 +5,19 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+/**
+ * helper class for reading and writing cookies
+ * 
+ * @author Joerg Huber
+ */
 public class CookieHelper {
 
 	static final String authTokenName = "authToken";
 
+	/**
+	 * set a cookie (update if exist otherwise a new one will be created)
+	 * */
 	public static void setCookie(String name, String value, int expiry) {
 
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -41,6 +50,9 @@ public class CookieHelper {
 		response.addCookie(cookie);
 	}
 
+	/**
+	 * get cookie by name if not found the method returns null
+	 * */
 	public static Cookie getCookie(String name) {
 
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -61,10 +73,16 @@ public class CookieHelper {
 		return null;
 	}
 	
+	/**
+	 * set a new value to the authentication token
+	 * */
 	public static void setAuthTokenValue(String token) {
 		setCookie(authTokenName, token,36000);
 	}
 
+	/**
+	 * get the current value of the authentication token
+	 * */
 	public static String getAuthTokenValue() {
 		Cookie cookie = getCookie(authTokenName);
 		if (cookie != null)
