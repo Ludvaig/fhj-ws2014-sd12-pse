@@ -1,8 +1,10 @@
 package at.fhj.swd.model.entity;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class AuthInfo {
 	private String username;
 	private String password;
