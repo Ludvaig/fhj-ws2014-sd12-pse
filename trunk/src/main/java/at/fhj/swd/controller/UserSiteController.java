@@ -26,7 +26,8 @@ import at.fhj.swd.model.service.UserService;
 
 @Named
 @SessionScoped
-public class UserSiteController implements Serializable {
+public class UserSiteController implements Serializable
+{
 	private static final long serialVersionUID = 1L;
 
 	@Inject
@@ -35,21 +36,43 @@ public class UserSiteController implements Serializable {
 	User user;
 
 	private List<User> contacts;
-
 	private User selectedUser;
+	private int phoneNumber;
+	private String username;
+	private String email;
 
-	public UserSiteController() {
+	public UserSiteController()
+	{
 		contacts = new ArrayList<User>();
 	}
 
 	@PostConstruct
-	public void init() {
-		
-		String authToken = "";		
+	public void init()
+	{
+
+		String authToken = "";
 		if (FacesContext.getCurrentInstance() != null)
 			authToken = CookieHelper.getAuthTokenValue();
-		
+
 		user = userService.getRegisteredUser(authToken);
+
+		if (user != null)
+		{
+			username = user.getUsername();
+			email = user.getEmail();
+			// TODO no Phone Number in User available
+			phoneNumber = 123456;
+		}
+		else
+		{
+			username = "No Name Available";
+			email = "no.mail@vailable.yet";
+			phoneNumber = 12345;
+		}
+
+		/*
+		 * the following Users are dummy objects for testing only.
+		 */
 
 		User user1 = new User();
 		user1.setId(10l);
@@ -78,24 +101,53 @@ public class UserSiteController implements Serializable {
 	 * 
 	 * @return current users username or No Name Available if the user is null
 	 */
-	public String getUsername() {
-		if (user == null) {
-			return "No Name Available";
-		} else {
-			return user.getUsername();
-		}
+	public String getUsername()
+	{
+		return username;
 	}
 
 	/**
 	 * 
 	 * @return current users email or no.mail@vailable.yet if the user is null
 	 */
-	public String getEmail() {
-		if (user == null) {
-			return "no.mail@vailable.yet";
-		} else {
-			return user.getEmail();
-		}
+	public String getEmail()
+	{
+		return email;
+	}
+
+	public int getPhoneNumber()
+	{
+		return phoneNumber;
+	}
+
+	public void setUsername(String username)
+	{
+		this.username = username;
+	}
+
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+
+	public void setPhoneNumber(int phoneNumber)
+	{
+		this.phoneNumber = phoneNumber;
+	}
+
+	public List<User> getContacts()
+	{
+		return contacts;
+	}
+
+	public User getSelectedUser()
+	{
+		return selectedUser;
+	}
+
+	public void setSelectedUser(User selectedUser)
+	{
+		this.selectedUser = selectedUser;
 	}
 
 	/**
@@ -103,26 +155,28 @@ public class UserSiteController implements Serializable {
 	 * 
 	 * @param actionEvent
 	 */
-	public void editUser(ActionEvent actionEvent) {
-		addMessage("Hi there!");
+	public void editUser(ActionEvent actionEvent)
+	{
+		if (user != null)
+		{
+			// to persist stuff
+		}
+		else
+		{
+			addMessage("Username: " + username + " Email: " + email + " Phone: " + phoneNumber);
+		}
 	}
 
-	private void addMessage(String summary) {
-		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO,
-				summary, null);
+	/**
+	 * creates a message. test method which will be deleted after real
+	 * implementation of editUser
+	 * 
+	 * @param summary
+	 */
+	private void addMessage(String summary)
+	{
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
 		FacesContext.getCurrentInstance().addMessage(null, message);
-	}
-
-	public List<User> getContacts() {
-		return contacts;
-	}
-
-	public User getSelectedUser() {
-		return selectedUser;
-	}
-
-	public void setSelectedUser(User selectedUser) {
-		this.selectedUser = selectedUser;
 	}
 
 }

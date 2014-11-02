@@ -44,4 +44,12 @@ public class UserServiceTestStub implements UserService {
 		return user;
 	}
 
+
+
+	@Override
+	public void loggoutUser(String userName) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
