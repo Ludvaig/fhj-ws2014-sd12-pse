@@ -13,6 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+/**
+ * DB-Entity for Topics.
+ * 
+ * @author Group4
+ * */
+
 @Entity
 public class Topic {
 
@@ -34,9 +40,9 @@ public class Topic {
 	@JoinColumn(name = "COMMUNITY_ID")
 	private Community community;
 
-	@OneToMany(mappedBy="topic")
+	@OneToMany(mappedBy = "topic")
 	private List<Post> posts;
-	
+
 	public Topic() {
 		this.posts = new ArrayList<Post>();
 	}

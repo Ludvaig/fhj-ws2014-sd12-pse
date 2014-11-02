@@ -9,6 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * DB-Entity for Posts.
+ * 
+ * @author Group4
+ * */
+
 @Entity
 public class Post {
 
@@ -16,21 +22,21 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id = null;
-	
+
 	@Column
 	private String title;
-	
+
 	@Column
 	private String text;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="TOPIC_ID")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "TOPIC_ID")
 	private Topic topic;
-	
+
 	public Post() {
 		// empty on purpose!
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -46,7 +52,7 @@ public class Post {
 	public void setText(String newText) {
 		this.text = newText;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -72,10 +78,11 @@ public class Post {
 		return super.hashCode();
 	}
 
-	public String toString() { 
+	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.getClass().getName()).append(
-				String.format(": Id='%s', title='%s', text='%s'!", id, title, text));
+				String.format(": Id='%s', title='%s', text='%s'!", id, title,
+						text));
 		return sb.toString();
 	}
 }

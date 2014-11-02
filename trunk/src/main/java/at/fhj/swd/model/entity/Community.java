@@ -12,6 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+/**
+ * DB-Entity for Communities.
+ * 
+ * @author Group4
+ * */
+
 @Entity
 public class Community {
 

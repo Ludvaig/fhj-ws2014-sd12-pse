@@ -1,7 +1,7 @@
 package at.fhj.swd.model.entity;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.ManyToMany;
  * user class from an central storage (for example active directory) user with
  * the same id are always equal
  * 
- * @author Jörg Huber
+ * @author Jörg Huber, Group4
  */
 
 @Entity
@@ -28,7 +28,7 @@ public class User {
 	private Long id = null;
 
 	@Column(unique = true)
-	private String username;
+	private String username; // Don't remove the unique-property. All user stories regarding communities relay on the username being unique to work correctly!
 
 	@Column
 	private String password;
@@ -41,7 +41,7 @@ public class User {
 
 	@ManyToMany
 	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
-	private Collection<Community> communities;
+	private List<Community> communities;
 
 	public User() {
 		communities = new ArrayList<Community>();
@@ -53,31 +53,6 @@ public class User {
 
 	public void setId(final Long id) {
 		this.id = id;
-	}
-
-	@Override
-	public boolean equals(Object that) {
-		if (this == that) {
-			return true;
-		}
-		if (that == null) {
-			return false;
-		}
-		if (getClass() != that.getClass()) {
-			return false;
-		}
-		if (id != null) {
-			return id.equals(((User) that).id);
-		}
-		return super.equals(that);
-	}
-
-	@Override
-	public int hashCode() {
-		if (id != null) {
-			return id.hashCode();
-		}
-		return super.hashCode();
 	}
 
 	public String getUsername() {
@@ -103,13 +78,42 @@ public class User {
 	public void setEmail(final String email) {
 		this.email = email;
 	}
+
+	public List<Community> getSubscribedCommunities() {
+		return communities;
+	}
 	
 	public String getToken() {
 		return token;
 	}
-
+	
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	@Override
+	public boolean equals(Object that) {
+		if (this == that) {
+			return true;
+		}
+		if (that == null) {
+			return false;
+		}
+		if (getClass() != that.getClass()) {
+			return false;
+		}
+		if (id != null) {
+			return id.equals(((User) that).id);
+		}
+		return super.equals(that);
+	}
+
+	@Override
+	public int hashCode() {
+		if (id != null) {
+			return id.hashCode();
+		}
+		return super.hashCode();
 	}
 
 	public String toString() {
