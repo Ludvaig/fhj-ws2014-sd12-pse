@@ -44,13 +44,10 @@ public class UserSiteController implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		String authToken = "";
 		
+		String authToken = "";		
 		if (FacesContext.getCurrentInstance() != null)
-		{
 			authToken = CookieHelper.getAuthTokenValue();
-			System.out.println("authToken:" + authToken);
-		}
 		
 		user = userService.getRegisteredUser(authToken);
 

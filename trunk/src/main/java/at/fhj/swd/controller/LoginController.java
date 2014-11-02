@@ -18,7 +18,7 @@ import at.fhj.swd.model.service.UserService;
 
 /***
  * 
- * @author Steven Hagelm�ller
+ * @author Steven Hagelmueller
  * 
  *         Controller for the Login page. Uses the 'UserService' class for
  *         authentication.
@@ -54,7 +54,6 @@ public class LoginController {
 
 			// store new token
 			CookieHelper.setAuthTokenValue(token);
-			System.out.println("token:" + token);
 
 			facesContext.addMessage(null, new FacesMessage(
 					FacesMessage.SEVERITY_INFO, "Logged in!",
