@@ -16,5 +16,14 @@
 --
 
 -- You can use this file to load seed data into the database using SQL statements
-insert into MemberHibernate4Demo (id, name, email, phone_number, address) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212', 'Boston NY') 
-insert into MemberHibernate4Demo (id, name, email, phone_number, address) values (1, 'Madhumita Sadhukhan', 'msadhukh@gmail.com', '2135551214', 'Brno CZ') 
+insert into User (id, username, password, email) values (1, 'Herbert', 'vergessen', 'herbert_macht_dienstreisen@gmail.com')
+insert into User (id, username, password, email) values (2, 'George', 'nicht_anwesend', 'war_gerade_afk@gmail.com')
+
+insert into Community (id, name) values (1, 'George')
+insert into Community (id, name) values (2, 'Der Rest')
+insert into Community (id, name) values (3, 'Knebelmaster')
+insert into Community (id, name) values (4, 'Jboss is the Best')
+
+insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 2)
+insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 3)
+insert into USER_HAS_COMMUNITY (user_id, community_id) values (2, 1)
