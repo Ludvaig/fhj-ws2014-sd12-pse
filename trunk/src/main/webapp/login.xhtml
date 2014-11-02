@@ -48,7 +48,7 @@ Simple Login page mainly for testing purposes.
 	     	 2)enter user name and password, press login to register user
 		 </p>
          <p> 
-	     	 after that the UserService.getRegisteredUser() will return the registered user (from step 2)
+	     	 after that the UserService.getRegisteredUser(CookieHelper.getAuthTokenValue()) will return the registered user (from step 2)
 		 </p>
          <p> 
 	         use _a or _pa at the end of the user name (for example huber_pa)to create an admin or portal admin user

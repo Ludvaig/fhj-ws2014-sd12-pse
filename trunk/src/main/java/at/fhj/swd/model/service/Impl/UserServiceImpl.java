@@ -47,7 +47,8 @@ public class UserServiceImpl implements UserService {
 
 		// persist the user
 		userDAO.persist(user);
-		
+
+		//return the created token (store this token to cookies)
 		return token;
 	}
 
@@ -58,7 +59,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User getRegisteredUser(String token) {
-	return userDAO.loadUserByToken(token);
+		return userDAO.loadUserByToken(token);
 	}
 
 	@Override
@@ -74,6 +75,24 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean UserIsPortalAdmin(User user) {
 		return user.getUsername().endsWith("_pa");
+	}
+
+	@Override
+	public void loggoutUser(String userName) {
+		
+		// load user by user name
+		User user = userDAO.loadUserByName(userName);
+
+		// throw exception if the user was not found
+		if (user == null) {
+			throw new RuntimeException("could not find user in database");
+		}
+		
+		//set token initial
+		user.setToken("");
+		
+		//persist user
+		userDAO.persist(user);
 	}
 
 }

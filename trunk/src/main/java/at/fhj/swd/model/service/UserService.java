@@ -12,7 +12,7 @@ public interface UserService {
 	
 	/**
 	 * register user with user name and password
-	 * a new token will be created
+	 * a new token will be created (store this token into Cookies)
 	 * */
 	String registerUser(String userName,String password);
 	
@@ -36,5 +36,11 @@ public interface UserService {
 	/**
 	 * check if User is Portaladmin
 	 * */
-	boolean UserIsPortalAdmin(User user);	
+	boolean UserIsPortalAdmin(User user);
+	
+	/**
+	 * logout the given user
+	 * (remove the authToken from the user)
+	 * */
+	void loggoutUser(String userName);
 }
