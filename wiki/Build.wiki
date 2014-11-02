@@ -19,11 +19,13 @@ In the Fedora 20 VM all required tools are already preinstalled in
 Open the .bashrc file in the /home/student directory and add/modify the
 following lines:
 
+{{{
 export JAVA_HOME=/usr/java/jdk1.8.0_20
 export ANT_HOME=/home/student/install/apache-ant-1.9.4
 export M2_HOME=/home/student/install/apache-maven-3.2.3
 export JBOSS_HOME=/home/student/install/wildfly-8.1.0.Final
 export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$ANT_HOME/bin:$JBOSS_HOME/bin:$PATH
+}}}
 
 To be able to build and deploy with maven please follow this steps:
  * Download and start wildfly server (8.1.0), see section "Starting a Standalone Server"
