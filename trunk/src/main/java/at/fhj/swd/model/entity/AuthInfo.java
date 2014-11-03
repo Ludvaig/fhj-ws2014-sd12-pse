@@ -1,11 +1,12 @@
 package at.fhj.swd.model.entity;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-@SessionScoped
 public class AuthInfo {
+	
 	private String username;
 	private String password;
 	public String getUsername() {
