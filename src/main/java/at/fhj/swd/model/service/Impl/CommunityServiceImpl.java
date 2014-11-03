@@ -25,6 +25,11 @@ public class CommunityServiceImpl implements CommunityService {
 	
 	@Override
 	public List<Community> getAllSubscribedCommunitiesForUser(String username) {
-		return userDao.loadUserByName(username).getSubscribedCommunities();
+		try{
+			return userDao.loadUserByName(username).getSubscribedCommunities();
+		}catch(NullPointerException e){
+			System.out.println("NullPointerException: User konnte nicht geladen werden.");
+		}
+		return null;
 	}
 }
