@@ -29,7 +29,7 @@ public class User {
 	private Long id = null;
 
 	@Column(unique = true)
-	private String username; // Don't remove the unique-property. All user stories regarding communities relay on the username being unique to work correctly!
+	private String username; 
 
 	@Column
 	private String password;
@@ -38,7 +38,7 @@ public class User {
 	private String email;
 	
 	@Column(unique = true)
-	private String token;
+	private String token; // Don't remove the unique-property. All user stories regarding communities relay on the username being unique to work correctly!
 
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
