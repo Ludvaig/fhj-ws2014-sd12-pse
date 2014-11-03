@@ -52,7 +52,7 @@ public class LoginController implements Serializable {
 
 	public String login() {
 		try {
-			String token = userService.registerUser(username, username);
+			String token = userService.registerUser(username, password);
 			CookieHelper.setAuthTokenValue(token);
 
 			//String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
