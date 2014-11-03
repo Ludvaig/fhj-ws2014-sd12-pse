@@ -14,11 +14,17 @@ Overview of all subscribed communities for one user
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
    
-	<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}">
-	    <p:column headerText="Community Name">
-	        <h:outputText value="#{community.name}" />
-	    </p:column>
-	</p:dataTable>
+    <h:form id="communitySearch">
+		<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}">
+		    <p:column headerText="Community Name">
+		        <h:outputText value="#{community.name}" />
+		    </p:column>
+		</p:dataTable>
+		
+		<p:inputText value="#{dtCommunitiesView.searchFieldText}"/>
+		
+		<p:button action="#{dtCommunitiesView.search}" value="search" id="communitySearch"/>
+	</h:form>
 
 	</ui:define>
 </ui:composition>
