@@ -3,7 +3,7 @@
 Author: Steven Hagelmüller
 
 The Logout page.
-Note: The logout process happens automatically in the LogoutController if this page is requested by the client.
+Note: The logout process happens automatically in the LogoutController if this page is requested by a client.
 
 -->
 
@@ -11,12 +11,12 @@ Note: The logout process happens automatically in the LogoutController if this p
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:p="http://primefaces.org/ui">
+   xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
    <title>Logout</title>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </h:head>
 <h:body>
-	Logout
+	<f:event listener="#{logoutController.logout}" type="preRenderView" />
 </h:body>
 </html>
