@@ -1,5 +1,6 @@
 package at.fhj.swd.model.service.Impl;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +21,24 @@ public class DocumentServiceImpl implements DocumentService {
 
 	static String documentHome = "/home/student";
 	
+	static String globalContext = "global";
+	
 	@Override
 	public List<Document> getGlobalDocuments() {
+		return this.getDocuments(globalContext);
+	}
+	
+	private List<Document> getDocuments(final String pathExtension) {
+		final File folder = new File(documentHome, pathExtension);
 		List<Document> docs = new ArrayList<>();
-		Document doc1 = new Document();
-		doc1.setName("asdf.pdf");
 		
-		docs.add(doc1);
+		for (final File fileEntry : folder.listFiles()) {
+			if (!fileEntry.isDirectory()) {
+				Document doc = new Document();
+				doc.setName(fileEntry.getName());
+				docs.add(doc);
+		    }
+		}
 		
 		return docs;
 	}
