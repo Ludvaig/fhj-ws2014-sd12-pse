@@ -14,7 +14,6 @@ import javax.inject.Inject;
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.data.impl.UserDAOImpl;
-import at.fhj.swd.model.entity.AuthInfo;
 import at.fhj.swd.model.entity.Community;
 import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
