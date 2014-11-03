@@ -50,18 +50,22 @@ public class LoginController implements Serializable {
 		this.username = username;
 	}
 
-	public void login() {
+	public String login() {
 		try {
 			String token = userService.registerUser(username, username);
 			CookieHelper.setAuthTokenValue(token);
 
-			String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
-			facesContext.getExternalContext().redirect(url);
-
+			//String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
+			//facesContext.getExternalContext().redirect(url);
+			
+			//Todo:Change to real page:
+			return "tmpindex?faces-redirect=true";
+			
 		} catch (Exception e) {
 			String errorMessage = e.getLocalizedMessage();
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
 		}
+		return null;
 	}
 	
 	/***
