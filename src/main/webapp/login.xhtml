@@ -10,51 +10,34 @@ Simple Login page mainly for testing purposes.
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:ui="http://java.sun.com/jsf/facelets"
-   xmlns:f="http://java.sun.com/jsf/core">
+   xmlns:p="http://primefaces.org/ui">
 <h:head>
    <title>Login</title>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </h:head>
 <h:body>
-      <h:form id="log">
-         <h2>Login</h2>
-       
-         <h:panelGrid columns="3">
-            <h:outputLabel for="username" value="Username:"/>
-            <h:inputText id="username" value="#{authInfo.username}" />
-            <h:message for="username"/>
+	<h:form id="login">
+		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+		<h:panelGrid columns="2" >
+			<p:outputLabel for="username" value="Username:"/>
+			<p:inputText id="username" value="#{loginController.username}" required="true" requiredMessage="Username is required."/>
+			<p:outputLabel for="password" value="Password:"/>
+			<p:password id="password" value="#{loginController.password}" required="true" requiredMessage="Password is required."/>
+			<div></div>
+			<p:commandButton id="login" action="#{loginController.login}" value="Login"/> 
+		</h:panelGrid>
+		
+		
+<!-- #################################################################################################### -->
+<!-- Can be used to create new users during the development phase: -->
 
-            <h:outputLabel for="password" value="Password:"/>
-            <h:inputSecret id="password" value="#{authInfo.password}" />
-            <h:message for="password"/>
-         </h:panelGrid>
+<br/><br/><h:commandButton id="insertMax" action="#{loginController.insertUser}" value="Insert user" />
+<pre>
+Enter a username and password and press "Insert user" to insert a new user into the database.
+Use _a or _pa at the end of the user name (e.g. huber_pa) to create an admin or portal admin user.
+</pre>
+<!-- #################################################################################################### -->
 
-         <p>
-            <h:panelGrid columns="3">
-               <h:commandButton id="login" action="#{loginController.login}" value="Login" /> 
-               <h:commandButton id="insertMax" action="#{loginController.insertUser}" value="Insert user" /> 
-               <h:messages globalOnly="true"/>
-            </h:panelGrid>
-         </p>
-        
-
-      </h:form>
-      
-          <p> 
-	         1)enter user name and password, press "Insert user" to store a new User in database
-		 </p>
-         <p> 
-	     	 2)enter user name and password, press login to register user
-		 </p>
-         <p> 
-	     	 after that the UserService.getRegisteredUser(CookieHelper.getAuthTokenValue()) will return the registered user (from step 2)
-		 </p>
-         <p> 
-	         use _a or _pa at the end of the user name (for example huber_pa)to create an admin or portal admin user
-	         with UserService.UserIsAdmin and the UserService.UserIsPortalAdmin you can check the privileges of the user
-         </p> 
-
-
+	</h:form>
 </h:body>
 </html>

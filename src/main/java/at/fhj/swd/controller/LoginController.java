@@ -1,84 +1,82 @@
 package at.fhj.swd.controller;
 
-import java.io.Console;
+import java.io.Serializable;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.inject.Model;
-import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
-import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
-import at.fhj.swd.model.entity.AuthInfo;
 import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.UserService;
 
 /***
  * 
- * @author Steven Hagelmueller
+ * @author Steven Hagelmüller 
  * 
- *         Controller for the Login page. Uses the 'UserService' class for
- *         authentication.
+ * Controller for the Login page. Uses the 'UserService' class for authentication.
  * 
  */
-@Model
-public class LoginController {
+@ManagedBean(name = "loginController")
+@RequestScoped
+public class LoginController implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private FacesContext facesContext;
 
 	@Inject
 	private UserService userService;
-
-	private AuthInfo authInfo;
-
-	@Produces
-	@Named
-	public AuthInfo getAuthInfo() {
-		return authInfo;
+	
+	private String username;
+	private String password;
+	
+    public String getPassword() {
+		return password;
 	}
 
-	@PostConstruct
-	public void initAuthInfo() {
-		authInfo = new AuthInfo();
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public void login() {
 		try {
-
-			// try to register user
-			String token = userService.registerUser(authInfo.getUsername(),
-					authInfo.getPassword());
-
-			// store new token
+			String token = userService.registerUser(username, username);
 			CookieHelper.setAuthTokenValue(token);
 
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_INFO, "Logged in!",
-					"Log in successful."));
+			String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
+			facesContext.getExternalContext().redirect(url);
 
 		} catch (Exception e) {
 			String errorMessage = e.getLocalizedMessage();
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, errorMessage,
-					"Login unsuccessful."));
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
 		}
 	}
-
+	
+	/***
+	 * Should be removed before release.
+	 */
 	public void insertUser() {
 		try {
 			User user = new User();
-			user.setUsername(authInfo.getUsername());
-			user.setPassword(authInfo.getPassword());
+			user.setUsername(username);
+			user.setPassword(password);
 			userService.insertUser(user);
 
 		} catch (Exception e) {
 			String errorMessage = e.getLocalizedMessage();
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, errorMessage,
-					"Login unsuccessful."));
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
 		}
 	}
 }
