@@ -38,6 +38,13 @@ public class UserSiteController implements Serializable
 	private int phoneNumber;
 	private String username;
 	private String email;
+	
+	/* 
+	 * needed do disable functions if the current UserSite is not the own UserSite
+	 * if so the user should not be able do make changes
+	 * 
+	 *  */
+	private boolean otherUser = false;
 
 	public UserSiteController()
 	{
@@ -70,6 +77,7 @@ public class UserSiteController implements Serializable
 
 		/*
 		 * the following Users are dummy objects for testing only.
+		 * in iteration 2 they will be replaced with real contacts
 		 */
 
 		User user1 = new User();
@@ -133,24 +141,51 @@ public class UserSiteController implements Serializable
 		this.phoneNumber = phoneNumber;
 	}
 
+	public boolean isotherUser()
+	{
+		return otherUser;
+	}
+
+	public void setotherUser(boolean saveButtonDisabled)
+	{
+		this.otherUser = saveButtonDisabled;
+	}
+
+	/**
+	 *  not needed in iteration 1
+	 *  
+	 * @return all contacts
+	 */
 	public List<User> getContacts()
 	{
 		return contacts;
 	}
 
+	/**
+	 *  not needed in iteration 1
+	 * 
+	 * @return
+	 */
 	public User getSelectedUser()
 	{
 		return selectedUser;
 	}
-
+	
+	
+	/**
+	 * not needed in iteration 1
+	 * 
+	 * @param selectedUser
+	 */
 	public void setSelectedUser(User selectedUser)
 	{
 		this.selectedUser = selectedUser;
 	}
 
 	/**
-	 * This is just a test method while the database didn't work for me.
-	 * 
+	 * if user is available: update user
+	 * else: send back error message.
+	 *  
 	 * @param actionEvent
 	 */
 	public void editUser(ActionEvent actionEvent)
@@ -166,8 +201,7 @@ public class UserSiteController implements Serializable
 	}
 
 	/**
-	 * creates a message. test method which will be deleted after real
-	 * implementation of editUser
+	 * creates a message to notify the User about Errors
 	 * 
 	 * @param summary
 	 */
