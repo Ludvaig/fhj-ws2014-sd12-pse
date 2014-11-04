@@ -34,6 +34,7 @@ Simple usersite
 				<td>email:</td>
 				<td>
 					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email">
+						<f:validateRegex pattern=".*\@\w*\.\w*" />
 	            	</p:inputText>
 				</td>
 			</tr>
