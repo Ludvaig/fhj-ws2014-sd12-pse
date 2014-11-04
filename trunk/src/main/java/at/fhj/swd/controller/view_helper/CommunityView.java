@@ -1,13 +1,12 @@
 package at.fhj.swd.controller.view_helper;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
@@ -24,12 +23,12 @@ import at.fhj.swd.model.service.CommunityService;
  * */
 
 @ManagedBean(name="dtCommunitiesView")
-@RequestScoped
+@ViewScoped
 public class CommunityView implements Serializable {
 
 	private static final long serialVersionUID = 6330672338108028518L;
 
-	private List<Community> subscribedCommunities = new ArrayList<Community>();
+	private List<Community> subscribedCommunities = null;
 	
 	private String searchFieldText = "";
 	
@@ -44,11 +43,11 @@ public class CommunityView implements Serializable {
     
     private User user;
     
+    
     @PostConstruct
     public void init() {
     	user = userDao.loadUserByToken(CookieHelper.getAuthTokenValue());
     	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(user.getUsername());
-//    	System.out.println("init!!");
     }
     
     public List<Community> getSubscribedCommunities() {
@@ -68,7 +67,6 @@ public class CommunityView implements Serializable {
     }
     
     public String search() {
-//    	System.out.println("search!!");
     	subscribedCommunities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
     	return "communities";
     }
