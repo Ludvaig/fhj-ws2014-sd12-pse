@@ -1,5 +1,6 @@
 package at.fhj.swd.controller.view_helper;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,6 +8,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+
+import org.primefaces.event.FileUploadEvent;
 
 import at.fhj.swd.model.entity.Document;
 import at.fhj.swd.model.service.DocumentService;
@@ -37,7 +40,11 @@ public class DocumentView implements Serializable {
     	return this.documents;
     }
     
+    public void handleFileUpload(FileUploadEvent event) throws IOException {
+    	this.service.uploadGlobalDocument(event.getFile().getInputstream(), event.getFile().getFileName());
+    }
+    
     public void setService(DocumentService service) {
         this.service = service;
-    }    
+    }
 }
