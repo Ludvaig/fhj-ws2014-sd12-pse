@@ -43,4 +43,9 @@ public interface UserService {
 	 * (remove the authToken from the user)
 	 * */
 	void loggoutUser(String userName);
+	
+	/**
+	 * updates the given user
+	 */
+	User updateUser(User user);
 }

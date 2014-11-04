@@ -100,4 +100,13 @@ public class UserServiceImpl implements UserService {
 		userDAO.persist(user);
 	}
 
+	@Override
+	public User updateUser(User user)
+	{
+		if (user == null)
+			throw new IllegalArgumentException("User is null.");
+		
+		return userDAO.updateUser(user);
+	}
+
 }

@@ -29,4 +29,11 @@ public interface UserDAO {
 	 *load a User by his token
 	 */
 	User loadUserByToken(String token);
+	
+	/**
+	 * updates the given user
+	 * @param user
+	 * @return
+	 */
+	User updateUser(User user);
 }

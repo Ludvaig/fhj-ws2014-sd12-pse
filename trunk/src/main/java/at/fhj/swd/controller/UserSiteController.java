@@ -17,9 +17,7 @@ import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.UserService;
 
 /**
- * UserSite Controller. Just a simple placeholder as a result of local database
- * issues. This class is just a test class and will be completed with full
- * functionality if the issues are fixed.
+ * UserSite Controller. Handles the requests from the UserSite.
  * 
  * @author Michael Spörk
  */
@@ -159,11 +157,11 @@ public class UserSiteController implements Serializable
 	{
 		if (user != null)
 		{
-			// to persist stuff
+			userService.updateUser(user);
 		}
 		else
 		{
-			addMessage("Username: " + username + " Email: " + email + " Phone: " + phoneNumber);
+			addMessage("Error: Could not save.");
 		}
 	}
 

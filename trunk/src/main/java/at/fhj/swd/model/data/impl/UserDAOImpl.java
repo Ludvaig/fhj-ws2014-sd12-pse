@@ -68,5 +68,14 @@ public class UserDAOImpl implements UserDAO {
 		throw new RuntimeException("inavlid database state in user table");
 	}
 
+	@Override
+	public User updateUser(User user)
+	{
+		if (user != null)
+			return em.merge(user);
+		else
+			return null;
+	}
+
 
 }
