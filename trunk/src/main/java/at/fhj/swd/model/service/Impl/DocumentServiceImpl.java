@@ -1,7 +1,7 @@
 package at.fhj.swd.model.service.Impl;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,9 @@ import at.fhj.swd.model.entity.Document;
 import at.fhj.swd.model.service.DocumentService;
 
 /** 
- * Service which handles all requests to documents.
+ * Service which handles all requests to documents. All documents
+ * are stored on directly on disk in a sub folder depending on
+ * context (global, community, user).
  * 
  * @author Group1
  * */
@@ -38,42 +40,57 @@ public class DocumentServiceImpl implements DocumentService {
 	}
 
 	@Override
-	public void uploadGlobalDocument(InputStream source, String name) throws IOException {
+	public void uploadGlobalDocument(InputStream source, final String name) throws IOException {
 		this.uploadDocument(source, name, this.getGlobalPath());
 	}
 	
 	@Override
-	public void deleteGlobalDocument(String name) {
+	public InputStream downloadGlobalDocument(final String name) throws IOException {
+		return this.downloadDocument(name, this.getGlobalPath());
+	}	
+	
+	@Override
+	public void deleteGlobalDocument(final String name) {
 		this.deleteDocument(name, this.getGlobalPath());
 	}
 
 	@Override
-	public List<Document> getCommunityDocuments(String community) {
+	public List<Document> getCommunityDocuments(final String community) {
 		return this.getDocuments(this.getCommunityPath(community));
 	}
 
 	@Override
-	public void uploadCommunityDocument(final String community, InputStream source, String name) throws IOException {
+	public void uploadCommunityDocument(final String community, InputStream source, final String name) throws IOException {
 		this.uploadDocument(source, name, this.getCommunityPath(community));
 	}
 
 	@Override
-	public void deleteCommunityDocument(String community, String name) {
+	public InputStream downloadCommunityDocument(final String community, final String name) throws IOException {
+		return this.downloadDocument(name, this.getCommunityPath(community));
+	}	
+	
+	@Override
+	public void deleteCommunityDocument(final String community, final String name) {
 		this.deleteDocument(name, this.getCommunityPath(community));
 	}
 
 	@Override
-	public List<Document> getUserDocuments(String user) {
+	public List<Document> getUserDocuments(final String user) {
 		return this.getDocuments(this.getUserPath(user));		
 	}
 
 	@Override
-	public void uploadUserDocument(final String user, InputStream source, String name) throws IOException {
+	public void uploadUserDocument(final String user, InputStream source, final String name) throws IOException {
 		this.uploadDocument(source, name, this.getUserPath(user));
 	}
 
 	@Override
-	public void deleteUserDocument(String user, String name) {
+	public InputStream downloadUserDocument(final String user, final String name) throws IOException {
+		return this.downloadDocument(name, this.getUserPath(user));
+	}	
+	
+	@Override
+	public void deleteUserDocument(final String user, final String name) {
 		this.deleteDocument(name, this.getUserPath(user));	
 	}	
 	
@@ -131,4 +148,8 @@ public class DocumentServiceImpl implements DocumentService {
 		out.flush();
 		out.close();
 	}
+	
+	public InputStream downloadDocument(final String name, final String path) throws IOException {
+		return new FileInputStream(this.concatPath(path, name));
+	}		
 }
