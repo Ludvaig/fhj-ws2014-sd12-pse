@@ -19,21 +19,21 @@ Simple usersite
 </h:head>
 <h:body>
 
-	<h:form>
+	<h:form id="userForm">
 		<p:panel header="User" style="width:400px">
 		
 		<table>
 			<tr>
 				<td>Username:</td>
 				<td>
-					<p:inputText id="userName" value="#{userSiteController.username}" label="Username">
+					<p:inputText id="userName" value="#{userSiteController.username}" label="Username" readonly="#{userSiteController.otherUser}">
 	            	</p:inputText>
 				</td>
 			</tr>
 			<tr>
 				<td>email:</td>
 				<td>
-					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email">
+					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email" readonly="#{userSiteController.otherUser}">
 						<f:validateRegex pattern=".*\@\w*\.\w*" />
 	            	</p:inputText>
 				</td>
@@ -41,7 +41,7 @@ Simple usersite
 			<tr>
 				<td>phone:</td>
 				<td>
-					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber">
+					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber" readonly="#{userSiteController.otherUser}">
 	                	<f:validateLength minimum="3" maximum="8" />
 	            	</p:inputText>
 				</td>
@@ -54,8 +54,8 @@ Simple usersite
 	<p:growl id="growl" life="5000" />
 	<br/>
 		
-	<p:commandButton value="Save" id="editUserdata" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
-	   
+	<p:commandButton value="Save" id="saveUserdata" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	  	
 	<br/>
 	<br/>
 	
@@ -70,9 +70,24 @@ Simple usersite
 	
 	<br/>
 	
-	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
-	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
 	
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	
+	<!-- The following two buttons are for testing only. They enable and disable the other elements to demonstrate this functionality.  -->
+	<p:commandButton value="Disable Buttons" id="disableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
+		<f:setPropertyActionListener value="#{true}" target="#{userSiteController.otherUser}"/>
+	</p:commandButton>
+	  
+	<p:commandButton value="Enable Buttons" id="enableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
+		<f:setPropertyActionListener value="#{false}" target="#{userSiteController.otherUser}"/>
+	</p:commandButton>
 	
 	<!-- selection of contacts is not part of the first iteration and so the following part is commented out-->
 	
