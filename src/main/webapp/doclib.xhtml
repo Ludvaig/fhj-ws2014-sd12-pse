@@ -19,17 +19,33 @@ Temporary test page for document library
 </h:head>
 <h:body>
 
+<h:form enctype="multipart/form-data">
+	<p:fileUpload mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
+</h:form>
+
+<h:form>
+    <p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
+        <p:fileDownload value="#{dtDocumentView.file}" />
+    </p:commandButton>
+</h:form>
+
 <h:form>
 	<p:dataTable var="document" value="#{dtDocumentView.documents}"> 
     	<p:column headerText="Document">
         	<h:outputText value="#{documnet.name}" />
     	</p:column>
 	</p:dataTable>
-</h:form>	
-
-<h:form enctype="multipart/form-data">
-	<p:fileUpload mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
 </h:form>
+
+<script type="text/javascript">
+function start() {
+    PF('statusDialog').show();
+}
+ 
+function stop() {
+    PF('statusDialog').hide();
+}
+</script>
     
 </h:body>
 </html>

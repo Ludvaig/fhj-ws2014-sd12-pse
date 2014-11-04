@@ -18,15 +18,21 @@ public interface DocumentService {
 
 	public void deleteGlobalDocument(final String name);
 	
+	public InputStream downloadGlobalDocument(final String name) throws IOException;
+	
 	public List<Document> getCommunityDocuments(final String community);
 
 	public void uploadCommunityDocument(final String community, InputStream source, final String name) throws IOException;
 
+	public InputStream downloadCommunityDocument(final String community, final String name) throws IOException;
+	
 	public void deleteCommunityDocument(final String community, final String name);
 	
 	public List<Document> getUserDocuments(final String user);
-	
+		
 	public void uploadUserDocument(final String user, InputStream source, final String name) throws IOException;	
 
+	public InputStream downloadUserDocument(final String user, final String name) throws IOException;
+	
 	public void deleteUserDocument(final String user, final String name);
 }
