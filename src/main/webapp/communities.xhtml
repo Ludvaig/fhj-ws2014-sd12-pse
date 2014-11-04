@@ -13,18 +13,16 @@ Overview of all subscribed communities for one user
    xmlns:p="http://primefaces.org/ui"
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
-   
-    <h:form id="communitySearch">
-		<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}">
-		    <p:column headerText="Community Name">
-		        <h:outputText value="#{community.name}" />
-		    </p:column>
-		</p:dataTable>
-		
-		<p:inputText value="#{dtCommunitiesView.searchFieldText}"/>
-		
-		<p:button action="#{dtCommunitiesView.search}" value="search" id="communitySearch"/>
-	</h:form>
-
+	    <h:form id="communitySearch">
+			<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}" id="communities">
+			    <p:column headerText="Community Name">
+			        <h:outputText value="#{community.name}" />
+			    </p:column>
+			</p:dataTable>
+			<p:inputText value="#{dtCommunitiesView.searchFieldText}" />
+			<p:commandLink id="ajax" update="communities" actionListener="#{dtCommunitiesView.search}">
+		       <p:commandButton value="search" id="communitySearch"/>
+		   </p:commandLink>
+		</h:form>
 	</ui:define>
 </ui:composition>
