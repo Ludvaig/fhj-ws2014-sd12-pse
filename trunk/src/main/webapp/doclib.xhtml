@@ -14,24 +14,10 @@ Temporary test page for document library
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:p="http://primefaces.org/ui">
 <h:head>
-   <title>Doc Lib Test</title>
+   <title>Document Library Test</title>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </h:head>
 <h:body>
-
-<!-- document view begin -->
-<h:form>
-    <p:dataList value="#{dtDocumentView.documents}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
-        <f:facet name="header">Documents</f:facet>
-		<h:commandLink value="#{document.name}">
-            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedDocument}" />
-            <p:fileDownload value="#{dtDocumentView.file}" />
-        </h:commandLink>
-    </p:dataList>
-
-	<p:fileUpload update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
-</h:form>
-<!-- document view end -->
     
 </h:body>
 </html>
