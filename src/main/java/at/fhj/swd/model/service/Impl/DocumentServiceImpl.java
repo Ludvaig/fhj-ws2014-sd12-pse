@@ -135,6 +135,7 @@ public class DocumentServiceImpl implements DocumentService {
 
 	private void deleteDocument(final String name, final String path) {
 		this.ensurePath(path);
+		new File(this.concatPath(path, name)).delete();
 	}	
 	
 	private void uploadDocument(InputStream source, final String name, final String path) throws IOException {
