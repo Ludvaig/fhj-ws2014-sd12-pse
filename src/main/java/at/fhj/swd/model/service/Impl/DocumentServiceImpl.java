@@ -25,8 +25,6 @@ import at.fhj.swd.model.service.DocumentService;
 @ManagedBean(name = "documentService")
 @ApplicationScoped
 public class DocumentServiceImpl implements DocumentService {
-
-	private static String documentHome = "/tmp/doclib";
 	
 	private static String globalContext = "global";
 	
@@ -111,16 +109,20 @@ public class DocumentServiceImpl implements DocumentService {
 		return docs;
 	}
 
+	private String getDocumentHome() {
+		return this.concatPath(System.getProperty("jboss.server.data.dir"), "docs");
+	}
+	
 	private String getGlobalPath() {
-		return this.concatPath(documentHome, globalContext);
+		return this.concatPath(this.getDocumentHome(), globalContext);
 	}	
 
 	private String getCommunityPath(final String community) {
-		return this.concatPath(this.concatPath(documentHome, communityContext), community);
+		return this.concatPath(this.concatPath(this.getDocumentHome(), communityContext), community);
 	}	
 	
 	private String getUserPath(final String user) {
-		return this.concatPath(this.concatPath(documentHome, userContext), user);
+		return this.concatPath(this.concatPath(this.getDocumentHome(), userContext), user);
 	}
 	
 	private String concatPath(final String prefix, final String postfix) {
