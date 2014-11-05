@@ -48,4 +48,15 @@ public interface UserService {
 	 * updates the given user
 	 */
 	User updateUser(User user);
+	
+	/**
+	 * load User by Id from Database
+	 * */
+	User getUserById(long id);
+	
+	/**
+	 * load User by Username from Database
+	 * */
+	User getUserByUsername(String username);
+
 }

@@ -52,6 +52,24 @@ public class UserDAOImpl implements UserDAO {
 		}
 		throw new RuntimeException("inavlid database state in user table");
 	}
+	
+
+	@Override
+	public User loadUserById(long id) {
+		List<User> users = em
+				.createQuery("from User user where user.id=:id",
+						User.class).setParameter("id", id)
+				.getResultList();
+
+		if (users.size() == 1) {
+			return users.get(0);
+		} else if (users.size() == 0) {
+			return null;
+		}
+		throw new RuntimeException("inavlid database state in user table");
+	}
+
+
 
 	@Override
 	public User loadUserByToken(String token) {

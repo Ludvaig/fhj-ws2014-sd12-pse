@@ -25,6 +25,12 @@ public interface UserDAO {
 	 */
 	User loadUserByName(String username);
 	
+	
+	/**
+	 *load a User by user id
+	 */
+	User loadUserById(long id);
+	
 	/**
 	 *load a User by his token
 	 */
@@ -36,4 +42,6 @@ public interface UserDAO {
 	 * @return
 	 */
 	User updateUser(User user);
+	
+
 }
