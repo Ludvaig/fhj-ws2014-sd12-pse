@@ -6,8 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
-import at.fhj.swd.model.data.UserDAO;
+import at.fhj.swd.model.data.CommunityDao;
 import at.fhj.swd.model.entity.Community;
+import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
 
 /**
@@ -21,10 +22,16 @@ import at.fhj.swd.model.service.CommunityService;
 public class CommunityServiceImpl implements CommunityService {
 	
 	@Inject
-	private UserDAO userDao;
+	private CommunityDao communityDao;
 	
 	@Override
-	public List<Community> getAllSubscribedCommunitiesForUser(String username) {
-		return userDao.loadUserByName(username).getSubscribedCommunities();
+	public List<Community> getAllSubscribedCommunitiesForUser(User user) {
+		List<Community> communities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+		return communities;
 	}
+	
+	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, User user){
+		return communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
+	}
+
 }

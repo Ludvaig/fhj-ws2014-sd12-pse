@@ -14,7 +14,10 @@ Overview of all subscribed communities for one user
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
 	    <h:form id="communitySearch">
-			<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}" id="communities">
+			<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}" id="communities"
+				paginator="true" rows="10"
+               	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+			>
 			    <p:column headerText="Community Name">
 			        <h:outputText value="#{community.name}" />
 			    </p:column>

@@ -10,7 +10,6 @@ import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
-import at.fhj.swd.model.data.CommunityDao;
 import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.Community;
 import at.fhj.swd.model.entity.User;
@@ -38,16 +37,12 @@ public class CommunityView implements Serializable {
     @Inject
 	private UserDAO userDao;
     
-    @Inject
-    private CommunityDao communityDao;
-    
     private User user;
-    
     
     @PostConstruct
     public void init() {
     	user = userDao.loadUserByToken(CookieHelper.getAuthTokenValue());
-    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(user.getUsername());
+    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(user);
     }
     
     public List<Community> getSubscribedCommunities() {
@@ -67,7 +62,7 @@ public class CommunityView implements Serializable {
     }
     
     public String search() {
-    	subscribedCommunities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
+    	subscribedCommunities = service.getSubscribedCommunitiesForUser(searchFieldText, user);
     	return "communities";
     }
 }

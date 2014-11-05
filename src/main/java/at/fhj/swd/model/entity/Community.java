@@ -29,7 +29,7 @@ public class Community {
 
 	private String name;
 
-	@ManyToMany(mappedBy = "communities",fetch=FetchType.EAGER)
+	@ManyToMany(mappedBy = "communities")
 	private Collection<User> users;
 
 	@OneToMany(mappedBy = "community")
