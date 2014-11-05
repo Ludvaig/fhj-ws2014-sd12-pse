@@ -37,6 +37,9 @@ public class User {
 	@Column
 	private String email;
 	
+	@Column
+	private String telephone;
+
 	@Column(unique = true)
 	private String token; // Don't remove the unique-property. All user stories regarding communities relay on the username being unique to work correctly!
 
@@ -78,6 +81,14 @@ public class User {
 
 	public void setEmail(final String email) {
 		this.email = email;
+	}
+	
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(final String telephone) {
+		this.telephone = telephone;
 	}
 
 	public List<Community> getSubscribedCommunities() {
