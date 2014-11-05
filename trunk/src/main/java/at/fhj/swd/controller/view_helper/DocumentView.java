@@ -27,6 +27,8 @@ public class DocumentView implements Serializable {
 
 	private static final long serialVersionUID = 6219023243007670413L;
 	
+	private String selectedDocument;
+	
     @ManagedProperty("#{documentService}")
     private DocumentService service;
     
@@ -42,9 +44,17 @@ public class DocumentView implements Serializable {
     	this.service.uploadGlobalDocument(event.getFile().getInputstream(), event.getFile().getFileName());
     }
     
+    public void setSelectedDocument(String name) {
+    	this.selectedDocument = name;
+    }
+    
+    public String getSelectedDocument() {
+    	return this.selectedDocument;
+    }
+    
     public DefaultStreamedContent getFile() throws IOException {
-    	String name = this.getDocuments().get(0).getName();
-    	return new DefaultStreamedContent(this.service.downloadGlobalDocument(name), name);
+    	String name = this.getSelectedDocument();
+    	return new DefaultStreamedContent(this.service.downloadGlobalDocument(name));
     }
     
     public void setService(DocumentService service) {
