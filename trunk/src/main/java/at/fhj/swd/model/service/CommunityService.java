@@ -3,6 +3,7 @@ package at.fhj.swd.model.service;
 import java.util.List;
 
 import at.fhj.swd.model.entity.Community;
+import at.fhj.swd.model.entity.User;
 
 /** 
  * Service which handles all requests to community-entities.
@@ -12,5 +13,7 @@ import at.fhj.swd.model.entity.Community;
 
 public interface CommunityService {
 
-	public List<Community> getAllSubscribedCommunitiesForUser(String username);
+	public List<Community> getAllSubscribedCommunitiesForUser(User user);
+	public List <Community> getSubscribedCommunitiesForUser(String searchfieldText, User user);
+	
 }
