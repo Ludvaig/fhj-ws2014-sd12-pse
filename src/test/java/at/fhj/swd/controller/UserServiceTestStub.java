@@ -61,4 +61,22 @@ public class UserServiceTestStub implements UserService {
 		return null;
 	}
 
+
+
+	@Override
+	public User getUserById(long id)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public User getUserByUsername(String username)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
