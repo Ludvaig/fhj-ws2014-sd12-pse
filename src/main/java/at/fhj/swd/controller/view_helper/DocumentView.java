@@ -52,9 +52,14 @@ public class DocumentView implements Serializable {
     	return this.selectedDocument;
     }
     
-    public DefaultStreamedContent getFile() throws IOException {
+    public DefaultStreamedContent getDownload() throws IOException {
     	String name = this.getSelectedDocument();
-    	return new DefaultStreamedContent(this.service.downloadGlobalDocument(name));
+    	return new DefaultStreamedContent(this.service.downloadGlobalDocument(name), null, name);
+    }
+    
+    public boolean getAdministrationAllowed() {
+    	// TODO: has to query specific user rights
+    	return true;
     }
     
     public void setService(DocumentService service) {
