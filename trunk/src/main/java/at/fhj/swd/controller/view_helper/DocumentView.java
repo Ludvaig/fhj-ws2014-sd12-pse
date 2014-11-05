@@ -52,6 +52,10 @@ public class DocumentView implements Serializable {
     	return this.selectedDocument;
     }
     
+    public void setDeleteDocument(String name) {
+    	this.service.deleteGlobalDocument(name);
+    }
+    
     public DefaultStreamedContent getDownload() throws IOException {
     	String name = this.getSelectedDocument();
     	return new DefaultStreamedContent(this.service.downloadGlobalDocument(name), null, name);

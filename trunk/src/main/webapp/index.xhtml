@@ -31,6 +31,10 @@ Portal main page
             <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedDocument}" />
             <p:fileDownload value="#{dtDocumentView.download}" />
         </h:commandLink>
+        
+		<h:commandLink rendered="#{dtDocumentView.administrationAllowed}" value="Delete" update="@form" styleClass="ui-icon ui-icon-closethick" style="float:right;margin-right:10px">
+            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.deleteDocument}" />
+        </h:commandLink>        
     </p:dataList>
 
 	<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
