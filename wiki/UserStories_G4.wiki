@@ -25,7 +25,7 @@ Bewertung: 2.5
 Umsetzung:
 Mockup: Source path:  svn/  trunk/ doc/ Gruppe4/ mockup_us30.png
 
-Status: Begonnen
+Status: Ready for acceptance
 
 *(US35) Als User möchte ich eine Übersicht über alle Community-Beiträge zu einer abonnierten Community angezeigt bekommen. 
 
