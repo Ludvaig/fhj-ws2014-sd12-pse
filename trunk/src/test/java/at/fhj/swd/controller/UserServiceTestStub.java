@@ -79,4 +79,12 @@ public class UserServiceTestStub implements UserService {
 		return null;
 	}
 
+
+
+	@Override
+	public void registerUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
