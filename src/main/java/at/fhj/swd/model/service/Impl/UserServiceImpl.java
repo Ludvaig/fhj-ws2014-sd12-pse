@@ -2,10 +2,15 @@ package at.fhj.swd.model.service.Impl;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.logging.Logger;
 
+import javax.annotation.security.PermitAll;
+import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.User;
@@ -14,15 +19,27 @@ import at.fhj.swd.model.service.UserService;
 /**
  * DAO Implementation for User entity
  * 
- * @author Jörg Huber
+ * @author Jörg Huber, Lukas Kranabetter
  * */
 @Stateless
 public class UserServiceImpl implements UserService {
 
 	@Inject
+	private Logger _log;
+	
+	@Inject
 	private UserDAO userDAO;
+	
+	@PersistenceContext()
+  private EntityManager em;
+  
+	/*
+  @EJB
+  IEmailService emailService;
+  */
 
 	@Override
+	@PermitAll()
 	public String registerUser(String username, String password) {
 
 		// prove if input data are set
@@ -51,6 +68,42 @@ public class UserServiceImpl implements UserService {
 		//return the created token (store this token to cookies)
 		return token;
 	}
+	
+	/**
+	 * Register a new user, permit for all.
+	 * 
+	 * @param user
+	 */
+	@Override
+	@PermitAll()
+	public void registerUser(User user)
+	{
+		_log.info("Register a user with form authetication");
+		
+		//if(isUsernameExist(user.getUsername())) throw new RuntimeException("This username already exists");
+		//if(user.getEmail() == null) throw new RuntimeException("Invalid email address");
+		//if(isEmailOverRegistered(user.getEmail())) throw new RuntimeException("One Email can register at most 3 accounts");
+ 
+		//user.setActivated(false);
+		em.persist(user);
+  
+		// TODO: Implement email account activation
+		// Example code
+		/*
+		ActivateCode activateCode = new ActivateCode();
+		activateCode.setUser(user);
+		activateCode.setCode(RandomHelper.getRandomString(ActivateCode.CODE_LENGTH));
+		activateCode.setUsageType(ActivateCode.Usage.USER_ACTIVATE_ACCOUNT.id);
+		em.persist(activateCode);
+  
+	  Email email = new Email();
+	  email.setTitle(EmailConstants.USER_REGISTER_ACTIVATION_EMAIL_TITLE);
+	  email.setContent(EmailConstants.getUserRegisterActivatioinEmailContent(user.getUsername(), activateCode.getActivatingLink()));
+	  email.setToUser(user);
+	  em.persist(email);
+	  emailService.sendMail(email);
+	  */
+	}
 
 	private String GetNewToken() {
 		SecureRandom random = new SecureRandom();
@@ -58,6 +111,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@PermitAll()
 	public User getRegisteredUser(String token) {
 		
 		//check if token is valid
@@ -68,6 +122,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@PermitAll()
 	public void insertUser(User user) {
 		userDAO.persist(user);
 	}

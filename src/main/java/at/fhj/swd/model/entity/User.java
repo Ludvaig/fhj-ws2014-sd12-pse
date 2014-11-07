@@ -2,6 +2,7 @@ package at.fhj.swd.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,20 +13,38 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.TableGenerator;
+
+import at.fhj.swd.model.entity.helper.TableGeneratorHelper;
 
 /**
+ * <p>
  * user class from an central storage (for example active directory) user with
  * the same id are always equal
+ * </p>
  * 
- * @author Jörg Huber, Group4
+ * @author Jörg Huber, Group4, Lukas Kranabetter
  */
 
 @Entity
 public class User {
 
+	public static final String TABLE_GEN_NAME = "userTableGen";
+	public static final String PK_COL_VALUE = "userPk";
+	
+	public static final String JOIN_TABLE_User_UserGroup = "User_UserGroup";
+  public static final String JOIN_TABLE_User_UserGroup_JoinColumn = "user_id";
+  public static final String JOIN_TABLE_User_UserGroup_InverseJoinColumn = "usergroup_id";
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, nullable = false)
+	@TableGenerator(name = TABLE_GEN_NAME,
+   								table = TableGeneratorHelper.TABLE_NAME,
+   								pkColumnName = TableGeneratorHelper.PK_COL_NAME,
+   								pkColumnValue = PK_COL_VALUE,
+ 									valueColumnName = TableGeneratorHelper.VALUE_COL_NAME,
+									allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_GEN_NAME)
+	//@Column(name = "id", updatable = false, nullable = false)
 	private Long id = null;
 
 	@Column(unique = true)
@@ -33,6 +52,9 @@ public class User {
 
 	@Column
 	private String password;
+	
+	@Column(nullable = false, length = 256)
+	private String hashedPassword;
 
 	@Column
 	private String email;
@@ -46,6 +68,12 @@ public class User {
 	@ManyToMany
 	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
 	private List<Community> communities;
+	
+	@ManyToMany(targetEntity = UserGroup.class, fetch = FetchType.LAZY)
+  @JoinTable(name = JOIN_TABLE_User_UserGroup,
+             joinColumns = @JoinColumn(name=JOIN_TABLE_User_UserGroup_JoinColumn),
+             inverseJoinColumns = @JoinColumn(name=JOIN_TABLE_User_UserGroup_InverseJoinColumn))
+	private Set<UserGroup> _userGroups;
 
 	public User() {
 		communities = new ArrayList<Community>();
@@ -73,6 +101,14 @@ public class User {
 
 	public void setPassword(final String password) {
 		this.password = password;
+	}
+	
+	public String getHashedPassword() {
+    return hashedPassword;
+	}
+	
+	public void setHashedPassword(String hashedPassword) {
+    this.hashedPassword = hashedPassword;
 	}
 
 	public String getEmail() {
@@ -105,6 +141,16 @@ public class User {
 	
 	public void setToken(String token) {
 		this.token = token;
+	}
+	
+	public Set<UserGroup> getUserGroups() 
+	{
+    return _userGroups;
+	}
+
+	public void setUserGroups(Set<UserGroup> userGroups) 
+	{
+    _userGroups = userGroups;
 	}
 
 	@Override

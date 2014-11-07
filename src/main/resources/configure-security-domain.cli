@@ -1,0 +1,15 @@
+# Batch script to add the project security domain to the wildfly server configuration
+# @author Lukas Kranabetter
+
+# Start batching commands
+batch
+
+# Configure the security domain
+/subsystem=security/security-domain=fhj-ws2014-sd12-pse/:add(cache-type=default)
+/subsystem=security/security-domain=fhj-ws2014-sd12-pse/authentication=classic:add(login-modules=[{"code"=>"org.jboss.security.auth.spi.DatabaseServerLoginModule", "flag"=>"required", "module-options"=>[("password-stacking"=>"useFirstPass"),("dsJndiName"=>"java:jboss/datasources/fhj-ws2014-sd12-pse-ds"),("principalsQuery"=>"SELECT hashedPassword FROM User WHERE username=? and activated=true and locked=false"), ("rolesQuery"=>"SELECT DISTINCT r.name, 'Roles' FROM User u, User_UserGroup ug, UserGroup_UserRole gr, UserRole r WHERE u.id=ug.user_id AND ug.usergroup_id=gr.usergroup_id AND gr.userrole_id=r.id AND u.username=?"),("hashAlgorithm"=>"SHA-256"),("hashEncoding"=>"Base64"),("hashCharset"=>"UTF-8"),("unauthenticatedIdentity"=>"guest")]}])
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+:reload
