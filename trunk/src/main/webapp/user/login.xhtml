@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Security check login form.
+	
+	@author Lukas Kranabetter
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value=""/>
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:panelGroup layout="block" rendered="#{request.getUserPrincipal() == null}">
+			<!-- TODO: Its not working!
+	      (1) <form method="post" action="j_security_check">
+	          http://javaarm.com/faces/j_security_check is used!
+	      (2) <form method="post" action="#{request.contextPath}/j_security_check">
+	          http://javaarm.com/j_security_check is used!
+      -->
+			<form method="post" action="j_security_check">
+				<table>
+					<tr>
+						<!--<td width="10%">#{messages['ybxiang.javaarm.username']}:</td>-->
+						<td>Username</td>
+						<td width="40%"><input type="text" name="j_username" /></td>
+					</tr>
+					<tr>
+						<!--<td>#{messages['ybxiang.javaarm.password']}:</td>-->
+						<td>Password</td>
+						<td><input type="password" name="j_password" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="login"/></td>
+					</tr>
+				</table>
+			</form>
+		</h:panelGroup>
+
+	</ui:define>
+</ui:composition>

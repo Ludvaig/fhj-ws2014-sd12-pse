@@ -6,7 +6,7 @@ import at.fhj.swd.model.entity.User;
  * service to load information
  * about user objects
  * 
- * @author Joerg Huber
+ * @author Joerg Huber, Lukas Kranabetter
  */
 public interface UserService {
 	
@@ -15,6 +15,11 @@ public interface UserService {
 	 * a new token will be created (store this token into Cookies)
 	 * */
 	String registerUser(String userName,String password);
+	
+	/**
+	 * Register a user by form registration.
+	 */
+	void registerUser(User user);
 	
 	/**
 	 * get the registered user

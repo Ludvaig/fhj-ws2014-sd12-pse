@@ -1,0 +1,56 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Security register user form.
+	
+	@author Lukas Kranabetter
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="" />
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="form">
+
+			<h3>
+				<h:outputText value="" />
+			</h3>
+
+			<h:panelGrid columns="2">
+				<h:outputLabel style="color:red" value="Username" for="username"/>
+				<h:inputText id="username" value="#{registerController.username}" maxlength="#{registerController.maxUsernameLength}" size="90">
+					<f:validateLength minimum="#{registerController.minUsernameLength}" maximum="#{registerController.maxUsernameLength}"/>
+				</h:inputText>
+				<h:outputText value=""/>
+				<h:message for="username" styleClass="message" errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg" />
+
+				<h:outputLabel style="color:red" value="Password" for="password"/>
+				<h:inputSecret id="password" value="#{registerController.password}"
+					maxlength="#{registerController.maxPasswordLength}" size="90">
+					<f:validateLength
+						minimum="#{registerController.minPasswordLength}"
+						maximum="#{registerController.maxPasswordLength}" />
+				</h:inputSecret>
+				<h:outputText value="" />
+				<h:message for="password" styleClass="message" errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg"/>
+
+				<h:outputLabel style="color:red" value="Password repeat" for="passwordRepeat"/>
+				<h:inputSecret id="passwordRepeat" value="#{registerController.passwordRepeat}" maxlength="#{registerController.maxPasswordLength}" size="90">
+					<f:validateLength minimum="#{registerController.minPasswordLength}" maximum="#{registerController.maxPasswordLength}"/>
+				</h:inputSecret>
+				<h:outputText value=""/>
+				<h:message for="passwordRepeat" styleClass="message" errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg"/>
+ 				<h:outputText value="." />
+				<h:commandButton id="submitButton" value="Submit" action="#{registerController.create()}"/>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

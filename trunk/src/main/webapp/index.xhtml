@@ -1,45 +1,24 @@
-<!--
-
-Author: Thomas Ascher
-
-Portal main page
-
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Application entry point.
+	
+	@author Lukas Kranabetter
 -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main.xhtml">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:ui="http://java.sun.com/jsf/facelets"
-   xmlns:f="http://java.sun.com/jsf/core"
-   xmlns:p="http://primefaces.org/ui">
-<h:head>
-   <title>Portal</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</h:head>
-<h:body>
+	<ui:define name="title">
+		<h:outputText value=""/>
+	</ui:define>
 
-<h1>Welcome to the Portal Page</h1>
+	<ui:define name="headMetaData">
+	</ui:define>
 
-<h2>TODO</h2>
-
-<!-- document library view begin -->
-<h:form>
-    <p:dataList value="#{dtDocumentView.documents}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
-        <f:facet name="header">Documents</f:facet>
-		<h:commandLink value="#{document.name}">
-            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedDocument}" />
-            <p:fileDownload value="#{dtDocumentView.download}" />
-        </h:commandLink>
-        
-		<h:commandLink rendered="#{dtDocumentView.administrationAllowed}" value="Delete" update="@form" styleClass="ui-icon ui-icon-closethick" style="float:right;margin-right:10px">
-            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.deleteDocument}" />
-        </h:commandLink>        
-    </p:dataList>
-
-	<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
-</h:form>
-<!-- document library view end -->
-    
-</h:body>
-</html>
+	<ui:define name="content">
+		<!-- TODO: Fill content area with startup content! -->
+	</ui:define>
+	
+</ui:composition>
