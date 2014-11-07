@@ -36,13 +36,26 @@ Or use maven eclipse plugin to create eclipse project files:
 http://scriptime.blogspot.in/2014/08/how-to-convert-maven-project-to-eclipse.html
 
 
-*Starting a Standalone Server*
-----------------------------
+*Starting and configure wildfly standalone Server*
+--------------------------------------------------
 
 A WildFly standalone server runs a single instance.
 
- * ${JBOSS_HOME}/bin/standalone.sh      (Unix / Linux)
- * ${JBOSS_HOME}\bin\standalone.bat     (Windows)
+ * $<JBOSS_HOME>/bin/standalone.sh      (Unix / Linux)
+ * $<JBOSS_HOME>\bin\standalone.bat     (Windows)
+
+Run the wildfly command line tool (Graphical user interface with option --gui). 
+
+ * $<JBOSS_HOME>/bin/jboss-cli.sh	(Unix / Linux)
+ * $<JBOSS_HOME>\bin\jboss-cli.bat	(Windows)
+
+Run the cli files in src/main/resources/. We need to configure the security domain to use wildfly server security with our datasource. Open a new command line, navigate to the root directory of this project, and run the following command. This script adds the project domain to the security subsystem in the server configuration and configures authentication access.
+
+<JBOSS_HOME>/bin/jboss-cli.sh --connect --file=src/main/resources/configure-security-domain.cli 
+
+Available scripts:
+src/main/resources/configure-security-domain.cli
+src/main/resources/remove-security-domain.cli
 
 
 *Build and Deploy with maven*
