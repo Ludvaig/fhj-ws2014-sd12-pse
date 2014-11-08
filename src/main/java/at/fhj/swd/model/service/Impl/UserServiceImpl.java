@@ -80,12 +80,14 @@ public class UserServiceImpl implements UserService {
 	{
 		_log.info("Register a user with form authetication");
 		
+		em.persist(user);
+		
 		//if(isUsernameExist(user.getUsername())) throw new RuntimeException("This username already exists");
 		//if(user.getEmail() == null) throw new RuntimeException("Invalid email address");
 		//if(isEmailOverRegistered(user.getEmail())) throw new RuntimeException("One Email can register at most 3 accounts");
  
 		//user.setActivated(false);
-		em.persist(user);
+
   
 		// TODO: Implement email account activation
 		// Example code
@@ -124,6 +126,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public void insertUser(User user) {
+		//hotfix set empty HashedPassword (to avoid null entity manger exception)
+		if(user.getHashedPassword() == null)
+			user.setHashedPassword("");		
 		userDAO.persist(user);
 	}
 
