@@ -1,19 +1,24 @@
 <!--
 
-Author: Steven Hagelmüller
+Author: Steven Hagelmüller, John Palade
 
 Simple Login page mainly for testing purposes.
 
 -->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:p="http://primefaces.org/ui">
 <h:head>
-   <title>Login</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>PSE Login</title>
+	<meta charset="utf-8"/>
+   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+	<!--[if lt IE 9]>
+		<h:outputScript library="js" name="//html5shim.googlecode.com/svn/trunk/html5.js"/>
+	<![endif]-->
+	<h:outputStylesheet library="css" name="resources/css/styles-login.css"/>
 </h:head>
 <h:body>
 	<h:form id="login">
@@ -39,5 +44,41 @@ Use _a or _pa at the end of the user name (e.g. huber_pa) to create an admin or 
 <!-- #################################################################################################### -->
 
 	</h:form>
+	
+	<!--login modal-->
+ <!-- 
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="text-center">Login</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email"/>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password"/>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
+-->
+<!-- script references -->
+<!-- 
+<h:outputScript library="js" name="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"/>
+<h:outputScript library="js" name="bootstrap.min.js"/>
+-->
 </h:body>
 </html>
