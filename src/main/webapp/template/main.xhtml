@@ -1,14 +1,15 @@
 <!--
 	Main page faces template.
 	
-	@author Lukas Kranabetter, Daniel Frech, John Palade
+	@author Daniel Frech, John Palade
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-			xmlns:h="http://java.sun.com/jsf/html"
-			xmlns:ui="http://java.sun.com/jsf/facelets">
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
+
 	<title>FH-Joanneum SWD12 practical software engeneering project.</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -16,85 +17,65 @@
 	<meta name="description" content=""/>
 	<meta name="author" content=""/>
 
-	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
-	<!--<h:outputStylesheet name="resources/css/screen.css"/>-->
-	<h:outputStylesheet library="css" name="sb-admin.css"/>
-
+	<h:outputStylesheet library="css" name="bootstrap.css"/>
+	<h:outputStylesheet library="css" name="styles.css"/>
 	<h:outputScript library="js" name="jquery.js"/>
-	<h:outputScript library="js" name="bootstrap.min.js"/>
-
+	<h:outputScript library="js" name="bootstrap.min.js"/>	
+	
 </h:head>
 
 <h:body>
+    <nav class="navbar navbar-static">
+      <div class="container">
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+        <div class="nav-collapse collase">
+          <ul class="nav navbar-nav">  
+            <li><a href="index.jsf">Home</a></li>
+            <li><a href="communities.jsf">Communities</a></li>
+            <li><a href="documents.jsf">Documents</a></li>
+          </ul>
+          <ul class="nav navbar-right navbar-nav">
 
-	<div class="header"></div>
-	
-	<div id="wrapper">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="user/login.jsf">Login (security domain)</a></li>
+                <li><a href="login.jsf">Login (Test)</a></li>
+                <li><a href="usersite.jsf">User profile</a></li>
+                <li><a href="adminsite.jsf">Admin</a></li>               
+                <li class="divider"></li>
+                <li><a href="logout.jsf">Logout</a></li>
+               </ul>
+            </li>  
+          </ul>
+        </div>		
+      </div>
+    </nav><!-- /.navbar -->
 
-		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" 
-								class="navbar-toggle" 
-								data-toggle="collapse"
-								data-target=".navbar-ex1-collapse">
-								
-					<span class="sr-only">Toggle navigation</span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.jsf">SWD12</a>
-			</div>
-		
-			<!-- Top Menu Items -->
-			<ul class="nav navbar-right top-nav">
-	
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="fa fa-user"></i>#{loginController.username}<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu">
-						<!-- TODO: Change the hardcoded hrefs! -->
-						<li><a href="/fhj-ws2014-sd12-pse/user/login.jsf"><i class="fa fa-fw fa-arrow-left"></i>Log in (security domain)</a></li>
-						<li><a href="/fhj-ws2014-sd12-pse/login.jsf"><i class="fa fa-fw fa-arrow-left"></i>Log in (test)</a></li>
-						<li><a href="/fhj-ws2014-sd12-pse/user/register.jsf"><i class="fa fa-fw fa-arrow-left"></i>Register</a></li>
-						<li><a href="/fhj-ws2014-sd12-pse/user/logout.jsf"><i class="fa fa-fw fa-power-off"></i>Log out</a></li>
-					</ul>
-				</li>
-			</ul>
-			
-			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav side-nav">
-					<!-- TODO: Change the hardcoded hrefs! -->
-					<li class="active"><a href="communities.jsf"><i class="fa fa-fw fa-bullseye"></i>Communities</a></li>
-					<li><a href="documents.jsf"><i class="fa fa-fw fa-bullseye"></i>Documents</a></li>
-					<li><a href="usersite.jsf"><i class="fa fa-fw fa-user"></i>Users</a></li>
-					<li><a href="adminsite.jsf"><i class="fa fa-fw fa-newspaper-o"></i>Admin</a></li>
-				</ul>
-			</div>
-			
-		</nav>
+    <header class="masthead">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-6">
+            <h1>
+              <a href="#" title="scroll down for your viewing pleasure">SWD12</a>
+              <p class="lead">Das Facebook-Twitter-Instagram-Sharepoint Projekt</p>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
 
-		<div id="content">
-
-			<div class="container-fluid">
-
-				<ui:insert name="content">
-					<!--  Template content will be inserted here. -->
-				</ui:insert>
-
-			</div>
-
-		</div>
-
-	</div>
-	
-	<div id="footer"></div>
-	
+    <!-- Begin Body -->
+    <div class="container">
+    
+	<ui:insert name="content">
+		<!--  Template content will be inserted here. -->
+	</ui:insert>       
+    
+    </div>
+    
 </h:body>
 
 </html>
