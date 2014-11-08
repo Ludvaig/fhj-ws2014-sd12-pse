@@ -23,7 +23,7 @@ import at.fhj.swd.model.entity.helper.TableGeneratorHelper;
  * the same id are always equal
  * </p>
  * 
- * @author Jörg Huber, Group4, Lukas Kranabetter
+ * @author Jörg Huber, Group4, Lukas Kranabetter, Sandra Marcher
  */
 
 @Entity
@@ -124,7 +124,7 @@ public class User {
 	}
 
 	public void setTelephone(final String telephone) {
-		if (telephone.matches("(\\+?)(\\d{3,8})")){
+		if (telephone.matches("(\\+?)(\\d{3,20})")){
 			this.telephone = telephone;
 		}
 		else {
