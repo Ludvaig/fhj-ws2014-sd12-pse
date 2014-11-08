@@ -143,6 +143,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@PermitAll()
 	public void loggoutUser(String userName) {
 		
 		// load user by user name
