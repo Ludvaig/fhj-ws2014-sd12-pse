@@ -83,5 +83,28 @@ public class UserTest extends TestCase {
 	   // Tests
 		assertFalse(userOne.hashCode() == userTwo.hashCode());
 	} 
-		
+
+	public void testTelephoneNumber_succes(){
+		User userOne = new User();
+		  
+		String telephoneNumber = "+43316123";
+		  
+		userOne.setTelephone(telephoneNumber);
+		  
+		assertEquals(userOne.getTelephone(), telephoneNumber);
+	}
+		 
+	public void testTelephoneNumber_fail(){
+		try {
+			User userOne = new User();
+		   
+			String telephoneNumber = "ASDFE111";
+			userOne.setTelephone(telephoneNumber);
+
+			fail( "Missing exception" );
+		} catch( IllegalArgumentException e ) {
+		   
+		  assertEquals( "Invalid telephone number", e.getMessage() ); 
+		  }
+		}
 }

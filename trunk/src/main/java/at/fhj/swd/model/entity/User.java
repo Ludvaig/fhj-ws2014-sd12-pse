@@ -124,7 +124,13 @@ public class User {
 	}
 
 	public void setTelephone(final String telephone) {
-		this.telephone = telephone;
+		if (telephone.matches("(\\+?)(\\d{3,8})")){
+			this.telephone = telephone;
+		}
+		else {
+			throw new IllegalArgumentException("Invalid telephone number");
+		}
+		  
 	}
 
 	public List<Community> getSubscribedCommunities() {
