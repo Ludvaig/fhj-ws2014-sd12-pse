@@ -14,4 +14,17 @@
    						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    						xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
         													http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+  
+  <!-- Support for multi language application. -->      													
+	<application>
+		<locale-config>
+			<default-locale>de_AT</default-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>locale/de_AT</base-name>
+			<var>locale</var>
+		</resource-bundle>
+	</application>
+
 </faces-config>
