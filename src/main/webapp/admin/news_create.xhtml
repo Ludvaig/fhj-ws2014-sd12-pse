@@ -1,0 +1,25 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Admin overview of the communities.
+	
+	@author Achim Kotremba
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main_admin.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value=""/>
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+		#{locale.adminNewsTitelLabel}: <h:inputText value="" />
+		#{locale.adminNewsContentLabel}: <h:inputTextarea value="" />
+		<button>#{locale.adminNewsCreateLabel}</button><!-- TODO: -->
+	</ui:define>
+</ui:composition>
