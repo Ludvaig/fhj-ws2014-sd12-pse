@@ -1,7 +1,7 @@
 <!--
 	Main page faces template.
 	
-	@author Daniel Frech, John Palade
+	@author Daniel Frech, John Palade, Lukas Kranabetter
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -10,7 +10,7 @@
 
 <h:head>
 
-	<title>FH-Joanneum SWD12 practical software engeneering project.</title>
+	<title>#{locale.pageTitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -32,21 +32,21 @@
         </a>
         <div class="nav-collapse collase">
           <ul class="nav navbar-nav">  
-            <li><a href="index.jsf">Home</a></li>
-            <li><a href="communities.jsf">Communities</a></li>
-            <li><a href="documents.jsf">Documents</a></li>
+            <li><a href="index.jsf">#{locale.menuHomeLabel}</a></li>
+            <li><a href="communities.jsf">#{locale.menuCommunitiesLabel}</a></li>
+            <li><a href="documents.jsf">#{locale.menuDocumentsLabel}</a></li>
           </ul>
           <ul class="nav navbar-right navbar-nav">
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="user/login.jsf">Login (security domain)</a></li>
-                <li><a href="login.jsf">Login (Test)</a></li>
-                <li><a href="usersite.jsf">User profile</a></li>
-                <li><a href="adminsite.jsf">Admin</a></li>               
+                <li><a href="user/login.jsf">#{locale.menuLoginLabel} (security domain)</a></li>
+                <li><a href="login.jsf">#{locale.menuLoginLabel} (Test)</a></li>
+                <li><a href="usersite.jsf">#{locale.menuUserLabel}</a></li>
+                <li><a href="adminsite.jsf">#{locale.menuAdminLabel}</a></li>               
                 <li class="divider"></li>
-                <li><a href="logout.jsf">Logout</a></li>
+                <li><a href="logout.jsf">#{locale.menuLogoutLabel}</a></li>
                </ul>
             </li>  
           </ul>
