@@ -14,7 +14,7 @@ Usersite
 					template="/template/main.xhtml">
 
   <ui:define name="content">
-
+  	
 	<h:form id="userForm">
 		<p:panel header="User" style="width:400px">
 		
@@ -38,7 +38,7 @@ Usersite
 				<td>phone:</td>
 				<td>
 					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber" readonly="#{userSiteController.otherUser}">
-	                	<f:validateLength minimum="3" maximum="8" />
+	                	<f:validateRegex pattern="\+?\d{3,15}" />
 	            	</p:inputText>
 				</td>
 			</tr>
@@ -56,13 +56,32 @@ Usersite
 	<br/>
 	
 	<h:form id="contactForm" style="width:400px">
-		<p:dataList value="#{userSiteController.contacts}" var="contact" type="ordered">
+		<p:dataList value="#{userSiteController.contacts}" var="contact" type="unordered" paginator="true" rows="10" styleClass="paginated">
 		      <f:facet name="header">
 		          Contacts
 		      </f:facet>
-		      #{contact.username}, #{contact.email}
+		      <p:commandLink update=":contactForm:contactDetail" oncomplete="PF('contactDialog').show()" title="View Detail" styleClass="ui-icon ui-icon-search" style="float:left;margin-right:10px">
+	              <f:setPropertyActionListener value="#{contact}" target="#{userSiteController.selectedUser}" />
+	              <h:outputText value="#{contact.username}, #{contact.email}" />
+	          </p:commandLink>
+		      <h:outputText value="#{contact.username}, #{contact.email}" style="display:inline-block"/>
 		</p:dataList>
+		
+		<p:dialog header="Contact Info" widgetVar="contactDialog" modal="true" showEffect="blind" hideEffect="explode" resizable="false">
+	        <p:outputPanel id="contactDetail" style="text-align:center;">
+	            <p:panelGrid  columns="2" rendered="#{not empty userSiteController.selectedUser}" columnClasses="label,value">
+	 
+	                <h:outputText value="Id:" />
+	                <h:outputText value="#{userSiteController.selectedUser.username}" />
+	 
+	                <h:outputText value="Year" />
+	                <h:outputText value="#{userSiteController.selectedUser.email}" />
+	 
+	            </p:panelGrid>
+	        </p:outputPanel>
+    	</p:dialog>
 	</h:form>
+	
 	
 	<br/>
 	
@@ -76,14 +95,14 @@ Usersite
 	<br/>
 	
 	
-	<!-- The following two buttons are for testing only. They enable and disable the other elements to demonstrate this functionality.  -->
+	<!-- The following two buttons are for testing only. They enable and disable the other elements to demonstrate this functionality.  
 	<p:commandButton value="Disable Buttons" id="disableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
 		<f:setPropertyActionListener value="#{true}" target="#{userSiteController.otherUser}"/>
 	</p:commandButton>
 	  
 	<p:commandButton value="Enable Buttons" id="enableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
 		<f:setPropertyActionListener value="#{false}" target="#{userSiteController.otherUser}"/>
-	</p:commandButton>
+	</p:commandButton> -->
 	
 	<!-- selection of contacts is not part of the first iteration and so the following part is commented out-->
 	
@@ -99,6 +118,6 @@ Usersite
 	     <h:outputText value="#{user.username}, #{user.email}" style="display:inline-block"/>
 	 </p:dataList>-->
     
-  </ui:define>
+  </ui:define> 
     
 </ui:composition>

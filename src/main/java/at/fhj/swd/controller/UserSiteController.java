@@ -7,10 +7,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.User;
@@ -22,7 +22,8 @@ import at.fhj.swd.model.service.UserService;
  * @author Michael Spörk
  */
 
-@Named
+
+@ManagedBean
 @SessionScoped
 public class UserSiteController implements Serializable
 {
@@ -35,9 +36,7 @@ public class UserSiteController implements Serializable
 
 	private List<User> contacts;
 	private User selectedUser;
-	private int phoneNumber;
-	private String username;
-	private String email;
+	private String authToken = "";
 	
 	/* 
 	 * needed do disable functions if the current UserSite is not the own UserSite
@@ -45,62 +44,40 @@ public class UserSiteController implements Serializable
 	 * 
 	 *  */
 	private boolean otherUser = false;
+	
 
 	public UserSiteController()
 	{
 		contacts = new ArrayList<User>();
 	}
-
+	
 	@PostConstruct
 	public void init()
-	{
-
-		String authToken = "";
+	{		
 		if (FacesContext.getCurrentInstance() != null)
 			authToken = CookieHelper.getAuthTokenValue();
+		
+		if (user == null)
+			loadUser();
 
-		user = userService.getRegisteredUser(authToken);
-
-		if (user != null)
-		{
-			username = user.getUsername();
-			email = user.getEmail();
-			// TODO no Phone Number in User available
-			phoneNumber = 123456;
-		}
-		else
-		{
-			username = "No Name Available";
-			email = "no.mail@vailable.yet";
-			phoneNumber = 12345;
-		}
-
-		/*
-		 * the following Users are dummy objects for testing only.
-		 * in iteration 2 they will be replaced with real contacts
-		 */
-
-		User user1 = new User();
-		user1.setId(10l);
-		user1.setUsername("Testuser 1");
-		user1.setPassword("TeSt");
-		user1.setEmail("testuser1@test.test");
-
-		User user2 = new User();
-		user2.setId(11l);
-		user2.setUsername("Testuser 2");
-		user2.setPassword("TeSt");
-		user2.setEmail("testuser2@test.test");
-
-		User user3 = new User();
-		user3.setId(12l);
-		user3.setUsername("Testuser 3");
-		user3.setPassword("TeSt");
-		user3.setEmail("testuser3@test.test");
+		User user1 = userService.getUserById(1);
+		User user2 = userService.getUserById(2);
 
 		contacts.add(user1);
 		contacts.add(user2);
-		contacts.add(user3);
+	}
+	
+	public void loadUser()
+	{
+		user = userService.getRegisteredUser(authToken);
+
+		if (user == null)
+		{
+			user = new User();
+			user.setUsername("No Name Available");
+			user.setEmail("no.mail@vailable.yet");
+			user.setTelephone("12345");
+		}
 	}
 
 	/**
@@ -109,7 +86,7 @@ public class UserSiteController implements Serializable
 	 */
 	public String getUsername()
 	{
-		return username;
+		return user.getUsername();
 	}
 
 	/**
@@ -118,27 +95,27 @@ public class UserSiteController implements Serializable
 	 */
 	public String getEmail()
 	{
-		return email;
+		return user.getEmail();
 	}
 
-	public int getPhoneNumber()
+	public String getPhoneNumber()
 	{
-		return phoneNumber;
+		return user.getTelephone();
 	}
 
 	public void setUsername(String username)
 	{
-		this.username = username;
+		user.setUsername(username);
 	}
 
 	public void setEmail(String email)
 	{
-		this.email = email;
+		user.setEmail(email);
 	}
 
-	public void setPhoneNumber(int phoneNumber)
+	public void setPhoneNumber(String phoneNumber)
 	{
-		this.phoneNumber = phoneNumber;
+		user.setTelephone(phoneNumber);
 	}
 
 	public boolean isotherUser()
@@ -171,7 +148,6 @@ public class UserSiteController implements Serializable
 		return selectedUser;
 	}
 	
-	
 	/**
 	 * not needed in iteration 1
 	 * 
@@ -189,10 +165,12 @@ public class UserSiteController implements Serializable
 	 * @param actionEvent
 	 */
 	public void editUser(ActionEvent actionEvent)
-	{
+	{	
+	
 		if (user != null)
 		{
-			userService.updateUser(user);
+			user = userService.updateUser(user);
+			addMessage("Userdata changed");
 		}
 		else
 		{
@@ -210,5 +188,4 @@ public class UserSiteController implements Serializable
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
 		FacesContext.getCurrentInstance().addMessage(null, message);
 	}
-
 }

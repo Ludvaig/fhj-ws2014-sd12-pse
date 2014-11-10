@@ -164,6 +164,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@PermitAll()
 	public User updateUser(User user)
 	{
 		if (user == null)
@@ -173,6 +174,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
+	@PermitAll()
 	public User getUserById(long id) {
 		
 		return userDAO.loadUserById(id);
@@ -180,6 +182,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
+	@PermitAll()
 	public User getUserByUsername(String username){
 	
 		return userDAO.loadUserByName(username);
