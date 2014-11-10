@@ -106,9 +106,13 @@ public class DocumentView implements Serializable {
     // -----------------------------
     
     
-    // User related things ------------------------
     public boolean getAdministrationAllowed() {
     	return service.getAdministrationAllowed(CookieHelper.getAuthTokenValue());
+    }
+    
+    // User related things ------------------------
+    public boolean getUserAdministrationAllowed() {
+    	return service.getUserAdministrationAllowed(CookieHelper.getAuthTokenValue());
     }
     
     public void setService(DocumentService service) {

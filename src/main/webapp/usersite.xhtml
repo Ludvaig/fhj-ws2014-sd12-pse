@@ -93,12 +93,12 @@ Usersite
 		            <p:fileDownload value="#{dtDocumentView.userDownload}" />
 		        </h:commandLink>
 		        
-				<h:commandLink rendered="#{dtDocumentView.administrationAllowed}" value="Delete" update="@form" styleClass="ui-icon ui-icon-closethick" style="float:right;margin-right:10px">
+				<h:commandLink rendered="#{dtDocumentView.userAdministrationAllowed}" value="Delete" update="@form" styleClass="ui-icon ui-icon-closethick" style="float:right;margin-right:10px">
 		            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.deleteUserDocument}" />
 		        </h:commandLink>        
 		    </p:dataList>
 		
-			<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleUserFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
+			<p:fileUpload rendered="#{dtDocumentView.userAdministrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleUserFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
 		</h:form>
 		<!-- user document library view end -->
 	<br/>

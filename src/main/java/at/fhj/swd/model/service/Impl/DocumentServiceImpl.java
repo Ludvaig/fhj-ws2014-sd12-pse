@@ -173,11 +173,18 @@ public class DocumentServiceImpl implements DocumentService {
 		if(user == null) {
 			return false;
 		}
-		
-		// Holger, 10. Nov. 2014
-		// not needed at this stage, because a normal user should use and handle its own files!
-		// TODO: OR AM I WRONG
-		//return userService.UserIsPortalAdmin(user);
+		return userService.UserIsPortalAdmin(user);
+	}
+	
+	@Override
+	public boolean getUserAdministrationAllowed(String token) {
+		if(token == null) {
+			return false;
+		}
+		User user = userService.getRegisteredUser(token);
+		if(user == null) {
+			return false;
+		}
 		return true;
 	}
 

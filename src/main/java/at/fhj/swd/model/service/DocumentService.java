@@ -49,4 +49,6 @@ public interface DocumentService {
 	public boolean getAdministrationAllowed(String token);
 	
 	public User getUserByToken(String token);
+
+	boolean getUserAdministrationAllowed(String token);
 }
