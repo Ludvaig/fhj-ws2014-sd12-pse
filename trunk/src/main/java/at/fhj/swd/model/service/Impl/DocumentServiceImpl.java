@@ -11,9 +11,12 @@ import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
 
 import at.fhj.swd.model.entity.Document;
+import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.DocumentService;
+import at.fhj.swd.model.service.UserService;
 
 /** 
  * Service which handles all requests to documents. All documents
@@ -31,6 +34,9 @@ public class DocumentServiceImpl implements DocumentService {
 	private static String communityContext = "community";
 	
 	private static String userContext = "user";
+	
+	@Inject
+	private UserService userService;
 	
 	@Override
 	public List<Document> getGlobalDocuments() {
@@ -134,11 +140,13 @@ public class DocumentServiceImpl implements DocumentService {
 	}
 
 	private void deleteDocument(final String name, final String path) {
+		//TODO: do we have to check the admin rights?
 		this.ensurePath(path);
 		new File(this.concatPath(path, name)).delete();
 	}	
 	
 	private void uploadDocument(InputStream source, final String name, final String path) throws IOException {
+		//TODO: do we have to check the admin rights?
 		this.ensurePath(path);
 		
 		OutputStream out = new FileOutputStream(new File(path, name));
@@ -154,5 +162,17 @@ public class DocumentServiceImpl implements DocumentService {
 	
 	public InputStream downloadDocument(final String name, final String path) throws IOException {
 		return new FileInputStream(this.concatPath(path, name));
+	}
+
+	@Override
+	public boolean getAdministrationAllowed(String token) {
+		if(token == null) {
+			return false;
+		}
+		User user = userService.getRegisteredUser(token);
+		if(user == null) {
+			return false;
+		}
+		return userService.UserIsPortalAdmin(user);
 	}		
 }

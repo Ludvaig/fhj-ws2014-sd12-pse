@@ -133,11 +133,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@PermitAll()
 	public boolean UserIsAdmin(User user) {
 		return user.getUsername().endsWith("_a");
 	}
 
 	@Override
+	@PermitAll()
 	public boolean UserIsPortalAdmin(User user) {
 		return user.getUsername().endsWith("_pa");
 	}

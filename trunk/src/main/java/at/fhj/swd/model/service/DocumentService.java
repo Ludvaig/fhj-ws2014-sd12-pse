@@ -35,4 +35,12 @@ public interface DocumentService {
 	public InputStream downloadUserDocument(final String user, final String name) throws IOException;
 	
 	public void deleteUserDocument(final String user, final String name);
+	
+	/**
+	 * checks it user is logged in as portal administrator.
+	 * 
+	 * @param token
+	 * @return
+	 */
+	public boolean getAdministrationAllowed(String token);
 }
