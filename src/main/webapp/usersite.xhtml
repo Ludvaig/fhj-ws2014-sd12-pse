@@ -1,6 +1,6 @@
 <!--
 
-Author: Michael Spörk, John Palade
+Author: Michael Spörk, John Palade, Holger Reitner, Manuel Lamb
 
 Usersite
 
@@ -83,6 +83,24 @@ Usersite
 	</h:form>
 	
 	
+	<br/>
+		<!-- user document library view begin -->
+		<h:form>
+		    <p:dataList value="#{dtDocumentView.userDocuments}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
+		        <f:facet name="header">Documents</f:facet>
+				<h:commandLink value="#{document.name}">
+		            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedUserDocument}" />
+		            <p:fileDownload value="#{dtDocumentView.userDownload}" />
+		        </h:commandLink>
+		        
+				<h:commandLink rendered="#{dtDocumentView.administrationAllowed}" value="Delete" update="@form" styleClass="ui-icon ui-icon-closethick" style="float:right;margin-right:10px">
+		            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.deleteUserDocument}" />
+		        </h:commandLink>        
+		    </p:dataList>
+		
+			<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleUserFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
+		</h:form>
+		<!-- user document library view end -->
 	<br/>
 	
 	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
