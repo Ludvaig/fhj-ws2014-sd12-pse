@@ -12,6 +12,7 @@ import javax.faces.bean.ViewScoped;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.DefaultStreamedContent;
 
+import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.Document;
 import at.fhj.swd.model.service.DocumentService;
 
@@ -62,8 +63,8 @@ public class DocumentView implements Serializable {
     }
     
     public boolean getAdministrationAllowed() {
-    	// TODO: has to query specific user rights
-    	return true;
+    	// TODO: it's working but is it a good solution?
+    	return service.getAdministrationAllowed(CookieHelper.getAuthTokenValue());
     }
     
     public void setService(DocumentService service) {
