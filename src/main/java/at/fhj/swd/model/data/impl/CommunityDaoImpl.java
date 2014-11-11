@@ -34,4 +34,7 @@ public class CommunityDaoImpl implements CommunityDao {
 		return communities;
 	}
 
+	public Community getCommunityById(String id) {
+		return em.createQuery("FROM Community com WHERE com.id = :id", Community.class).setParameter("id", Long.valueOf(id)).getSingleResult();
+	}
 }

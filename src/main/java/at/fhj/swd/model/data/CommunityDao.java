@@ -8,4 +8,5 @@ import at.fhj.swd.model.entity.User;
 public interface CommunityDao {
 
 	public List<Community> getSubscribedCommunitiesForSearchTextOfCurrentUser(String searchFieldText, User user);
+	public Community getCommunityById(String id);
 }
