@@ -161,14 +161,6 @@ Acceptance:
  * Speichern der Daten in der Datenbank bei Bestätigung
  * Validierung der eingegebenen Daten
 
-*(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
-
-*Storypoints: 5*
-
-Acceptance:   
- * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
- * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
- * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
 
 --------------------------------------------------------------
@@ -262,6 +254,15 @@ Acceptance:
  * Möglichkeit zur Auswahl eines oder mehrerer Kontakte
  * Vor dem endgültigen Löschen wird eine positive Bestätigung des Users verlangt.
  * Ohne Bestätigung wird der Kontakt nicht gelöscht.
+
+*(US20) Als User möchte ich Statusinformationen (online/offline, intern/extern) meiner Freunde sehen.*
+
+*Storypoints: 5*
+
+Acceptance:   
+ * Der Online-Status wird mit einem grünen Punkt neben dem Namen markiert.
+ * Der Offline-Status wird mit einem roten Punkt neben dem Namen markiert.
+ * Der externe Mitarbeiter wird durch den Buchstaben "E" neben dem Namen gekennzeichnet.
 
 
 ==Ende Gruppe 2==
