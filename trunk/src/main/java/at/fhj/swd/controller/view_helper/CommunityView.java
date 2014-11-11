@@ -8,14 +8,11 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 
 import org.primefaces.event.SelectEvent;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
-import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.Community;
 import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
@@ -40,25 +37,13 @@ public class CommunityView implements Serializable{
 
 	@ManagedProperty("#{communityService}")
     private CommunityService service;
-	
-    @Inject
-	private UserDAO userDao;
     
     private User user;
     
     @PostConstruct
     public void init() {
-    	user = userDao.loadUserByToken(CookieHelper.getAuthTokenValue());
-    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(user);
-    	if(user == null){
-    		FacesContext fc = FacesContext.getCurrentInstance();
-    		ExternalContext ec = fc.getExternalContext();
-    		try {
-    			ec.redirect("login.jsf");
-    		} catch (IOException ex) {
-    		        
-    		}
-    	}
+    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(CookieHelper.getAuthTokenValue());
+    	service.ensureUserIsLoggedIn();
     }
     
     public List<Community> getSubscribedCommunities() {
@@ -94,7 +79,6 @@ public class CommunityView implements Serializable{
 		try {
 			FacesContext.getCurrentInstance().getExternalContext().redirect("topic.jsf?id=" + selectedCommunity.getId());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

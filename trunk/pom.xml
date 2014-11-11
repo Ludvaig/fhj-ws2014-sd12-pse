@@ -77,6 +77,13 @@
         a collection) of artifacts. We use this here so that we always get the correct 
         versions of artifacts. Here we use the jboss-javaee-7.0-with-hibernate stack. 
       -->
+      
+      <!-- LOG4J Logging Framework -->
+      <dependency>
+ 		<groupId>log4j</groupId>
+ 		<artifactId>log4j</artifactId>
+ 		<version>1.2.17</version>
+	  </dependency>
             
       <!-- Hybernate included BOM. -->      
       <dependency>

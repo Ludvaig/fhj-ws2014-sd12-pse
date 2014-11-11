@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import at.fhj.swd.model.entity.Topic;
+import at.fhj.swd.model.service.CommunityService;
 import at.fhj.swd.model.service.TopicService;
 
 @ManagedBean(name="dtTopicView")
@@ -23,12 +24,19 @@ public class TopicView implements Serializable{
 	@Inject
 	TopicService service;
 	
+	@Inject
+	CommunityService comService;
+	
+	private String communityName = null;
+	
 	@PostConstruct
 	public void init(){
 		Map<String,String> params = 
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap(); 
 		String id = params.get("id");
 		this.existingTopics = service.getExistingTopics(id, "");
+		
+		this.communityName = comService.getCommunityById(id).getName();
 	}
 
 	public List<Topic> getExistingTopics() {
@@ -52,4 +60,11 @@ public class TopicView implements Serializable{
 		return "topic";
 	}
 	
+	public void setCommunityName(String communityName) {
+		this.communityName = communityName;
+	}
+	
+	public String getCommunityName() {
+		return this.communityName;
+	}
 }
