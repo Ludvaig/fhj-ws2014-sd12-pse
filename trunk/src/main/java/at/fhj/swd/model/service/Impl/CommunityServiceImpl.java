@@ -26,7 +26,10 @@ public class CommunityServiceImpl implements CommunityService {
 	
 	@Override
 	public List<Community> getAllSubscribedCommunitiesForUser(User user) {
-		List<Community> communities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+		List<Community> communities = null;
+		if(user != null){
+			communities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+		}
 		return communities;
 	}
 	

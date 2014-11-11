@@ -11,13 +11,17 @@ Overview of all subscribed communities for one user
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:p="http://primefaces.org/ui"
-   template="/WEB-INF/templates/default.xhtml">
+   template="/template/main.xhtml">
    <ui:define name="content">
 	    <h:form id="communitySearch">
+	    	<h1>Communities</h1>
 			<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}" id="communities"
 				paginator="true" rows="10"
                	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+               	selectionMode="single" selection="#{dtCommunitiesView.selectedCommunity}" 
+               	rowKey="#{community.id}"
 			>
+			<p:ajax event="rowSelect" listener="#{dtCommunitiesView.onCommunitySelected}" ></p:ajax>
 			    <p:column headerText="Community Name">
 			        <h:outputText value="#{community.name}" />
 			    </p:column>

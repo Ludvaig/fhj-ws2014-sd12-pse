@@ -22,7 +22,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
 		User user = loadUserByName(username);
-
+		
 		// check password, if user is not null
 		if (user != null) {
 			if (user.getPassword().equals(password)) {

@@ -1,0 +1,35 @@
+<!--
+
+Author: G4
+
+Overview of all topic for one community
+
+-->
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   template="/template/main.xhtml">
+   <ui:define name="content">
+   <h:form id="topicSearch">
+   			<h1>Topic(s)</h1>
+			<p:dataTable var="topic" value="#{dtTopicView.existingTopics}" id="topic"
+				paginator="true" rows="10"
+               	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+               	selectionMode="single" selection="#{dtCommunitiesView.selectedCommunity}" 
+               	rowKey="#{topic.id}"
+			>
+				<p:ajax event="rowSelect" listener="#{dtCommunitiesView.onCommunitySelected}" ></p:ajax>
+			    <p:column headerText="Topic Name">
+			        <h:outputText value="#{topic.name}" />
+			    </p:column>
+			</p:dataTable>
+			<p:inputText value="#{dtTopicView.searchFieldText}" />
+			<p:commandLink id="ajax" update="topic" actionListener="#{dtTopicView.search}">
+		       <p:commandButton value="search" id="topicSearch"/>
+		   </p:commandLink>
+		</h:form>
+   </ui:define>
+</ui:composition>
