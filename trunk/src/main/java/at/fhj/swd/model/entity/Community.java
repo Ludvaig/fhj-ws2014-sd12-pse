@@ -27,6 +27,19 @@ public class Community {
 	private Long id = null;
 
 	private String name;
+	
+	
+	// Gruppe 3: brauchen das für US25
+	@Column(name= "visible")
+	private boolean visible = false;
+
+	public boolean isVisible() {
+		return visible;
+	}
+
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
 
 	@ManyToMany(mappedBy = "communities")
 	private Collection<User> users;
