@@ -13,7 +13,7 @@ import at.fhj.swd.model.entity.User;
 
 public interface CommunityService {
 
-	public List<Community> getAllSubscribedCommunitiesForUser(String token);
-	public List <Community> getSubscribedCommunitiesForUser(String searchfieldText, String token);
+	public List<Community> getAllSubscribedCommunitiesForUser(User user);
+	public List <Community> getSubscribedCommunitiesForUser(String searchfieldText, User user);
 	
 }

@@ -1,6 +1,5 @@
 package at.fhj.swd.model.data.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -18,9 +17,6 @@ public class CommunityDaoImpl implements CommunityDao {
 	@Override
 	public List<Community> getSubscribedCommunitiesForSearchTextOfCurrentUser(
 		String searchFieldText, User user) {
-		if(user == null) {
-			return new ArrayList<>();
-		}
 		
 		// Load limited Community-Entry from Database (Pagination @see: LazyCommunityImpl)
 		List<Community> communities = em
