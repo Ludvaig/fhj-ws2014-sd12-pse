@@ -7,9 +7,12 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
+import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.Community;
+import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
 
 /**
@@ -30,10 +33,16 @@ public class CommunityView implements Serializable {
 	
     @ManagedProperty("#{communityService}")
     private CommunityService service;
+	
+    @Inject
+	private UserDAO userDao;
+    
+    private User user;
     
     @PostConstruct
     public void init() {
-    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(CookieHelper.getAuthTokenValue());
+    	user = userDao.loadUserByToken(CookieHelper.getAuthTokenValue());
+    	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(user);
     }
     
     public List<Community> getSubscribedCommunities() {
@@ -53,7 +62,7 @@ public class CommunityView implements Serializable {
     }
     
     public String search() {
-    	subscribedCommunities = service.getSubscribedCommunitiesForUser(searchFieldText, CookieHelper.getAuthTokenValue());
+    	subscribedCommunities = service.getSubscribedCommunitiesForUser(searchFieldText, user);
     	return "communities";
     }
 }

@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.DefaultStreamedContent;
@@ -15,6 +16,7 @@ import org.primefaces.model.DefaultStreamedContent;
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.Document;
 import at.fhj.swd.model.service.DocumentService;
+import at.fhj.swd.model.service.UserService;
 
 
 /**
