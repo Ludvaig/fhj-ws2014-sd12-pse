@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -69,14 +70,21 @@ public class User {
 	@JoinTable(name = "USER_HAS_COMMUNITY", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "COMMUNITY_ID"))
 	private List<Community> communities;
 	
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="USER_NEWS",
+                joinColumns={@JoinColumn(name="USER_ID")},
+                inverseJoinColumns={@JoinColumn(name="NEWS_ID")})
+    private List<News> news = new ArrayList<News>();
+	
 	@ManyToMany(targetEntity = UserGroup.class, fetch = FetchType.LAZY)
-  @JoinTable(name = JOIN_TABLE_User_UserGroup,
+	@JoinTable(name = JOIN_TABLE_User_UserGroup,
              joinColumns = @JoinColumn(name=JOIN_TABLE_User_UserGroup_JoinColumn),
              inverseJoinColumns = @JoinColumn(name=JOIN_TABLE_User_UserGroup_InverseJoinColumn))
 	private Set<UserGroup> _userGroups;
 
 	public User() {
 		communities = new ArrayList<Community>();
+		//news = new ArrayList<News>();
 	}
 
 	public Long getId() {
@@ -139,6 +147,14 @@ public class User {
 	
 	public void setSubscribedCommunities(List<Community> communities){
 		this.communities = communities;
+	}
+	
+		public List<News> getNews() {
+		return news;
+	}
+	
+	public void setNews(List<News> news){
+		this.news = news;
 	}
 	
 	public String getToken() {
