@@ -14,22 +14,38 @@ Overview of all topic for one community
    template="/template/main.xhtml">
    <ui:define name="content">
    <h:form id="topicSearch">
-   			<h1>Topic(s)</h1>
+   			<h1>Topic(s) of Community: 
+   			<h:outputText value="#{dtTopicView.communityName}" />
+   			</h1>
 			<p:dataTable var="topic" value="#{dtTopicView.existingTopics}" id="topic"
 				paginator="true" rows="10"
                	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-               	selectionMode="single" selection="#{dtCommunitiesView.selectedCommunity}" 
-               	rowKey="#{topic.id}"
+               	
 			>
-				<p:ajax event="rowSelect" listener="#{dtCommunitiesView.onCommunitySelected}" ></p:ajax>
 			    <p:column headerText="Topic Name">
-			        <h:outputText value="#{topic.name}" />
+			        <h2><h:outputText value="#{topic.name}" /></h2>
+			        <p><h:outputText value="#{topic.text}" /></p>
 			    </p:column>
 			</p:dataTable>
 			<p:inputText value="#{dtTopicView.searchFieldText}" />
 			<p:commandLink id="ajax" update="topic" actionListener="#{dtTopicView.search}">
-		       <p:commandButton value="search" id="topicSearch"/>
+		       <p:commandButton value="search" id="topicSearch"/> 
 		   </p:commandLink>
+		   	<br/>
+		   	<div style="margin-top: 15px">
+		   	<label for="createFieldText"> new Topic name: </label>
+		   	<br/>
+		   	<p:inputText value="#{dtTopicView.createFieldText}" id="createFieldText"/>
+		   	<br/>
+		   	<label for="createTopicText"> new Topic text: </label>
+		   	<br/>
+		   	<p:inputTextarea  rows="10" cols="50" value="#{dtTopicView.createTopicText}" id="createTopicText"/>
+		   	<br/>
+			<p:commandLink id="ajax2" update="topic" actionListener="#{dtTopicView.createNewTopic}">
+		       <p:commandButton value="create" id="topicCreate"/>
+		   </p:commandLink>
+		     </div>
+		   
 		</h:form>
    </ui:define>
 </ui:composition>

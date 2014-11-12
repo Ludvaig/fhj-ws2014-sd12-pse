@@ -45,7 +45,8 @@ public class CommunityServiceImpl implements CommunityService {
 		return communities;
 	}
 	
-	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, User user){
+	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, String authUserToken){
+		user = userDao.loadUserByToken(authUserToken);
 		return communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
 	}
 

@@ -14,7 +14,6 @@ import org.primefaces.event.SelectEvent;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.Community;
-import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
 
 /**
@@ -38,7 +37,6 @@ public class CommunityView implements Serializable{
 	@ManagedProperty("#{communityService}")
     private CommunityService service;
     
-    private User user;
     
     @PostConstruct
     public void init() {
@@ -71,7 +69,7 @@ public class CommunityView implements Serializable{
 	}
     
     public String search() {
-    	subscribedCommunities = service.getSubscribedCommunitiesForUser(searchFieldText, user);
+    	subscribedCommunities = service.getSubscribedCommunitiesForUser(searchFieldText, CookieHelper.getAuthTokenValue());
     	return "communities";
     }
     
