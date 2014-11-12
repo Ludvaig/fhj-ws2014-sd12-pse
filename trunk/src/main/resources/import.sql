@@ -16,25 +16,21 @@
 --
 
 -- You can use this file to load seed data into the database using SQL statements
+
 insert into User (id, username, password, hashedPassword, email) values (1, 'Herbert', 'vergessen', '1', 'herbert_macht_dienstreisen@gmail.com')
 insert into User (id, username, password, hashedPassword, email) values (2, 'George', 'nicht_anwesend', '1', 'war_gerade_afk@gmail.com')
 
-insert into Community (id, name) values (1, 'George')
-insert into Community (id, name) values (2, 'Der Rest')
-insert into Community (id, name) values (3, 'Knebelmaster')
-insert into Community (id, name) values (4, 'Jboss is the Best')
-insert into Community (id, name) values (5, 'George 1')
-insert into Community (id, name) values (6, 'Der Rest 1')
-insert into Community (id, name) values (7, 'Knebelmaster 1')
-insert into Community (id, name) values (8, 'Jboss is the Best 1')
-insert into Community (id, name) values (9, 'George 2')
-insert into Community (id, name) values (10, 'Der Rest 2')
-insert into Community (id, name) values (11, 'Knebelmaster 2')
-insert into Community (id, name) values (12, 'Jboss is the Best 2')
-
-insert into Topic(id, name, COMMUNITY_ID) values(1, 'Topic 1', 1)
-insert into Topic(id, name, COMMUNITY_ID) values(2, 'Topic 2', 1)
-insert into Topic(id, name, COMMUNITY_ID) values(3, 'Topic 3', 1)
+insert into Community (id, name, visible) values (1, 'George', true)
+insert into Community (id, name, visible) values (2, 'Der Rest', true)
+insert into Community (id, name, visible) values (4, 'Jboss is the Best', true)
+insert into Community (id, name, visible) values (5, 'George 1', true)
+insert into Community (id, name, visible) values (6, 'Der Rest 1', true)
+insert into Community (id, name, visible) values (7, 'Knebelmaster 1', true)
+insert into Community (id, name, visible) values (8, 'Jboss is the Best 1', true)
+insert into Community (id, name, visible) values (9, 'George 2', true)
+insert into Community (id, name, visible) values (10, 'Der Rest 2', true)
+insert into Community (id, name, visible) values (11, 'Knebelmaster 2', true)
+insert into Community (id, name, visible) values (12, 'Jboss is the Best 2', true)
 
 insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 1)
 insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 2)

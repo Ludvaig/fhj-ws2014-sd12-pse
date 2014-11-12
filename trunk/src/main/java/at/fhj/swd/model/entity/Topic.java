@@ -1,6 +1,7 @@
 package at.fhj.swd.model.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,6 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.TableGenerator;
+
+import at.fhj.swd.model.entity.helper.TableGeneratorHelper;
 
 /**
  * DB-Entity for Topics.
@@ -22,19 +27,37 @@ import javax.persistence.OneToMany;
 @Entity
 public class Topic {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, nullable = false)
-	private Long id = null;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.TABLE)
+//	@Column(name = "id", updatable = false, nullable = false)
+//	private Long id = null;
 
+	public static final String TABLE_GEN_NAME = "topicTableGen";
+	public static final String PK_COL_VALUE = "topicPk";
+	
+	
+	@Id
+	@TableGenerator(name = TABLE_GEN_NAME,
+   								table = TableGeneratorHelper.TABLE_NAME,
+   								pkColumnName = TableGeneratorHelper.PK_COL_NAME,
+   								pkColumnValue = PK_COL_VALUE,
+ 									valueColumnName = TableGeneratorHelper.VALUE_COL_NAME,
+									allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_GEN_NAME)
+	//@Column(name = "id", updatable = false, nullable = false)
+	private Long id = null;
+	
+	@Column
+	private Date date;
+	
 	@Column
 	private String name;
 
 	@Column
 	private String text;
 
-	@Column
-	private Long communityId;
+//	@Column
+//	private Long communityId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "COMMUNITY_ID")
@@ -62,15 +85,22 @@ public class Topic {
 	public void setText(String newText) {
 		this.text = newText;
 	}
-
-	public Long getCommunityId() {
-		return communityId;
-	}
-
-	public void setCommunityId(Long newCommunityId) {
-		this.communityId = newCommunityId;
-	}
+//
+//	public Long getCommunityId() {
+//		return communityId;
+//	}
+//
+//	public void setCommunityId(Long newCommunityId) {
+//		this.communityId = newCommunityId;
+//	}
 	
+	
+	public Community getCommunity() {
+	return community;
+	}
+	public void setCommunity(Community community) {
+	this.community = community;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -79,6 +109,10 @@ public class Topic {
 		this.id = id;
 	}
 
+	@PrePersist
+	public void onCreate(){
+		this.date = new Date();
+	}
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -108,8 +142,8 @@ public class Topic {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.getClass().getName()).append(
 				String.format(
-						": Id='%s', name='%s', text='%s', communityId='%s'!",
-						id, name, text, communityId));
+						": Id='%s', name='%s', text='%s' !",
+						id, name, text));
 		return sb.toString();
 	}
 }
