@@ -56,9 +56,6 @@ public class Topic {
 	@Column
 	private String text;
 
-//	@Column
-//	private Long communityId;
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "COMMUNITY_ID")
 	private Community community;
@@ -85,15 +82,6 @@ public class Topic {
 	public void setText(String newText) {
 		this.text = newText;
 	}
-//
-//	public Long getCommunityId() {
-//		return communityId;
-//	}
-//
-//	public void setCommunityId(Long newCommunityId) {
-//		this.communityId = newCommunityId;
-//	}
-	
 	
 	public Community getCommunity() {
 	return community;

@@ -81,9 +81,8 @@ public class TopicView implements Serializable{
 		this.createFieldText = createFieldText;
 	}
 	
-	public String search(){
+	public void search(){
 		this.existingTopics = service.getExistingTopics(communityId, searchFieldText);
-		return "topic";
 	}
 	
 	public void setCommunityName(String communityName) {
