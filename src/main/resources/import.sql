@@ -1,36 +1,58 @@
 --
--- JBoss, Home of Professional Open Source
--- Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
--- contributors by the @authors tag. See the copyright.txt in the
--- distribution for a full listing of individual contributors.
---
--- Licensed under the Apache License, Version 2.0 (the "License");
--- you may not use this file except in compliance with the License.
--- You may obtain a copy of the License at
--- http://www.apache.org/licenses/LICENSE-2.0
--- Unless required by applicable law or agreed to in writing, software
--- distributed under the License is distributed on an "AS IS" BASIS,
--- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
--- See the License for the specific language governing permissions and
--- limitations under the License.
---
-
+-- Persistence start up data import sql file.
 -- You can use this file to load seed data into the database using SQL statements
+-- @author SWD12
+--
 
-insert into User (id, username, password, hashedPassword, email) values (1, 'Herbert', 'vergessen', '1', 'herbert_macht_dienstreisen@gmail.com')
-insert into User (id, username, password, hashedPassword, email) values (2, 'George', 'nicht_anwesend', '1', 'war_gerade_afk@gmail.com')
+-- TODO: import.sql has never been executed! Added drop and create table statements to have a clean
+-- state on initializing. But errors occur in combination with hybernate persistance creation. Maybe
+-- any database freak can help me out here. Commented out all my changes to not disturb any body!
 
-insert into Community (id, name, visible) values (1, 'George', true)
-insert into Community (id, name, visible) values (2, 'Der Rest', true)
-insert into Community (id, name, visible) values (4, 'Jboss is the Best', true)
-insert into Community (id, name, visible) values (5, 'George 1', true)
-insert into Community (id, name, visible) values (6, 'Der Rest 1', true)
-insert into Community (id, name, visible) values (7, 'Knebelmaster 1', true)
-insert into Community (id, name, visible) values (8, 'Jboss is the Best 1', true)
-insert into Community (id, name, visible) values (9, 'George 2', true)
-insert into Community (id, name, visible) values (10, 'Der Rest 2', true)
-insert into Community (id, name, visible) values (11, 'Knebelmaster 2', true)
-insert into Community (id, name, visible) values (12, 'Jboss is the Best 2', true)
+--drop table if exists USER;
+
+--create table USER 
+--(
+--	id BIGINT(19) NOT NULL,	
+--	username VARCHAR(255),
+--	password VARCHAR(256) NOT NULL,
+--	hashedPassword VARCHAR(255),
+--	email VARCHAR(255),
+--	telephone VARCHAR(255),
+--	token VARCHAR(255) 
+--);
+
+
+insert into USER (id, username, password, hashedPassword, email) values (1, 'Herbert', 'vergessen', '1', 'herbert_macht_dienstreisen@gmail.com')
+insert into USER (id, username, password, hashedPassword, email) values (2, 'George', 'nicht_anwesend', '1', 'war_gerade_afk@gmail.com')
+
+--drop table if exists COMMUNITY;
+
+--create table COMMUNITY 
+--(
+--	id BIGINT(19) NOT NULL,	
+--	name VARCHAR(255),
+--	visible BOOLEAN(1)
+--);
+
+insert into COMMUNITY (id, name, visible) values (1, 'George', true)
+insert into COMMUNITY (id, name, visible) values (2, 'Der Rest', true)
+insert into COMMUNITY (id, name, visible) values (4, 'Jboss is the Best', true)
+insert into COMMUNITY (id, name, visible) values (5, 'George 1', true)
+insert into COMMUNITY (id, name, visible) values (6, 'Der Rest 1', true)
+insert into COMMUNITY (id, name, visible) values (7, 'Knebelmaster 1', true)
+insert into COMMUNITY (id, name, visible) values (8, 'Jboss is the Best 1', true)
+insert into COMMUNITY (id, name, visible) values (9, 'George 2', true)
+insert into COMMUNITY (id, name, visible) values (10, 'Der Rest 2', true)
+insert into COMMUNITY (id, name, visible) values (11, 'Knebelmaster 2', true)
+insert into COMMUNITY (id, name, visible) values (12, 'Jboss is the Best 2', true)
+
+--drop table if exists USER_HAS_COMMUNITY;
+
+--create table USER_HAS_COMMUNITY 
+--(
+--	user_id BIGINT(19) NOT NULL,	
+--	community_id BIGINT(19) NOT NULL
+--);
 
 insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 1)
 insert into USER_HAS_COMMUNITY (user_id, community_id) values (1, 2)
