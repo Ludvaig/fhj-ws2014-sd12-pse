@@ -1,12 +1,12 @@
 --
 -- Persistence start up data import sql file.
--- You can use this file to load seed data into the database using SQL statements
+-- You can use this file to load seed data into the database using SQL statements. 
+-- Set hibernate.hbm2ddl.auto = create-drop in persistence.xml configuration to run this statements.
 -- @author SWD12
 --
 
--- TODO: import.sql has never been executed! Added drop and create table statements to have a clean
--- state on initializing. But errors occur in combination with hybernate persistance creation. Maybe
--- any database freak can help me out here. Commented out all my changes to not disturb any body!
+-- TODO: Hybernate errors occur while application deploy, check how they can be solved. Commented out 
+-- all my changes and tries to not disturb any body! Anyway its not sure this file is the reason.
 
 --drop table if exists USER;
 
