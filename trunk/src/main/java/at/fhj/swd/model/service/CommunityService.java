@@ -16,4 +16,5 @@ public interface CommunityService {
 	public List <Community> getSubscribedCommunitiesForUser(String searchfieldText, String authUserToken);
 	public void ensureUserIsLoggedIn();
 	public Community getCommunityById(String id);
+	void createCommunity(Long id, String name, boolean visible);
 }

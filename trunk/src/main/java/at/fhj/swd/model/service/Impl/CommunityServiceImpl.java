@@ -78,7 +78,16 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public List<Community> getAllCommunities() {
-		// TODO: Group3
-		return null;
+		return this.getAllCommunities();
+	}
+
+	@Override
+	public void createCommunity(Long id, String name, boolean visible) {
+		Community community = new Community();
+		community.setId(id);
+		community.setName(name);
+		community.setVisible(visible);
+		communityDao.createCommunity(community);
+		
 	}
 }
