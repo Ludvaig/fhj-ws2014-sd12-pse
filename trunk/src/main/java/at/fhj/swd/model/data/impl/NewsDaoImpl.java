@@ -1,10 +1,13 @@
 package at.fhj.swd.model.data.impl;
 
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+
 import at.fhj.swd.model.data.NewsDao;
 import at.fhj.swd.model.entity.News;
+import at.fhj.swd.model.entity.Topic;
 
 public class NewsDaoImpl implements NewsDao {
 
@@ -29,5 +32,10 @@ public class NewsDaoImpl implements NewsDao {
 	@Override
 	public News getNewsById(String id) {
 		return em.createQuery("FROM News news WHERE news.id = :id", News.class).setParameter("id", Long.valueOf(id)).getSingleResult();
+	}
+	
+	@Override
+	public void createNewNews(News newNews) {
+		em.persist(newNews);
 	}
 }
