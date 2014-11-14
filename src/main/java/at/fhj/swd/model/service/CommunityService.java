@@ -11,7 +11,7 @@ import at.fhj.swd.model.entity.Community;
  * */
 
 public interface CommunityService {
-
+	public List<Community> getAllCommunities();
 	public List<Community> getAllSubscribedCommunitiesForUser(String authUserToken);
 	public List <Community> getSubscribedCommunitiesForUser(String searchfieldText, String authUserToken);
 	public void ensureUserIsLoggedIn();
