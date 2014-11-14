@@ -1,16 +1,29 @@
 package at.fhj.swd.model.services;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.Impl.UserServiceImpl;
 import junit.framework.TestCase;
 
 public class UserServiceTest extends TestCase {
+	
+	UserServiceImpl UserService;
+	User user;
+	
+	@Before
+	public void setUp() {
+		
+		UserService = new UserServiceImpl();
+		
+		user = new User();
+	}
 
+	@Test
 	public void testUserIsAdmin() {
 		
-		UserServiceImpl UserService = new UserServiceImpl();
-		
-		User user = new User();
+
 		user.setUsername("test");
 		
 		assertEquals(false, UserService.UserIsAdmin(user));
@@ -21,12 +34,9 @@ public class UserServiceTest extends TestCase {
 		assertEquals(false, UserService.UserIsPortalAdmin(user));
 	}
 	
-
+	@Test
 	public void testUserIsPortalAdmin() {
-		
-		UserServiceImpl UserService = new UserServiceImpl();
-		
-		User user = new User();
+	
 		user.setUsername("test");
 		
 		assertEquals(false, UserService.UserIsPortalAdmin(user));

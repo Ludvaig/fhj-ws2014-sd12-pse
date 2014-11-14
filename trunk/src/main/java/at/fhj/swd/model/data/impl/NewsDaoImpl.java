@@ -1,5 +1,11 @@
 package at.fhj.swd.model.data.impl;
 
+/**
+ * Gruppe 3:
+ * 
+ * Update Julia: UpdateUser-Methode
+ */
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -37,5 +43,13 @@ public class NewsDaoImpl implements NewsDao {
 	@Override
 	public void createNewNews(News newNews) {
 		em.persist(newNews);
+	}
+
+	@Override
+	public News updateNews(News news) {
+		if (news != null)
+			return em.merge(news);
+		else
+			return null;		
 	}
 }

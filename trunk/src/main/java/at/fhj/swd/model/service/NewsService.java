@@ -5,6 +5,7 @@
 package at.fhj.swd.model.service;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import at.fhj.swd.model.entity.News;
@@ -13,13 +14,14 @@ import at.fhj.swd.model.entity.User;
 public interface NewsService {
 
 		public List<News> getAllNews();
+		public List <News> getNewsbyID(Long id);
 		
 		//News posten, löschen und updaten. Titel ist unique!	
-		public void postNews(final String title, final String content) throws IOException;
 
-		public void deleteNews(final String title);
+		void postNews(Long id, String title, String content, Date startdate,
+				Boolean visible) throws IOException;
 		
-		public void updateNews(final String name) throws IOException;
+		News updateNews(News news);
 		
 		
 		/**
@@ -28,10 +30,14 @@ public interface NewsService {
 		 * @param token
 		 * @return
 		 */
-		public boolean getAdministrationAllowed(String token);
+		boolean UserIsAdmin(User user);
 		
-		public User getUserByToken(String token);
+		/**
+		 * check if User is Portaladmin
+		 * */
+		boolean UserIsPortalAdmin(User user);
 
-		boolean getUserAdministrationAllowed(String token);
+
+		
 
 }
