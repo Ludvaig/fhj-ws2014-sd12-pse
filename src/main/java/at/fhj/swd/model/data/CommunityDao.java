@@ -9,4 +9,6 @@ public interface CommunityDao {
 
 	public List<Community> getSubscribedCommunitiesForSearchTextOfCurrentUser(String searchFieldText, User user);
 	public Community getCommunityById(String id);
+	void createCommunity(Community community);
+	public List<Community> getAllCommunities();
 }
