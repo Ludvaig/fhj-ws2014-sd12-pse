@@ -4,12 +4,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.Test;
+
 import at.fhj.swd.model.data.impl.UserDAOImpl;
 import at.fhj.swd.model.entity.User;
 import junit.framework.TestCase;
 
 public class UserDAOTest extends TestCase {
-
+	
+	
+	@Test
 	public void testInsertNewUser() {
 		
 		assertEquals(true, true);
