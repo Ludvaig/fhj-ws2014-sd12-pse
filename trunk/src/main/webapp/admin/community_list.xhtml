@@ -18,30 +18,34 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<button><a href="/admin/community_create.jsf">#{locale.adminCommunitiesCreateLabel}</a></button>
-		
+		<h:button event="click" listener="#{dtCommunitiesAdminView.onCreateCommunity}">#{locale.adminCommunitiesCreateLabel}</h:button>
+
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
-		<h:dataTable value="#{admin.Comunities}" var="c">
+		<h:dataTable value="#{dtCommunitiesAdminView.communities}" var="c">
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header">#{locale.adminComunitiesComunityNameLabel}</f:facet>
    				<!-- row record -->
-   				#{c.getName()}
+   				#{c.name}
 			</h:column>
 			
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header">#{locale.adminComunitiesComunityStateLabel}</f:facet>
    				<!-- row record -->
-   				#{c.releasedText} <!-- TODO: -->
+   				#{c.visible} <!-- TODO: -->
 			</h:column>
 			
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header"></f:facet>
    				<!-- row record -->
-   				<button>#{locale.adminComunitiesComunityReleaseLabel}</button><!-- TODO: -->
-   				<button>#{locale.adminCommunitiesDeleteCommunityLabel}</button><!-- TODO: -->
+   				<h:commandLink value="#{locale.adminComunitiesComunityReleaseLabel}" update="@form">
+		            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.deleteCommunity}" />
+		        </h:commandLink>
+   				<h:commandLink value="#{locale.adminCommunitiesDeleteCommunityLabel}" update="@form">
+		            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
+		        </h:commandLink>
 			</h:column>
 		</h:dataTable>
 	</ui:define>

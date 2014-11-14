@@ -75,4 +75,10 @@ public class CommunityServiceImpl implements CommunityService {
 			return null; // This can never happen because we redirect the user to the communities-side!
 		}
 	}
+
+	@Override
+	public List<Community> getAllCommunities() {
+		// TODO: Group3
+		return null;
+	}
 }
