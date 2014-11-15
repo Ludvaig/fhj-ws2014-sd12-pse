@@ -17,4 +17,5 @@ public interface CommunityService {
 	public void ensureUserIsLoggedIn();
 	public Community getCommunityById(String id);
 	void createCommunity(Long id, String name, boolean visible);
+	void releaseCommunity(Long id, boolean release);
 }

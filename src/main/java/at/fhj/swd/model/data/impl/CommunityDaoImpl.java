@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 
 import at.fhj.swd.model.data.CommunityDao;
 import at.fhj.swd.model.entity.Community;
-import at.fhj.swd.model.entity.News;
 import at.fhj.swd.model.entity.User;
 
 public class CommunityDaoImpl implements CommunityDao {
@@ -47,15 +46,25 @@ public class CommunityDaoImpl implements CommunityDao {
 	@Override
 	public List<Community> getAllCommunities() {
 			
-			// Load all visible news from database (Pagination @see: LazyCommunityImpl)
+			// Load all news from database (Pagination @see: LazyCommunityImpl)
 			List<Community> communities = em
 					.createQuery(
-							"SELECT community FROM Community com"
-							+ " WHERE com.visible = true ",
+							"SELECT com FROM Community com",
 							Community.class)
 								.getResultList();
 			
 			return communities;
 		
+	}
+
+	@Override
+	public Community update(Community community) {
+		try {
+			em.persist(community);
+			return community;
+		} catch(Exception e) {
+			// should be DAOException in future releases.
+			throw e;
+		}
 	}
 }

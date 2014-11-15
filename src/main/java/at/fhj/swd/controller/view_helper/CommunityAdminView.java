@@ -5,8 +5,11 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.transaction.NotSupportedException;
 
 import org.primefaces.event.SelectEvent;
 
@@ -27,41 +30,50 @@ public class CommunityAdminView implements Serializable{
 
 	private List<Community> communities = null;
 	
-	@ManagedProperty("#{communityService}")
-    private CommunityService service;
-    
+	@Inject
+    private CommunityService communityService;
+	
+	@Inject
+	private FacesContext facesContext;
+	
+	private String communityName;
     
     @PostConstruct
     public void init() {
-//    	communities = service.getAllCommunities();
-//    	service.ensureUserIsLoggedIn();
+    	communities = communityService.getAllCommunities();
+    	//communityService.ensureUserIsLoggedIn();
     }
     
     public List<Community> getCommunities() {
     	return communities;
     }
     
-    public void setService(CommunityService service) {
-    	this.service = service;
-    }
-    
-    public void setDeleteCommunity(int id) {
-    	// TODO: Group3
-    	// TODO: Delete community with id
+    public void setDeleteCommunity(int id) throws NotSupportedException {
+    	throw new NotSupportedException();
     }
     
     public void setReleaseCommunity(int id) {
-    	// TODO: Group3
-    	// TODO: Release community with id
+    	try {
+    		Long communityId = new Long(id);
+    		communityService.releaseCommunity(communityId, true);
+    		
+    		// redirection.
+    		ExternalContext ec = facesContext.getExternalContext();
+    	    ec.redirect(ec.getRequestContextPath() + "/fhj-ws2014-sd12-pse/admin/community_list.jsf");
+    	} catch(Exception e) {
+    		
+    	}
     }
     
     public void setCreateCommunity(String name) {
-    	// TODO: Group3
-    	// TODO: Create community
+    	this.communityName = name;
     }
     
     public void onCreateCommunity(SelectEvent object) {
-		// TODO: Group3
-    	// TODO: Navigate to create view
+    	try {
+    		communityService.createCommunity(null, communityName, false);
+    	} catch(Exception e) {
+    		
+    	}
     }
 }
