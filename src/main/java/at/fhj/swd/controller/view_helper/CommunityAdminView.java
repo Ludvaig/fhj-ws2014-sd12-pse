@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
@@ -61,7 +62,8 @@ public class CommunityAdminView implements Serializable{
     		ExternalContext ec = facesContext.getExternalContext();
     	    ec.redirect(ec.getRequestContextPath() + "/fhj-ws2014-sd12-pse/admin/community_list.jsf");
     	} catch(Exception e) {
-    		
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to release community", null));    		
     	}
     }
     
@@ -72,8 +74,13 @@ public class CommunityAdminView implements Serializable{
     public void onCreateCommunity(SelectEvent object) {
     	try {
     		communityService.createCommunity(null, communityName, false);
-    	} catch(Exception e) {
     		
+    		// redirection.
+    		ExternalContext ec = facesContext.getExternalContext();
+    	    ec.redirect(ec.getRequestContextPath() + "/fhj-ws2014-sd12-pse/admin/community_list.jsf");
+    	} catch(Exception e) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
     	}
     }
 }

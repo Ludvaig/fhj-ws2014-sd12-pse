@@ -13,7 +13,6 @@ import javax.persistence.EntityManager;
 
 import at.fhj.swd.model.data.NewsDao;
 import at.fhj.swd.model.entity.News;
-import at.fhj.swd.model.entity.Topic;
 
 public class NewsDaoImpl implements NewsDao {
 
