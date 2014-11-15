@@ -18,8 +18,10 @@
 	</ui:define>
 
 	<ui:define name="content">
-		#{locale.adminNewsTitelLabel}: <h:inputText value="" />
-		#{locale.adminNewsContentLabel}: <h:inputTextarea value="" />
-		<button>#{locale.adminNewsCreateLabel}</button><!-- TODO: -->
+	<h:form>
+		#{locale.adminNewsTitelLabel}: <h:inputText value="#{dtNewsAdminView.createTitle}" /><br />
+		#{locale.adminNewsContentLabel}: <h:inputTextarea value="#{dtNewsAdminView.createContent}" /> <br />
+		<h:commandButton action="#{dtNewsAdminView.create()}" value="#{locale.adminNewsSaveLabel}"></h:commandButton><!-- TODO: -->
+	</h:form>
 	</ui:define>
 </ui:composition>

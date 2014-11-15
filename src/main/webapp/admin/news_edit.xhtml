@@ -16,10 +16,12 @@
 
 	<ui:define name="headMetaData">
 	</ui:define>
-
+	
 	<ui:define name="content">
-		#{locale.adminNewsTitelLabel}: <h:inputText value="admin.selectedNews.Title" />
-		#{locale.adminNewsContentLabel}: <h:inputTextarea value="admin.selectedNews.Content" />
-		<button>#{locale.adminNewsSaveLabel}</button><!-- TODO: -->
+	<h:form>
+		#{locale.adminNewsTitelLabel}: <h:inputText value="#{dtNewsAdminView.selectedNews.title}" />
+		#{locale.adminNewsContentLabel}: <h:inputTextarea value="#{dtNewsAdminView.selectedNews.content}" />
+		<h:commandButton action="#{dtNewsAdminView.save()}">#{locale.adminNewsSaveLabel}</h:commandButton><!-- TODO: -->
+	</h:form>
 	</ui:define>
 </ui:composition>
