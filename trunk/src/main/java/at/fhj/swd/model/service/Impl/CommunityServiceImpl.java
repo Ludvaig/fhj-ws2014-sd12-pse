@@ -78,16 +78,26 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public List<Community> getAllCommunities() {
-		return this.getAllCommunities();
+		return communityDao.getAllCommunities();
 	}
 
 	@Override
 	public void createCommunity(Long id, String name, boolean visible) {
 		Community community = new Community();
-		community.setId(id);
+		//community.setId(id);
 		community.setName(name);
 		community.setVisible(visible);
 		communityDao.createCommunity(community);
 		
+	}
+
+	@Override
+	public void releaseCommunity(Long id, boolean release) {
+		if(id == null)
+			throw new RuntimeException("id is null");
+		
+		Community community = communityDao.getCommunityById(id.toString());
+		community.setVisible(release);
+		communityDao.update(community);
 	}
 }

@@ -33,12 +33,6 @@ public class AdminSiteController implements Serializable {
 	@Inject
 	private UserService userService;
 	
-	@Inject
-	private NewsService newsService;
-	
-	@Inject
-	private CommunityService communityService;
-	
 	
 	/**
 	 * Properties
@@ -51,27 +45,14 @@ public class AdminSiteController implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	private String communityName;
-	
-	public String getCommunityName() {
-		return communityName;
-	}
-
-	public void setCommunityName(String communityName) {
-		this.communityName = communityName;
-	}
-	
+	}	
 	
 	/**
 	 * Bean interaction methods
 	 */
 	@PostConstruct
 	public void initController() {
-		
-		prepare();
-		
+				
 		String authToken = CookieHelper.getAuthTokenValue();
 		System.out.println("authToken <" + authToken + ">");
 		User user = userService.getRegisteredUser(authToken);
@@ -86,24 +67,5 @@ public class AdminSiteController implements Serializable {
 				setUsername(user.getUsername());
 			}
 		}
-	}
-	
-	/**
-	 * Controller member methods
-	 */
-	private void prepare() {
-		setCommunityName(null);
-	}
-	
-	public void createCommunity() {
-		try {
-		
-			
-			prepare();
-		}
-		catch(Exception e) {
-			
-		}
-	}
-	
+	}	
 }

@@ -11,4 +11,5 @@ public interface CommunityDao {
 	public Community getCommunityById(String id);
 	void createCommunity(Community community);
 	public List<Community> getAllCommunities();
+    Community update(Community community);
 }
