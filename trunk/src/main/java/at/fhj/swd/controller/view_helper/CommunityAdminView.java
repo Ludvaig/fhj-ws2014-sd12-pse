@@ -33,8 +33,8 @@ public class CommunityAdminView implements Serializable{
     
     @PostConstruct
     public void init() {
-    	communities = service.getAllCommunities();
-    	service.ensureUserIsLoggedIn();
+//    	communities = service.getAllCommunities();
+//    	service.ensureUserIsLoggedIn();
     }
     
     public List<Community> getCommunities() {
