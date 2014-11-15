@@ -18,10 +18,10 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<button><a href="/admin/news_create.jsf">#{locale.adminCommunitiesCreateLabel}</a></button>
-		
+		<button><a href="/fhj-ws2014-sd12-pse/admin/news_create.jsf">#{locale.adminCommunitiesCreateLabel}</a></button>
+
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
-		<h:dataTable value="#{admin.News}" var="n">
+		<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-hover">
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header">#{locale.adminNewsTitelLabel}</f:facet>
@@ -29,20 +29,15 @@
    				#{n.title}
 			</h:column>
 			
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header">#{locale.adminNewsValidTimeLabel}</f:facet>
-   				<!-- row record -->
-   				#{n.validTime} <!-- TODO: -->
-			</h:column>
 			
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header"></f:facet>
    				<!-- row record -->
-   				<button><a href="/admin/news_edit.jsf">#{locale.adminNewsEditLabel}</a></button>
-   				<button>#{locale.adminNewsDeleteLabel}</button><!-- TODO: -->
+   				<button onclick="#{dtNewsAdminView.selectedNews(n.id)}"><a href="/fhj-ws2014-sd12-pse/admin/news_edit.jsf">#{locale.adminNewsEditLabel}</a></button>
 			</h:column>
+			
+			
 		</h:dataTable>
 	</ui:define>
 </ui:composition>
