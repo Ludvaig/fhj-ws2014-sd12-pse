@@ -24,7 +24,8 @@
 
 insert into USER (id, username, password, hashedPassword, email) values (1, 'Herbert', 'vergessen', '1', 'herbert_macht_dienstreisen@gmail.com')
 insert into USER (id, username, password, hashedPassword, email) values (2, 'George', 'nicht_anwesend', '1', 'war_gerade_afk@gmail.com')
-
+insert into USER (id, username, password, hashedPassword, email) values (3, 'admin_a', '1', '1', 'some@mail.com')
+insert into USER (id, username, password, hashedPassword, email) values (4, 'padmin_pa', '1', '1', 'some@mail.com')
 --drop table if exists COMMUNITY;
 
 --create table COMMUNITY 
