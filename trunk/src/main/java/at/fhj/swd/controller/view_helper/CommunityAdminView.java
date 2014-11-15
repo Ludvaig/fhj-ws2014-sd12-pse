@@ -71,7 +71,8 @@ public class CommunityAdminView implements Serializable{
     	this.communityName = name;
     }
     
-    public void onCreateCommunity(SelectEvent object) {
+    public void onCreateCommunity() {
+    	System.out.println("onCreateCommunity");
     	try {
     		communityService.createCommunity(null, communityName, false);
     		
