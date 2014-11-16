@@ -185,12 +185,11 @@ Acceptance:
  * Neue Communities sollen nicht freigeschaltet sein
  * Die Freischaltung soll durch den Admin wiederrufbar sein.
 
-*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich einen News-Eintrages editieren und dessen Gültigkeitszeitraum bestimmen können.*
+*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich einen News-Eintrages editieren können.*
 
 *Storypoints: 8*
 
 Acceptance:
- * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar. --> US5 Gr.1
  * News Einträge sollen durch den Administrator bearbeitbar sein.
 
 ===Verwaltungsbereich (Administratoren)===
