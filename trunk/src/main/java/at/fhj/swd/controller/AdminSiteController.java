@@ -60,11 +60,16 @@ public class AdminSiteController implements Serializable {
 				// user is not administrator.
 				System.out.println("user is not admin");
 				facesContext.addMessage(null, 
-						new FacesMessage(FacesMessage.SEVERITY_INFO, "Not Allowed", "Your are no administrator"));
+						new FacesMessage(FacesMessage.SEVERITY_INFO, "You are not signed in as Administrator", "Failure"));
 			} else {
-				System.out.println("setUsername <" + user.getUsername() + ">");
+				System.out.println("adminSiteController allowed for <" + user.getUsername() + ">");
 				setUsername(user.getUsername());
 			}
+		} else {
+			// user is not signed in.
+			System.out.println("user is not logged in");
+			facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Please sign in as Administrator", "Failure"));
 		}
 	}	
 }

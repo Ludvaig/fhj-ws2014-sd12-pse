@@ -9,20 +9,17 @@ import java.util.Date;
 import java.util.List;
 
 import at.fhj.swd.model.entity.News;
-import at.fhj.swd.model.entity.User;
 
 public interface NewsService {
 
-		public List<News> getAllNews();
-		public List <News> getNewsbyID(Long id);
+		List<News> getAllNews();
+		
+		News findNewsById(long id);
 		
 		//News posten, löschen und updaten. Titel ist unique!	
-
-		void postNews(Long id, String title, String content, Date startdate,
-				Boolean visible) throws IOException;
+		void postNews(Long id, String title, String content, Date startdate, Boolean visible) throws IOException;
 		
-		News updateNews(News news);
-		
+		News updateNews(News news);		
 		
 		/**
 		 * checks if user is logged in.
@@ -30,14 +27,11 @@ public interface NewsService {
 		 * @param token
 		 * @return
 		 */
-		boolean UserIsAdmin(User user);
+		boolean ensureUserIsAdmin();
 		
 		/**
 		 * check if User is Portaladmin
 		 * */
-		boolean UserIsPortalAdmin(User user);
-
-
-		
+		boolean ensureUserIsPortalAdmin();		
 
 }

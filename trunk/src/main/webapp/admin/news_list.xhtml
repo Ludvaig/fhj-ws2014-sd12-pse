@@ -24,23 +24,25 @@
 		<button type="button" class="btn btn-primary" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/news_create.jsf'">News anlegen</button>
 
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
-		<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-striped news-table">
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header">#{locale.adminNewsTitelLabel}</f:facet>
-   				<!-- row record -->
-   				#{n.title}
-			</h:column>
-			
-			
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header"></f:facet>
-   				<!-- row record -->
-   				<button onclick="#{dtNewsAdminView.selectedNews(n.id)}"><a href="/fhj-ws2014-sd12-pse/admin/news_edit.jsf">#{locale.adminNewsEditLabel}</a></button>
-			</h:column>
-			
-			
-		</h:dataTable>
+		<h:form>
+			<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-striped">
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">#{locale.adminNewsTitelLabel}</f:facet>
+	   				<!-- row record -->
+	   				#{n.title}
+				</h:column>	
+				
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header"></f:facet>
+	   				<!-- row record -->
+	   				<h:outputLink value="news_edit.jsf">
+	   					<h:outputText value="Edit News Entry" />
+	   					<f:param name="newsId" value="#{n.id}"></f:param>
+	   				</h:outputLink>
+				</h:column>
+			</h:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>
