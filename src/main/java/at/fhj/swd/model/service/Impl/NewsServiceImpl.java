@@ -4,76 +4,81 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.security.PermitAll;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.data.NewsDao;
 import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.News;
 import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.NewsService;
 
-public class NewsServiceImpl implements NewsService{
+@Stateless
+public class NewsServiceImpl implements NewsService {
 	
-	private NewsDao newsdao;
+	@Inject
+	private NewsDao newsDao;
 	
-	private UserDAO userdao;
-	
-	private User user;
-	
-	private News news;
-	
+	@Inject
+	private UserDAO userDao;	
 
 	@Override
 	public List<News> getAllNews() {
-		return this.getAllNews();
+		return newsDao.getAllNews();
 	}
 
 	@Override
 	public void postNews(Long id, String title, String content, Date startdate, Boolean visible) throws IOException {
 		
-		if (UserIsAdmin(user) == false)
+		if (ensureUserIsAdmin() == false)
 			throw new IllegalArgumentException("Du bist kein Admin. Nur Admins dürfen NEws posten");
-			News newNews = new News();
-			newNews.setId(id);
-			newNews.setTitle(title);
-			newNews.setContent(content);
-			newNews.setStartdate(startdate);
-			newNews.setVisible(visible);
-			newsdao.createNewNews(newNews);
-			
+		
+		News newNews = new News();
+		newNews.setTitle(title);
+		newNews.setContent(content);
+		newNews.setStartdate(startdate);
+		newNews.setVisible(visible);
+		newsDao.createNewNews(newNews);			
 	}
-
-	
 
 	@Override
 	public News updateNews(News news) {
-		if (UserIsAdmin(user) || UserIsPortalAdmin(user)== false )
+		if (!ensureUserIsAdmin() && !ensureUserIsPortalAdmin())
 			throw new IllegalArgumentException("Du bist kein Admin.");
-			if (news == null)
-				throw new IllegalArgumentException("News is null.");
-			return newsdao.updateNews(news);		
+		
+		if (news == null)
+			throw new IllegalArgumentException("News is null.");
+		return newsDao.updateNews(news);
 	}
 	
 
 
 	@Override
-	@PermitAll()
-	public boolean UserIsAdmin(User user) {
+	public boolean ensureUserIsAdmin() {
+		String token = CookieHelper.getAuthTokenValue();
+		User user = userDao.loadUserByToken(token);
+		if(user == null)
+			return false;
 		return user.getUsername().endsWith("_a");
 	}
 
 	@Override
-	@PermitAll()
-	public boolean UserIsPortalAdmin(User user) {
+	public boolean ensureUserIsPortalAdmin() {
+		String token = CookieHelper.getAuthTokenValue();
+		User user = userDao.loadUserByToken(token);
+		if(user == null)
+			return false;
 		return user.getUsername().endsWith("_pa");
 	}
 
 	@Override
-	public List<News> getNewsbyID(Long id) {
-		// TODO Auto-generated method stub
-		return this.getNewsbyID(id);
+	public News findNewsById(long id) {
+		try {
+			return newsDao.getNewsById(id);			
+		} catch(Exception e) {
+			// should be DaoException in future releases.
+			throw e;
+		}
 	}
-
-
-
 }

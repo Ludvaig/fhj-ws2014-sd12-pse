@@ -48,6 +48,8 @@ insert into COMMUNITY (id, name, visible) values (10, 'Der Rest 2', true)
 insert into COMMUNITY (id, name, visible) values (11, 'Knebelmaster 2', true)
 insert into COMMUNITY (id, name, visible) values (12, 'Jboss is the Best 2', true)
 
+
+insert into NEWS (id, title, content, visible) values (1, 'news 1', 'content 1', false)
 --drop table if exists USER_HAS_COMMUNITY;
 
 --create table USER_HAS_COMMUNITY 

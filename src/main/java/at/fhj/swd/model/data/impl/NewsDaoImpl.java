@@ -33,10 +33,24 @@ public class NewsDaoImpl implements NewsDao {
 		
 		return news;
 	}
+	
+	@Override
+	public List<News> getAllNews() {
+		// Load all news from database (Pagination @see: LazyCommunityImpl)
+		List<News> news = em
+				.createQuery(
+					"SELECT news FROM News news"
+					+ " ORDER BY news.startdate",
+					News.class)
+				.getResultList();		
+		return news;
+	}
 
 	@Override
-	public News getNewsById(String id) {
-		return em.createQuery("FROM News news WHERE news.id = :id", News.class).setParameter("id", Long.valueOf(id)).getSingleResult();
+	public News getNewsById(long id) {
+		return em.createQuery("FROM News news WHERE news.id = :id", News.class)
+				.setParameter("id", Long.valueOf(id))
+				.getSingleResult();
 	}
 	
 	@Override
