@@ -190,7 +190,7 @@ Acceptance:
 *Storypoints: 8*
 
 Acceptance:
- * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar.
+ * Nach Ablauf des Gültigkeitszeitraums ist der News-Eintrag nicht mehr sichtbar. --> US5 Gr.1
  * News Einträge sollen durch den Administrator bearbeitbar sein.
 
 ===Verwaltungsbereich (Administratoren)===
