@@ -82,15 +82,21 @@ public class CommunityAdminView implements Serializable{
     		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
     	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
     	} catch(Exception e) {
-    		facesContext.addMessage(null, 
-					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
+    		if(e.getMessage().equals("operation not allowed")) {
+    			facesContext.addMessage(null, 
+    					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community. You are not signed in as Administrator.", null));
+    		} else {
+    			facesContext.addMessage(null, 
+    					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
+    		}
     	}
     }
     
     public void release() {
     	try {
     		Long communityId = new Long(releaseCommunity);
-    		communityService.releaseCommunity(communityId, true);
+    		Community community = communityService.getCommunityById(communityId.longValue());
+    		communityService.releaseCommunity(communityId, !community.isVisible());
     		
     		// redirection.
     		ExternalContext ec = facesContext.getExternalContext();
