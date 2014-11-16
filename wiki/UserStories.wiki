@@ -185,7 +185,7 @@ Acceptance:
  * Neue Communities sollen nicht freigeschaltet sein
  * Die Freischaltung soll durch den Admin wiederrufbar sein.
 
-*(US26) Als Portal-Admin möchte ich im Unternehmens-Newsbereich einen News-Eintrages editieren können.*
+*(US26) Als Portal-Admin möchte ich im Adminbereich einen News-Eintrages editieren können.*
 
 *Storypoints: 8*
 
