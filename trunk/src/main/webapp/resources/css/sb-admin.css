@@ -17,7 +17,17 @@
 	margin-top: 20px;
 }
 
+.news-table {
+	max-width: 700px;
+	margin-top: 20px;
+}
+
 .community-form {
+	max-width: 700px;
+	margin-top: 20px;
+}
+
+.news-form {
 	max-width: 700px;
 	margin-top: 20px;
 }

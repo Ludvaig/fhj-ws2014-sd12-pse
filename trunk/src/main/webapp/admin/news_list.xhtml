@@ -18,10 +18,13 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<button><a href="/fhj-ws2014-sd12-pse/admin/news_create.jsf">#{locale.adminCommunitiesCreateLabel}</a></button>
+		<div class="admin-part-header">
+			<h1>News</h1>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/news_create.jsf'">News anlegen</button>
 
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
-		<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-striped">
+		<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-striped news-table">
 			<h:column>
 				<!-- column header -->
 				<f:facet name="header">#{locale.adminNewsTitelLabel}</f:facet>
