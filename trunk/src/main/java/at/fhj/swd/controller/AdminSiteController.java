@@ -56,7 +56,7 @@ public class AdminSiteController implements Serializable {
 		System.out.println("authToken <" + authToken + ">");
 		User user = userService.getRegisteredUser(authToken);
 		if(user != null) {
-			if(!userService.UserIsAdmin(user)) {
+			if(!userService.UserIsAdmin(user) && !userService.UserIsPortalAdmin(user)) {
 				// user is not administrator.
 				System.out.println("user is not admin");
 				facesContext.addMessage(null, 

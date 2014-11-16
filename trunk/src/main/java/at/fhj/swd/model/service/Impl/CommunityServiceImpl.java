@@ -86,6 +86,9 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public void createCommunity(String name, boolean visible) {
+		if(!ensureUserIsAdmin())
+			throw new RuntimeException("operation not allowed");
+		
 		try {
 			Community community = new Community();
 			community.setName(name);
@@ -107,5 +110,13 @@ public class CommunityServiceImpl implements CommunityService {
 			logger.log(Level.SEVERE, "failed to release community", e);
 			throw e;
 		}
+	}
+	
+	public boolean ensureUserIsAdmin() {
+		String token = CookieHelper.getAuthTokenValue();
+		User user = userDao.loadUserByToken(token);
+		if(user == null)
+			return false;
+		return user.getUsername().endsWith("_a");
 	}
 }

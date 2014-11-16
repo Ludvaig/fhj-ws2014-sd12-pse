@@ -31,28 +31,32 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public void postNews(Long id, String title, String content, Date startdate, Boolean visible) throws IOException {
 		
-		if (ensureUserIsAdmin() == false)
-			throw new IllegalArgumentException("Du bist kein Admin. Nur Admins dürfen NEws posten");
-		
-		News newNews = new News();
-		newNews.setTitle(title);
-		newNews.setContent(content);
-		newNews.setStartdate(startdate);
-		newNews.setVisible(visible);
-		newsDao.createNewNews(newNews);			
+		if (ensureUserIsAdmin() || ensureUserIsPortalAdmin()) {
+			News newNews = new News();
+			newNews.setTitle(title);
+			newNews.setContent(content);
+			newNews.setStartdate(startdate);
+			newNews.setVisible(visible);
+			newsDao.createNewNews(newNews);	
+		}
+		else {
+			throw new RuntimeException("operation not allowed");
+		}
 	}
 
 	@Override
 	public News updateNews(News news) {
-		if (!ensureUserIsAdmin() && !ensureUserIsPortalAdmin())
-			throw new IllegalArgumentException("Du bist kein Admin.");
-		
 		if (news == null)
 			throw new IllegalArgumentException("News is null.");
-		return newsDao.updateNews(news);
+		
+		if (ensureUserIsAdmin() || ensureUserIsPortalAdmin()) {
+			return newsDao.updateNews(news);
+		}
+		else {
+			throw new RuntimeException("operation not allowed");
+		}	
+		
 	}
-	
-
 
 	@Override
 	public boolean ensureUserIsAdmin() {
