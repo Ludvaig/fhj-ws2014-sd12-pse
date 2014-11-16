@@ -45,7 +45,10 @@
 					<!-- column header -->
 					<f:facet name="header"></f:facet>
 	   				<!-- row record -->
-	   				<h:commandLink action="#{dtCommunitiesAdminView.release()}" value="#{locale.adminComunitiesComunityReleaseLabel}" update="@form">
+	   				<h:commandLink action="#{dtCommunitiesAdminView.release()}" rendered="#{not c.visible}" value="#{locale.adminComunitiesComunityReleaseLabel}" update="@form">
+			            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
+			        </h:commandLink>
+			        <h:commandLink action="#{dtCommunitiesAdminView.release()}" rendered="#{c.visible}" value="#{locale.adminComunitiesComunityLockLabel}" update="@form">
 			            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
 			        </h:commandLink>
 <!-- 	   				<h:commandLink value="#{locale.adminCommunitiesDeleteCommunityLabel}" update="@form">
