@@ -197,6 +197,8 @@ Acceptance:
 
 *(US27) Als Portal-Administrator möchte ich neue hochgeladene Fotos am User Profil vor der Veröffentlichung freischalten.*
 
+->> auf Iteration 2 verschoben
+
 *Storypoints: 5*
 
 Acceptance:
@@ -212,7 +214,7 @@ Abhängigkeit: US16, Gruppe 2
 
 Acceptance:
  * Schnelles / einfaches erstellen neuer Neuigkeiten
- * Einfacher Upload für Dateien (Bilder)
+ * Einfacher Upload für Dateien (Bilder) --> Iteration 2
 
 --------------------------------------------------------------
 ==Gruppe 4==
