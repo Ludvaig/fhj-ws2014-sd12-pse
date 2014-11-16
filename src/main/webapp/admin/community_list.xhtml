@@ -17,11 +17,14 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<button type="button" class="btn btn-default" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/community_create.jsf'">Community anlegen</button>
+		<div class="admin-part-header">
+			<h1>Communities</h1>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/community_create.jsf'">Community anlegen</button>
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
 		<br/>
 		<h:form>
-			<h:dataTable value="#{dtCommunitiesAdminView.communities}" var="c" class="table table-striped">
+			<h:dataTable value="#{dtCommunitiesAdminView.communities}" var="c" class="table table-striped community-table">
 				<h:column>
 					<!-- column header -->
 					<f:facet name="header">#{locale.adminComunitiesComunityNameLabel}</f:facet>
