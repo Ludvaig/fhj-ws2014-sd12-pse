@@ -6,6 +6,31 @@
 
 /* Global Styles */
 
+#content {
+	background: white;
+	padding: 20px 0px;
+	height: 100vh;
+}
+
+.community-table {
+	max-width: 700px;
+	margin-top: 20px;
+}
+
+.community-form {
+	max-width: 700px;
+	margin-top: 20px;
+}
+
+.button-cancel{
+	margin-right: 5px;
+}
+
+.admin-part-header{
+	margin-bottom: 30px;
+}
+
+
 body {
     margin-top: 100px;
     background-color: #222;
