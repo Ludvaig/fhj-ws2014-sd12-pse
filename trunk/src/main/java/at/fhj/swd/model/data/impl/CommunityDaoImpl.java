@@ -9,6 +9,12 @@ import at.fhj.swd.model.data.CommunityDao;
 import at.fhj.swd.model.entity.Community;
 import at.fhj.swd.model.entity.User;
 
+/**
+ * Data Access Object for Community
+ * 
+ * @author Group3, Michael Mayer
+ * */
+
 public class CommunityDaoImpl implements CommunityDao {
 
 	@Inject
@@ -34,7 +40,7 @@ public class CommunityDaoImpl implements CommunityDao {
 		return communities;
 	}
 
-	public Community getCommunityById(String id) {
+	public Community getCommunityById(long id) {
 		return em.createQuery("FROM Community com WHERE com.id = :id", Community.class).setParameter("id", Long.valueOf(id)).getSingleResult();
 	}
 
@@ -45,22 +51,20 @@ public class CommunityDaoImpl implements CommunityDao {
 
 	@Override
 	public List<Community> getAllCommunities() {
-			
-			// Load all news from database (Pagination @see: LazyCommunityImpl)
-			List<Community> communities = em
-					.createQuery(
-							"SELECT com FROM Community com",
-							Community.class)
-								.getResultList();
-			
-			return communities;
+		// Load all news from database (Pagination @see: LazyCommunityImpl)
+		List<Community> communities = em
+				.createQuery(
+						"SELECT com FROM Community com",
+						Community.class)
+							.getResultList();
 		
+		return communities;		
 	}
 
 	@Override
 	public Community update(Community community) {
 		try {
-			em.persist(community);
+			em.merge(community);
 			return community;
 		} catch(Exception e) {
 			// should be DAOException in future releases.

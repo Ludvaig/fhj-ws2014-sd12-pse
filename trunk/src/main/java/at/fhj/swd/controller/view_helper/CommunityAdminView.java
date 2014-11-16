@@ -2,6 +2,7 @@ package at.fhj.swd.controller.view_helper;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -11,8 +12,6 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.NotSupportedException;
-
-import org.primefaces.event.SelectEvent;
 
 import at.fhj.swd.model.entity.Community;
 import at.fhj.swd.model.service.CommunityService;
@@ -32,12 +31,16 @@ public class CommunityAdminView implements Serializable{
 	private List<Community> communities = null;
 	
 	@Inject
+	private Logger logger;
+	
+	@Inject
     private CommunityService communityService;
 	
 	@Inject
 	private FacesContext facesContext;
 	
-	private String communityName;
+	private String createCommunity;
+	private long releaseCommunity;
     
     @PostConstruct
     public void init() {
@@ -53,35 +56,49 @@ public class CommunityAdminView implements Serializable{
     	throw new NotSupportedException();
     }
     
-    public void setReleaseCommunity(int id) {
+    public long getReleaseCommunity() {
+    	return releaseCommunity;
+    }
+    
+    public void setReleaseCommunity(long id) {
+    	this.releaseCommunity = id;
+    }
+    
+    public String getCreateCommunity() {
+    	return this.createCommunity;
+    }
+    
+    public void setCreateCommunity(String name) {
+    	this.createCommunity = name;
+    }
+    
+    public void create() {
+    	System.out.println("create");
     	try {
-    		Long communityId = new Long(id);
+    		communityService.createCommunity(createCommunity, false);
+    		
+    		// redirection.
+    		ExternalContext ec = facesContext.getExternalContext();
+    		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
+    	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
+    	} catch(Exception e) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
+    	}
+    }
+    
+    public void release() {
+    	try {
+    		Long communityId = new Long(releaseCommunity);
     		communityService.releaseCommunity(communityId, true);
     		
     		// redirection.
     		ExternalContext ec = facesContext.getExternalContext();
-    	    ec.redirect(ec.getRequestContextPath() + "/fhj-ws2014-sd12-pse/admin/community_list.jsf");
+    		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
+    	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
     	} catch(Exception e) {
     		facesContext.addMessage(null, 
 					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to release community", null));    		
-    	}
-    }
-    
-    public void setCreateCommunity(String name) {
-    	this.communityName = name;
-    }
-    
-    public void onCreateCommunity() {
-    	System.out.println("onCreateCommunity");
-    	try {
-    		communityService.createCommunity(null, communityName, false);
-    		
-    		// redirection.
-    		ExternalContext ec = facesContext.getExternalContext();
-    	    ec.redirect(ec.getRequestContextPath() + "/fhj-ws2014-sd12-pse/admin/community_list.jsf");
-    	} catch(Exception e) {
-    		facesContext.addMessage(null, 
-					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
     	}
     }
 }

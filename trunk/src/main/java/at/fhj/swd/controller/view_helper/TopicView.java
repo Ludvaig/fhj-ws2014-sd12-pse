@@ -39,7 +39,9 @@ public class TopicView implements Serializable{
 	public void init(){
 		getCommunityId();
 		this.existingTopics = service.getExistingTopics(communityId, "");	
-		this.communityName = comService.getCommunityById(communityId).getName();
+		if(communityId != null && !communityId.equals("")) {
+			this.communityName = comService.getCommunityById(Long.valueOf(communityId).longValue()).getName();
+		}
 	}
 
 	private void getCommunityId(){

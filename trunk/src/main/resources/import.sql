@@ -37,7 +37,8 @@ insert into USER (id, username, password, hashedPassword, email) values (4, 'pad
 
 insert into COMMUNITY (id, name, visible) values (1, 'George', true)
 insert into COMMUNITY (id, name, visible) values (2, 'Der Rest', true)
-insert into COMMUNITY (id, name, visible) values (4, 'Jboss is the Best', true)
+insert into COMMUNITY (id, name, visible) values (3, 'Jboss is the Best', true)
+insert into COMMUNITY (id, name, visible) values (4, 'Jboss is the Best 2', true)
 insert into COMMUNITY (id, name, visible) values (5, 'George 1', true)
 insert into COMMUNITY (id, name, visible) values (6, 'Der Rest 1', true)
 insert into COMMUNITY (id, name, visible) values (7, 'Knebelmaster 1', true)
