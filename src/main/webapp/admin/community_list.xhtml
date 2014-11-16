@@ -20,32 +20,34 @@
 		<button type="button" class="btn btn-default" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/community_create.jsf'">Community anlegen</button>
 		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
 		<br/>
-		<h:dataTable value="#{dtCommunitiesAdminView.communities}" var="c" class="table table-striped">
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header">#{locale.adminComunitiesComunityNameLabel}</f:facet>
-   				<!-- row record -->
-   				#{c.name}
-			</h:column>
-			
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header">#{locale.adminComunitiesComunityStateLabel}</f:facet>
-   				<!-- row record -->
-   				#{c.visible} <!-- TODO: -->
-			</h:column>
-			
-			<h:column>
-				<!-- column header -->
-				<f:facet name="header"></f:facet>
-   				<!-- row record -->
-   				<h:commandLink value="#{locale.adminComunitiesComunityReleaseLabel}" update="@form">
-		            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.deleteCommunity}" />
-		        </h:commandLink>
-   				<h:commandLink value="#{locale.adminCommunitiesDeleteCommunityLabel}" update="@form">
-		            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
-		        </h:commandLink>
-			</h:column>
-		</h:dataTable>
+		<h:form>
+			<h:dataTable value="#{dtCommunitiesAdminView.communities}" var="c" class="table table-striped">
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">#{locale.adminComunitiesComunityNameLabel}</f:facet>
+	   				<!-- row record -->
+	   				#{c.name}
+				</h:column>
+				
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">#{locale.adminComunitiesComunityStateLabel}</f:facet>
+	   				<!-- row record -->
+	   				#{c.visible} <!-- TODO: -->
+				</h:column>
+				
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header"></f:facet>
+	   				<!-- row record -->
+	   				<h:commandLink action="#{dtCommunitiesAdminView.release()}" value="#{locale.adminComunitiesComunityReleaseLabel}" update="@form">
+			            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
+			        </h:commandLink>
+<!-- 	   				<h:commandLink value="#{locale.adminCommunitiesDeleteCommunityLabel}" update="@form">
+			            <f:setPropertyActionListener value="#{c.id}" target="#{dtCommunitiesAdminView.releaseCommunity}" />
+			        </h:commandLink> -->
+				</h:column>
+			</h:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>

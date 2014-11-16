@@ -11,8 +11,6 @@ import javax.inject.Inject;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.User;
-import at.fhj.swd.model.service.CommunityService;
-import at.fhj.swd.model.service.NewsService;
 import at.fhj.swd.model.service.UserService;
 
 @ManagedBean(name = "adminSiteBean")
@@ -30,6 +28,7 @@ public class AdminSiteController implements Serializable {
 	@Inject
     private FacesContext facesContext;
 	
+	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private UserService userService;
 	

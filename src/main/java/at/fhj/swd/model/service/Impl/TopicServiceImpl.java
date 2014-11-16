@@ -29,7 +29,7 @@ public class TopicServiceImpl implements TopicService{
 	@Override
 	public void createNewTopic(String communityId, String newTopicName, String topicText) {
 		Topic topic = new Topic();
-		topic.setCommunity(communityDao.getCommunityById(communityId));
+		topic.setCommunity(communityDao.getCommunityById(Long.valueOf(communityId).longValue()));
 		topic.setName(newTopicName);
 		topic.setText(topicText);
 		topicDao.createNewTopic(topic);

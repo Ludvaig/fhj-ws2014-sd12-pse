@@ -2,14 +2,15 @@ package at.fhj.swd.model.service.Impl;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.ejb.Stateless;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.data.CommunityDao;
 import at.fhj.swd.model.data.UserDAO;
 import at.fhj.swd.model.entity.Community;
@@ -17,26 +18,26 @@ import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.CommunityService;
 
 /**
- * Community-ViewHelper.
+ * Community service implementation.
  * 
- * @author Group4
+ * @author Group4, Michael Mayer
  * */
 
-@ManagedBean(name = "communityService")
-@ViewScoped
+@Stateless
 public class CommunityServiceImpl implements CommunityService {
+	
+	@Inject
+	private Logger logger;
 	
 	@Inject
 	private CommunityDao communityDao;
 	
     @Inject
 	private UserDAO userDao;
-    
-    private User user;
 	
 	@Override
 	public List<Community> getAllSubscribedCommunitiesForUser(String authUserToken) {
-		user = userDao.loadUserByToken(authUserToken);
+		User user = userDao.loadUserByToken(authUserToken);
 		
 		List<Community> communities = null;
 		if(user != null){
@@ -46,7 +47,7 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 	
 	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, String authUserToken){
-		user = userDao.loadUserByToken(authUserToken);
+		User user = userDao.loadUserByToken(authUserToken);
 		return communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
 	}
 
@@ -61,12 +62,14 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 	
 	public void ensureUserIsLoggedIn() {
+		String authToken = CookieHelper.getAuthTokenValue();
+		User user = userDao.loadUserByToken(authToken);
 		if(user == null) {
 			redirectToUserLogin("login");
 		}
 	}
 	
-	public Community getCommunityById(String id) {
+	public Community getCommunityById(long id) {
 		Community community = communityDao.getCommunityById(id);
 		if (community != null) {
 			return community;
@@ -82,22 +85,27 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public void createCommunity(Long id, String name, boolean visible) {
-		Community community = new Community();
-		//community.setId(id);
-		community.setName(name);
-		community.setVisible(visible);
-		communityDao.createCommunity(community);
-		
+	public void createCommunity(String name, boolean visible) {
+		try {
+			Community community = new Community();
+			community.setName(name);
+			community.setVisible(visible);
+			communityDao.createCommunity(community);
+		} catch(Exception e) {
+			logger.log(Level.SEVERE, "failed to create community", e);
+			throw e;
+		}		
 	}
 
 	@Override
-	public void releaseCommunity(Long id, boolean release) {
-		if(id == null)
-			throw new RuntimeException("id is null");
-		
-		Community community = communityDao.getCommunityById(id.toString());
-		community.setVisible(release);
-		communityDao.update(community);
+	public void releaseCommunity(long id, boolean release) {
+		try {
+			Community community = communityDao.getCommunityById(id);
+			community.setVisible(release);
+			communityDao.update(community);
+		} catch(Exception e) {
+			logger.log(Level.SEVERE, "failed to release community", e);
+			throw e;
+		}
 	}
 }

@@ -11,14 +11,16 @@
 								template="/template/main_admin.xhtml">
 
 	<ui:define name="title">
-		<h:outputText value=""/>
+		<h:outputText value="Create new Community"/>
 	</ui:define>
 
 	<ui:define name="headMetaData">
 	</ui:define>
 
 	<ui:define name="content">
-		#{locale.adminComunitiesComunityNameLabel}<h:inputText></h:inputText>
-		<button type="button" class="btn btn-default">#{locale.adminCommunitiesCreateLabel}</button><!-- TODO: -->
+		<h:form>
+			#{locale.adminComunitiesComunityNameLabel}: <h:inputText value="#{dtCommunitiesAdminView.createCommunity}" /><br />
+			<h:commandButton action="#{dtCommunitiesAdminView.create()}" value="#{locale.adminCommunitySaveLabel}"></h:commandButton>
+		</h:form>
 	</ui:define>
 </ui:composition>

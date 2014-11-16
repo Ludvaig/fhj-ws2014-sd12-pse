@@ -15,31 +15,21 @@ import javax.persistence.OneToMany;
 /**
  * DB-Entity for Communities.
  * 
- * @author Group4
+ * @author Group4, Michael Mayer
  * */
 
 @Entity
 public class Community {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, nullable = false)
-	private Long id = null;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
+	@Column(name = "name")
 	private String name;
 	
-	
-	// Gruppe 3: brauchen das für US25
 	@Column(name= "visible")
 	private boolean visible = false;
-
-	public boolean isVisible() {
-		return visible;
-	}
-
-	public void setVisible(boolean visible) {
-		this.visible = visible;
-	}
 
 	@ManyToMany(mappedBy = "communities")
 	private Collection<User> users;
@@ -51,7 +41,11 @@ public class Community {
 		users = new ArrayList<User>();
 		topics = new ArrayList<Topic>();
 	}
-
+	
+	public long getId() {
+		return id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -60,37 +54,34 @@ public class Community {
 		this.name = newName;
 	}
 	
-	public Long getId() {
-		return id;
+	public boolean isVisible() {
+		return visible;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) {
+		if (this == obj)
 			return true;
-		}
-		if (obj == null) {
+		if (obj == null)
 			return false;
-		}
-		if (getClass() != obj.getClass()) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
-		if (id != null) {
-			return id.equals(((Community) obj).id);
-		}
-		return super.equals(obj);
-	}
-
-	@Override
-	public int hashCode() {
-		if (id != null) {
-			return id.hashCode();
-		}
-		return super.hashCode();
+		Community other = (Community) obj;
+		if (id != other.id)
+			return false;
+		return true;
 	}
 
 	public String toString() {

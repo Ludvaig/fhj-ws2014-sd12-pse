@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 import org.primefaces.event.SelectEvent;
 
@@ -34,7 +34,7 @@ public class CommunityView implements Serializable{
 	
 	private Community selectedCommunity = null;
 
-	@ManagedProperty("#{communityService}")
+	@Inject
     private CommunityService service;
     
     
