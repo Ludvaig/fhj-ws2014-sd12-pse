@@ -6,17 +6,19 @@ Usersite
 
 -->
 
+
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 					xmlns:ui="http://java.sun.com/jsf/facelets"
 					xmlns:f="http://java.sun.com/jsf/core"
 					xmlns:h="http://java.sun.com/jsf/html"
 					xmlns:p="http://primefaces.org/ui"
 					template="/template/main.xhtml">
-
+					
   <ui:define name="content">
-  	
+  
 	<h:form id="userForm">
-		<p:panel header="User" style="width:400px">
+		<p:panel header="User">
+		<p:messages autoUpdate="true"/>
 		
 		<table>
 			<tr>
@@ -29,15 +31,15 @@ Usersite
 			<tr>
 				<td>email:</td>
 				<td>
-					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email" readonly="#{userSiteController.otherUser}">
-						<f:validateRegex pattern=".*\@\w*\.\w*" />
+					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email" readonly="#{userSiteController.otherUser}" validatorMessage="Email does not match pattern. Example: (any sign)@(any sign).(character)">
+						<f:validateRegex pattern=".*\@.*\.\w*" />
 	            	</p:inputText>
 				</td>
 			</tr>
 			<tr>
 				<td>phone:</td>
 				<td>
-					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber" readonly="#{userSiteController.otherUser}">
+					<p:inputText id="phoneNumber" value="#{userSiteController.phoneNumber}" label="PhoneNumber" readonly="#{userSiteController.otherUser}" validatorMessage="Phone Number does not match pattern.+(optional) 3-15 numbers long. Example: +4312345">
 	                	<f:validateRegex pattern="\+?\d{3,15}" />
 	            	</p:inputText>
 				</td>
@@ -45,17 +47,19 @@ Usersite
 		</table>
 
 		</p:panel>
+		
+
 	</h:form>
 		
 	<p:growl id="growl" life="5000" />
 	<br/>
 		
-	<p:commandButton value="Save" id="saveUserdata" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="Save" id="saveUserdata" validateClient="true" update="growl userForm:userName userForm:eMail userForm:phoneNumber contactForm :contactForm:contactDetail" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
 	  	
 	<br/>
 	<br/>
 	
-	<h:form id="contactForm" style="width:400px">
+	<h:form id="contactForm">
 		<p:dataList value="#{userSiteController.contacts}" var="contact" type="unordered" paginator="true" rows="10" styleClass="paginated">
 		      <f:facet name="header">
 		          Contacts
@@ -71,19 +75,26 @@ Usersite
 	        <p:outputPanel id="contactDetail" style="text-align:center;">
 	            <p:panelGrid  columns="2" rendered="#{not empty userSiteController.selectedUser}" columnClasses="label,value">
 	 
-	                <h:outputText value="Id:" />
+	                <h:outputText value="Username:" />
 	                <h:outputText value="#{userSiteController.selectedUser.username}" />
-	 
-	                <h:outputText value="Year" />
+	 	
+	                <h:outputText value="Email:" />
 	                <h:outputText value="#{userSiteController.selectedUser.email}" />
-	 
+	                
+	                <h:outputText value="Phone:" />
+	                <h:outputText value="#{userSiteController.selectedUser.telephone}" />
+	                	 
 	            </p:panelGrid>
 	        </p:outputPanel>
     	</p:dialog>
 	</h:form>
 	
-	
 	<br/>
+	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	<br/>
+	<br/>
+	
 		<!-- user document library view begin -->
 		<h:form>
 		    <p:dataList value="#{dtDocumentView.userDocuments}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
@@ -103,15 +114,10 @@ Usersite
 		<!-- user document library view end -->
 	<br/>
 	
-	<p:commandButton value="add contact" id="usersiteAddContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
-	<p:commandButton value="remove contact" id="usersiteRemoveContact" update="growl" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
-	
-	
 	<br/>
 	<br/>
 	<br/>
 	<br/>
-	
 	
 	<!-- The following two buttons are for testing only. They enable and disable the other elements to demonstrate this functionality.  
 	<p:commandButton value="Disable Buttons" id="disableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
@@ -121,21 +127,9 @@ Usersite
 	<p:commandButton value="Enable Buttons" id="enableButtons" styleClass="ui-priority-primary" update="saveUserdata usersiteAddContact usersiteRemoveContact userForm:userName userForm:eMail userForm:phoneNumber">
 		<f:setPropertyActionListener value="#{false}" target="#{userSiteController.otherUser}"/>
 	</p:commandButton> -->
-	
-	<!-- selection of contacts is not part of the first iteration and so the following part is commented out-->
-	
-	
-	<!--  p:dataList value="#{userSiteController.contacts}" var="contacts" type="unordered" itemType="none" paginator="true" rows="10" styleClass="paginated">
-	      <f:facet name="header">
-	          Contacts
-	      </f:facet>
-	      <p:commandLink update=":form:contactDetail" oncomplete="PF('carDialog').show()" title="View Detail" styleClass="ui-icon ui-icon-search" style="float:left;margin-right:10px">
-	         <f:setPropertyActionListener value="#{user}" target="#{userSiteController.selectedUser}" />
-	         <h:outputText value="#{user.username}, #{user.email}" />
-	     </p:commandLink>
-	     <h:outputText value="#{user.username}, #{user.email}" style="display:inline-block"/>
-	 </p:dataList>-->
-    
+	   
   </ui:define> 
+  
+  
     
 </ui:composition>

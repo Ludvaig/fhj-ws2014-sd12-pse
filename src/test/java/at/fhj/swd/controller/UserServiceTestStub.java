@@ -17,8 +17,6 @@ public class UserServiceTestStub implements UserService {
 		return authToken;
 	}
 
-
-
 	@Override
 	public void insertUser(User user) {
 		// TODO Auto-generated method stub
@@ -37,22 +35,16 @@ public class UserServiceTestStub implements UserService {
 		return false;
 	}
 
-
-
 	@Override
 	public User getRegisteredUser(String token) {
 		return user;
 	}
-
-
 
 	@Override
 	public void loggoutUser(String userName) {
 		// TODO Auto-generated method stub
 		
 	}
-
-
 
 	@Override
 	public User updateUser(User user)
@@ -61,16 +53,12 @@ public class UserServiceTestStub implements UserService {
 		return null;
 	}
 
-
-
 	@Override
 	public User getUserById(long id)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 	@Override
 	public User getUserByUsername(String username)
@@ -79,12 +67,9 @@ public class UserServiceTestStub implements UserService {
 		return null;
 	}
 
-
-
 	@Override
 	public void registerUser(User user) {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

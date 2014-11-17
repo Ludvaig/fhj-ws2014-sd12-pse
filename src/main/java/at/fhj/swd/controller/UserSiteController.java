@@ -166,15 +166,14 @@ public class UserSiteController implements Serializable
 	 */
 	public void editUser(ActionEvent actionEvent)
 	{	
-	
-		if (user != null)
+		if (user != null && (userService.getUserByUsername(user.getUsername()) != null))
 		{
 			user = userService.updateUser(user);
-			addMessage("Userdata changed");
+			addInfoMessage("Userdata changed");
 		}
 		else
 		{
-			addMessage("Error: Could not save.");
+			addErrorMessage("Error: Could not save. User does not exist.");
 		}
 	}
 
@@ -183,7 +182,13 @@ public class UserSiteController implements Serializable
 	 * 
 	 * @param summary
 	 */
-	private void addMessage(String summary)
+	private void addErrorMessage(String summary)
+	{
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, summary, null);
+		FacesContext.getCurrentInstance().addMessage(null, message);
+	}
+	
+	private void addInfoMessage(String summary)
 	{
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
 		FacesContext.getCurrentInstance().addMessage(null, message);
