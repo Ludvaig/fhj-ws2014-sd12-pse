@@ -15,6 +15,7 @@ import org.primefaces.model.DefaultStreamedContent;
 
 import at.fhj.swd.controller.Helpers.CookieHelper;
 import at.fhj.swd.model.entity.Document;
+import at.fhj.swd.model.entity.User;
 import at.fhj.swd.model.service.DocumentService;
 import at.fhj.swd.model.service.UserService;
 
@@ -32,6 +33,8 @@ public class DocumentView implements Serializable {
 	private static final long serialVersionUID = 6219023243007670413L;
 	
 	private String selectedDocument;
+	
+	//TODO: Is this necessary see also getUserSelectedDocument
 	private String selectedUserDocument;
 	
     @ManagedProperty("#{documentService}")
@@ -46,7 +49,7 @@ public class DocumentView implements Serializable {
     	return this.service.getGlobalDocuments();
     }
     
-  //TODO: Upload not working. Before security script everything was working fine. Needs to be checked!
+    //TODO: Upload not working. Before security script everything was working fine. Needs to be checked!
     public void handleFileUpload(FileUploadEvent event) throws IOException {
     	this.service.uploadGlobalDocument(event.getFile().getInputstream(), event.getFile().getFileName());
     }
@@ -72,36 +75,52 @@ public class DocumentView implements Serializable {
 	
 	// User ------------------------
     public List<Document> getUserDocuments() {
-    	String username = service.getUserByToken(CookieHelper.getAuthTokenValue()).getUsername();
-	    return this.service.getUserDocuments(username);
+    	String username = getLoggedInUsername();
+	    if (username != null) {
+	    	return this.service.getUserDocuments(username);
+    	} else {
+    		return null;
+    	}
     }
     
     //TODO: Upload not working. Before security script everything was working fine. Needs to be checked!
     //Also tried to use HandleUserFileUpload as function name ==> also not working
     public void setHandleUserFileUpload(FileUploadEvent event) throws IOException {
-    	String username = service.getUserByToken(CookieHelper.getAuthTokenValue()).getUsername();
-    	this.service.uploadUserDocument(username, event.getFile().getInputstream(), event.getFile().getFileName());
+    	String username = getLoggedInUsername();
+	    if (username != null) {
+	    	this.service.uploadUserDocument(username, event.getFile().getInputstream(), event.getFile().getFileName());
+	    }
     }
     
+    //TODO: Is this necessary 
     public void setSelectedUserDocument(String name) {
     	this.selectedUserDocument = name;
     }
     
+    //TODO: Is this necessary 
     public String getSelectedUserDocument() {
     	return this.selectedUserDocument;
     }
     
     public void setDeleteUserDocument(String name) {
-    	String username = service.getUserByToken(CookieHelper.getAuthTokenValue()).getUsername();
-    	if(username != null) {
+    	String username = getLoggedInUsername();
+	    if (username != null) {
        		this.service.deleteUserDocument(username, name);
     	}
     }
     
     public DefaultStreamedContent getUserDownload() throws IOException {
-    	String username = service.getUserByToken(CookieHelper.getAuthTokenValue()).getUsername();
-    	String name = this.getSelectedDocument();
-    	return new DefaultStreamedContent(this.service.downloadUserDocument(username, name), null, name);
+    	String username = getLoggedInUsername();
+	    if (username != null) {
+	    	String name = this.getSelectedUserDocument();
+	    	if (name != null) {
+	    		return new DefaultStreamedContent(this.service.downloadUserDocument(username, name), null, name);
+	    	} else {
+	    		return null;
+	    	}
+	    } else {
+	    	return null;
+	    }
     }
     // -----------------------------
     
@@ -117,6 +136,20 @@ public class DocumentView implements Serializable {
     
     public void setService(DocumentService service) {
         this.service = service;
+    }
+    
+    private String getLoggedInUsername() {
+    	User user = service.getUserByToken(CookieHelper.getAuthTokenValue());
+    	if (user != null) {
+	    	String username = user.getUsername();
+	    	if (username != null) {
+	    		return username;
+	    	} else {
+	    		return null;
+	    	}
+    	} else {
+    		return null;
+    	}
     }
     // --------------------------------------------
 }
