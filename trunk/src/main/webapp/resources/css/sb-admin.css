@@ -9,7 +9,7 @@
 #content {
 	background: white;
 	padding: 20px 0px;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .community-table {
