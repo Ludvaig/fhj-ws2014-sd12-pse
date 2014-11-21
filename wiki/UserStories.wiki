@@ -176,7 +176,7 @@ Acceptance:
 
 ===Verwaltungsbereich===
 
-*(US25) Als Admin möchte ich im Verwaltungsbereich Communities anlegen und freischalten, um User mit gleichen Interessen eine Gruppe erstellen zu können.*
+*(US25) Als Admin möchte ich im Adminbereich Communities anlegen und freischalten, um User mit gleichen Interessen eine Gruppe erstellen zu können.*
 
 *Storypoints: 5*
 
