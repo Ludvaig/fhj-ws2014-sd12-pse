@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Beans configuration for fhj-ws2014-sd12-pse project.<br>
+	We're declaring the schema to save you time if you do have to configure this in the future.<br>
+	
+	@author Lukas Kranabetter 
+-->
+<beans xmlns="http://java.sun.com/xml/ns/javaee" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   			xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+        										http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+</beans>

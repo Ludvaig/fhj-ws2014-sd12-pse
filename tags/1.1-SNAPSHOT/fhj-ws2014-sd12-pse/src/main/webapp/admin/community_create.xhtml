@@ -1,0 +1,36 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Admin area.
+	
+	@author Achim Kotremba
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main_admin.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="Create new Community"/>
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+		<div class="admin-part-header">
+			<h1>Communities</h1>
+		</div>
+		
+		<h:form>
+		    <div class="form-group community-form">
+		        <label>#{locale.adminComunitiesComunityNameLabel}</label>
+		        <h:inputText value="#{dtCommunitiesAdminView.createCommunity}" type="text" class="form-control"/>
+		    </div>
+		    <div class="form-buttons">			
+				<button type="button" class="btn btn-default button-cancel" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/community_list.jsf'">Abbrechen</button>   
+				<h:commandButton action="#{dtCommunitiesAdminView.create()}" value="#{locale.adminCommunitySaveLabel}" class="btn btn-primary"></h:commandButton>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

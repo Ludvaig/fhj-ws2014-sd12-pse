@@ -1,0 +1,31 @@
+<!--
+
+Author: Kamper
+
+View the News
+
+-->
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   template="/template/main.xhtml">
+   <ui:define name="content">
+	    <h:form id="newsViewer">
+	    	<h1>News</h1>
+			<p:dataTable var="news" value="#{dtNewsView.allNews}" id="news"
+				paginator="true" rows="6"
+               	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+               	selectionMode="single" selection="#{dtNewsView.selectedNews}" 
+               	rowKey="#{news.title}"
+			>
+			<p:ajax event="rowSelect" listener="#{dtNewsView.onNewsSelected}" ></p:ajax>
+			    <p:column headerText="News Title">
+			        <h:outputText value="#{news.title}" />
+			    </p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

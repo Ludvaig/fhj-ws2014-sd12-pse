@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Jboss web configuration for fhj-ws2014-sd12-pse project.<br>
+	Configure usage of the security domain.<br>
+	
+	@author Lukas Kranabetter 
+-->
+<jboss-web>
+	<security-domain>fhj-ws2014-sd12-pse</security-domain>
+	<!-- Encoding for login servlet "j_security_check" -->
+	<valve>
+		<class-name>org.apache.catalina.authenticator.FormAuthenticator</class-name>
+		<param>
+			<param-name>characterEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</param>
+	</valve>
+	<disable-audit>true</disable-audit>
+</jboss-web>

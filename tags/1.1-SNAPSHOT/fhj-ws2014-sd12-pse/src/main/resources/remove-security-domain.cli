@@ -1,0 +1,14 @@
+# Batch script to remove the project security domain from the wildfly server
+# @author Lukas Kranabetter
+
+# Start batching commands
+batch
+
+# Remove the security domain
+/subsystem=security/security-domain=fhj-ws2014-sd12-pse:remove
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+:reload

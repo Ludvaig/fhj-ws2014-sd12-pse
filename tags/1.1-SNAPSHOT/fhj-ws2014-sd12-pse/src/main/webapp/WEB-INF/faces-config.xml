@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Beans configuration for fhj-ws2014-sd12-pse project.<br>
+	This file is not required if you don't need any extra configuration.<br>
+	<p>
+	This descriptor activates the JSF 2.0 Servlet. Write your navigation rules here. 
+	You are encouraged to use CDI for creating @Named managed beans.
+	</p>
+	
+	@author Lukas Kranabetter 
+-->
+<faces-config version="2.0" 
+							xmlns="http://java.sun.com/xml/ns/javaee"
+   						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   						xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        													http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+  
+  <!-- Support for multi language application. -->      													
+	<application>
+		<locale-config>
+			<default-locale>de_AT</default-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>locale/de_AT</base-name>
+			<var>locale</var>
+		</resource-bundle>
+	</application>
+
+</faces-config>

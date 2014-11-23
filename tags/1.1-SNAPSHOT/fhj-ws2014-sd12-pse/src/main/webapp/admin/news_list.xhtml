@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+	Admin overview of the communities.
+	
+	@author Achim Kotremba
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+								xmlns:ui="http://java.sun.com/jsf/facelets"
+								xmlns:f="http://java.sun.com/jsf/core"
+								xmlns:h="http://java.sun.com/jsf/html"
+								template="/template/main_admin.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value=""/>
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+		<div class="admin-part-header">
+			<h1>News</h1>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/news_create.jsf'">News anlegen</button>
+
+		<!-- DataTable: see http://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
+		<h:form>
+			<h:dataTable value="#{dtNewsAdminView.news}" var="n" class="table table-striped">
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">#{locale.adminNewsTitelLabel}</f:facet>
+	   				<!-- row record -->
+	   				#{n.title}
+				</h:column>	
+				
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header"></f:facet>
+	   				<!-- row record -->
+	   				<h:outputLink value="news_edit.jsf">
+	   					<h:outputText value="Edit News Entry" />
+	   					<f:param name="newsId" value="#{n.id}"></f:param>
+	   				</h:outputLink>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

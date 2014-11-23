@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Datasources configuration for fhj-ws2014-sd12-pse project.<br>
+	
+	@author Lukas Kranabetter 
+-->
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+   						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   						xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema 
+   																http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+
+	<!-- 
+		This is an unmanaged datasource. It should be used for proofs of concept or testing only. 
+		It uses H2, an in memory database that ships with JBoss AS. The datasource is bound into 
+		JNDI at this location. We reference this in META-INF/persistence.xml 
+	-->
+	<datasource jndi-name="java:jboss/datasources/fhj-ws2014-sd12-pse-ds"
+	   					pool-name="fhj-ws2014-sd12-pse" 
+	   					enabled="true"
+	   					use-java-context="true">
+	   					
+		<!-- In memory h2 database for easy application tests. -->
+		
+		<!-- In memory database without sql initialization -->
+		<connection-url>jdbc:h2:mem:fhj-ws2014-sd12-pse;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
+		
+		<!-- In memory database, add import.sql from application classpath. -->
+		<!--<connection-url>jdbc:h2:mem:fhj-ws2014-sd12-pse;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:/import.sql'</connection-url>-->
+		
+		<!-- H2 tcp database for testing, keep in mind to start the database before "/src/test/resources/start-h2-tcp-db.sh". -->
+		
+		<!-- Tcp database without sql initialization -->
+		<!--<connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds</connection-url>-->
+		
+		<!-- Script starts database server in project directory, add import.sql with relative path. -->
+		<!--<connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds;INIT=RUNSCRIPT FROM 'src/main/resources/import.sql'</connection-url>-->
+		
+		<driver>h2</driver>
+		<security>
+			<user-name>sa</user-name>
+			<password></password>
+		</security>
+	</datasource>
+   
+</datasources>

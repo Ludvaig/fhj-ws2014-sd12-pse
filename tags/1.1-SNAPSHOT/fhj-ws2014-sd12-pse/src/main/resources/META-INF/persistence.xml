@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Persistence configuration for fhj-ws2014-sd12-pse project.<br>
+	<p>
+	<b>Note:</b> If you are running in a production environment, add a managed data source, 
+	this example data source is just for devleopment and testing! The datasource is deployed 
+	as WEB-INF/fhj-ws2014-sd12-pse-ds.xml, you can find it in the source at 
+	src/main/webapp/WEB-INF/fhj-ws2014-sd12-pse-ds.xml.
+	</p> 
+	
+	@author Lukas Kranabetter 
+-->
+<persistence version="2.0"
+   						xmlns="http://java.sun.com/xml/ns/persistence" 
+   						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   						xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        													http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+        													
+	<persistence-unit name="primary">
+		<jta-data-source>java:jboss/datasources/fhj-ws2014-sd12-pse-ds</jta-data-source>
+		<properties>
+			<!-- Properties for Hibernate -->
+			<!-- Set hibernate.hbm2ddl.auto = create-drop to enable import.sql script -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
+			<!--<property name="hibernate.show_sql" value="false"/>-->
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.max_fetch_depth" value="3"/>
+		</properties>
+	</persistence-unit>
+	
+</persistence>
