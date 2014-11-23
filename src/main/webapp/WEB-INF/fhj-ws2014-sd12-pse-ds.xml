@@ -30,10 +30,10 @@
 		<!-- H2 tcp database for testing, keep in mind to start the database before "/src/test/resources/start-h2-tcp-db.sh". -->
 		
 		<!-- Tcp database without sql initialization -->
-		<!-- <connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds</connection-url>  -->
+		<!--<connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds</connection-url>-->
 		
 		<!-- Script starts database server in project directory, add import.sql with relative path. -->
-		<!-- <connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds;INIT=RUNSCRIPT FROM 'src/main/resources/import.sql'</connection-url> -->
+		<!--<connection-url>jdbc:h2:tcp://localhost/fhj-ws2014-sd12-pse-ds;INIT=RUNSCRIPT FROM 'src/main/resources/import.sql'</connection-url>-->
 		
 		<driver>h2</driver>
 		<security>

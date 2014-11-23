@@ -1,6 +1,17 @@
 Version history:
 ----------------
 
+v1.2:
+Refactoring for: Layered enterprise architectures, Logging, Business and technical code encapsulation,
+Persistence and Entities, View usability, Exception handling. 
+
+v1.1-SNAPSHOT:
+Snapshot version for previous project structure. Further versions consists of refactored project and
+packages structure.
+
+v1.1:
+Iteration 1 user stories.
+
 v1.0-SNAPSHOT:
 Create project maven envirnoment. Get it working for all developers!
 
