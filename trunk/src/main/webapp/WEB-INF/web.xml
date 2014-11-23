@@ -67,6 +67,7 @@
 		<web-resource-collection>
 			<web-resource-name>Confidential resources for authenticated administrators</web-resource-name>
 			<url-pattern>/admin/*</url-pattern>
+			<url-pattern>/adminsite.jsf</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>Administrator</role-name>
