@@ -41,14 +41,14 @@ public class CommunityServiceImpl implements CommunityService {
 		
 		List<Community> communities = null;
 		if(user != null){
-			communities = communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+			communities = communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
 		}
 		return communities;
 	}
 	
 	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, String authUserToken){
 		User user = userDao.loadUserByToken(authUserToken);
-		return communityDao.getSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
+		return communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
 	}
 
 	private void redirectToUserLogin(String redirectionTarget) {
@@ -70,7 +70,7 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 	
 	public Community getCommunityById(long id) {
-		Community community = communityDao.getCommunityById(id);
+		Community community = communityDao.findCommunityById(id);
 		if (community != null) {
 			return community;
 		} else {
@@ -81,7 +81,7 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public List<Community> getAllCommunities() {
-		return communityDao.getAllCommunities();
+		return communityDao.findAllCommunities();
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class CommunityServiceImpl implements CommunityService {
 			Community community = new Community();
 			community.setName(name);
 			community.setVisible(visible);
-			communityDao.createCommunity(community);
+			communityDao.insertCommunity(community);
 		} catch(Exception e) {
 			logger.log(Level.SEVERE, "failed to create community", e);
 			throw e;
@@ -103,7 +103,7 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public void releaseCommunity(long id, boolean release) {
 		try {
-			Community community = communityDao.getCommunityById(id);
+			Community community = communityDao.findCommunityById(id);
 			community.setVisible(release);
 			communityDao.update(community);
 		} catch(Exception e) {

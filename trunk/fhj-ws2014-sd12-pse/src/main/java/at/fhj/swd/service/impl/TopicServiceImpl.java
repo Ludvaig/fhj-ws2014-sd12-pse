@@ -25,16 +25,16 @@ public class TopicServiceImpl implements TopicService{
 	
 	@Override
 	public List<Topic> getExistingTopics(String communityId, String search) {
-		return topicDao.getTopicsByCommunityId(communityId, search);
+		return topicDao.findTopicsByCommunityId(communityId, search);
 	}
 
 	@Override
 	public void createNewTopic(String communityId, String newTopicName, String topicText) {
 		Topic topic = new Topic();
-		topic.setCommunity(communityDao.getCommunityById(Long.valueOf(communityId).longValue()));
+		topic.setCommunity(communityDao.findCommunityById(Long.valueOf(communityId).longValue()));
 		topic.setName(newTopicName);
 		topic.setText(topicText);
-		topicDao.createNewTopic(topic);
+		topicDao.insert(topic);
 		
 	}
 	

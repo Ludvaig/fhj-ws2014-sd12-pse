@@ -6,6 +6,6 @@ import at.fhj.swd.data.entity.Topic;
 
 public interface TopicDAO {
 	
-	public List<Topic> getTopicsByCommunityId(String communityId, String search);
-	public void createNewTopic(Topic newTopic);
+	public List<Topic> findTopicsByCommunityId(String communityId, String search);
+	public void insert(Topic newTopic);
 }

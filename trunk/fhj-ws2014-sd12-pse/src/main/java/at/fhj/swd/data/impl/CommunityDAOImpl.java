@@ -21,7 +21,7 @@ public class CommunityDAOImpl implements CommunityDAO {
 	public EntityManager em;
 
 	@Override
-	public List<Community> getSubscribedCommunitiesForSearchTextOfCurrentUser(
+	public List<Community> findSubscribedCommunitiesForSearchTextOfCurrentUser(
 		String searchFieldText, User user) {
 		
 		// Load limited Community-Entry from Database (Pagination @see: LazyCommunityImpl)
@@ -40,17 +40,17 @@ public class CommunityDAOImpl implements CommunityDAO {
 		return communities;
 	}
 
-	public Community getCommunityById(long id) {
+	public Community findCommunityById(long id) {
 		return em.createQuery("FROM Community com WHERE com.id = :id", Community.class).setParameter("id", Long.valueOf(id)).getSingleResult();
 	}
 
 	@Override
-	public void createCommunity(Community community) {
+	public void insertCommunity(Community community) {
 		em.persist(community);
 	}
 
 	@Override
-	public List<Community> getAllCommunities() {
+	public List<Community> findAllCommunities() {
 		// Load all news from database (Pagination @see: LazyCommunityImpl)
 		List<Community> communities = em
 				.createQuery(
