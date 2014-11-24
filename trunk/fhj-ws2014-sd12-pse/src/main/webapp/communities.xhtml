@@ -15,6 +15,11 @@ Overview of all subscribed communities for one user
    <ui:define name="content">
 	    <h:form id="communitySearch">
 	    	<h1>Communities</h1>
+	    	<p:inputText value="#{dtCommunitiesView.searchFieldText}" />
+			<p:commandLink id="ajax" update="communities" actionListener="#{dtCommunitiesView.search}">
+	       		<p:commandButton value="search" id="communitySearch"/>
+	   		</p:commandLink>
+	   		<br/><br/><br/>
 			<p:dataTable var="community" value="#{dtCommunitiesView.subscribedCommunities}" id="communities"
 				paginator="true" rows="10"
                	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
@@ -26,10 +31,6 @@ Overview of all subscribed communities for one user
 			        <h:outputText value="#{community.name}" />
 			    </p:column>
 			</p:dataTable>
-			<p:inputText value="#{dtCommunitiesView.searchFieldText}" />
-			<p:commandLink id="ajax" update="communities" actionListener="#{dtCommunitiesView.search}">
-		       <p:commandButton value="search" id="communitySearch"/>
-		   </p:commandLink>
 		</h:form>
 	</ui:define>
 </ui:composition>
