@@ -41,7 +41,9 @@ public class CommunityView implements Serializable{
     @PostConstruct
     public void init() {
     	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(CookieHelper.getAuthTokenValue());
-    	service.ensureUserIsLoggedIn();
+    	if (!service.isUserIsLoggedIn()) {
+    		RedirectionTargetHelper.redirectTo(RedirectionTarget.LOGIN);
+    	}
     }
     
     public List<Community> getSubscribedCommunities() {
