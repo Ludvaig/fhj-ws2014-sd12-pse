@@ -7,9 +7,9 @@ import at.fhj.swd.data.entity.User;
 
 public interface CommunityDAO {
 
-	public List<Community> getSubscribedCommunitiesForSearchTextOfCurrentUser(String searchFieldText, User user);
-	public Community getCommunityById(long id);
-	void createCommunity(Community community);
-	public List<Community> getAllCommunities();
+	public List<Community> findSubscribedCommunitiesForSearchTextOfCurrentUser(String searchFieldText, User user);
+	public Community findCommunityById(long id);
+	void insertCommunity(Community community);
+	public List<Community> findAllCommunities();
     Community update(Community community);
 }

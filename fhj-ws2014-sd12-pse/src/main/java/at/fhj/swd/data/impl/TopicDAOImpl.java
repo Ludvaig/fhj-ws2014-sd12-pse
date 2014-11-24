@@ -16,7 +16,7 @@ public class TopicDAOImpl implements TopicDAO{
 	
 	
 	@Override
-	public List<Topic> getTopicsByCommunityId(String communityId, String search) {
+	public List<Topic> findTopicsByCommunityId(String communityId, String search) {
 		List<Topic> topic = em
 				.createQuery(
 						"SELECT topic FROM Topic topic"
@@ -31,7 +31,7 @@ public class TopicDAOImpl implements TopicDAO{
 	}
 
 	@Override
-	public void createNewTopic(Topic newTopic) {
+	public void insert(Topic newTopic) {
 		em.persist(newTopic);
 	}
 
