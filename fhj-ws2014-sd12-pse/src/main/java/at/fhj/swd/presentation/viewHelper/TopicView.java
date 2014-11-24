@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.data.entity.Topic;
 import at.fhj.swd.service.CommunityService;
 import at.fhj.swd.service.TopicService;
@@ -37,10 +38,16 @@ public class TopicView implements Serializable{
 	
 	@PostConstruct
 	public void init(){
-		getCommunityId();
-		this.existingTopics = service.getExistingTopics(communityId, "");	
+		getCommunityId();	
 		if(communityId != null && !communityId.equals("")) {
-			this.communityName = comService.getCommunityById(Long.valueOf(communityId).longValue()).getName();
+			Community community = null;
+			try {
+				community = comService.getCommunityById(Long.valueOf(communityId).longValue());
+			} catch (Exception e) {
+				RedirectionTargetHelper.redirectTo(RedirectionTarget.COMMUNITIES);
+			}
+			this.existingTopics = service.getExistingTopics(communityId, "");
+			this.communityName = community.getName();
 		}
 	}
 
@@ -99,5 +106,4 @@ public class TopicView implements Serializable{
 		service.createNewTopic(communityId, createFieldText, createTopicText);
 		this.existingTopics = service.getExistingTopics(communityId, "");
 	}
-	
 }
