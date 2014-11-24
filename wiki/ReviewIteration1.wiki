@@ -1,12 +1,13 @@
+#labels Featured
 =1. Repository Structure=
 -------------------------------------------------------------------------------
 
 - Maven Repo .m2 eingecheckt für settings.xml
-
 - src direkt eingecheckt - ohne Projektnamen? 
-	=> was ist wenn man mehrere Module braucht?
-	
+	=> was ist wenn man mehrere Module braucht?	
 - pom.xml direkt eingecheckt
+
+*=> Solved (r316 - r330)*
 
 
 =2. Architecture=
@@ -16,6 +17,9 @@
 login.xhtml --> LoginController --> UserService------> UserDAO
                 @ManagedBean        @RequestScoped
                 @Stateless          em.persist(user);
+
+*=> Solved (r316 - r330)*
+TODO: Check package for domain layer if it contains the right classes!
 	
 	
 ==Entities==
