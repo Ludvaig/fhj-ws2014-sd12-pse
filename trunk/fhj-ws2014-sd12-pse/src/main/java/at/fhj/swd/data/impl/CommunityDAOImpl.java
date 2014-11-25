@@ -1,6 +1,8 @@
 package at.fhj.swd.data.impl;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -18,13 +20,16 @@ import at.fhj.swd.data.entity.User;
 public class CommunityDAOImpl implements CommunityDAO {
 
 	@Inject
+	private Logger logger;
+	
+	@Inject
 	public EntityManager em;
 
 	@Override
-	public List<Community> findSubscribedCommunitiesForSearchTextOfCurrentUser(
-		String searchFieldText, User user) {
+	public List<Community> findSubscribedCommunitiesForSearchTextOfCurrentUser(String searchFieldText, User user) {
+		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::findSubscribedCommunitiesForSearchTextOfCurrentUser()!");
 		
-		// Load limited Community-Entry from Database (Pagination @see: LazyCommunityImpl)
+		/** Load limited Community-Entry from Database (Pagination @see: LazyCommunityImpl) */
 		List<Community> communities = em
 				.createQuery(
 						"SELECT com FROM Community com"
@@ -36,6 +41,8 @@ public class CommunityDAOImpl implements CommunityDAO {
 							.setParameter("user_id", user.getId())
 							.setParameter("com_name", "%" + searchFieldText + "%")
 							.getResultList();
+		
+		logger.log(Level.INFO, "Successfully created communities: " + communities);
 		
 		return communities;
 	}
