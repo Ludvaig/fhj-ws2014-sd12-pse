@@ -15,22 +15,22 @@ Overview of all topic for one community
    <ui:define name="content">
    <h:form id="topicSearch">
    			<h1>Topic(s) of Community: 
-   			<h:outputText value="#{dtTopicView.communityName}" />
+ 				<h:outputText value="#{dtTopicView.communityName}" />
    			</h1>
+   			<br/>
+			<p:inputText value="#{dtTopicView.searchFieldText}" />
+			<p:commandLink id="ajax" update="topic" actionListener="#{dtTopicView.search}">
+		       <p:commandButton value="search" id="topicSearch"/> 
+		   	</p:commandLink>
+	   			<br/><br/><br/>
 			<p:dataTable var="topic" value="#{dtTopicView.existingTopics}" id="topic"
 				paginator="true" rows="10"
-               	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-               	
-			>
+               	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}">
 			    <p:column headerText="Topic Name">
 			        <h2><h:outputText value="#{topic.name}" /></h2>
 			        <p><h:outputText value="#{topic.text}" /></p>
 			    </p:column>
 			</p:dataTable>
-			<p:inputText value="#{dtTopicView.searchFieldText}" />
-			<p:commandLink id="ajax" update="topic" actionListener="#{dtTopicView.search}">
-		       <p:commandButton value="search" id="topicSearch"/> 
-		   </p:commandLink>
 		   	<br/>
 		   	<div style="margin-top: 15px">
 		   	<label for="createFieldText"> new Topic name: </label>
