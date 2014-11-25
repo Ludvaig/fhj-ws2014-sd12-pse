@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import at.fhj.swd.data.CommunityDAO;
 import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.data.entity.User;
+import at.fhj.swd.data.exceptions.DAOUpdateFailedException;
 
 /**
  * Data Access Object for Community
@@ -74,8 +75,7 @@ public class CommunityDAOImpl implements CommunityDAO {
 			em.merge(community);
 			return community;
 		} catch(Exception e) {
-			// should be DAOException in future releases.
-			throw e;
+			throw new DAOUpdateFailedException("Updating community [" + community + "] failed!", e);
 		}
 	}
 }
