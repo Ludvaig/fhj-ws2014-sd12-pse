@@ -3,6 +3,8 @@ package at.fhj.swd.presentation.viewHelper;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -28,6 +30,9 @@ public class CommunityView implements Serializable{
 
 	private static final long serialVersionUID = 6330672338108028518L;
 
+	@Inject
+	private Logger logger;
+	
 	private List<Community> subscribedCommunities = null;
 	
 	private String searchFieldText = "";
@@ -40,10 +45,14 @@ public class CommunityView implements Serializable{
     
     @PostConstruct
     public void init() {
+    	logger.log(Level.INFO, "Initiliazing " + this.getClass().getName() + " in @PostConstruct!");
+    	
     	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(CookieHelper.getAuthTokenValue());
     	if (!service.isUserIsLoggedIn()) {
     		RedirectionTargetHelper.redirectTo(RedirectionTarget.LOGIN);
     	}
+    	
+    	logger.log(Level.INFO, "Successfully nitiliazed " + this.getClass().getName() + " in @PostConstruct!");
     }
     
     public List<Community> getSubscribedCommunities() {
@@ -76,10 +85,14 @@ public class CommunityView implements Serializable{
     }
     
     public void onCommunitySelected(SelectEvent object){
+    	logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::onCommunitySelected()!");
+    	
 		try {
 			FacesContext.getCurrentInstance().getExternalContext().redirect("topic.jsf?id=" + selectedCommunity.getId());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+    	logger.log(Level.INFO, "Called " + this.getClass().getName() + "::onCommunitySelected()!");
     }
 }

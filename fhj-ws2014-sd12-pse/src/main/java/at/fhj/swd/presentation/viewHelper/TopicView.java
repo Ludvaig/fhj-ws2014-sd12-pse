@@ -3,6 +3,8 @@ package at.fhj.swd.presentation.viewHelper;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -29,6 +31,9 @@ public class TopicView implements Serializable{
 	private String communityId = null;
 	
 	@Inject
+	private Logger logger;
+	
+	@Inject
 	TopicService service;
 	
 	@Inject
@@ -38,6 +43,8 @@ public class TopicView implements Serializable{
 	
 	@PostConstruct
 	public void init(){
+		logger.log(Level.INFO, "Initiliazing " + this.getClass().getName() + " in @PostConstruct!");
+		
 		getCommunityId();	
 		if(communityId != null && !communityId.equals("")) {
 			Community community = null;
@@ -46,6 +53,8 @@ public class TopicView implements Serializable{
 			} catch (Exception e) {
 				RedirectionTargetHelper.redirectTo(RedirectionTarget.COMMUNITIES);
 			}
+			logger.log(Level.INFO, "Retrieved community [communityName = '" + community.getName() + "']!");
+			
 			this.existingTopics = service.getExistingTopics(communityId, "");
 			this.communityName = community.getName();
 		}

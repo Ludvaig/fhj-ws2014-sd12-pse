@@ -1,6 +1,8 @@
 package at.fhj.swd.data.impl;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -8,16 +10,21 @@ import javax.persistence.EntityManager;
 
 import at.fhj.swd.data.TopicDAO;
 import at.fhj.swd.data.entity.Topic;
+
 @Stateless
 public class TopicDAOImpl implements TopicDAO{
 
 	@Inject
-	EntityManager em;
+	private Logger logger;
 	
+	@Inject
+	EntityManager em;	
 	
 	@Override
 	public List<Topic> findTopicsByCommunityId(String communityId, String search) {
-		List<Topic> topic = em
+		logger.log(Level.INFO, "Called " + this.getClass().getName() + "::findTopicsByCommunityId()!");
+		
+		List<Topic> topics = em
 				.createQuery(
 						"SELECT topic FROM Topic topic"
 						+ " WHERE COMMUNITY_ID = :communityId "
@@ -27,12 +34,14 @@ public class TopicDAOImpl implements TopicDAO{
 							.setParameter("communityId", communityId)
 							.setParameter("search", "%" + search + "%")
 							.getResultList();
-		return topic;
+		
+		logger.log(Level.INFO, "Created topics: " + topics);
+		
+		return topics;
 	}
 
 	@Override
 	public void insert(Topic newTopic) {
 		em.persist(newTopic);
 	}
-
 }
