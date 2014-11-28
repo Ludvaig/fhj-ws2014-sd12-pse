@@ -14,7 +14,7 @@ public abstract class PageObjectBase {
 	/**
 	 * Constant for default timeout
 	 */
-	public static int DEFAULT_TIMEOUT_SECONDS =5;
+	public static int DEFAULT_TIMEOUT_SECONDS =1;
 	
 	/**
 	 * The web driver
@@ -87,7 +87,7 @@ public abstract class PageObjectBase {
 		(new WebDriverWait(driver, timeout)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
             	String myTitle = d.getTitle();
-            	return !myTitle.contains(title);
+            	return !myTitle.equals(title);
             }
         });
     }
