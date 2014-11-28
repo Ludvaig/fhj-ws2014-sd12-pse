@@ -14,7 +14,7 @@ public abstract class PageObjectBase {
 	/**
 	 * Constant for default timeout
 	 */
-	public static int DEFAULT_TIMEOUT_SECONDS =1;
+	public static int DEFAULT_TIMEOUT_SECONDS =5;
 	
 	/**
 	 * The web driver
@@ -91,5 +91,15 @@ public abstract class PageObjectBase {
             }
         });
     }
+	
+	/**
+	 * Get the text of given xpath element.
+	 * @param xPathElement the element.
+	 * @return the text of the element.
+	 */
+	public String GetTextOfxPathElement(String xPathElement){
+		String text = driver.findElement(By.xpath(xPathElement)).getText();
+		return text;
+	}
 	
 }
