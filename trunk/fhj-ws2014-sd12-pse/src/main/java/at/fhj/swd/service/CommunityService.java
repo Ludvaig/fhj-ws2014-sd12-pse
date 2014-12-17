@@ -2,6 +2,8 @@ package at.fhj.swd.service;
 
 import java.util.List;
 
+import at.fhj.swd.data.CommunityDAO;
+import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.Community;
 
 /** 
@@ -18,4 +20,8 @@ public interface CommunityService {
 	public Community getCommunityById(long id);
 	void createCommunity(String name, boolean visible);
 	void releaseCommunity(long id, boolean release);
+	public void setCommunityDAO(CommunityDAO communityDao);
+	public CommunityDAO getCommunityDAO();
+	public void setUserDAO(UserDAO userDao);
+	public UserDAO getUserDAO();
 }
