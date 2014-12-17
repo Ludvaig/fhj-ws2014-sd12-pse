@@ -131,4 +131,20 @@ public class CommunityServiceImpl implements CommunityService {
 		logger.log(Level.INFO, "Loaded user [" + user + "]!");
 		return user.getUsername().endsWith("_a");
 	}
+	
+	public void setCommunityDAO(CommunityDAO communityDao) {
+		this.communityDao = communityDao;
+	}
+	
+	public CommunityDAO getCommunityDAO() {
+		return this.communityDao;
+	}
+	
+	public void setUserDAO(UserDAO userDao) {
+		this.userDao = userDao;
+	}
+	
+	public UserDAO getUserDAO() {
+		return this.userDao;
+	}
 }
