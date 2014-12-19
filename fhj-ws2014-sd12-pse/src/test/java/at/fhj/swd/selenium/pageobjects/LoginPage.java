@@ -10,17 +10,21 @@ public class LoginPage extends PageObjectBase{
 	}
 
 	public TmpPage loginUser()  {
-		
+		return loginUser("Herbert", "vergessen");
+	}
+	
+	
+	public TmpPage loginUser(String user, String password){
 		driver.findElement(By.xpath(".//*[@id='login:username']")).clear();
 		driver.findElement(By.xpath(".//*[@id='login:password']")).clear();
-		driver.findElement(By.xpath(".//*[@id='login:username']")).sendKeys("Herbert");
-		driver.findElement(By.xpath(".//*[@id='login:password']")).sendKeys("vergessen");
+		driver.findElement(By.xpath(".//*[@id='login:username']")).sendKeys(user);
+		driver.findElement(By.xpath(".//*[@id='login:password']")).sendKeys(password);
 		driver.findElement(By.xpath(".//*[@id='login:login']")).click(); 
-		
+
 		// note: click does not wait for page to load, so wait
 		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);	
 		
-		return new TmpPage(driver);
+		return new TmpPage(driver);		
 	}
 	
 }
