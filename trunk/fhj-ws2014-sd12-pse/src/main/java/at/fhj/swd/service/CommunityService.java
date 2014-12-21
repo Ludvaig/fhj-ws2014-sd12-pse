@@ -20,6 +20,7 @@ public interface CommunityService {
 	public Community getCommunityById(long id);
 	void createCommunity(String name, boolean visible);
 	void releaseCommunity(long id, boolean release);
+	public boolean ensureUserIsAdmin();
 	public void setCommunityDAO(CommunityDAO communityDao);
 	public CommunityDAO getCommunityDAO();
 	public void setUserDAO(UserDAO userDao);

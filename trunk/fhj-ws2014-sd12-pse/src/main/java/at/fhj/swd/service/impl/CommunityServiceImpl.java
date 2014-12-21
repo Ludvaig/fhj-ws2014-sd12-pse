@@ -120,6 +120,7 @@ public class CommunityServiceImpl implements CommunityService {
 		}
 	}
 	
+	@Override
 	public boolean ensureUserIsAdmin() {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::ensureUserIsAdmin()!");
 		
