@@ -39,9 +39,9 @@ public class UserServiceImpl implements UserService {
 
 		// prove if input data are set
 		if (username == null)
-			throw new NullPointerException("username could not be null");
+			throw new NullPointerException("username can not be null");
 		if (password == null)
-			throw new NullPointerException("password could not be null");
+			throw new NullPointerException("password can not be null");
 
 		// check if the user password combination is correct
 		User user = userDAO.proveUserPassswordCombination(username, password);
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
 		user.setToken(token);
 
 		// persist the user
-		userDAO.persist(user);
+		userDAO.insert(user);
 
 		//return the created token (store this token to cookies)
 		return token;
@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
 	{
 		_log.info("Register a user with form authetication");
 		
-		userDAO.persist(user);
+		userDAO.insert(user);
 		
 		//if(isUsernameExist(user.getUsername())) throw new RuntimeException("This username already exists");
 		//if(user.getEmail() == null) throw new RuntimeException("Invalid email address");
@@ -124,7 +124,7 @@ public class UserServiceImpl implements UserService {
 		//hotfix set empty HashedPassword (to avoid null entity manger exception)
 		if(user.getHashedPassword() == null)
 			user.setHashedPassword("");		
-		userDAO.persist(user);
+		userDAO.insert(user);
 	}
 
 	@Override
@@ -155,7 +155,7 @@ public class UserServiceImpl implements UserService {
 		user.setToken("");
 		
 		//persist user
-		userDAO.persist(user);
+		userDAO.update(user);
 	}
 
 	@Override
@@ -165,7 +165,7 @@ public class UserServiceImpl implements UserService {
 		if (user == null)
 			throw new IllegalArgumentException("User is null.");
 		
-		return userDAO.updateUser(user);
+		return userDAO.update(user);
 	}
 	
 	@Override
