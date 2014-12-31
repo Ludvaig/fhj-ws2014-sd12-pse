@@ -64,4 +64,8 @@ public interface UserService {
 	 * */
 	User getUserByUsername(String username);
 
+	/**
+	 * check if password is correct for the user and load user from Database
+	 * */
+	User proveUserPassswordCombination(String username, String password); 
 }

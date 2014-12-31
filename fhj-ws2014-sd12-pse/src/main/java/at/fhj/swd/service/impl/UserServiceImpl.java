@@ -31,7 +31,8 @@ public class UserServiceImpl implements UserService {
   IEmailService emailService;
   */
 
-	private User proveUserPassswordCombination(String username, String password) {
+	@Override
+	public User proveUserPassswordCombination(String username, String password) {
 		User user = userDAO.findByName(username);
 		
 		// check password, if user is not null
