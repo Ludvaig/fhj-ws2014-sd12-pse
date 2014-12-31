@@ -14,24 +14,25 @@ public class UserDAOTestFacade implements UserDAO {
 	@EJB(beanName="UserDAOImpl")
 	private UserDAO dao;
 	
+	/*
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
 		return dao.proveUserPassswordCombination(username, password);
 	}
-
+*/
 	@Override
-	public User loadUserByName(String username) {
-		return dao.loadUserByName(username);
+	public User findByName(String username) {
+		return dao.findByName(username);
 	}
 
 	@Override
-	public User loadUserById(long id) {
-		return dao.loadUserById(id);
+	public User findById(long id) {
+		return dao.findById(id);
 	}
 
 	@Override
-	public User loadUserByToken(String token) {
-		return dao.loadUserByToken(token);
+	public User findByToken(String token) {
+		return dao.findByToken(token);
 	}
 
 
@@ -42,7 +43,6 @@ public class UserDAOTestFacade implements UserDAO {
 
 	@Override
 	public void insert(User user) {
-		dao.update(user);
-		
+		dao.insert(user);
 	}
 }

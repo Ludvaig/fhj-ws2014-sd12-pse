@@ -5,8 +5,6 @@ import java.security.SecureRandom;
 import java.util.logging.Logger;
 
 import javax.annotation.security.PermitAll;
-import javax.ejb.EJB;
-import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -33,6 +31,19 @@ public class UserServiceImpl implements UserService {
   IEmailService emailService;
   */
 
+	private User proveUserPassswordCombination(String username, String password) {
+		User user = userDAO.findByName(username);
+		
+		// check password, if user is not null
+		if (user != null) {
+			if (user.getPassword().equals(password)) {
+				return user;
+			}
+		}
+
+		return null;
+	}
+	
 	@Override
 	@PermitAll()
 	public String registerUser(String username, String password) {
@@ -44,7 +55,7 @@ public class UserServiceImpl implements UserService {
 			throw new NullPointerException("password can not be null");
 
 		// check if the user password combination is correct
-		User user = userDAO.proveUserPassswordCombination(username, password);
+		User user = proveUserPassswordCombination(username, password);
 
 		// throw exception if registration failed
 		if (user == null) {
@@ -52,7 +63,7 @@ public class UserServiceImpl implements UserService {
 		}
 
 		// Generate a new token
-		String token = GetNewToken();
+		String token = getNewToken();
 
 		// store token to user
 		user.setToken(token);
@@ -102,7 +113,7 @@ public class UserServiceImpl implements UserService {
 	  */
 	}
 
-	private String GetNewToken() {
+	private String getNewToken() {
 		SecureRandom random = new SecureRandom();
 		return new BigInteger(130, random).toString(32);
 	}
@@ -115,7 +126,7 @@ public class UserServiceImpl implements UserService {
 		if(token == null || token.length()< 5)
 			return null;
 		
-		return userDAO.loadUserByToken(token);
+		return userDAO.findByToken(token);
 	}
 
 	@Override
@@ -144,7 +155,7 @@ public class UserServiceImpl implements UserService {
 	public void loggoutUser(String userName) {
 		
 		// load user by user name
-		User user = userDAO.loadUserByName(userName);
+		User user = userDAO.findByName(userName);
 
 		// throw exception if the user was not found
 		if (user == null) {
@@ -171,17 +182,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public User getUserById(long id) {
-		
-		return userDAO.loadUserById(id);
-		
+		return userDAO.findById(id);
 	}
 	
 	@Override
 	@PermitAll()
 	public User getUserByUsername(String username){
-	
-		return userDAO.loadUserByName(username);
+		return userDAO.findByName(username);
 	}
-
-
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.NotSupportedException;
 
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
@@ -20,26 +21,20 @@ public class UserDAOImpl implements UserDAO {
 	public EntityManager em;
 
 	@Override
-	public User proveUserPassswordCombination(String username, String password) {
-		User user = loadUserByName(username);
-		
-		// check password, if user is not null
-		if (user != null) {
-			if (user.getPassword().equals(password)) {
-				return user;
-			}
-		}
-
-		return null;
-	}
-
-	@Override
 	public void insert(User user) {
 		em.persist(user);
 	}
+	
+	@Override
+	public User update(User user) {
+		if (user != null)
+			return em.merge(user);
+		else
+			return null;
+	}
 
 	@Override
-	public User loadUserByName(String username) {
+	public User findByName(String username) {
 		List<User> users = em
 				.createQuery("from User user where user.username=:username",
 						User.class).setParameter("username", username)
@@ -52,10 +47,9 @@ public class UserDAOImpl implements UserDAO {
 		}
 		throw new RuntimeException("inavlid database state in user table");
 	}
-	
 
 	@Override
-	public User loadUserById(long id) {
+	public User findById(long id) {
 		List<User> users = em
 				.createQuery("from User user where user.id=:id",
 						User.class).setParameter("id", id)
@@ -69,10 +63,8 @@ public class UserDAOImpl implements UserDAO {
 		throw new RuntimeException("inavlid database state in user table");
 	}
 
-
-
 	@Override
-	public User loadUserByToken(String token) {
+	public User findByToken(String token) {
 		List<User> users = em
 				.createQuery("from User user where user.token=:token",
 						User.class).setParameter("token", token)
@@ -85,15 +77,4 @@ public class UserDAOImpl implements UserDAO {
 		}
 		throw new RuntimeException("inavlid database state in user table");
 	}
-
-	@Override
-	public User update(User user)
-	{
-		if (user != null)
-			return em.merge(user);
-		else
-			return null;
-	}
-
-
 }
