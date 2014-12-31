@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
-import junit.framework.Assert;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +13,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import at.fhj.swd.selenium.pageobjects.LoginPage;
 import at.fhj.swd.selenium.pageobjects.TmpPage;
-
 
 public class LoginPageTest {
 	WebDriver driver;   
