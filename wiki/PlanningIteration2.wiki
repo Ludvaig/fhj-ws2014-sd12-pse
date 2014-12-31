@@ -1,12 +1,3 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
 ==Group 2: Fritz, Hagelmüller, Huber, Marcher, Palade, Schuberth und Spörk==
 ===User-Page===	
 	
@@ -21,18 +12,13 @@ Add your content here.
 
 
 ===Refactoring===		
-UserSerive RemoteFaced Test´s	To Do	Michael Spörk	4
-UserDAO Test´s	To Do	Jörg Huber	5
-UserService Test´s	To Do	Schuberth Jürgen	3
-Controller Logik aus Service-Layer entfernen	To Do	Schuberth Jürgen	1
-Logging	To Do	Steven Hagelmüller	2
-Auskommentierter Code	To Do	Sandra	2
-Enitity prüfen	To Do	Eva Fritz	2
-DAO-Logik aus Service-Layer entfernen	To Do	Steven Hagelmüller	2
-DAO Methodennamen anpassen	To Do	Eva Fritz	2
-Exception Handling UserService 	To Do	Ionut Palade	3
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+||UserService RemoteFaced tests||To Do||Michael Spörk||4||
+||UserDAO tests||To Do||Jörg Huber||5||
+||UserService tests||To Do||Schuberth Jürgen||3||
+||Delete controller logic from Service-Layer||To Do||Schuberth Jürgen||1||
+||Logging||To Do||Steven Hagelmüller||2||
+||Delete comment out code||To Do||Sandra Marcher||2||
+||Check Enitity||To Do||Eva Fritz||2||
+||Delete DAO-Logic from Service-Layer||To Do||Steven Hagelmüller||2||
+||Update DAO method names||To Do||Eva Fritz||2||
+||Exception Handling||To Do||Ionut Palade||3||
