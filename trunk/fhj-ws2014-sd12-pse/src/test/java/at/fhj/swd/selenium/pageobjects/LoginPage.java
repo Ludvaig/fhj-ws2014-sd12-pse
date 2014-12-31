@@ -3,6 +3,11 @@ package at.fhj.swd.selenium.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * LoginPage pageobject for testing.
+ * @author I. Palade
+ *
+ */
 public class LoginPage extends PageObjectBase{
 
 	public LoginPage(WebDriver driver) {

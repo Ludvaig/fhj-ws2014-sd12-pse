@@ -17,4 +17,12 @@ public class TmpPage extends PageObjectBase{
 		return new CommunityPage(driver);
 	}
 	
+	public UserPage goToUserPage(){
+		driver.findElement(By.xpath("html/body/table/tbody/tr[1]/td/a")).click();
+		
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+		
+		return new UserPage(driver);
+	}
+	
 }
