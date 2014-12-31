@@ -7,6 +7,29 @@ Add your content here.
 
 = Details =
 
+73	US16 Userseite	Committed	
+	
+Selenium Test´s User-Seite	To Do	Sandra	2
+Email-Adresse darf auf User-Seite nicht änderbar sein	To Do	Michael Spörk	1
+Validierungs-Info soll direkt neben der Eingabe sein	To Do	Michael Spörk	1
+
+74	US01 Login	Committed		
+Login alt/neu zusammenführen	To Do	Ionut Palade	1
+Selenium-Test´s für Login-Seite	To Do	Ionut Palade	2
+
+
+Refactore	Committed		
+UserSerive RemoteFaced Test´s	To Do	Michael Spörk	4
+UserDAO Test´s	To Do	Jörg Huber	5
+UserService Test´s	To Do	Schuberth Jürgen	3
+Controller Logik aus Service-Layer entfernen	To Do	Schuberth Jürgen	1
+Logging	To Do	Steven Hagelmüller	2
+Auskommentierter Code	To Do	Sandra	2
+Enitity prüfen	To Do	Eva Fritz	2
+DAO-Logik aus Service-Layer entfernen	To Do	Steven Hagelmüller	2
+DAO Methodennamen anpassen	To Do	Eva Fritz	2
+Exception Handling UserService 	To Do	Ionut Palade	3
+
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
