@@ -16,8 +16,8 @@ Add your content here.
 
 
 ===Login===		
-Login alt/neu zusammenführen	To Do	Ionut Palade	1
-Selenium-Test´s für Login-Seite	To Do	Ionut Palade	2
+||Login old/new merging||To Do||Ionut Palade||1||
+||Selenium tests for Login-Page||To Do||Ionut Palade||2||
 
 
 ===Refactoring===		
