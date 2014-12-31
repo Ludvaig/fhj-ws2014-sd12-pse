@@ -72,4 +72,10 @@ public class UserServiceTestStub implements UserService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public User proveUserPassswordCombination(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
