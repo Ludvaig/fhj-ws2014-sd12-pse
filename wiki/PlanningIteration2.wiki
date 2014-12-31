@@ -10,9 +10,10 @@ Add your content here.
 ==Group 2: Fritz, Hagelmüller, Huber, Marcher, Palade, Schuberth und Spörk==
 ===User-Page===	
 	
-Selenium Test´s User-Seite	To Do	Sandra	2
-Email-Adresse darf auf User-Seite nicht änderbar sein	To Do	Michael Spörk	1
-Validierungs-Info soll direkt neben der Eingabe sein	To Do	Michael Spörk	1
+||Selenium tests for User-Pages||To Do||Sandra Marcher||2||
+||Email-address are not changeable on User-Pages||To Do||Michael Spörk||1||
+||Information of validation directly on input field||To Do||Michael Spörk||1||
+
 
 ===Login===		
 Login alt/neu zusammenführen	To Do	Ionut Palade	1
