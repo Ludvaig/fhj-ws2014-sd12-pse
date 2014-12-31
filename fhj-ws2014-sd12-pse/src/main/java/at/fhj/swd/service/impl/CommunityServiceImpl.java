@@ -37,7 +37,7 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<Community> getAllSubscribedCommunitiesForUser(String authUserToken) {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::getAllSubscribedCommunitiesForUser()!");
 		
-		User user = userDao.loadUserByToken(authUserToken);
+		User user = userDao.findByToken(authUserToken);
 		
 		List<Community> communities = null;
 		if(user != null){
@@ -52,7 +52,7 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, String authUserToken) {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::getAllSubscribedCommunitiesForUser()!");
 		
-		User user = userDao.loadUserByToken(authUserToken);
+		User user = userDao.findByToken(authUserToken);
 		
 		logger.log(Level.INFO, "Loaded user [username='" + user.getUsername() + "']!");
 		
@@ -63,7 +63,7 @@ public class CommunityServiceImpl implements CommunityService {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::isUserIsLoggedIn()!");
 		
 		String authToken = CookieHelper.getAuthTokenValue();
-		User user = userDao.loadUserByToken(authToken);
+		User user = userDao.findByToken(authToken);
 		
 		if(user == null) {
 			return false;
@@ -125,7 +125,7 @@ public class CommunityServiceImpl implements CommunityService {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::ensureUserIsAdmin()!");
 		
 		String token = CookieHelper.getAuthTokenValue();
-		User user = userDao.loadUserByToken(token);
+		User user = userDao.findByToken(token);
 		if(user == null)
 			return false;
 		

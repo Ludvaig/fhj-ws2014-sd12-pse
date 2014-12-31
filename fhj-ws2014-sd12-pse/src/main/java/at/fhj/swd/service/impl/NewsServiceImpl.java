@@ -61,7 +61,7 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public boolean ensureUserIsAdmin() {
 		String token = CookieHelper.getAuthTokenValue();
-		User user = userDao.loadUserByToken(token);
+		User user = userDao.findByToken(token);
 		if(user == null)
 			return false;
 		return user.getUsername().endsWith("_a");
@@ -70,7 +70,7 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public boolean ensureUserIsPortalAdmin() {
 		String token = CookieHelper.getAuthTokenValue();
-		User user = userDao.loadUserByToken(token);
+		User user = userDao.findByToken(token);
 		if(user == null)
 			return false;
 		return user.getUsername().endsWith("_pa");
