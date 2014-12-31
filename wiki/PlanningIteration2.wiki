@@ -8,18 +8,18 @@ Add your content here.
 = Details =
 
 ==Group 2: Fritz, Hagelmüller, Huber, Marcher, Palade, Schuberth und Spörk==
-===73	US16 Userseite	Committed===	
+===User-Page===	
 	
 Selenium Test´s User-Seite	To Do	Sandra	2
 Email-Adresse darf auf User-Seite nicht änderbar sein	To Do	Michael Spörk	1
 Validierungs-Info soll direkt neben der Eingabe sein	To Do	Michael Spörk	1
 
-74	US01 Login	Committed		
+===Login===		
 Login alt/neu zusammenführen	To Do	Ionut Palade	1
 Selenium-Test´s für Login-Seite	To Do	Ionut Palade	2
 
 
-Refactore	Committed		
+===Refactoring===		
 UserSerive RemoteFaced Test´s	To Do	Michael Spörk	4
 UserDAO Test´s	To Do	Jörg Huber	5
 UserService Test´s	To Do	Schuberth Jürgen	3
