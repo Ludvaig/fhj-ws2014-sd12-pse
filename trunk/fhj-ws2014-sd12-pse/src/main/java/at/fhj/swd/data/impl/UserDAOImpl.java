@@ -34,7 +34,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void persist(User user) {
+	public void insert(User user) {
 		em.persist(user);
 	}
 
@@ -87,7 +87,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User updateUser(User user)
+	public User update(User user)
 	{
 		if (user != null)
 			return em.merge(user);
