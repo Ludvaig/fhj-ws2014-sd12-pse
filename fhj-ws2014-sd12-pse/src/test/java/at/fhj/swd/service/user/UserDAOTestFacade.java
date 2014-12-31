@@ -20,11 +20,6 @@ public class UserDAOTestFacade implements UserDAO {
 	}
 
 	@Override
-	public void persist(User user) {
-		dao.persist(user);
-	}
-
-	@Override
 	public User loadUserByName(String username) {
 		return dao.loadUserByName(username);
 	}
@@ -39,8 +34,15 @@ public class UserDAOTestFacade implements UserDAO {
 		return dao.loadUserByToken(token);
 	}
 
+
 	@Override
-	public User updateUser(User user) {
-		return dao.updateUser(user);
+	public User update(User user) {
+		return dao.update(user);
+	}
+
+	@Override
+	public void insert(User user) {
+		dao.update(user);
+		
 	}
 }
