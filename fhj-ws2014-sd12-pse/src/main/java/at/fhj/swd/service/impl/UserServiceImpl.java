@@ -9,8 +9,6 @@ import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
@@ -29,9 +27,6 @@ public class UserServiceImpl implements UserService {
 	
 	@Inject
 	private UserDAO userDAO;
-	
-	@PersistenceContext()
-  private EntityManager em;
   
 	/*
   @EJB
@@ -80,7 +75,7 @@ public class UserServiceImpl implements UserService {
 	{
 		_log.info("Register a user with form authetication");
 		
-		em.persist(user);
+		userDAO.persist(user);
 		
 		//if(isUsernameExist(user.getUsername())) throw new RuntimeException("This username already exists");
 		//if(user.getEmail() == null) throw new RuntimeException("Invalid email address");
