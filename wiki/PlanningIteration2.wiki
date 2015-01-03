@@ -26,15 +26,18 @@
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
 ===User-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
-||Fix upload||to do||x||x||
+||Fix document upload||to do||x||x||
+||Fix document download||to do||x||x||
 
 ===Admin-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
-||Fix upload||to do||x||x||
+||Fix document upload||to do||x||x||
+||Fix document download||to do||x||x||
 
 ===Main-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
-||Fix upload||to do||x||x||
+||Fix document upload||to do||x||x||
+||Fix document download||to do||x||x||
 ||Move document library to main page||to do||x||x||
 
 ===Refactoring===
