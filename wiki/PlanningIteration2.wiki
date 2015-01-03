@@ -34,7 +34,7 @@
 
 ===Main-Page===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Move document library to main page||Kamper||x||2||
+||Move document library to main page||to do||Kamper||2||
 
 ===Refactoring===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
