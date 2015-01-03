@@ -26,6 +26,8 @@
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
 ===User-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
+||Fix upload||undone||x||x||
+
 
 
 ===Admin-Page===
@@ -34,5 +36,5 @@
 ===Main-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
 
-===Loggin===
+===Logging & Exceptions===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
