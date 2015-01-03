@@ -14,35 +14,33 @@ public class UserDAOTestFacade implements UserDAO {
 	@EJB(beanName="UserDAOImpl")
 	private UserDAO dao;
 	
-	/*
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
 		return dao.proveUserPassswordCombination(username, password);
 	}
-*/
+
 	@Override
-	public User findByName(String username) {
-		return dao.findByName(username);
+	public void persist(User user) {
+		dao.persist(user);
 	}
 
 	@Override
-	public User findById(long id) {
-		return dao.findById(id);
+	public User loadUserByName(String username) {
+		return dao.loadUserByName(username);
 	}
 
 	@Override
-	public User findByToken(String token) {
-		return dao.findByToken(token);
-	}
-
-
-	@Override
-	public User update(User user) {
-		return dao.update(user);
+	public User loadUserById(long id) {
+		return dao.loadUserById(id);
 	}
 
 	@Override
-	public void insert(User user) {
-		dao.insert(user);
+	public User loadUserByToken(String token) {
+		return dao.loadUserByToken(token);
+	}
+
+	@Override
+	public User updateUser(User user) {
+		return dao.updateUser(user);
 	}
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.transaction.NotSupportedException;
 
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
@@ -21,20 +20,26 @@ public class UserDAOImpl implements UserDAO {
 	public EntityManager em;
 
 	@Override
-	public void insert(User user) {
-		em.persist(user);
-	}
-	
-	@Override
-	public User update(User user) {
-		if (user != null)
-			return em.merge(user);
-		else
-			return null;
+	public User proveUserPassswordCombination(String username, String password) {
+		User user = loadUserByName(username);
+		
+		// check password, if user is not null
+		if (user != null) {
+			if (user.getPassword().equals(password)) {
+				return user;
+			}
+		}
+
+		return null;
 	}
 
 	@Override
-	public User findByName(String username) {
+	public void persist(User user) {
+		em.persist(user);
+	}
+
+	@Override
+	public User loadUserByName(String username) {
 		List<User> users = em
 				.createQuery("from User user where user.username=:username",
 						User.class).setParameter("username", username)
@@ -49,7 +54,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User findById(long id) {
+	public User loadUserById(long id) {
 		List<User> users = em
 				.createQuery("from User user where user.id=:id",
 						User.class).setParameter("id", id)
@@ -63,8 +68,10 @@ public class UserDAOImpl implements UserDAO {
 		throw new RuntimeException("inavlid database state in user table");
 	}
 
+
+
 	@Override
-	public User findByToken(String token) {
+	public User loadUserByToken(String token) {
 		List<User> users = em
 				.createQuery("from User user where user.token=:token",
 						User.class).setParameter("token", token)
@@ -76,5 +83,14 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 		throw new RuntimeException("inavlid database state in user table");
+	}
+
+	@Override
+	public User updateUser(User user)
+	{
+		if (user != null)
+			return em.merge(user);
+		else
+			return null;
 	}
 }
