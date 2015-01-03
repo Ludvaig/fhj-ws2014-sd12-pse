@@ -46,3 +46,4 @@
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Logging||to do||x||x||
 ||Exception handling||to do||x||x||
+||Document service including unit test||to do||x||x||
