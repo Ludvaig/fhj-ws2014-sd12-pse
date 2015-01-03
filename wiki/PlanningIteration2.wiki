@@ -25,11 +25,11 @@
 
 
 
-==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
+==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabetter,Reitner,Seidl==
 ===General issues=== 
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Fix document upload||to do||x||x||
-||Fix document download||to do||x||x||
+||Fix document upload||to do||Kranabetter||3||
+||Fix document download||to do||Kranabetter||3||
 
 ===Main-Page===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
