@@ -23,9 +23,11 @@
 ||Update DAO method names||To Do||Eva Fritz||2||
 ||Exception Handling||To Do||Ionut Palade||3||
 
+
+
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
-===User-Page===
-||*To Do*||*Status*||*Responsible person*||*Story points*||
+===User-Page=== 
+|| *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Fix document upload||to do||x||x||
 ||Fix document download||to do||x||x||
 
@@ -35,12 +37,12 @@
 ||Fix document download||to do||x||x||
 
 ===Main-Page===
-||*To Do*||*Status*||*Responsible person*||*Story points*||
+|| *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Fix document upload||to do||x||x||
 ||Fix document download||to do||x||x||
 ||Move document library to main page||to do||x||x||
 
 ===Refactoring===
-||*To Do*||*Status*||*Responsible person*||*Story points*||
+|| *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Logging||to do||x||x||
 ||Exception handling||to do||x||x||
