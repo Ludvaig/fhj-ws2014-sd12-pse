@@ -47,3 +47,8 @@
 ||Logging||to do||x||x||
 ||Exception handling||to do||x||x||
 ||Document service including unit test||to do||x||x||
+
+===Selenium tests===
+|| *To Do* || *Status* || *Responsible person* || *Story points* ||
+||Document upload||to do||x||x||
+||Document download||to do||x||x||
