@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Beans configuration for community-DAO-CDI-component tests.<br>
+	
+	@author Group4
+-->
+<beans xmlns="http://java.sun.com/xml/ns/javaee" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   			xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+        										http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+        										
+	<alternatives>
+		<class>at.fhj.swd.data.dao.community.CommunityDAOAlternativeImpl</class>
+	</alternatives>        										
+</beans>
