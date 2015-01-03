@@ -22,3 +22,17 @@
 ||Delete DAO-Logic from Service-Layer||To Do||Steven Hagelmüller||2||
 ||Update DAO method names||To Do||Eva Fritz||2||
 ||Exception Handling||To Do||Ionut Palade||3||
+
+==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
+===User-Page===
+||*To Do*||*Status*||*Responsible person*||*Story points*||
+
+
+===Admin-Page===
+||*To Do*||*Status*||*Responsible person*||*Story points*||
+
+===Main-Page===
+||*To Do*||*Status*||*Responsible person*||*Story points*||
+
+===Loggin===
+||*To Do*||*Status*||*Responsible person*||*Story points*||
