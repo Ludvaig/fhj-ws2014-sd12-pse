@@ -30,7 +30,7 @@
 ||Fix document download||to do||x||x||
 
 ===Admin-Page===
-||*To Do*||*Status*||*Responsible person*||*Story points*||
+|| *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Fix document upload||to do||x||x||
 ||Fix document download||to do||x||x||
 
