@@ -70,10 +70,9 @@ public class CommunityDAOImpl implements CommunityDAO {
 	}
 
 	@Override
-	public Community update(Community community) {
+	public void update(Community community) {
 		try {
 			em.merge(community);
-			return community;
 		} catch(Exception e) {
 			throw new DAOUpdateFailedException("Updating community [" + community + "] failed!", e);
 		}

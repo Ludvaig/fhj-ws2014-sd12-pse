@@ -11,5 +11,5 @@ public interface CommunityDAO {
 	public Community findCommunityById(long id);
 	void insertCommunity(Community community);
 	public List<Community> findAllCommunities();
-    Community update(Community community);
+    void update(Community community);
 }

@@ -38,8 +38,8 @@ public class CommunityDAOTestFacade implements CommunityDAO {
 	}
 
 	@Override
-	public Community update(Community community) {
-		return dao.update(community);
+	public void update(Community community) {
+		dao.update(community);
 	}
 
 }
