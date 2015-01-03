@@ -40,7 +40,7 @@
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Logging||to do||x||2||
 ||Exception handling||to do||x||2||
-||Document service including unit test||Lamb, Reitner||x||4||
+||Document service including unit test||to do||Lamb, Reitner||4||
 ||Implement hashcodes and Equals||to do||Lamb, Reitner||1||
 ||Unify naming of variables and classes etc.||to do||x||1||
 ||Remove representation layer code from service||to do||x||3||
