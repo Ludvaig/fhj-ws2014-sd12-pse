@@ -42,7 +42,7 @@
 ||Exception handling||to do||x||2||
 ||Document service including unit test||to do||Lamb, Reitner||4||
 ||Implement hashcodes and Equals||to do||Lamb, Reitner||1||
-||Unify naming of variables and classes etc.||to do||x||1||
+||Unify naming of variables and classes etc.||Lamb, Reitner||x||1||
 ||Remove representation layer code from service||to do||x||3||
 
 ===Selenium tests===
