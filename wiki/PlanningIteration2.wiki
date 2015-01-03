@@ -26,15 +26,15 @@
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabeter,Reitner,Seidl==
 ===User-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
-||Fix upload||undone||x||x||
-
-
+||Fix upload||to do||x||x||
 
 ===Admin-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
+||Fix upload||to do||x||x||
 
 ===Main-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
+||Fix upload||to do||x||x||
 
 ===Logging & Exceptions===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
