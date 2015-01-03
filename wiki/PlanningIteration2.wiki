@@ -49,7 +49,7 @@
 ||Document service including unit test||to do||x||x||
 ||Implement hashcodes and Equals||to do||x||1||
 ||Unify naming of variables and classes etc.||to do||x||x||
-||Move representation layer code from service||to do||x||x||
+||Remove representation layer code from service||to do||x||x||
 
 ===Selenium tests===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
