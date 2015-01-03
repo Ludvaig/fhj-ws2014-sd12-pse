@@ -47,5 +47,5 @@
 ===Selenium tests===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Document upload||to do||Ascher, Haberl||4||
-||Document download||to do||Ascher, Haberl||4||
-||News feed for user||to do||Ascher, Haberl||4||
+||Document download||to do||Ascher, Haberl||3||
+||News feed for user||to do||Ascher, Haberl||3||
