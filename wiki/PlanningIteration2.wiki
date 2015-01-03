@@ -30,6 +30,7 @@
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Fix document upload||to do||Kranabetter||3||
 ||Fix document download||to do||Kranabetter||3||
+||Maven environment||to do||Kranabetter||2||
 
 ===Main-Page===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
