@@ -47,6 +47,8 @@
 ||Logging||to do||x||x||
 ||Exception handling||to do||x||x||
 ||Document service including unit test||to do||x||x||
+||Implement hashcodes and Equals||to do||x||x||
+||d||to do||x||x||
 
 ===Selenium tests===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
