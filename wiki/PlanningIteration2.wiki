@@ -35,6 +35,9 @@
 ===Main-Page===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
 ||Fix upload||to do||x||x||
+||Move document library to main page||to do||x||x||
 
-===Logging & Exceptions===
+===Refactoring===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
+||Logging||to do||x||x||
+||Exception||to do||x||x||
