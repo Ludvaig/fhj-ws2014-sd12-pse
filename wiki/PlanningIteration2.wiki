@@ -40,4 +40,4 @@
 ===Refactoring===
 ||*To Do*||*Status*||*Responsible person*||*Story points*||
 ||Logging||to do||x||x||
-||Exception||to do||x||x||
+||Exception handling||to do||x||x||
