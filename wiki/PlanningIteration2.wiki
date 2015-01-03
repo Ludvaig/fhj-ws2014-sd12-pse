@@ -43,7 +43,7 @@
 ||Document service including unit test||to do||Lamb, Reitner||4||
 ||Implement hashcodes and Equals||to do||Lamb, Reitner||1||
 ||Unify naming of variables and classes etc.||to do||Lamb, Reitner||1||
-||Remove representation layer code from service||to do (clarify)||x||3||
+||Remove representation layer code from service||to do (clarify)||Lamb,Kamper,Reitner||3||
 
 ===Selenium tests===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
