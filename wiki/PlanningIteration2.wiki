@@ -50,3 +50,43 @@
 ||Document upload||to do||Ascher, Haberl||4||
 ||Document download||to do||Ascher, Haberl||3||
 ||News feed for user||to do||Ascher, Haberl||3||
+
+
+==Group 4: Dulzky, Lindlbauer, Mitteregger, Temmel, Siharath, Wendl==
+
+===Refactoring===
+abgeschlossen
+
+===Abstimmung mit anderen Teams===
+* Service-Layer in den Domain-Layer hochziehen: ja/nein
+* utils-package (HashUtil.java und Ressources.java) aus dem Domain-Layer in eine eigene Hierarchie: ja/nein
+* Wie wird mit den gemeinsamen noch offenen issue bzgl. gemeinsame Exception-Fang-Ebene auf oberster Business-Ebene an damit unser System resilient ist?
+
+===Offene Punkte===
+====2. Functional Tests/In-Container Tests====
+Vorbereitungen erfolgt, Umsetzung der Happy-Path-Tests: in progress
+Abschätzung: 8 Stunden
+
+====3. Component Tests/DB-Tests:====
+work in progress
+Probleme mit Connection
+Abschätzung: 5 Stunden
+
+====4. Unit-Tests====
+noch nicht begonnen
+Abschätzung: 10 Stunden
+
+===Zeitaufwand bisher ===
+
+Di, 16.12., 20:30 - 22:15, Beginn Functional Tests, 
+Mi, 17.12., 20:30 - 22:30, Functional Tests
+Do, 18.12., 20:30 - 22:30, Functional Tests
+So, 21.12., 20:00 - 22:00, Functional Tests
+Mo, 29.12., 20:00 - 21:30, Functional Tests
+Di, 30.12., 19:00 - 22:00, Functional Tests  
+Sa, 03.01., 18:00 - 21:00, Functional Test => schauen, wie die Tests auszuführen sind
+So, 04.01., 20:00 - 22:15, Functional Test
+
+Summe - bisheriger Aufwand: 17,5 Stunden
+
+Summe - geschätzter offener Aufwand: 23 Stunden
