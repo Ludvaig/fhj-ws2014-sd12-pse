@@ -1,7 +1,9 @@
 package at.fhj.swd.presentation;
 
 import java.io.Serializable;
+import java.util.logging.Logger;
 
+import javax.ejb.EJBException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -9,9 +11,9 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import at.fhj.swd.data.entity.User;
 import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.UserService;
+import at.fhj.swd.service.exceptions.UserLoginException;
 
 /***
  * 
@@ -25,6 +27,9 @@ import at.fhj.swd.service.UserService;
 public class LoginController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	private Logger logger;
+	
 	@Inject
 	private FacesContext facesContext;
 
@@ -52,18 +57,27 @@ public class LoginController implements Serializable {
 
 	public String login() {
 		try {
+			logger.info(String.format("Entering LoginController.login() method. Username:  '%s'...", username));
+			
 			String token = userService.registerUser(username, password);
 			CookieHelper.setAuthTokenValue(token);
 
+			logger.info(String.format("Login for user '%s' successful.", username));
 			//String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
 			//facesContext.getExternalContext().redirect(url);
 			
 			//Todo:Change to real page:
 			return "tmpindex?faces-redirect=true";
-			
-		} catch (Exception e) {
-			String errorMessage = e.getLocalizedMessage();
-			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
+		} 
+		catch (Exception e) {
+			if(e instanceof EJBException && ((EJBException) e).getCausedByException() instanceof UserLoginException) {
+				logger.warning(String.format("Login for user '%s' failed.", username));
+				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getLocalizedMessage(), ""));
+			}
+			else {
+				logger.severe(String.format("An unexpected exception occured: ", e.getLocalizedMessage()));
+				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "An unexpected error occurred. Please contact the system administrator.", ""));
+			}
 		}
 		return null;
 	}
