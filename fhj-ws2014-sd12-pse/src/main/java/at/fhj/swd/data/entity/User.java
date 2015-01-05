@@ -1,5 +1,6 @@
 package at.fhj.swd.data.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -28,8 +29,13 @@ import at.fhj.swd.data.entity.helper.TableGeneratorHelper;
  */
 
 @Entity
-public class User {
+public class User implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	public static final String TABLE_GEN_NAME = "userTableGen";
 	public static final String PK_COL_VALUE = "userPk";
 	
