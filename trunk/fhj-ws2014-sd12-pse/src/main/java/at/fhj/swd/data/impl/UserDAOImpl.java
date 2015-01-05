@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
+import javax.inject.Named;
 
 /**
  * DAO Implementation for User entity
@@ -14,6 +15,7 @@ import at.fhj.swd.data.entity.User;
  * @author Jörg Huber
  * */
 
+@Named
 public class UserDAOImpl implements UserDAO {
 
 	@Inject
