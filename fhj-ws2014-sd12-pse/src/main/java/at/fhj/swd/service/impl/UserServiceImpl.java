@@ -11,11 +11,13 @@ import javax.inject.Inject;
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
 import at.fhj.swd.service.UserService;
+import at.fhj.swd.service.exceptions.UserLoginException;
+import javax.inject.Named;
 
 /**
  * DAO Implementation for User entity
  * 
- * @author Jörg Huber, Lukas Kranabetter
+ * @author Joerg Huber, Lukas Kranabetter
  * */
 @Stateless
 public class UserServiceImpl implements UserService {
@@ -23,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	private Logger _log;
 	
-	@Inject
+	@Inject @Named("userDAOImpl")
 	private UserDAO userDAO;
   
 	/*
@@ -51,16 +53,16 @@ public class UserServiceImpl implements UserService {
 
 		// prove if input data are set
 		if (username == null)
-			throw new NullPointerException("username can not be null");
+			throw new IllegalArgumentException ("username can not be null");
 		if (password == null)
-			throw new NullPointerException("password can not be null");
+			throw new IllegalArgumentException ("password can not be null");
 
 		// check if the user password combination is correct
 		User user = proveUserPassswordCombination(username, password);
 
 		// throw exception if registration failed
 		if (user == null) {
-			throw new RuntimeException("not registerd");
+			throw new UserLoginException();
 		}
 
 		// Generate a new token
