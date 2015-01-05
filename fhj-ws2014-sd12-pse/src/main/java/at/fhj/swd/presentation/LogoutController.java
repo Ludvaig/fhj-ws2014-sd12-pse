@@ -43,7 +43,8 @@ public class LogoutController {
 				if(user != null) {
 					userService.loggoutUser(user.getUsername());
 				}
-			}			
+			}
+			logger.info("Logout succesful.");
 		} catch(Exception e) {
 			if(e instanceof EJBException) {
 				e = ((EJBException) e).getCausedByException();
