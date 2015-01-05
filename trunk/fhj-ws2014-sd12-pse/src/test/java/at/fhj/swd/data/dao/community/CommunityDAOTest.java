@@ -71,12 +71,12 @@ public class CommunityDAOTest {
 		connection.rollback();
 	}
 	
-	@Test
+	@Ignore
 	public void testFindSubscribedCommunitiesForSearchTextOfCurrentUser() {
 		
 	}
 	
-	@Test
+	@Ignore
 	public void testFindCommunityById() {
 		
 	}
@@ -88,12 +88,12 @@ public class CommunityDAOTest {
 		Assert.assertEquals(comHerbert.getId(), dao.findCommunityById(comHerbert.getId()));
 	}
 	
-	@Test
+	@Ignore
 	public void testFindAllCommunities() {
 		
 	}
 	
-	@Test
+	@Ignore
 	public void testUpdate() {
 		
 	}

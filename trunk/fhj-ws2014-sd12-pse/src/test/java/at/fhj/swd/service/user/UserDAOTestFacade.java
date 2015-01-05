@@ -20,27 +20,27 @@ public class UserDAOTestFacade implements UserDAO {
 	}
 
 	@Override
-	public void persist(User user) {
-		dao.persist(user);
+	public void insert(User user) {
+		dao.insert(user);
 	}
 
 	@Override
-	public User loadUserByName(String username) {
-		return dao.loadUserByName(username);
+	public User findByName(String username) {
+		return dao.findByName(username);
 	}
 
 	@Override
-	public User loadUserById(long id) {
-		return dao.loadUserById(id);
+	public User findById(long id) {
+		return dao.findById(id);
 	}
 
 	@Override
-	public User loadUserByToken(String token) {
-		return dao.loadUserByToken(token);
+	public User findByToken(String token) {
+		return dao.findByToken(token);
 	}
 
 	@Override
-	public User updateUser(User user) {
-		return dao.updateUser(user);
+	public User update(User user) {
+		return dao.update(user);
 	}
 }
