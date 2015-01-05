@@ -67,20 +67,4 @@ public class LoginController implements Serializable {
 		}
 		return null;
 	}
-	
-	/***
-	 * Should be removed before release.
-	 */
-	public void insertUser() {
-		try {
-			User user = new User();
-			user.setUsername(username);
-			user.setPassword(password);
-			userService.insertUser(user);
-
-		} catch (Exception e) {
-			String errorMessage = e.getLocalizedMessage();
-			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
-		}
-	}
 }
