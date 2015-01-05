@@ -1,8 +1,9 @@
 package at.fhj.swd.presentation;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
+import javax.ejb.EJBException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
@@ -24,20 +25,32 @@ import at.fhj.swd.service.UserService;
 @RequestScoped
 public class LogoutController {
 	@Inject
+	private Logger logger;
+	
+	@Inject
 	private FacesContext facesContext;
 
 	@Inject
 	private UserService userService;
 
 	public void logout() throws IOException {
-		String token = CookieHelper.getAuthTokenValue();
-		if(token != null) {
-			User user = userService.getRegisteredUser(token);
-			if(user != null) {
-				userService.loggoutUser(user.getUsername());
-			}
-		}
+		logger.info("Entering LogoutController.logout() method.");
 		
+		try {
+			String token = CookieHelper.getAuthTokenValue();
+			if(token != null) {
+				User user = userService.getRegisteredUser(token);
+				if(user != null) {
+					userService.loggoutUser(user.getUsername());
+				}
+			}			
+		} catch(Exception e) {
+			if(e instanceof EJBException) {
+				e = ((EJBException) e).getCausedByException();
+			}
+			logger.severe(String.format("An unexpected exception occured: ", e.getLocalizedMessage()));
+		}
+				
 		String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
 		facesContext.getExternalContext().redirect(url);
 	}
