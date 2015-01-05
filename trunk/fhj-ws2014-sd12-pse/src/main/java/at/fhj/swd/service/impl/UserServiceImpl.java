@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
 
 		// throw exception if registration failed
 		if (user == null) {
-			throw new UserLoginException();
+			throw new UserLoginException("Login failed.");
 		}
 
 		// Generate a new token
