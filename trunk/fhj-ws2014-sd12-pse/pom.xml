@@ -101,6 +101,49 @@
   
     <!-- BOM dependencies need no version declaration. -->
     
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-ejb-client</artifactId>
+			<scope>runtime</scope>
+			<version>2.0.1.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.xnio</groupId>
+			<artifactId>xnio-api</artifactId>
+			<scope>runtime</scope>
+			<version>3.3.0.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.xnio</groupId>
+			<artifactId>xnio-nio</artifactId>
+			<scope>runtime</scope>
+			<version>3.3.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.remoting</groupId>
+			<artifactId>jboss-remoting</artifactId>
+			<scope>runtime</scope>
+			<version>4.0.3.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.sasl</groupId>
+			<artifactId>jboss-sasl</artifactId>
+			<scope>runtime</scope>
+			<version>1.0.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.marshalling</groupId>
+			<artifactId>jboss-marshalling-river</artifactId>
+			<scope>runtime</scope>
+			<version>1.4.9.Final</version>
+		</dependency>
+
+    
     <!-- Import the CDI API. -->
     <dependency>
       <groupId>javax.enterprise</groupId>
