@@ -1,14 +1,15 @@
-package at.fhj.swd.service;
+package at.fhj.swd.remoteFacade;
 
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import at.fhj.swd.data.entity.User;
+import at.fhj.swd.service.UserService;
 
 @Stateless
 @Remote(UserService.class)
-public class UserServiceTestFacade implements UserService{
+public class UserServiceRemoteFacade implements UserService{
 	
 	@EJB(beanName="UserServiceImpl")
 	private UserService service;

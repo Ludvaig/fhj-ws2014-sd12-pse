@@ -1,4 +1,4 @@
-package at.fhj.swd.service;
+package at.fhj.swd.remoteFacade;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -12,6 +12,7 @@ import javax.naming.NamingException;
 import org.junit.Before;
 import org.junit.Test;
 
+import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.exceptions.UserLoginException;
 
 public final class UserServiceRemoteFacadeTest {
