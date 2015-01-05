@@ -26,18 +26,6 @@ Simple Login page mainly for testing purposes.
 			<div></div>
 			<p:commandButton id="login" action="#{loginController.login}" value="Login"/> 
 		</h:panelGrid>
-		
-		
-<!-- #################################################################################################### -->
-<!-- Can be used to create new users during the development phase: -->
-
-<br/><br/><h:commandButton id="insertMax" action="#{loginController.insertUser}" value="Insert user" />
-<pre>
-Enter a username and password and press "Insert user" to insert a new user into the database.
-Use _a or _pa at the end of the user name (e.g. huber_pa) to create an admin or portal admin user.
-</pre>
-<!-- #################################################################################################### -->
-
 	</h:form>
 </h:body>
 </html>
