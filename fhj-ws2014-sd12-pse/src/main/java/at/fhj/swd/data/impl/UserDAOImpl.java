@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
-		User user = loadUserByName(username);
+		User user = findByName(username);
 		
 		// check password, if user is not null
 		if (user != null) {
@@ -34,12 +34,12 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void persist(User user) {
+	public void insert(User user) {
 		em.persist(user);
 	}
 
 	@Override
-	public User loadUserByName(String username) {
+	public User findByName(String username) {
 		List<User> users = em
 				.createQuery("from User user where user.username=:username",
 						User.class).setParameter("username", username)
@@ -54,7 +54,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User loadUserById(long id) {
+	public User findById(long id) {
 		List<User> users = em
 				.createQuery("from User user where user.id=:id",
 						User.class).setParameter("id", id)
@@ -71,7 +71,7 @@ public class UserDAOImpl implements UserDAO {
 
 
 	@Override
-	public User loadUserByToken(String token) {
+	public User findByToken(String token) {
 		List<User> users = em
 				.createQuery("from User user where user.token=:token",
 						User.class).setParameter("token", token)
@@ -86,7 +86,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User updateUser(User user)
+	public User update(User user)
 	{
 		if (user != null)
 			return em.merge(user);
