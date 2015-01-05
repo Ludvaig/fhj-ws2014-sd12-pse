@@ -9,15 +9,19 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import at.fhj.swd.data.entity.User;
 import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.exceptions.UserLoginException;
 
 public final class UserServiceRemoteFacadeTest {
 
-
+	private User user;
+	
 	private UserService service;
 	// The JNDI lookup name for a stateless session bean has the syntax of:
 	// ejb:<appName>/<moduleName>/<distinctName>/<beanName>!<viewClassName>
@@ -51,12 +55,20 @@ public final class UserServiceRemoteFacadeTest {
         final String jndiName = "ejb:" + "" 
         		+ "/" + "fhj-ws2014-sd12-pse" 
         		+ "/" + ""
-        		+ "/" + "UserServiceTestFacade" 
+        		+ "/" + "UserServiceRemoteFacade" 
         		+ "!" + UserService.class.getName();
    
         service =  (UserService) context.lookup(jndiName);
+        
+        
+        user = new User();
     }
     
+    @After
+    public void tearDown()
+    {
+    	
+    }
     
     @Test
     public void registerUser_defect()
@@ -68,5 +80,37 @@ public final class UserServiceRemoteFacadeTest {
 			assertEquals(UserLoginException.class, e.getCause().getClass());
 		}
     }
+    
+	@Test
+	public void testUserIsAdmin() {
+		
+		user.setUsername("test");
+		
+		assertEquals(false, service.UserIsAdmin(user));
+		
+		user.setUsername("test_a");
+
+		assertEquals(true, service.UserIsAdmin(user));
+		assertEquals(false, service.UserIsPortalAdmin(user));
+	}
 	
+	@Test
+	public void testUserIsPortalAdmin() {
+	
+		user.setUsername("test");
+		
+		assertEquals(false, service.UserIsPortalAdmin(user));
+		
+		user.setUsername("test_pa");
+		assertEquals(true, service.UserIsPortalAdmin(user));
+		assertEquals(false, service.UserIsAdmin(user));
+	}
+	
+	@Test
+	public void getUserById()
+	{
+		User user = service.getUserById(1);
+		
+		assertEquals("Herbert", user.getUsername());
+	}
 }
