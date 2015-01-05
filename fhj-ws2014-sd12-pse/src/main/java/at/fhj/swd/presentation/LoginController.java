@@ -72,7 +72,7 @@ public class LoginController implements Serializable {
 		catch (Exception e) {
 			if(e instanceof EJBException && ((EJBException) e).getCausedByException() instanceof UserLoginException) {
 				logger.warning(String.format("Login for user '%s' failed.", username));
-				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getLocalizedMessage(), ""));
+				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, ((EJBException) e).getCausedByException().getLocalizedMessage(), ""));
 			}
 			else {
 				logger.severe(String.format("An unexpected exception occured: ", e.getLocalizedMessage()));

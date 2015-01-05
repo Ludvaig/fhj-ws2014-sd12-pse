@@ -13,6 +13,7 @@ public class UserLoginException extends ServiceLayerException {
 	 */
 	private static final long serialVersionUID = -5257960952452128139L;
 
-
-
+	public UserLoginException(String msg) {
+		super(msg);
+	}
 }
