@@ -19,20 +19,20 @@ Usersite
 	<h:form id="userForm">
 		<h1>User profile</h1>
 		<p:panel header="User">
-		<p:messages autoUpdate="true"/>
+		<!--p:messages autoUpdate="true"/-->
 		
 		<table>
 			<tr>
 				<td>Username:</td>
 				<td>
-					<p:inputText id="userName" value="#{userSiteController.username}" label="Username" readonly="#{userSiteController.otherUser}">
+					<p:inputText id="userName" value="#{userSiteController.username}" label="Username" readonly="true">
 	            	</p:inputText>
 				</td>
 			</tr>
 			<tr>
 				<td>email:</td>
 				<td>
-					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email" readonly="#{userSiteController.otherUser}" validatorMessage="Email does not match pattern. Example: (any sign)@(any sign).(character)">
+					<p:inputText id="eMail" value="#{userSiteController.email}" label="Email" readonly="true" validatorMessage="Email does not match pattern. Example: (any sign)@(any sign).(character)">
 						<f:validateRegex pattern=".*\@.*\.\w*" />
 	            	</p:inputText>
 				</td>
@@ -44,6 +44,7 @@ Usersite
 	                	<f:validateRegex pattern="\+?\d{3,15}" />
 	            	</p:inputText>
 				</td>
+				<td><p:messages id="phoneNumberMessage" /></td>
 			</tr>
 		</table>
 
@@ -55,7 +56,7 @@ Usersite
 	<p:growl id="growl" life="5000" />
 	<br/>
 		
-	<p:commandButton value="Save" id="saveUserdata" validateClient="true" update="growl userForm:userName userForm:eMail userForm:phoneNumber contactForm :contactForm:contactDetail" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
+	<p:commandButton value="Save" id="saveUserdata" validateClient="true" update="userForm:phoneNumberMessage" actionListener="#{userSiteController.editUser}" disabled="#{userSiteController.otherUser}" styleClass="ui-priority-primary" />
 	  	
 	<br/>
 	<br/>
