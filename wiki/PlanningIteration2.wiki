@@ -73,7 +73,7 @@ Probleme mit Connection
 Abschätzung: 5 Stunden
 
 ====4. Unit-Tests====
-noch nicht begonnen
+ost-Entity abgeschlossen
 Abschätzung: 10 Stunden
 
 ===Zeitaufwand bisher ===
@@ -85,7 +85,10 @@ So, 21.12., 20:00 - 22:00, Functional Tests
 Mo, 29.12., 20:00 - 21:30, Functional Tests
 Di, 30.12., 19:00 - 22:00, Functional Tests  
 Sa, 03.01., 18:00 - 21:00, Functional Test => schauen, wie die Tests auszuführen sind
-So, 04.01., 20:00 - 22:15, Functional Test
+So, 04.01., 20:00 - 22:15, Kompoenten-Test
+Mo, 05.01., 20:00 - 22:00, Administration + Reparieren nach Refactoring von Gruppe 1 (1 Stunde), Komponenten-Test
+Di, 06.01., 20:00 - 22:45 Unit-Test für Post-Entity
+So, 04.01., 20:00 - 23:00, Unit-Test Post-Entity abgeschlossen
 
 Summe - bisheriger Aufwand: 17,5 Stunden
 
