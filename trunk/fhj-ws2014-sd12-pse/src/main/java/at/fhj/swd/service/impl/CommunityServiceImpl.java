@@ -11,7 +11,6 @@ import at.fhj.swd.data.CommunityDAO;
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.data.entity.User;
-import at.fhj.swd.domain.exceptions.InsufficientUserPriviledgesException;
 import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.CommunityService;
 
@@ -90,9 +89,6 @@ public class CommunityServiceImpl implements CommunityService {
 	public void createCommunity(String name, boolean visible) {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::createCommunity()!");
 		
-		if(!ensureUserIsAdmin())
-			throw new InsufficientUserPriviledgesException("User does not have admin rights!");
-		
 		try {
 			Community community = new Community();
 			community.setName(name);
@@ -118,19 +114,6 @@ public class CommunityServiceImpl implements CommunityService {
 			logger.log(Level.SEVERE, "failed to release community", e);
 			throw e;
 		}
-	}
-	
-	@Override
-	public boolean ensureUserIsAdmin() {
-		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::ensureUserIsAdmin()!");
-		
-		String token = CookieHelper.getAuthTokenValue();
-		User user = userDao.findByToken(token);
-		if(user == null)
-			return false;
-		
-		logger.log(Level.INFO, "Loaded user [" + user + "]!");
-		return user.getUsername().endsWith("_a");
 	}
 	
 	public void setCommunityDAO(CommunityDAO communityDao) {

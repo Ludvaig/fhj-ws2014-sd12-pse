@@ -1,7 +1,9 @@
 package at.fhj.swd.presentation.viewHelper;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
@@ -14,12 +16,16 @@ import javax.inject.Inject;
 import javax.transaction.NotSupportedException;
 
 import at.fhj.swd.data.entity.Community;
+import at.fhj.swd.data.entity.User;
+import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.CommunityService;
+import at.fhj.swd.service.UserService;
+import at.fhj.swd.service.exceptions.ServiceLayerException;
 
 /**
- * Community-ViewHelper.
+ * Community Administration - ViewHelper.
  * 
- * @author Group4
+ * @author Group3
  * */
 
 @ManagedBean(name="dtCommunitiesAdminView")
@@ -36,16 +42,25 @@ public class CommunityAdminView implements Serializable{
 	@Inject
     private CommunityService communityService;
 	
+	@SuppressWarnings("cdi-ambiguous-dependency")
+	@Inject
+	private UserService userService;
+	
 	@Inject
 	private FacesContext facesContext;
 	
 	private String createCommunity;
 	private long releaseCommunity;
-    
-    @PostConstruct
+	private boolean userHasAccess;
+
+	@PostConstruct
     public void init() {
-    	communities = communityService.getAllCommunities();
-    	//communityService.ensureUserIsLoggedIn();
+    	// ensure administrator.
+		ensureUserHasAccess();
+    	
+    	if(getUserHasAccess()) {
+    		communities = communityService.getAllCommunities();
+    	}
     }
     
     public List<Community> getCommunities() {
@@ -72,27 +87,50 @@ public class CommunityAdminView implements Serializable{
     	this.createCommunity = name;
     }
     
+	public boolean getUserHasAccess() {
+		return userHasAccess;
+	}
+
+	public void setUserHasAccess(boolean userHasAccess) {
+		this.userHasAccess = userHasAccess;
+	}
+    
     public void create() {
     	System.out.println("create");
-    	try {
-    		communityService.createCommunity(createCommunity, false);
-    		
-    		// redirection.
-    		ExternalContext ec = facesContext.getExternalContext();
-    		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
-    	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
-    	} catch(Exception e) {
-    		if(e.getMessage().equals("operation not allowed")) {
+    	
+    	if(!getUserHasAccess()) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "You are not signed in as Administrator.", null));
+    		setCreateCommunity(null);
+    	}
+    	else {
+        	try {
+        		// create community.
+        		communityService.createCommunity(createCommunity, false);
+        		
+        		// redirection.
+        		ExternalContext ec = facesContext.getExternalContext();
+        		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
+        	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
+        	} catch(ServiceLayerException e) {
     			facesContext.addMessage(null, 
-    					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community. You are not signed in as Administrator.", null));
-    		} else {
-    			facesContext.addMessage(null, 
-    					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community", null));
-    		}
+    					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to create community.", null));
+        	} catch(IOException e) {
+        		facesContext.addMessage(null, 
+    					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Redirection failed", null));
+        	}
     	}
     }
     
     public void release() {
+    	
+    	if(!getUserHasAccess()) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "You are not signed in as Administrator.", null));
+    		setCreateCommunity(null);
+    		return;
+    	}
+    	
     	try {
     		Long communityId = new Long(releaseCommunity);
     		Community community = communityService.getCommunityById(communityId.longValue());
@@ -102,9 +140,26 @@ public class CommunityAdminView implements Serializable{
     		ExternalContext ec = facesContext.getExternalContext();
     		logger.info("path: " + ec.getRequestContextPath() + "/admin/community_list.jsf");
     	    ec.redirect(ec.getRequestContextPath() + "/admin/community_list.jsf");
-    	} catch(Exception e) {
+    	} catch(ServiceLayerException e) {
     		facesContext.addMessage(null, 
-					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to release community", null));    		
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Failed to release community.", null));    		
+    	} catch(IOException e) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Redirection failed", null));
     	}
+    }
+    
+    private void ensureUserHasAccess() {
+		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::ensureUserIsAdmin()!");
+		
+		String token = CookieHelper.getAuthTokenValue();
+		User user = userService.getRegisteredUser(token);
+		if(user == null) {
+			setUserHasAccess(false);
+		} else {
+			boolean hasAccess = user.getUsername().endsWith("_a");
+			logger.log(Level.INFO, "Loaded user [" + user + "] hasAccess [" + hasAccess +"]");
+			setUserHasAccess(hasAccess);
+		}
     }
 }

@@ -16,7 +16,10 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import at.fhj.swd.data.entity.News;
+import at.fhj.swd.data.entity.User;
+import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.NewsService;
+import at.fhj.swd.service.UserService;
 
 /**
  * News-ViewHelper.
@@ -36,6 +39,10 @@ public class NewsAdminView implements Serializable{
 	@Inject
 	private FacesContext facesContext;
 	
+	@SuppressWarnings("cdi-ambiguous-dependency")
+	@Inject 
+	private UserService userService;
+	
 	@Inject
     private NewsService newsService;
 	
@@ -43,23 +50,29 @@ public class NewsAdminView implements Serializable{
 	private String createTitle;
 	private String createContent;
 	private List<News> news = null;
+	private boolean userHasAccess;
     
     @PostConstruct
     public void init() {
     	logger.info("newsAdminView init()");
     	
-    	Map<String, String> parameters = facesContext.getExternalContext().getRequestParameterMap();
-		String newsId = parameters.get("newsId");
-		if(newsId != null && !newsId.equals("")) {
-			// load selected news.
-			logger.info("loading selected news due to request parameter");
-			loadSelectedNews(newsId);
-		}
-		else {
-			// load all news.
-			logger.info("loading all news due to news list request");
-    		news = newsService.getAllNews();
-		}
+    	// ensure access right.
+    	ensureUserHasAccess();
+    	
+    	if(getUserHasAccess()) {    	
+	    	Map<String, String> parameters = facesContext.getExternalContext().getRequestParameterMap();
+			String newsId = parameters.get("newsId");
+			if(newsId != null && !newsId.equals("")) {
+				// load selected news.
+				logger.info("loading selected news due to request parameter");
+				loadSelectedNews(newsId);
+			}
+			else {
+				// load all news.
+				logger.info("loading all news due to news list request");
+	    		news = newsService.getAllNews();
+			}
+    	}
     }
     
     public List<News> getNews() {
@@ -72,11 +85,6 @@ public class NewsAdminView implements Serializable{
     
     public void setSelectedNews(News news) {
     	this.selectedNews = news;
-    }
-    
-    public void setDeleteCommunity(int id) {
-    	// TODO: Group3
-    	// TODO: Delete community with id
     }
     
 	public String getCreateTitle() {
@@ -95,11 +103,26 @@ public class NewsAdminView implements Serializable{
 		this.createContent = createContent;
 	}
 	
+	public boolean getUserHasAccess() {
+		return userHasAccess;
+	}
+
+	public void setUserHasAccess(boolean userHasAccess) {
+		this.userHasAccess = userHasAccess;
+	}
+	
 	/**
 	 * Bean methods.
 	 */
     public void create() {
     	logger.info("create() news called.");
+    	
+    	if(!getUserHasAccess()) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "You are not signed in as Administrator or Portal Administrator.", null));
+    		return;   		
+    	}
+    	
     	try {
     		newsService.postNews(null, createTitle, createContent, new Date(), false);
     		
@@ -114,6 +137,13 @@ public class NewsAdminView implements Serializable{
     
     public void save() {
     	logger.info("save() selected news called");
+    	
+    	if(!getUserHasAccess()) {
+    		facesContext.addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "You are not signed in as Administrator or Portal Administrator.", null));
+    		return;   		
+    	}
+    	
     	try {
     		newsService.updateNews(selectedNews);
     		
@@ -126,7 +156,7 @@ public class NewsAdminView implements Serializable{
     	}
     }
     
-    private void loadSelectedNews(String newsId) {
+    private void loadSelectedNews(String newsId) {    	
     	try {
     		Long id = Long.parseLong(newsId);
     		selectedNews = newsService.findNewsById(id.longValue());
@@ -134,5 +164,20 @@ public class NewsAdminView implements Serializable{
     		logger.log(Level.SEVERE, "error parsing newsId", e);
     		
     	}
+    }
+    
+    private void ensureUserHasAccess() {
+		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::ensureUserIsAdmin()!");
+		
+		String token = CookieHelper.getAuthTokenValue();
+		User user = userService.getRegisteredUser(token);
+		if(user == null) {
+			setUserHasAccess(false);
+		} else {
+			boolean hasAccess = user.getUsername().endsWith("_a") || // access is granted to admin
+					user.getUsername().endsWith("_pa"); 			  // or portal admin.
+			logger.log(Level.INFO, "Loaded user [" + user + "] hasAccess [" + hasAccess +"]");
+			setUserHasAccess(hasAccess);
+		}
     }
 }
