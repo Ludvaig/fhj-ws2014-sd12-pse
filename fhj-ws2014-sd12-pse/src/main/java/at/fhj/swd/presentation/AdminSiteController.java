@@ -28,7 +28,6 @@ public class AdminSiteController implements Serializable {
 	@Inject
     private FacesContext facesContext;
 	
-	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private UserService userService;
 	
