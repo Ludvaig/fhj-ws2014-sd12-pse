@@ -2,6 +2,7 @@ package at.fhj.swd.service.impl;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.security.PermitAll;
@@ -11,8 +12,12 @@ import javax.inject.Inject;
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
 import at.fhj.swd.service.UserService;
+import at.fhj.swd.service.exceptions.ServiceLayerException;
 import at.fhj.swd.service.exceptions.UserLoginException;
+
 import javax.inject.Named;
+
+import org.eclipse.jetty.util.log.Log;
 
 /**
  * DAO Implementation for User entity
@@ -24,48 +29,56 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	private Logger _log;
-	
-	@Inject @Named("userDAOImpl")
+
+	@Inject
+	@Named("userDAOImpl")
 	private UserDAO userDAO;
-  
-	/*
-  @EJB
-  IEmailService emailService;
-  */
 
 	@Override
-	public User proveUserPassswordCombination(String username, String password) {
-		User user = userDAO.findByName(username);
-		
+	public User proveUserPassswordCombination(String userName, String password) {
+
+		_log.log(Level.INFO, "prove password for [" + userName + "] pw ["
+				+ password + "]!");
+
+		// input validation
+		if (userName == null)
+			throw new IllegalArgumentException("username can not be null");
+		if (password == null)
+			throw new IllegalArgumentException("password can not be null");
+
+		// find user by name
+		User user= getUserByName(userName);
+
 		// check password, if user is not null
-		if (user != null) {
-			if (user.getPassword().equals(password)) {
-				return user;
-			}
+		if (user != null && user.getPassword().equals(password)) {
+			return user;
 		}
 
 		return null;
 	}
-	
+
 	@Override
 	@PermitAll()
-	public String registerUser(String username, String password) {
+	public String registerUser(String userName, String password) {
+		
+		_log.log(Level.INFO, "register user [" + userName + "] pw ["
+				+ password + "]!");
 
-		// prove if input data are set
-		if (username == null)
-			throw new IllegalArgumentException ("username can not be null");
+		// input validation
+		if (userName == null)
+			throw new IllegalArgumentException("userName can not be null");
 		if (password == null)
-			throw new IllegalArgumentException ("password can not be null");
+			throw new IllegalArgumentException("password can not be null");
 
 		// check if the user password combination is correct
-		User user = proveUserPassswordCombination(username, password);
+		User user = proveUserPassswordCombination(userName, password);
 
 		// throw exception if registration failed
 		if (user == null) {
 			throw new UserLoginException("Login failed.");
 		}
 
-		// Generate a new token
+		// generate a new token
 		String token = getNewToken();
 
 		// store token to user
@@ -74,10 +87,10 @@ public class UserServiceImpl implements UserService {
 		// persist the user
 		userDAO.insert(user);
 
-		//return the created token (store this token to cookies)
+		// return the created token (store this token to cookies)
 		return token;
 	}
-	
+
 	/**
 	 * Register a new user, permit for all.
 	 * 
@@ -85,35 +98,28 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	@PermitAll()
-	public void registerUser(User user)
-	{
+	public void registerUser(User user) {
 		_log.info("Register a user with form authetication");
-		
-		userDAO.insert(user);
-		
-		//if(isUsernameExist(user.getUsername())) throw new RuntimeException("This username already exists");
-		//if(user.getEmail() == null) throw new RuntimeException("Invalid email address");
-		//if(isEmailOverRegistered(user.getEmail())) throw new RuntimeException("One Email can register at most 3 accounts");
- 
-		//user.setActivated(false);
 
-  
-		// TODO: Implement email account activation
-		// Example code
-		/*
-		ActivateCode activateCode = new ActivateCode();
-		activateCode.setUser(user);
-		activateCode.setCode(RandomHelper.getRandomString(ActivateCode.CODE_LENGTH));
-		activateCode.setUsageType(ActivateCode.Usage.USER_ACTIVATE_ACCOUNT.id);
-		em.persist(activateCode);
-  
-	  Email email = new Email();
-	  email.setTitle(EmailConstants.USER_REGISTER_ACTIVATION_EMAIL_TITLE);
-	  email.setContent(EmailConstants.getUserRegisterActivatioinEmailContent(user.getUsername(), activateCode.getActivatingLink()));
-	  email.setToUser(user);
-	  em.persist(email);
-	  emailService.sendMail(email);
-	  */
+		// input validation
+		if (user == null)
+			throw new IllegalArgumentException("user can not be null");
+
+		userDAO.insert(user);
+	}
+	
+	private User getUserByName(String userName)
+	{
+		// find user by name
+		User user;
+		try {
+			user = userDAO.findByName(userName);
+		} catch (Exception e) {
+			String msg = "UserDAO Exception from methode findByName";
+			_log.log(Level.SEVERE, msg + e);
+			throw new ServiceLayerException("Data Access Error", e);
+		}
+		return user;
 	}
 
 	private String getNewToken() {
@@ -124,20 +130,23 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public User getRegisteredUser(String token) {
-		
-		//check if token is valid
-		if(token == null || token.length()< 5)
+
+		_log.log(Level.INFO, "get registerd user by token [" + token + "]");
+
+		// check if token is valid
+		if (token == null || token.length() < 5)
 			return null;
-		
+
 		return userDAO.findByToken(token);
 	}
 
 	@Override
 	@PermitAll()
 	public void insertUser(User user) {
-		//hotfix set empty HashedPassword (to avoid null entity manger exception)
-		if(user.getHashedPassword() == null)
-			user.setHashedPassword("");		
+		// hotfix set empty HashedPassword (to avoid null entity manger
+		// exception)
+		if (user.getHashedPassword() == null)
+			user.setHashedPassword("");
 		userDAO.insert(user);
 	}
 
@@ -157,40 +166,55 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public void loggoutUser(String userName) {
 		
-		// load user by user name
-		User user = userDAO.findByName(userName);
+		_log.log(Level.INFO, "loggoutUser [" + userName + "]");
+
+		// find user by name
+		User user= getUserByName(userName);
 
 		// throw exception if the user was not found
 		if (user == null) {
 			throw new RuntimeException("could not find user in database");
 		}
-		
-		//set token initial
+
+		// set token initial
 		user.setToken("");
-		
-		//persist user
+
+		// persist user
 		userDAO.update(user);
 	}
 
 	@Override
 	@PermitAll()
-	public User updateUser(User user)
-	{
-		if (user == null)
-			throw new IllegalArgumentException("User is null.");
+	public User updateUser(User user) {
 		
+		_log.log(Level.INFO, "update user [" + user + "]");
+
+		// input validation
+		if (user == null)
+			throw new IllegalArgumentException("user is null.");
+
 		return userDAO.update(user);
 	}
-	
+
 	@Override
 	@PermitAll()
 	public User getUserById(long id) {
+
+		_log.log(Level.INFO, "get user by id [" + id + "]");
+
 		return userDAO.findById(id);
 	}
-	
+
 	@Override
 	@PermitAll()
-	public User getUserByUsername(String username){
+	public User getUserByUsername(String username) {
+
+		_log.log(Level.INFO, "get user by username [" + username + "]");
+
+		// input validation
+		if (username == null)
+			throw new IllegalArgumentException("username can not be null");
+
 		return userDAO.findByName(username);
 	}
 }
