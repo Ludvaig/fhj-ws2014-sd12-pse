@@ -22,23 +22,14 @@ public class CookieHelper {
 
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 
-		HttpServletRequest request = (HttpServletRequest) facesContext
-				.getExternalContext().getRequest();
-		Cookie cookie = null;
-
-		Cookie[] userCookies = request.getCookies();
-		if (userCookies != null && userCookies.length > 0) {
-			for (int i = 0; i < userCookies.length; i++) {
-				if (userCookies[i].getName().equals(name)) {
-					cookie = userCookies[i];
-					break;
-				}
-			}
-		}
+		Cookie cookie = getCookie(name);
 
 		if (cookie != null) {
 			cookie.setValue(value);
 		} else {
+			HttpServletRequest request = (HttpServletRequest) facesContext
+			.getExternalContext().getRequest();
+			
 			cookie = new Cookie(name, value);
 			cookie.setPath(request.getContextPath());
 		}
