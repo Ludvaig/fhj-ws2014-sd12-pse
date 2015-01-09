@@ -9,8 +9,10 @@ import at.fhj.swd.data.entity.User;
 public class UserDAOMock implements UserDAO {
 
 	public User user;
-	public RuntimeException exception;
-	
+	public RuntimeException insertException;
+	public RuntimeException findByNameException;
+	public RuntimeException findByIdException;
+	public RuntimeException updateException;	
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
 		// TODO Auto-generated method stub
@@ -19,23 +21,24 @@ public class UserDAOMock implements UserDAO {
 
 	@Override
 	public void insert(User user) {
-		if(exception != null)
-			throw exception;
+		if(insertException != null)
+			throw insertException;
 		this.user = user;
 		
 	}
 
 	@Override
 	public User findByName(String username) {
-		if(exception != null)
-			throw exception;
+		if(findByNameException != null)
+			throw findByNameException;
 		return user;
 	}
 
 	@Override
 	public User findById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		if(findByIdException != null)
+			throw findByIdException;
+		return user;
 	}
 
 	@Override
@@ -46,8 +49,10 @@ public class UserDAOMock implements UserDAO {
 
 	@Override
 	public User update(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		if(updateException != null)
+			throw updateException;
+		
+		return user;
 	}
 
 }
