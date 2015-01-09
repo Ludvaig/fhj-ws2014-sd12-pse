@@ -15,12 +15,15 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fhj.swd.data.entity.User;
+import at.fhj.swd.domain.util.HashUtil;
 import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.exceptions.UserLoginException;
 
 public final class UserServiceRemoteFacadeTest {
 
 	private User user;
+	private String userName = "Herbert";
+	private String password = "vergessen";
 	
 	private UserService service;
 	// The JNDI lookup name for a stateless session bean has the syntax of:
@@ -59,15 +62,26 @@ public final class UserServiceRemoteFacadeTest {
         		+ "!" + UserService.class.getName();
    
         service =  (UserService) context.lookup(jndiName);
-        
-        
+                       
         user = new User();
+        user.setUsername(userName);
+        user.setPassword(password);
+        user.setHashedPassword(HashUtil.getPasswordHash(user.getUsername(), user.getPassword()
+        		));
     }
     
     @After
     public void tearDown()
     {
     	
+    }
+        
+    @Test
+    public void registerUserWithUsernameAndPassword()
+    {
+    	String token = service.registerUser(userName, password);
+    	
+    	assertEquals(userName, service.getRegisteredUser(token).getUsername());
     }
     
     @Test
@@ -83,9 +97,7 @@ public final class UserServiceRemoteFacadeTest {
     
 	@Test
 	public void testUserIsAdmin() {
-		
-		user.setUsername("test");
-		
+			
 		assertEquals(false, service.UserIsAdmin(user));
 		
 		user.setUsername("test_a");
@@ -96,9 +108,7 @@ public final class UserServiceRemoteFacadeTest {
 	
 	@Test
 	public void testUserIsPortalAdmin() {
-	
-		user.setUsername("test");
-		
+			
 		assertEquals(false, service.UserIsPortalAdmin(user));
 		
 		user.setUsername("test_pa");
@@ -111,6 +121,42 @@ public final class UserServiceRemoteFacadeTest {
 	{
 		User user = service.getUserById(1);
 		
-		assertEquals("Herbert", user.getUsername());
+		assertEquals(userName, user.getUsername());
+	}
+	
+	@Test
+	public void getUserByName()
+	{
+		User user = service.getUserByUsername(userName);
+		
+		assertEquals(userName, user.getUsername());
+	}
+	
+	
+	@Test
+	public void loggoutUser()
+	{
+    	service.registerUser(userName, password);
+    	
+    	service.loggoutUser(userName);
+    	user = service.getUserByUsername(userName);
+    	
+    	assertEquals("", user.getToken());
+	}
+	
+	@Test
+	public void updateUser()
+	{
+		String email = "mail@mail.at";
+		
+		String token = service.registerUser(userName, password);
+		
+		user = service.getRegisteredUser(token);
+		
+		user.setEmail(email);
+		
+		service.updateUser(user);
+		
+		assertEquals(email, service.getUserByUsername(userName).getEmail());
 	}
 }
