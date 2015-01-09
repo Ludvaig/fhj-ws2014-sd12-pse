@@ -51,8 +51,9 @@ public class LogoutController {
 			}
 			logger.severe(String.format("An unexpected exception occured: ", e.getLocalizedMessage()));
 		}
-				
-		String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
-		facesContext.getExternalContext().redirect(url);
+		finally {
+			String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
+			facesContext.getExternalContext().redirect(url);
+		}
 	}
 }
