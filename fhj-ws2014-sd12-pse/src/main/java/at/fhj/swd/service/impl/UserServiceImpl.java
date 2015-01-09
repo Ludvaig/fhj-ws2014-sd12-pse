@@ -26,7 +26,7 @@ import javax.inject.Named;
 public class UserServiceImpl implements UserService {
 
 	@Inject
-	private Logger _log;
+	private Logger log;
 
 	@Inject
 	@Named("userDAOImpl")
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User proveUserPassswordCombination(String userName, String password) {
 
-		_log.log(Level.INFO, "prove password for [" + userName + "] pw ["
+		log.log(Level.INFO, "prove password for [" + userName + "] pw ["
 				+ password + "]!");
 
 		// input validation
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public String registerUser(String userName, String password) {
 
-		_log.log(Level.INFO, "register user [" + userName + "] pw [" + password
+		log.log(Level.INFO, "register user [" + userName + "] pw [" + password
 				+ "]!");
 
 		// input validation
@@ -97,7 +97,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public void registerUser(User user) {
-		_log.info("Register a user with form authetication");
+		log.info("Register a user with form authetication");
 
 		// input validation
 		if (user == null)
@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
 			user = userDAO.findByName(userName);
 		} catch (Exception e) {
 			String msg = "UserDAO Exception from methode findByName";
-			_log.log(Level.SEVERE, msg + e);
+			log.log(Level.SEVERE, msg + e);
 			throw new ServiceLayerException("Data Access Error", e);
 		}
 		return user;
@@ -128,7 +128,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public User getRegisteredUser(String token) {
 
-		_log.log(Level.INFO, "get registerd user by token [" + token + "]");
+		log.log(Level.INFO, "get registerd user by token [" + token + "]");
 
 		// check if token is valid
 		if (token == null || token.length() < 5)
@@ -139,18 +139,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@PermitAll()
-	public void insertUser(User user) {
-		// hotfix set empty HashedPassword (to avoid null entity manger
-		// exception)
-		if (user.getHashedPassword() == null)
-			user.setHashedPassword("");
-		userDAO.insert(user);
-	}
-
-	@Override
-	@PermitAll()
 	public boolean userIsAdmin(User user) {
-		_log.log(Level.INFO, "check if user is  admin [" + user + "]");
+		log.log(Level.INFO, "check if user is  admin [" + user + "]");
 		
 		// input validation
 		if (user == null)
@@ -164,7 +154,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public boolean userIsPortalAdmin(User user) {
 		
-		_log.log(Level.INFO, "check if user is portal admin [" + user + "]");
+		log.log(Level.INFO, "check if user is portal admin [" + user + "]");
 		
 		// input validation
 		if (user == null)
@@ -177,7 +167,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public void loggoutUser(String userName) {
 
-		_log.log(Level.INFO, "loggoutUser [" + userName + "]");
+		log.log(Level.INFO, "loggoutUser [" + userName + "]");
 
 		// find user by name
 		User user = getUserByName(userName);
@@ -198,7 +188,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public User updateUser(User user) {
 
-		_log.log(Level.INFO, "update user [" + user + "]");
+		log.log(Level.INFO, "update user [" + user + "]");
 
 		// input validation
 		if (user == null)
@@ -211,7 +201,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public User getUserById(long id) {
 
-		_log.log(Level.INFO, "get user by id [" + id + "]");
+		log.log(Level.INFO, "get user by id [" + id + "]");
 
 		return userDAO.findById(id);
 	}
@@ -220,7 +210,7 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public User getUserByUsername(String username) {
 
-		_log.log(Level.INFO, "get user by username [" + username + "]");
+		log.log(Level.INFO, "get user by username [" + username + "]");
 
 		// input validation
 		if (username == null)

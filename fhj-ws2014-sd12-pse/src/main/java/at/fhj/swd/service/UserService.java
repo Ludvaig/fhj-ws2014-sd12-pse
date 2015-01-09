@@ -29,11 +29,6 @@ public interface UserService {
 	User getRegisteredUser(String token);
 	
 	/**
-	 * insert new User to Database
-	 * */
-	void insertUser(User user);
-
-	/**
 	 * check if User is Admin
 	 * */
 	boolean userIsAdmin(User user);
