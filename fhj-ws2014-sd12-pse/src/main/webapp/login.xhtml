@@ -1,6 +1,6 @@
 <!--
 
-Author: Steven Hagelmüller
+Author: I. Palade
 
 Simple Login page mainly for testing purposes.
 
@@ -8,24 +8,33 @@ Simple Login page mainly for testing purposes.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:p="http://primefaces.org/ui">
-<h:head>
-   <title>Login</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</h:head>
-<h:body>
-	<h:form id="login">
-		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
-		<h:panelGrid columns="2" >
-			<p:outputLabel for="username" value="Username:"/>
-			<p:inputText id="username" value="#{loginController.username}" required="true" requiredMessage="Username is required."/>
-			<p:outputLabel for="password" value="Password:"/>
-			<p:password id="password" value="#{loginController.password}" required="true" requiredMessage="Password is required."/>
-			<div></div>
-			<p:commandButton id="login" action="#{loginController.login}" value="Login"/> 
-		</h:panelGrid>
-	</h:form>
-</h:body>
-</html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:f="http://java.sun.com/jsf/core"
+   				xmlns:p="http://primefaces.org/ui"
+				xmlns:h="http://java.sun.com/jsf/html"
+				template="/template/main.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="Login"/>
+	</ui:define>
+
+	<ui:define name="headMetaData">
+	</ui:define>
+
+	<ui:define name="content">
+	
+		<h:form id="login">
+			<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+			<h:panelGrid columns="2" >
+				<p:outputLabel for="username" value="Username:"/>
+				<p:inputText id="username" value="#{loginController.username}" required="true" requiredMessage="Username is required."/>
+				<p:outputLabel for="password" value="Password:"/>
+				<p:password id="password" value="#{loginController.password}" required="true" requiredMessage="Password is required."/>
+				<div></div>
+				<p:commandButton id="login" action="#{loginController.login}" value="Login"/> 
+			</h:panelGrid>
+		</h:form>
+	
+	</ui:define>
+</ui:composition>
