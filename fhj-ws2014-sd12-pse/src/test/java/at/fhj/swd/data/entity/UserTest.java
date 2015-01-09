@@ -33,7 +33,8 @@ public class UserTest extends TestCase {
 	@Test
 	public void testEqualWrongClass_fail() {
 	   // Tests
-	   assertEquals(false, new User().equals(new String()));
+		Object obj = new Object();
+		assertEquals(false, new User().equals(obj));
 	} 
 	
 	@Test
