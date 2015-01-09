@@ -45,7 +45,12 @@ public class UserServiceImpl implements UserService {
 			throw new IllegalArgumentException("password can not be null");
 
 		// find user by name
-		User user = getUserByName(userName);
+		User user = null;
+		try {
+			user = userDAO.findByName(userName);
+		} catch (Exception e) {
+			throw throwDataAccessException("findByName", e);
+		}
 
 		// check password, if user is not null
 		if (user != null && user.getPassword().equals(password)) {
@@ -83,7 +88,11 @@ public class UserServiceImpl implements UserService {
 		user.setToken(token);
 
 		// persist the user
-		userDAO.insert(user);
+		try {
+			userDAO.insert(user);
+		} catch (Exception e) {
+			throw throwDataAccessException("update", e);
+		}
 
 		// return the created token (store this token to cookies)
 		return token;
@@ -103,20 +112,11 @@ public class UserServiceImpl implements UserService {
 		if (user == null)
 			throw new IllegalArgumentException("user can not be null");
 
-		userDAO.insert(user);
-	}
-
-	private User getUserByName(String userName) {
-		// find user by name
-		User user;
 		try {
-			user = userDAO.findByName(userName);
+			userDAO.insert(user);
 		} catch (Exception e) {
-			String msg = "UserDAO Exception from methode findByName";
-			log.log(Level.SEVERE, msg + e);
-			throw new ServiceLayerException("Data Access Error", e);
+			throw throwDataAccessException("update", e);
 		}
-		return user;
 	}
 
 	private String getNewToken() {
@@ -141,11 +141,10 @@ public class UserServiceImpl implements UserService {
 	@PermitAll()
 	public boolean userIsAdmin(User user) {
 		log.log(Level.INFO, "check if user is  admin [" + user + "]");
-		
+
 		// input validation
 		if (user == null)
 			throw new IllegalArgumentException("user can not be null");
-		
 
 		return user.getUsername().endsWith("_a");
 	}
@@ -153,13 +152,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public boolean userIsPortalAdmin(User user) {
-		
+
 		log.log(Level.INFO, "check if user is portal admin [" + user + "]");
-		
+
 		// input validation
 		if (user == null)
 			throw new IllegalArgumentException("user can not be null");
-		
+
 		return user.getUsername().endsWith("_pa");
 	}
 
@@ -170,7 +169,12 @@ public class UserServiceImpl implements UserService {
 		log.log(Level.INFO, "loggoutUser [" + userName + "]");
 
 		// find user by name
-		User user = getUserByName(userName);
+		User user = null;
+		try {
+			user = userDAO.findByName(userName);
+		} catch (Exception e) {
+			throw throwDataAccessException("findByName", e);
+		}
 
 		// throw exception if the user was not found
 		if (user == null) {
@@ -194,7 +198,11 @@ public class UserServiceImpl implements UserService {
 		if (user == null)
 			throw new IllegalArgumentException("user is null.");
 
-		return userDAO.update(user);
+		try {
+			return userDAO.update(user);
+		} catch (Exception e) {
+			throw throwDataAccessException("update", e);
+		}
 	}
 
 	@Override
@@ -203,19 +211,35 @@ public class UserServiceImpl implements UserService {
 
 		log.log(Level.INFO, "get user by id [" + id + "]");
 
-		return userDAO.findById(id);
+		try {
+			return userDAO.findById(id);
+		} catch (Exception e) {
+			throw throwDataAccessException("findById", e);
+		}
 	}
 
 	@Override
 	@PermitAll()
-	public User getUserByUsername(String username) {
+	public User getUserByUsername(String userName) {
 
-		log.log(Level.INFO, "get user by username [" + username + "]");
+		log.log(Level.INFO, "get user by username [" + userName + "]");
 
 		// input validation
-		if (username == null)
+		if (userName == null)
 			throw new IllegalArgumentException("username can not be null");
 
-		return userDAO.findByName(username);
+		try {
+			return userDAO.findByName(userName);
+		} catch (Exception e) {
+			throw throwDataAccessException("findByName", e);
+		}
+	}
+
+	// create ServiceLayerException from DAO Exception
+	private RuntimeException throwDataAccessException(String methodeName,
+			Exception e) {
+		String msg = "UserDAO Exception from methode " + methodeName;
+		log.log(Level.SEVERE, msg + e);
+		return new ServiceLayerException("Data Access Error", e);
 	}
 }
