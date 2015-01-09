@@ -14,7 +14,7 @@ public abstract class PageObjectBase {
 	/**
 	 * Constant for default timeout
 	 */
-	public static int DEFAULT_TIMEOUT_SECONDS =1;
+	public static int DEFAULT_TIMEOUT_SECONDS = 2;
 	
 	/**
 	 * The web driver
