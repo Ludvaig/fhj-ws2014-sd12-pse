@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.Hashtable;
+import java.util.Random;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -70,8 +71,8 @@ public final class UserServiceRemoteFacadeTest {
 		user = new User();
 		user.setUsername(userName);
 		user.setPassword(password);
-		user.setHashedPassword(HashUtil.getPasswordHash(user.getUsername(),
-				user.getPassword()));
+//		user.setHashedPassword(HashUtil.getPasswordHash(user.getUsername(),
+//				user.getPassword()));
 	}
 
 	@After
@@ -156,14 +157,20 @@ public final class UserServiceRemoteFacadeTest {
 		assertEquals(email, service.getUserByUsername(userName).getEmail());
 	}
 
-//	@Test
-//	public void registerUserNewUser() {
-//		User newUser = new User();
-//		newUser.setUsername("Max");
-//		service.registerUser(newUser);
-//
+	@Test
+	public void registerUserNewUser() {
+		User newUser = new User();
+		
+		Random rand = new Random();
+		 int randomNum = rand.nextInt(999999)+10000;
+		 String randName = new Integer(randomNum).toString();
+		
+		newUser.setId((long) randomNum);
+		newUser.setUsername(randName);
+		service.registerUser(newUser);
+
 //		User userFromStorage = service.getUserByUsername(userName);
 //
 //		assertEquals(userFromStorage.getUsername(), newUser.getUsername());
-//	}
+	}
 }

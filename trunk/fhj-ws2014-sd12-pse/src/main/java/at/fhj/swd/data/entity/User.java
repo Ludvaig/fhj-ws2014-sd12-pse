@@ -44,14 +44,14 @@ public class User implements Serializable {
   public static final String JOIN_TABLE_User_UserGroup_InverseJoinColumn = "usergroup_id";
 	
 	@Id
-	@TableGenerator(name = TABLE_GEN_NAME,
-   								table = TableGeneratorHelper.TABLE_NAME,
-   								pkColumnName = TableGeneratorHelper.PK_COL_NAME,
-   								pkColumnValue = PK_COL_VALUE,
- 									valueColumnName = TableGeneratorHelper.VALUE_COL_NAME,
-									allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_GEN_NAME)
-	//@Column(name = "id", updatable = false, nullable = false)
+//	@TableGenerator(name = TABLE_GEN_NAME,
+//   								table = TableGeneratorHelper.TABLE_NAME,
+//   								pkColumnName = TableGeneratorHelper.PK_COL_NAME,
+//   								pkColumnValue = PK_COL_VALUE,
+// 									valueColumnName = TableGeneratorHelper.VALUE_COL_NAME,
+//									allocationSize = 1)
+//	@GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_GEN_NAME)
+	@Column(name = "id", updatable = false, nullable = false)
 	private Long id = null;
 
 	@Column(unique = true)
@@ -60,8 +60,8 @@ public class User implements Serializable {
 	@Column
 	private String password;
 	
-	@Column(nullable = false, length = 256)
-	private String hashedPassword;
+//	@Column(nullable = false, length = 256)
+//	private String hashedPassword;
 
 	@Column
 	private String email;
@@ -117,13 +117,13 @@ public class User implements Serializable {
 		this.password = password;
 	}
 	
-	public String getHashedPassword() {
-    return hashedPassword;
-	}
-	
-	public void setHashedPassword(String hashedPassword) {
-    this.hashedPassword = hashedPassword;
-	}
+//	public String getHashedPassword() {
+//    return hashedPassword;
+//	}
+//	
+//	public void setHashedPassword(String hashedPassword) {
+//    this.hashedPassword = hashedPassword;
+//	}
 
 	public String getEmail() {
 		return this.email;
