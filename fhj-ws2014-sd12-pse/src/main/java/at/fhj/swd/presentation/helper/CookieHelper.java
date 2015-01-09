@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CookieHelper {
 
-	static final String authTokenName = "authToken";
+	static final String AUTTOKENNAME = "authToken";
 
 	/**
 	 * set a cookie (update if exist otherwise a new one will be created)
@@ -68,14 +68,14 @@ public class CookieHelper {
 	 * set a new value to the authentication token
 	 * */
 	public static void setAuthTokenValue(String token) {
-		setCookie(authTokenName, token,36000);
+		setCookie(AUTTOKENNAME, token,36000);
 	}
 
 	/**
 	 * get the current value of the authentication token
 	 * */
 	public static String getAuthTokenValue() {
-		Cookie cookie = getCookie(authTokenName);
+		Cookie cookie = getCookie(AUTTOKENNAME);
 		if (cookie != null)
 			return cookie.getValue();
 		return null;
