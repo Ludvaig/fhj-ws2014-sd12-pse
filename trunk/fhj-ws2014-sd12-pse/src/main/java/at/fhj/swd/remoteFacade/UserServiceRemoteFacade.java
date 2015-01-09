@@ -31,11 +31,6 @@ public class UserServiceRemoteFacade implements UserService{
 	}
 
 	@Override
-	public void insertUser(User user) {
-		service.insertUser(user);		
-	}
-
-	@Override
 	public boolean userIsAdmin(User user) {
 		return service.userIsAdmin(user);
 	}
