@@ -49,7 +49,8 @@ public class LogoutController {
 			if(e instanceof EJBException) {
 				e = ((EJBException) e).getCausedByException();
 			}
-			logger.severe(String.format("An unexpected exception occured: %s.", e.getLocalizedMessage()));
+			String msg ="An unexpected exception occured: " + e.getLocalizedMessage();
+			logger.severe(msg);
 		}
 		finally {
 			String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
