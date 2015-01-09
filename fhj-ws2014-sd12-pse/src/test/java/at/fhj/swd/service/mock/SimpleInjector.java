@@ -2,6 +2,8 @@ package at.fhj.swd.service.mock;
 
 import java.lang.reflect.Field;
 
+import javax.management.RuntimeErrorException;
+
 public final class SimpleInjector {
 	private SimpleInjector() {
 	}
@@ -12,6 +14,10 @@ public final class SimpleInjector {
 			
 			privateField = classInstance.getClass().getDeclaredField(propertyName);
 
+			if(privateField == null) {
+				throw new RuntimeException("The class " + classInstance.getClass().getName() + " has no property named " + propertyName + ".");
+			}
+			
 			privateField.setAccessible(true);
 
 			privateField.set(classInstance, propertyValue);
