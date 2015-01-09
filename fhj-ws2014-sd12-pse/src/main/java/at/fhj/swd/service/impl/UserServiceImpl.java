@@ -34,6 +34,10 @@ public class UserServiceImpl implements UserService {
 	@Named("userDAOImpl")
 	private UserDAO userDAO;
 
+	public void setUserDAO(UserDAO dao) {
+		userDAO = dao;
+	}
+
 	@Override
 	public User proveUserPassswordCombination(String userName, String password) {
 
@@ -47,7 +51,7 @@ public class UserServiceImpl implements UserService {
 			throw new IllegalArgumentException("password can not be null");
 
 		// find user by name
-		User user= getUserByName(userName);
+		User user = getUserByName(userName);
 
 		// check password, if user is not null
 		if (user != null && user.getPassword().equals(password)) {
@@ -60,9 +64,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public String registerUser(String userName, String password) {
-		
-		_log.log(Level.INFO, "register user [" + userName + "] pw ["
-				+ password + "]!");
+
+		_log.log(Level.INFO, "register user [" + userName + "] pw [" + password
+				+ "]!");
 
 		// input validation
 		if (userName == null)
@@ -107,9 +111,8 @@ public class UserServiceImpl implements UserService {
 
 		userDAO.insert(user);
 	}
-	
-	private User getUserByName(String userName)
-	{
+
+	private User getUserByName(String userName) {
 		// find user by name
 		User user;
 		try {
@@ -165,11 +168,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public void loggoutUser(String userName) {
-		
+
 		_log.log(Level.INFO, "loggoutUser [" + userName + "]");
 
 		// find user by name
-		User user= getUserByName(userName);
+		User user = getUserByName(userName);
 
 		// throw exception if the user was not found
 		if (user == null) {
@@ -186,7 +189,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public User updateUser(User user) {
-		
+
 		_log.log(Level.INFO, "update user [" + user + "]");
 
 		// input validation
