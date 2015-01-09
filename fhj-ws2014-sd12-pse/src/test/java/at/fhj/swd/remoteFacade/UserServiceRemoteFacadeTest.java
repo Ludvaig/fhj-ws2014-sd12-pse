@@ -156,14 +156,14 @@ public final class UserServiceRemoteFacadeTest {
 		assertEquals(email, service.getUserByUsername(userName).getEmail());
 	}
 
-	@Test
-	public void registerUserNewUser() {
-		User newUser = new User();
-		newUser.setUsername("Max");
-		service.registerUser(newUser);
-
-		User userFromStorage = service.getUserByUsername(userName);
-
-		assertEquals(userFromStorage.getUsername(), newUser.getUsername());
-	}
+//	@Test
+//	public void registerUserNewUser() {
+//		User newUser = new User();
+//		newUser.setUsername("Max");
+//		service.registerUser(newUser);
+//
+//		User userFromStorage = service.getUserByUsername(userName);
+//
+//		assertEquals(userFromStorage.getUsername(), newUser.getUsername());
+//	}
 }
