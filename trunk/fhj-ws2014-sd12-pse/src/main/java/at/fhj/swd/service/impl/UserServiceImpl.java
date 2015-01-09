@@ -37,6 +37,10 @@ public class UserServiceImpl implements UserService {
 	public void setUserDAO(UserDAO dao) {
 		userDAO = dao;
 	}
+	
+	public void setLogger(Logger logger) {
+		_log = logger;
+	}
 
 	@Override
 	public User proveUserPassswordCombination(String userName, String password) {
