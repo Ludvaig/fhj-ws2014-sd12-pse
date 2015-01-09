@@ -75,7 +75,7 @@ public class LoginController implements Serializable {
 				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, ((EJBException) e).getCausedByException().getLocalizedMessage(), ""));
 			}
 			else {
-				logger.severe(String.format("An unexpected exception occured: ", e.getLocalizedMessage()));
+				logger.severe(String.format("An unexpected exception occured: %s.", e.getLocalizedMessage()));
 				facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "An unexpected error occurred. Please contact the system administrator.", ""));
 			}
 		}
