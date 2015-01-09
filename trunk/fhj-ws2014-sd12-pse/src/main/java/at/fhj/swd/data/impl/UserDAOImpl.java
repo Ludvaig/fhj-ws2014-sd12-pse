@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
+import at.fhj.swd.data.exceptions.DataSourceLayerException;
+
 import javax.inject.Named;
 
 /**
@@ -24,7 +26,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User proveUserPassswordCombination(String username, String password) {
 		User user = findByName(username);
-		
+
 		// check password, if user is not null
 		if (user != null) {
 			if (user.getPassword().equals(password)) {
@@ -47,30 +49,17 @@ public class UserDAOImpl implements UserDAO {
 						User.class).setParameter("username", username)
 				.getResultList();
 
-		if (users.size() == 1) {
-			return users.get(0);
-		} else if (users.size() == 0) {
-			return null;
-		}
-		throw new RuntimeException("inavlid database state in user table");
+		return getUserFromList(users);
 	}
 
 	@Override
 	public User findById(long id) {
 		List<User> users = em
-				.createQuery("from User user where user.id=:id",
-						User.class).setParameter("id", id)
-				.getResultList();
+				.createQuery("from User user where user.id=:id", User.class)
+				.setParameter("id", id).getResultList();
 
-		if (users.size() == 1) {
-			return users.get(0);
-		} else if (users.size() == 0) {
-			return null;
-		}
-		throw new RuntimeException("inavlid database state in user table");
+		return getUserFromList(users);
 	}
-
-
 
 	@Override
 	public User findByToken(String token) {
@@ -79,17 +68,20 @@ public class UserDAOImpl implements UserDAO {
 						User.class).setParameter("token", token)
 				.getResultList();
 
+		return getUserFromList(users);
+	}
+
+	private User getUserFromList(List<User> users) {
 		if (users.size() == 1) {
 			return users.get(0);
 		} else if (users.size() == 0) {
 			return null;
 		}
-		throw new RuntimeException("inavlid database state in user table");
+		throw new DataSourceLayerException("inavlid database state in user table");
 	}
 
 	@Override
-	public User update(User user)
-	{
+	public User update(User user) {
 		if (user != null)
 			return em.merge(user);
 		else
