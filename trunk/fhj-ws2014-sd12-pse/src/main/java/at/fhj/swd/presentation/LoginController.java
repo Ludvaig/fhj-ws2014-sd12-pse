@@ -63,11 +63,8 @@ public class LoginController implements Serializable {
 			CookieHelper.setAuthTokenValue(token);
 
 			logger.info(String.format("Login for user '%s' successful.", username));
-			//String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
-			//facesContext.getExternalContext().redirect(url);
-			
-			//Todo:Change to real page:
-			return "tmpindex?faces-redirect=true";
+			String url = ((HttpServletRequest)facesContext.getExternalContext().getRequest()).getContextPath();
+			facesContext.getExternalContext().redirect(url);
 		} 
 		catch (Exception e) {
 			if(e instanceof EJBException && ((EJBException) e).getCausedByException() instanceof UserLoginException) {
