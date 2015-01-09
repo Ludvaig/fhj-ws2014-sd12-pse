@@ -33,6 +33,16 @@
     -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     
+    <!-- Skip tests for first deploy to enable selenium test on deployed application. -->
+    <skipTests>true</skipTests>
+    
+    <!-- Jacoco code coverage minimum for successful build -->
+    <!-- TODO: Increase! -->
+    <coveredRatio>0.05</coveredRatio>
+    
+    <!-- Enable/disable the CPD report. -->
+    <maven.pmd.cpd.enable>true</maven.pmd.cpd.enable>
+    
     <!-- Properties for all used dependency versions. -->
     
     <!-- Define the version of the JBoss - Wildfly BOMs we want to import to specify tested stacks. --> 
@@ -42,7 +52,18 @@
     <!-- Plugin versions -->
     <version.war.plugin>2.1.1</version.war.plugin>
     <version.wildfly.plugin>1.0.2.Final</version.wildfly.plugin>
-    <version.compiler.plugin>3.1</version.compiler.plugin>    
+    <version.compiler.plugin>3.1</version.compiler.plugin>
+    <version.surefire.plugin>2.9</version.surefire.plugin>
+    <version.failsafe.plugin>2.16</version.failsafe.plugin>
+    <version.jacoco.plugin>0.7.2.201409121644</version.jacoco.plugin>
+    <version.javadoc.plugin>2.10.1</version.javadoc.plugin>
+    <version.findbugs.plugin>3.0.0</version.findbugs.plugin>
+    <version.site.plugin>3.3</version.site.plugin>
+    <version.inforeports.plugin>2.6</version.inforeports.plugin> 
+    <version.surefirereport.plugin>2.18.1</version.surefirereport.plugin>
+    <version.javancss.plugin>2.1</version.javancss.plugin>
+    <version.pmd.plugin>3.3</version.pmd.plugin>
+    <version.statscm.plugin>1.2.0</version.statscm.plugin>   
     
     <!-- Maven compiler plugin -->
     <maven.compiler.target>1.7</maven.compiler.target>
@@ -53,6 +74,14 @@
     <version.junit>4.11</version.junit>        
     
   </properties>
+  
+  <!-- TODO: Wrong scm settings! -->
+  <scm>
+    <connection>scm:svn:http://fhj-ws2014-sd12-pse.googlecode.com/svn/trunk/fhj-ws2014-sd12-pse</connection>
+    <developerConnection>scm:svn:https://fhj-ws2014-sd12-pse.googlecode.com/svn/trunk/fhj-ws2014-sd12-pse</developerConnection>
+    <tag>HEAD</tag>
+    <url>http://fhj-ws2014-sd12-pse.googlecode.com/svn/trunk/fhj-ws2014-sd12-pse</url>
+  </scm>
   
   <!-- Set the JBoss reporsitory to get matching dependencies. -->
   <repositories>
@@ -317,30 +346,184 @@
 				</configuration>
 			</plugin>
       
+      <plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${version.surefire.plugin}</version>
+				<configuration>
+					<skipTests>${skipTests}</skipTests>
+					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>${argLine}</argLine>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
       
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.18</version>
-          <configuration>
-	          <skipTests>true</skipTests>
-	        </configuration>
-      </plugin>
-      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${version.failsafe.plugin}</version>
+				<executions>
+					<execution>
+						<id>default-integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.18</version>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${version.site.plugin}</version>
         <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
+        	<!-- Maven install should launch site creation. -->
+        	<execution>
+						<id>default-site</id>
+						<phase>install</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+					</execution>
+				</executions>
       </plugin>
+			
+	    <!-- 
+	    	The JaCoCo Maven plug-in needs to be in build as well to initialize and check build success
+	    	depending on coveredRatio property. Report is done by maven site plugin in reporting section. 
+	    -->
+	    <plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${version.jacoco.plugin}</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>BUNDLE</element>
+									<limits>
+										<limit>
+											<counter>COMPLEXITY</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>${coveredRatio}</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+    
     </plugins>
     
   </build>
+  
+  <!-- Reporting contains the elements that correspond specifically for the site generation phase. -->
+  <reporting>
+  
+  	<excludeDefaults>true</excludeDefaults>
+  	
+		<plugins>
+		
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${version.inforeports.plugin}</version>
+      </plugin>
+			
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>${version.surefirereport.plugin}</version>
+      </plugin>
+			
+			<!-- 
+	    	The JaCoCo Maven plug-in provides the JaCoCo runtime agent to your tests and allows basic 
+	    	report creation. See http://www.eclemma.org/jacoco/trunk/doc/maven.html for documentation. 
+	    -->
+			<plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${version.jacoco.plugin}</version>
+      </plugin>
+			
+			<!-- 
+				Generate FindBugs Report As Part of the Project Reports. 
+				See http://mojo.codehaus.org/findbugs-maven-plugin-3.0.0/usage.html	for documentation. 
+			-->
+			<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${version.findbugs.plugin}</version>
+      </plugin>
+      
+      <!-- 
+      	JavaNCSS is a source measurement suite for Java which produces quantity & complexity 
+      	metrics for your java source code.
+      	See http://mojo.codehaus.org/javancss-maven-plugin/index.html	for documentation.
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>javancss-maven-plugin</artifactId>
+        <version>${version.javancss.plugin}</version>
+      </plugin>
+      
+      <!--
+      	The PMD plugin generates PMD and CPD reports using the PMD code analysis tool.
+      	See http://maven.apache.org/plugins/maven-pmd-plugin/index.html	for documentation.
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${version.pmd.plugin}</version>
+      </plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${version.javadoc.plugin}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<failOnError>false</failOnError>
+					<linksource>true</linksource>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<id>default</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+					
+			<!-- Generates Source Code Management Metrics Reports as part of the mvn site command. -->
+			<plugin>
+				<groupId>net.sf</groupId>
+				<artifactId>stat-scm</artifactId>
+				<version>${version.statscm.plugin}</version>
+			</plugin>
+			
+		</plugins>
+	</reporting>
 
 </project>
