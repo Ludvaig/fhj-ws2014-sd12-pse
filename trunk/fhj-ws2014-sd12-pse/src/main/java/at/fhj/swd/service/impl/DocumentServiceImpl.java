@@ -174,7 +174,7 @@ public class DocumentServiceImpl implements DocumentService {
 		if(user == null) {
 			return false;
 		}
-		return userService.UserIsPortalAdmin(user);
+		return userService.userIsPortalAdmin(user);
 	}
 	
 	@Override

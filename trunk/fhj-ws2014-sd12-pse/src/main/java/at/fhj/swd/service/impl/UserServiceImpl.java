@@ -17,8 +17,6 @@ import at.fhj.swd.service.exceptions.UserLoginException;
 
 import javax.inject.Named;
 
-import org.eclipse.jetty.util.log.Log;
-
 /**
  * DAO Implementation for User entity
  * 
@@ -151,13 +149,27 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@PermitAll()
-	public boolean UserIsAdmin(User user) {
+	public boolean userIsAdmin(User user) {
+		_log.log(Level.INFO, "check if user is  admin [" + user + "]");
+		
+		// input validation
+		if (user == null)
+			throw new IllegalArgumentException("user can not be null");
+		
+
 		return user.getUsername().endsWith("_a");
 	}
 
 	@Override
 	@PermitAll()
-	public boolean UserIsPortalAdmin(User user) {
+	public boolean userIsPortalAdmin(User user) {
+		
+		_log.log(Level.INFO, "check if user is portal admin [" + user + "]");
+		
+		// input validation
+		if (user == null)
+			throw new IllegalArgumentException("user can not be null");
+		
 		return user.getUsername().endsWith("_pa");
 	}
 
@@ -172,7 +184,7 @@ public class UserServiceImpl implements UserService {
 
 		// throw exception if the user was not found
 		if (user == null) {
-			throw new RuntimeException("could not find user in database");
+			throw new ServiceLayerException("could not find user in database");
 		}
 
 		// set token initial

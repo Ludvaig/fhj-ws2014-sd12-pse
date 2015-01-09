@@ -1,8 +1,11 @@
 package at.fhj.swd.service.mock;
 
+import javax.enterprise.inject.Alternative;
+
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.User;
 
+@Alternative
 public class UserDAOMock implements UserDAO {
 
 	

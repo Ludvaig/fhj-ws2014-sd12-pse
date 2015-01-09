@@ -98,22 +98,22 @@ public final class UserServiceRemoteFacadeTest {
 	@Test
 	public void testUserIsAdmin() {
 			
-		assertEquals(false, service.UserIsAdmin(user));
+		assertEquals(false, service.userIsAdmin(user));
 		
 		user.setUsername("test_a");
 
-		assertEquals(true, service.UserIsAdmin(user));
-		assertEquals(false, service.UserIsPortalAdmin(user));
+		assertEquals(true, service.userIsAdmin(user));
+		assertEquals(false, service.userIsPortalAdmin(user));
 	}
 	
 	@Test
 	public void testUserIsPortalAdmin() {
 			
-		assertEquals(false, service.UserIsPortalAdmin(user));
+		assertEquals(false, service.userIsPortalAdmin(user));
 		
 		user.setUsername("test_pa");
-		assertEquals(true, service.UserIsPortalAdmin(user));
-		assertEquals(false, service.UserIsAdmin(user));
+		assertEquals(true, service.userIsPortalAdmin(user));
+		assertEquals(false, service.userIsAdmin(user));
 	}
 	
 	@Test

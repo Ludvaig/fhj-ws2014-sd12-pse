@@ -1,5 +1,8 @@
 package at.fhj.swd.service.mock;
 
+import javax.enterprise.inject.Alternative;
+
+@Alternative
 public class LoggerStub extends java.util.logging.Logger {
 
 	protected LoggerStub(String name, String resourceBundleName) {
