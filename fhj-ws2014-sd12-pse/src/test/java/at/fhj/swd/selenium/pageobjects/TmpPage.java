@@ -17,6 +17,7 @@ public class TmpPage extends PageObjectBase{
 		return new CommunityPage(driver);
 	}
 	
+
 	public UserPage goToUserPage() {
 		driver.findElement(By.cssSelector("a[href*='#']")).click();
 		driver.findElement(By.cssSelector("a[href*='usersite.jsf']")).click();
