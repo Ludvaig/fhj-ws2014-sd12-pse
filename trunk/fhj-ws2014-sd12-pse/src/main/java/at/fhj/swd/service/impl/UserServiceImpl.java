@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			user = userDAO.findByName(userName);
 		} catch (Exception e) {
-			throw throwDataAccessException("findByName", e);
+			throw getDataAccessException("findByName", e);
 		}
 
 		// check password, if user is not null
@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			userDAO.insert(user);
 		} catch (Exception e) {
-			throw throwDataAccessException("update", e);
+			throw getDataAccessException("update", e);
 		}
 
 		// return the created token (store this token to cookies)
@@ -115,7 +115,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			userDAO.insert(user);
 		} catch (Exception e) {
-			throw throwDataAccessException("update", e);
+			throw getDataAccessException("update", e);
 		}
 	}
 
@@ -173,7 +173,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			user = userDAO.findByName(userName);
 		} catch (Exception e) {
-			throw throwDataAccessException("findByName", e);
+			throw getDataAccessException("findByName", e);
 		}
 
 		// throw exception if the user was not found
@@ -201,7 +201,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			return userDAO.update(user);
 		} catch (Exception e) {
-			throw throwDataAccessException("update", e);
+			throw getDataAccessException("update", e);
 		}
 	}
 
@@ -214,7 +214,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			return userDAO.findById(id);
 		} catch (Exception e) {
-			throw throwDataAccessException("findById", e);
+			throw getDataAccessException("findById", e);
 		}
 	}
 
@@ -231,12 +231,12 @@ public class UserServiceImpl implements UserService {
 		try {
 			return userDAO.findByName(userName);
 		} catch (Exception e) {
-			throw throwDataAccessException("findByName", e);
+			throw getDataAccessException("findByName", e);
 		}
 	}
 
 	// create ServiceLayerException from DAO Exception
-	private RuntimeException throwDataAccessException(String methodeName,
+	private RuntimeException getDataAccessException(String methodeName,
 			Exception e) {
 		String msg = "UserDAO Exception from methode " + methodeName;
 		log.log(Level.SEVERE, msg + e);
