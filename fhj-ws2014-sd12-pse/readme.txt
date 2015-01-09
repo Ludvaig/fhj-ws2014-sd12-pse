@@ -126,6 +126,15 @@ activate it under "activeProfiles" at the end of the file.
 Maven goals:
 ------------
 
+Install the package into the local repository, which can be used as a dependency in other projects locally.
+
+mvn install
+
+To enable selenium test the first deploy must skip the test to have a deployed application on the server
+when tests start. By default they are disable to enable them do:
+
+mvn install -DskipTests=false 
+
 war pugin
 ---------
 
@@ -136,8 +145,8 @@ war:exploded is generally used to speed up testing during the developement phase
 war:inplace another variation of war:explode where the webapp is instead generated in the web application source directory, which is src/main/webapp by default.
 war:manifest generates a manifest for this webapp. The manifest file is created in the web application source directory.
 
-wildfly pugins
---------------
+wildfly pugin
+-------------
 
 https://docs.jboss.org/wildfly/plugins/maven/latest/
 
@@ -152,3 +161,50 @@ wildfly:run runs the application server and deploys your application.
 wildfly:start starts the application server and shuts it down at last when the maven process ends unless an explicit shutdown from a management client or the shutdown goal is executed.
 wildfly:shutdown shuts down a running application server.
 wildfly:execute-commands executes commands on the running server.
+
+Maven Project Info Reports Plugin
+---------------------------------
+
+http://maven.apache.org/plugins/maven-project-info-reports-plugin/
+
+Jacoco code coverage plugin
+---------------------------
+
+http://www.eclemma.org/jacoco/trunk/doc/maven.html
+
+jacoco:report generate code coverage report
+
+Findbugs plugin
+---------------
+
+http://mojo.codehaus.org/findbugs-maven-plugin/plugin-info.html
+
+findbugs:check fail the build if there were any FindBugs violations in the source code. An XML report is put out by default in the target directory with the errors.
+findbugs:findbugs	generates a FindBugs Report when the site plugin is run. The HTML report is generated for site commands only.
+findbugs:gui launch the Findbugs GUI. It will use all the parameters in the POM file.
+
+Maven 2 JavaNCSS Plugin
+-----------------------
+
+http://mojo.codehaus.org/javancss-maven-plugin/index.html
+
+javancss:report Generates a report of quantity and complexity metric on your code.
+javancss:check Check if your source code has a CCN or NCSS value too high, fails the build if so.
+
+Apache Maven PMD Plugin
+-----------------------
+
+http://maven.apache.org/plugins/maven-pmd-plugin/
+
+pmd:pmd creates a PMD site report based on the rulesets and configuration set in the plugin. It can also generate a pmd output file aside from the site report in any of the following formats: xml, csv or txt.
+pmd:cpd generates a report for PMD's Copy/Paste Detector (CPD) tool. It can also generate a cpd results file in any of these formats: xml, csv or txt.
+
+Javadoc plugin
+--------------
+
+http://maven.apache.org/plugins/maven-javadoc-plugin/
+
+javadoc:javadoc generates the Javadoc files for the project. It executes the standard Javadoc tool and supports the parameters used by the tool.
+javadoc:test-javadoc generates the test Javadoc files for the project. It executes the standard Javadoc tool and supports the parameters used by the tool.
+javadoc:jar creates an archive file of the generated Javadocs. It is used during the release process to create the Javadoc artifact for the project's release. This artifact is uploaded to the remote repository along with the project's compiled binary and source archive.
+javadoc:test-jar creates an archive file of the generated Test Javadocs.
