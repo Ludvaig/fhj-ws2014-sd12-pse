@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import at.fhj.swd.data.entity.User;
 import at.fhj.swd.service.mock.LoggerStub;
+import at.fhj.swd.service.mock.SimpleInjector;
 import at.fhj.swd.service.mock.UserDAOMock;
 import at.fhj.swd.service.exceptions.UserLoginException;
 import at.fhj.swd.service.impl.UserServiceImpl;
@@ -16,15 +17,15 @@ public class UserServiceTest extends TestCase {
 
 	UserServiceImpl UserService;
 	UserDAOMock userDAOmock = new UserDAOMock();
-	LoggerStub logerStub = new LoggerStub();
+	LoggerStub loggerStub = new LoggerStub();
 	User user;
 
 	@Before
 	public void setUp() {
 
 		UserService = new UserServiceImpl();
-		UserService.setUserDAO(userDAOmock);
-		UserService.setLogger(logerStub);
+		SimpleInjector.injectProperty(UserService, "userDAO", userDAOmock);
+		SimpleInjector.injectProperty(UserService, "_log", loggerStub);
 
 		user = new User();
 	}
