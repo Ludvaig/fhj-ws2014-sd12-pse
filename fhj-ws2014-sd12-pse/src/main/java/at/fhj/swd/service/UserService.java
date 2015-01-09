@@ -36,12 +36,12 @@ public interface UserService {
 	/**
 	 * check if User is Admin
 	 * */
-	boolean UserIsAdmin(User user);
+	boolean userIsAdmin(User user);
 	
 	/**
 	 * check if User is Portaladmin
 	 * */
-	boolean UserIsPortalAdmin(User user);
+	boolean userIsPortalAdmin(User user);
 	
 	/**
 	 * logout the given user

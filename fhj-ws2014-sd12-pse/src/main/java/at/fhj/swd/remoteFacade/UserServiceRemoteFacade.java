@@ -36,13 +36,13 @@ public class UserServiceRemoteFacade implements UserService{
 	}
 
 	@Override
-	public boolean UserIsAdmin(User user) {
-		return service.UserIsAdmin(user);
+	public boolean userIsAdmin(User user) {
+		return service.userIsAdmin(user);
 	}
 
 	@Override
-	public boolean UserIsPortalAdmin(User user) {
-		return service.UserIsPortalAdmin(user);
+	public boolean userIsPortalAdmin(User user) {
+		return service.userIsPortalAdmin(user);
 	}
 
 	@Override

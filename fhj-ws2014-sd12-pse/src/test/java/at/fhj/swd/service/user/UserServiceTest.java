@@ -34,12 +34,12 @@ public class UserServiceTest extends TestCase {
 	public void testUserIsAdmin() {
 		user.setUsername("test");
 
-		assertEquals(false, UserService.UserIsAdmin(user));
+		assertEquals(false, UserService.userIsAdmin(user));
 
 		user.setUsername("test_a");
 
-		assertEquals(true, UserService.UserIsAdmin(user));
-		assertEquals(false, UserService.UserIsPortalAdmin(user));
+		assertEquals(true, UserService.userIsAdmin(user));
+		assertEquals(false, UserService.userIsPortalAdmin(user));
 	}
 
 	@Test
@@ -47,11 +47,11 @@ public class UserServiceTest extends TestCase {
 
 		user.setUsername("test");
 
-		assertEquals(false, UserService.UserIsPortalAdmin(user));
+		assertEquals(false, UserService.userIsPortalAdmin(user));
 
 		user.setUsername("test_pa");
-		assertEquals(true, UserService.UserIsPortalAdmin(user));
-		assertEquals(false, UserService.UserIsAdmin(user));
+		assertEquals(true, UserService.userIsPortalAdmin(user));
+		assertEquals(false, UserService.userIsAdmin(user));
 	}
 	
 	@Test
