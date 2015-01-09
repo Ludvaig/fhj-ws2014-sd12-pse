@@ -27,7 +27,7 @@ public class UserTest extends TestCase {
 	@Test
 	public void testEqualNull_fail() {
 	   // Tests
-	   assertNull(new User());
+	   assertNotNull(new User());
 	 } 
 	
 	@Test
