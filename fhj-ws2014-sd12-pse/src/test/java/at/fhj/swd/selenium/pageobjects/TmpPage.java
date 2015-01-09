@@ -10,15 +10,16 @@ public class TmpPage extends PageObjectBase{
 	}
 	
 	public CommunityPage goToCommunityPage(){
-		driver.findElement(By.xpath("html/body/table/tbody/tr[2]/td/a")).click();
+		driver.findElement(By.cssSelector("a[href*='communities.jsf']")).click();
 		
 		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
 		
 		return new CommunityPage(driver);
 	}
 	
-	public UserPage goToUserPage(){
-		driver.findElement(By.xpath("html/body/table/tbody/tr[1]/td/a")).click();
+	public UserPage goToUserPage() {
+		driver.findElement(By.cssSelector("a[href*='#']")).click();
+		driver.findElement(By.cssSelector("a[href*='usersite.jsf']")).click();
 		
 		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
 		
