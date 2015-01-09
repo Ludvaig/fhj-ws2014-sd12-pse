@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import at.fhj.swd.data.entity.User;
-import at.fhj.swd.data.exceptions.DataSourceLayerException;
 import at.fhj.swd.service.mock.LoggerStub;
 import at.fhj.swd.service.mock.SimpleInjector;
 import at.fhj.swd.service.mock.UserDAOMock;
@@ -148,7 +147,7 @@ public class UserServiceTest {
 	@Test
 	public void testProveUserPassswordCombination_ServiceLayerException() {
 		
-		userDAOmock.exception = new DataSourceLayerException("Error");
+		userDAOmock.findByNameException = new RuntimeException("Error");
 		
 		try {
 			UserService.proveUserPassswordCombination("Herbert", "vergessen");
@@ -214,6 +213,20 @@ public class UserServiceTest {
 		assertEquals(user, userDAOmock.user);
 		
 	}
+	
+	@Test
+	public void testRegisterUserWithUserObject_ServiceLayerException() {
+		
+		userDAOmock.user = user;
+		userDAOmock.insertException = new RuntimeException("Error");
+		
+		try {
+			UserService.registerUser(user);
+			fail();
+		} catch (Exception e) {
+			assertEquals(ServiceLayerException.class, e.getClass());
+		}
+	}
 
 	@Test
 	public void testGetRegisteredUser_inputError_NoToken() {
@@ -233,7 +246,7 @@ public class UserServiceTest {
 	public void testRegisterUser_ServiceLayerException() {
 		
 		userDAOmock.user = user;
-		userDAOmock.exception = new DataSourceLayerException("Error");
+		userDAOmock.insertException = new RuntimeException("Error");
 		
 		try {
 			UserService.registerUser("Herbert", "vergessen");
@@ -267,7 +280,7 @@ public class UserServiceTest {
 	@Test
 	public void testloggoutUser_wrongUsername() {
 		
-		userDAOmock.exception = new DataSourceLayerException("Error");
+		userDAOmock.findByNameException = new RuntimeException("Error");
 		
 		try {
 			UserService.loggoutUser(null);
@@ -283,5 +296,86 @@ public class UserServiceTest {
 		userDAOmock.user = user;
 
 		UserService.loggoutUser(user.getUsername());
+	}
+	
+	@Test
+	public void testloggoutUser_userIsNull() {
+		
+		userDAOmock.user = null;
+
+		try {
+			UserService.loggoutUser("Herbert");
+			fail();
+		} catch (Exception e) {
+			assertEquals(ServiceLayerException.class, e.getClass());
+		}
+	}
+	
+	@Test
+	public void testUpdateUser_ServiceLayerException() {
+		
+		userDAOmock.updateException = new RuntimeException();
+
+		try {
+			UserService.updateUser(user);
+			fail();
+		} catch (Exception e) {
+			assertEquals(ServiceLayerException.class, e.getClass());
+		}
+	}
+	
+	@Test
+	public void testUpdateUser_CorrectUser() {
+		
+		userDAOmock.user = user;
+		
+		User testUser = UserService.updateUser(user);
+
+		assertEquals(user, testUser);
+	}
+	
+	@Test
+	public void testGetUserById_ServiceLayerException() {
+		
+		userDAOmock.findByIdException = new ServiceLayerException();
+
+		try {
+			UserService.getUserById(1);
+			fail();
+		} catch (Exception e) {
+			assertEquals(ServiceLayerException.class, e.getClass());
+		}
+	}
+	
+	@Test
+	public void testGetUserById_CorrectId() {
+		
+		userDAOmock.user = user;
+
+		User testUser = UserService.getUserById(1);
+
+		assertEquals(user, testUser);
+	}
+	
+	@Test
+	public void testGetUserByUsername_ServiceLayerException() {
+		
+		userDAOmock.findByNameException = new ServiceLayerException();
+
+		try {
+			UserService.getUserByUsername(user.getUsername());
+			fail();
+		} catch (Exception e) {
+			assertEquals(ServiceLayerException.class, e.getClass());
+		}
+	}
+	
+	@Test
+	public void testGetUserByUsername_CorrectUsername() {
+		
+		userDAOmock.user = user;
+
+		User testUser = UserService.getUserByUsername(user.getUsername());
+		assertEquals(user, testUser);
 	}
 }
