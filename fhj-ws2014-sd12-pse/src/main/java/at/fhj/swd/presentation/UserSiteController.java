@@ -3,6 +3,7 @@ package at.fhj.swd.presentation;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -30,6 +31,9 @@ public class UserSiteController implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	@Inject
+	private Logger logger;
+	
+	@Inject
 	UserService userService;
 
 	User user;
@@ -54,6 +58,8 @@ public class UserSiteController implements Serializable
 	@PostConstruct
 	public void init()
 	{		
+		logger.info("Entering UserSiteController.init() method.");
+		
 		if (FacesContext.getCurrentInstance() != null)
 			authToken = CookieHelper.getAuthTokenValue();
 		
@@ -69,6 +75,8 @@ public class UserSiteController implements Serializable
 	
 	public void loadUser()
 	{
+		logger.info("Entering UserSiteController.loadUser() method.");
+		
 		user = userService.getRegisteredUser(authToken);
 
 		if (user == null)
@@ -78,6 +86,8 @@ public class UserSiteController implements Serializable
 			user.setEmail("no.mail@vailable.yet");
 			user.setTelephone("12345");
 		}
+		
+		logger.info(String.format("Loaded user '%s',", user.getUsername()));
 	}
 
 	/**
