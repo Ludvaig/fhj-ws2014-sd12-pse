@@ -45,7 +45,7 @@ public class RegisterController
 	  User user = new User();
 	  
 	  user.setUsername(this.getUsername().trim());
-	  user.setHashedPassword(HashUtil.getPasswordHash(this.getUsername().trim(), this.getPassword().trim()));
+	//  user.setHashedPassword(HashUtil.getPasswordHash(this.getUsername().trim(), this.getPassword().trim()));
 	  user.setEmail(this.getEmail().trim());
 	  
 	  // TODO: Add optional parameters

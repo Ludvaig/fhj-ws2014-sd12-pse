@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@PermitAll()
 	public void registerUser(User user) {
-		log.info("Register a user with form authetication");
+		log.info("register user [" +  user + "]");
 
 		// input validation
 		if (user == null)
