@@ -18,6 +18,10 @@ public class LoginPage extends PageObjectBase{
 		return loginUser("Herbert", "vergessen");
 	}
 	
+	public TmpPage loginAdminPa() {
+		return loginUser("padmin_pa", "1");
+	}
+	
 	
 	public TmpPage loginUser(String user, String password){
 		driver.findElement(By.xpath(".//*[@id='login:username']")).clear();

@@ -18,6 +18,7 @@ public class UserPageTest extends AbstractTestSetup{
 	@Before
 	public void setup(){
 		super.setup();
+		loginUser();
 		userPage = tmpPage.goToUserPage();
 	}
 	
