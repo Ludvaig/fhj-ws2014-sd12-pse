@@ -14,6 +14,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,21 +27,22 @@ import static org.junit.Assert.*;
  * @author Haberl
  *
  */
-public class MainPage extends PageObjectBase {
-	private String testFile;
-	
+public class MainPage extends PageObjectBase {	
 
+	private final String tmpDir;
+	
 	public MainPage(WebDriver driver) {
 		super(driver);
+		tmpDir = System.getProperty("java.io.tmpdir");
 	}
 	
 	public boolean findUploadButton() {		
 		return !driver.findElements(By.id("documentViewer:button_input")).isEmpty();
 	}
 	
-	public void uploadTestFile() throws Exception {
+	public String uploadTestFile() throws Exception {
 		File temp = File.createTempFile("temp-file-name", ".txt"); 
-		testFile = temp.getName();
+		String testFile = temp.getName();
 		WebElement upload = driver.findElement(By.id("documentViewer:button_input"));
 		upload.click();
 		StringSelection ss = new StringSelection(temp.getAbsolutePath());
@@ -61,38 +63,50 @@ public class MainPage extends PageObjectBase {
 		
 		Thread.sleep(4000);
 		
-		getTestFileLink();
+		getTestFileLink(testFile);
 		
 		temp.delete();
 		assertFalse(temp.exists());
+		
+		return testFile;
 	}
 	
-	public WebElement getTestFileLink() {
+	public WebElement getTestFileLink(String testFile) {
 		if(testFile == null) {
 			throw new IllegalStateException("The test file needs to be created first");
 		}
-	    return driver.findElement(By.linkText(testFile));
+		List<WebElement> elements = driver.findElements(By.linkText(testFile));
+	    return elements.isEmpty() ? null : elements.get(0);
 	}
 
-	public boolean downloadTestFile() throws Exception {
-		WebElement fileLink = getTestFileLink();
+	public void downloadTestFile(String testFile) throws Exception {
+		WebElement fileLink = getTestFileLink(testFile);
 		
 		fileLink.click();		
 		
 		Thread.sleep(2000);
 		
-		File downloadedFile = new File(testFile);
-		
-		if(downloadedFile.exists() && !downloadedFile.isDirectory()) {
-			return true;
-		}
-		
-		return false;
+		File downloadedFile = new File(tmpDir, testFile);
+
+		assertTrue(downloadedFile.exists());
+		downloadedFile.delete();
+		assertFalse(downloadedFile.exists());
 	}
 
-	public boolean deleteTestFile() {
-		//TODO return if succeeded else false
-		return false;
+	public void deleteTestFile(String testFile) throws Exception {		
+		WebElement fileLink = getTestFileLink(testFile);
+		
+		WebElement row = fileLink.findElement(By.xpath(".."));
+		WebElement deleteButton = row.findElement(By.linkText("Delete"));
+		
+		//deleteButton.click();
+		
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", deleteButton);
+		
+		Thread.sleep(2000);
+
+		assertNull("Document must be deleted!", getTestFileLink(testFile));
 	}
 
 	public boolean checkTestNews() {

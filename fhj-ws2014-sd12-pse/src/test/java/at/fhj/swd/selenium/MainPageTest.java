@@ -2,14 +2,8 @@ package at.fhj.swd.selenium;
 
 import static org.junit.Assert.*;
 
-import java.awt.AWTException;
-import java.io.IOException;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
-
 import at.fhj.swd.selenium.pageobjects.MainPage;
 
 public class MainPageTest extends AbstractTestSetup {
@@ -28,14 +22,14 @@ public class MainPageTest extends AbstractTestSetup {
 	public void uploadAsAdminDownloadAsAdminAndUserDeleteAsAdmin() throws Exception {
 		loginAdmin();
 		mainPage = tmpPage.goToMainPage();
-		mainPage.uploadTestFile();
-		assertTrue(mainPage.downloadTestFile());
+		String testFile = mainPage.uploadTestFile();
+		mainPage.downloadTestFile(testFile);
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
-		assertTrue(mainPage.downloadTestFile());
+		mainPage.downloadTestFile(testFile);
 		loginAdmin();
 		mainPage = tmpPage.goToMainPage();
-		assertTrue(mainPage.deleteTestFile());
+		mainPage.deleteTestFile(testFile);
 	}
 
 	public void tryToUploadAsUser() {
@@ -48,10 +42,10 @@ public class MainPageTest extends AbstractTestSetup {
 	public void uploadAsAdminTryToDeleteAsUser() throws Exception {
 		loginAdmin();
 		mainPage = tmpPage.goToMainPage();
-		mainPage.uploadTestFile();
+		String testFile = mainPage.uploadTestFile();
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
-		assertFalse(mainPage.deleteTestFile());
+		mainPage.deleteTestFile(testFile);
 	}
 	
 	@Test
