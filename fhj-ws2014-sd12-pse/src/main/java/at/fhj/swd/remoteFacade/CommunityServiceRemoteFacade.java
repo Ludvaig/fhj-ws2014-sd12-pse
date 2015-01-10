@@ -26,13 +26,13 @@ public class CommunityServiceRemoteFacade implements CommunityService {
 	@Override
 	public List<Community> getAllSubscribedCommunitiesForUser(
 			String authUserToken) {
-		return getAllSubscribedCommunitiesForUser(authUserToken);
+		return communityService.getAllSubscribedCommunitiesForUser(authUserToken);
 	}
 
 	@Override
 	public List<Community> getSubscribedCommunitiesForUser(
 			String searchfieldText, String authUserToken) {
-		return getSubscribedCommunitiesForUser(searchfieldText, authUserToken);
+		return communityService.getSubscribedCommunitiesForUser(searchfieldText, authUserToken);
 	}
 
 	@Override
