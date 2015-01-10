@@ -21,7 +21,7 @@ public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
-	private Long id = null;
+	private long id;
 
 	@Column
 	private String title;
@@ -32,11 +32,7 @@ public class Post {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TOPIC_ID")
 	private Topic topic;
-
-	public Post() {
-		// empty on purpose!
-	}
-
+	
 	public String getTitle() {
 		return title;
 	}
@@ -52,7 +48,7 @@ public class Post {
 	public void setText(String newText) {
 		this.text = newText;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -64,18 +60,15 @@ public class Post {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		if (id != null) {
-			return id.equals(((Post) obj).id);
-		}
-		return super.equals(obj);
+		
+		Long boxedId = Long.valueOf(id);
+		return boxedId.equals(((Post) obj).id);
 	}
-
+	
 	@Override
 	public int hashCode() {
-		if (id != null) {
-			return id.hashCode();
-		}
-		return super.hashCode();
+		Long boxedId = Long.valueOf(id);
+		return boxedId.hashCode();
 	}
 
 	public String toString() {

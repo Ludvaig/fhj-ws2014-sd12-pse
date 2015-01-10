@@ -5,6 +5,8 @@ package at.fhj.swd.data.entity;
  * Gruppe 4
  */
 
+import java.lang.reflect.Field;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,49 +20,93 @@ public class PostTest {
 		p = new Post();
 	}
 
-	@Test
-	public void testPost() {
-//		fail("Not yet implemented");
-	}
+	// There is no need to test the constructor since the default constructor is used!
 
 	@Test
 	public void testGetTitle() {
-		p.setTitle("Neuer Post");
-		Assert.assertEquals("Neuer Post", p.getTitle());
+		String title = "Neuer Post";
+		p.setTitle(title);
+		Assert.assertEquals(title, p.getTitle());
 	}
 
 	@Test
 	public void testSetTitle() {
-		p.setTitle("Selenium - UserManual gesucht");
-		Assert.assertEquals("Selenium - UserManual gesucht", p.getTitle());
+		String title = "Selenium - UserManual gesucht";
+		p.setTitle(title);
+		Assert.assertEquals(title, p.getTitle());
 	}
 
 	@Test
 	public void testGetText() {
-		p.setText("Ich suche für Selenium ein UserManual");
-		Assert.assertEquals("Ich suche für Selenium ein UserManual", p.getText());
+		String text = "Ich suche für Selenium ein UserManual";
+		p.setText(text);
+		Assert.assertEquals(text, p.getText());
 	}
 
 	@Test
 	public void testSetText() {
-		p.setText("Mary had a little lamb");
-		Assert.assertEquals("Mary had a little lamb", p.getText());
+		String text = "Mary had a little lamb";
+		p.setText(text);
+		Assert.assertEquals(text, p.getText());
 	}
 
 	@Test
-	public void testEquals_This() {
+	public void testEqualsSameObjectReference() {
 		Assert.assertTrue(p.equals(p));
 	}
 	
-	@Test
-	public void testHashCode() {
-//		Post q = new Post();
-//		Assert.assertTrue(p.hashCode() == q.hashCode());
+	@Test 
+	public void testEqualsNullObject() {
+		Post nullPost = null;
+		Assert.assertEquals(false, p.equals(nullPost));
 	}
-
+	
 	@Test
-	public void testToString() {
-//		fail("Not yet implemented");
+	public void testEqualsDifferentType() {
+		Community wrongPostType = new Community();
+		Assert.assertEquals(false, p.equals(wrongPostType));
 	}
-
+	
+	@Test
+	public void testEqualsId() throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		Long sameId = new Long(22L);
+		
+		Field id = Post.class.getDeclaredField("id");
+		id.setAccessible(true);
+		
+		id.setLong(p, sameId);
+		
+		Post anotherPostWithSameId = new Post();
+		id.setLong(anotherPostWithSameId, sameId);
+		
+		Assert.assertEquals(true, p.equals(anotherPostWithSameId));
+	}
+	
+	@Test 
+	public void testHashCode() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		Field id = Post.class.getDeclaredField("id");
+		id.setAccessible(true);
+		id.setLong(p, 25L);
+		Long idValueAsBoxedLong = Long.valueOf(id.getLong(p));
+		int expectedHashCode = idValueAsBoxedLong.hashCode();
+		
+		Assert.assertEquals(expectedHashCode, p.hashCode());
+	}
+	
+	@Test
+	public void testToString() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		Long sameId = new Long(22L);
+		String text = "postText";
+		String title = "postTitle";
+		
+		Field id = Post.class.getDeclaredField("id");
+		id.setAccessible(true);
+		
+		id.setLong(p, sameId);
+		p.setText(text);
+		p.setTitle(title);
+		
+		String expectedToString = new StringBuilder().append(p.getClass().getName()).append(": Id='22', title='").append(title).append("', text='").append(text).append("'!").toString();
+		Assert.assertEquals(expectedToString, p.toString());
+	}
 }
