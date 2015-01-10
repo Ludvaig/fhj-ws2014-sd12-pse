@@ -10,12 +10,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
+import static org.junit.Assert.*;
 
 /**
  * Page object of index.jsf for testing.
@@ -58,25 +62,35 @@ public class MainPage extends PageObjectBase {
 		Thread.sleep(4000);
 		
 		getTestFileLink();
+		
+		temp.delete();
+		assertFalse(temp.exists());
 	}
 	
 	public WebElement getTestFileLink() {
-	      return driver.findElement(By.linkText(testFile));
-	}
-
-	public boolean downloadTestFile() {
 		if(testFile == null) {
 			throw new IllegalStateException("The test file needs to be created first");
 		}
+	    return driver.findElement(By.linkText(testFile));
+	}
 
-		getTestFileLink();
+	public boolean downloadTestFile() throws Exception {
+		WebElement fileLink = getTestFileLink();
+		
+		fileLink.click();		
+		
+		Thread.sleep(2000);
+		
+		File downloadedFile = new File(testFile);
+		
+		if(downloadedFile.exists() && !downloadedFile.isDirectory()) {
+			return true;
+		}
+		
 		return false;
 	}
 
 	public boolean deleteTestFile() {
-		if(testFile == null) {
-			throw new IllegalStateException("The test file needs to be created first");
-		}
 		//TODO return if succeeded else false
 		return false;
 	}
