@@ -42,15 +42,16 @@
                	rowKey="#{news.title}"
 			>
 			<p:ajax event="rowSelect" listener="#{dtNewsView.onNewsSelected}" ></p:ajax>
-			    <p:column headerText="News Title">
+			    <p:column headerText="#{locale.menuNewsLabel}">
 			        <h:outputText value="#{news.title}" />
 			    </p:column>
 			</p:dataTable> 
 			</h:form>
 			
 	    	<h:form id="documentViewer">
+	    	<h1>#{locale.menuDocumentsLabel}</h1>
 		    <p:dataList value="#{dtDocumentView.documents}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
-		        <f:facet name="header">Documents</f:facet>
+		        <f:facet name="header">#{locale.menuDocumentsLabel}</f:facet>
 				<h:commandLink value="#{document.name}">
 		            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedDocument}" />
 		            <p:fileDownload value="#{dtDocumentView.download}" />
