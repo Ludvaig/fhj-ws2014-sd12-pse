@@ -34,12 +34,12 @@
 
 ===Main-Page===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Move document library to main page||to do||Kamper||2||
+||Move document library to main page||to do||Ascher, Haberl||2||
 
 ===Refactoring===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Logging||to do||Haberl||2||
-||Exception handling||to do||Haberl||2||
+||Logging||to do||Kamper||2||
+||Exception handling||to do||Kamper||2||
 ||Document service including unit test||to do||Lamb, Reitner||4||
 ||Implement hashcodes and Equals||to do||Lamb, Reitner||1||
 ||Unify naming of variables and classes etc.||to do||Lamb, Reitner||1||
