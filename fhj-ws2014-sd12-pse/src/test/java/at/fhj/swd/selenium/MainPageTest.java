@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.NoSuchElementException;
+
 import at.fhj.swd.selenium.pageobjects.MainPage;
 
 public class MainPageTest extends AbstractTestSetup {
@@ -32,13 +34,14 @@ public class MainPageTest extends AbstractTestSetup {
 		mainPage.deleteTestFile(testFile);
 	}
 
+	@Test
 	public void tryToUploadAsUser() {
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
-		mainPage.findUploadButton();
+		assertFalse(mainPage.findUploadButton());
 	}
 	
-	@Test
+	@Test(expected=NoSuchElementException.class)
 	public void uploadAsAdminTryToDeleteAsUser() throws Exception {
 		loginAdmin();
 		mainPage = tmpPage.goToMainPage();
