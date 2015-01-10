@@ -100,7 +100,7 @@ Usersite
 		<!-- user document library view begin -->
 		<h:form>
 		    <p:dataList value="#{dtDocumentView.userDocuments}" var="document" itemType="none" paginator="true" rows="10" styleClass="paginated">
-		        <f:facet name="header">Documents</f:facet>
+		        <f:facet name="header">#{locale.menuDocumentsLabel}</f:facet>
 				<h:commandLink value="#{document.name}">
 		            <f:setPropertyActionListener value="#{document.name}" target="#{dtDocumentView.selectedUserDocument}" />
 		            <p:fileDownload value="#{dtDocumentView.userDownload}" />
