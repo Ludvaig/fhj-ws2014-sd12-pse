@@ -25,7 +25,7 @@ import at.fhj.swd.service.exceptions.ServiceLayerException;
 /**
  * Community Administration - ViewHelper.
  * 
- * @author Group3
+ * @author Group4
  * */
 
 @ManagedBean(name="dtCommunitiesAdminView")
