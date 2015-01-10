@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -38,7 +39,7 @@ public class NewsView implements Serializable{
 	@Inject
 	private FacesContext facesContext;
 
-	@ManagedProperty("#{newsService}")
+	@EJB
     private NewsService service;
     
     
