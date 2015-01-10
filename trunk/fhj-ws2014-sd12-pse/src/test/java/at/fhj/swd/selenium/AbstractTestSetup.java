@@ -25,7 +25,7 @@ public class AbstractTestSetup {
 		firefoxProfile.setPreference("browser.helperApps.alwaysAsk.force", false);
 		firefoxProfile.setPreference("browser.download.manager.showWhenStarting",false);
 		firefoxProfile.setPreference("browser.download.dir", tmpDir);
-		firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/txt");
+		firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/plain");
 		driver = new FirefoxDriver(firefoxProfile);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
