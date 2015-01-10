@@ -5,10 +5,9 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.event.ActionEvent;
 
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.DefaultStreamedContent;
@@ -17,7 +16,6 @@ import at.fhj.swd.data.entity.Document;
 import at.fhj.swd.data.entity.User;
 import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.DocumentService;
-import at.fhj.swd.service.UserService;
 
 
 /**
@@ -34,10 +32,9 @@ public class DocumentView implements Serializable {
 	
 	private String selectedDocument;
 	
-	//TODO: Is this necessary see also getUserSelectedDocument
 	private String selectedUserDocument;
 	
-    @ManagedProperty("#{documentService}")
+	@EJB(beanName="DocumentServiceImpl")
     private DocumentService service;
     
     @PostConstruct
@@ -49,7 +46,6 @@ public class DocumentView implements Serializable {
     	return this.service.getGlobalDocuments();
     }
     
-    //TODO: Upload not working. Before security script everything was working fine. Needs to be checked!
     public void handleFileUpload(FileUploadEvent event) throws IOException {
     	this.service.uploadGlobalDocument(event.getFile().getInputstream(), event.getFile().getFileName());
     }
@@ -89,13 +85,11 @@ public class DocumentView implements Serializable {
 	    	this.service.uploadUserDocument(username, event.getFile().getInputstream(), event.getFile().getFileName());
 	    }
     }
-    
-    //TODO: Is this necessary 
+     
     public void setSelectedUserDocument(String name) {
     	this.selectedUserDocument = name;
     }
     
-    //TODO: Is this necessary 
     public String getSelectedUserDocument() {
     	return this.selectedUserDocument;
     }
