@@ -29,7 +29,7 @@
 ===General issues=== 
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
 ||Fix document upload||done||Ascher||3||
-||Fix document download||to do||Kranabetter||3||
+||Fix document download||done||Ascher||3||
 ||Maven environment||to do||Kranabetter||2||
 
 ===Main-Page===
