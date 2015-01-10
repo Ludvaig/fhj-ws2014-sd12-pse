@@ -20,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
+import at.fhj.swd.data.entity.News;
 import static org.junit.Assert.*;
 
 /**
@@ -106,9 +107,15 @@ public class MainPage extends PageObjectBase {
 
 		assertNull("Document must be deleted!", getTestFileLink(testFile));
 	}
-
-	public boolean checkTestNews() {
-		//TODO return if succeeded else false
-		return false;
+	
+	public void checkTestNews(String newsTitle) throws InterruptedException {
+		WebElement newsTable = driver.findElement(By.id("newsViewer:news"));
+		List<WebElement> newsLines = newsTable.findElements(By.tagName("tr"));
+		assertEquals(2, newsLines.size());
+		
+		WebElement newsTitleElement = newsLines.get(1).findElement(By.tagName("td"));
+		assertEquals(newsTitle, newsTitleElement.getText());
+		
+		newsTitleElement.click();
 	}
 }

@@ -2,6 +2,7 @@ package at.fhj.swd.selenium;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,13 +12,10 @@ import at.fhj.swd.selenium.pageobjects.MainPage;
 public class MainPageTest extends AbstractTestSetup {
 
 	private MainPage mainPage;
-
-
-	@Before
-	public void setup(){
-		super.setup();
-		deleteAllDocuments();
-		deleteAllNews();
+	
+	@After
+	public void teardown() {
+		super.teardown();
 	}
 	
 	@Test
@@ -52,25 +50,16 @@ public class MainPageTest extends AbstractTestSetup {
 	}
 	
 	@Test
-	public void areNewsDisplayed() {
-		createTestNews();
+	public void areNewsDisplayed4User() throws InterruptedException {
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
-		assertTrue(mainPage.checkTestNews());
+		mainPage.checkTestNews("news 1");
+	}
+
+	@Test
+	public void areNewsDisplayed4Admin() throws InterruptedException {
 		loginAdmin();
 		mainPage = tmpPage.goToMainPage();
-		assertTrue(mainPage.checkTestNews());
-	}
-	
-	private void deleteAllDocuments() {
-		//TODO
-	}
-	
-	private void deleteAllNews() {
-		//TODO
-	}
-	
-	private void createTestNews() {
-		//TODO
+		mainPage.checkTestNews("news 1");
 	}
 }
