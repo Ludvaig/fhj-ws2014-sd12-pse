@@ -19,14 +19,7 @@ public class AbstractTestSetup {
 	
 	@Before
 	public void setup(){
-		String tmpDir = System.getProperty("java.io.tmpdir");
-		FirefoxProfile firefoxProfile = new FirefoxProfile();
-		firefoxProfile.setPreference("browser.download.folderList", 2);
-		firefoxProfile.setPreference("browser.helperApps.alwaysAsk.force", false);
-		firefoxProfile.setPreference("browser.download.manager.showWhenStarting",false);
-		firefoxProfile.setPreference("browser.download.dir", tmpDir);
-		firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/plain");
-		driver = new FirefoxDriver(firefoxProfile);
+		driver = new FirefoxDriver(createProfileForAutoTextFileToTempDirDownload());
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
@@ -42,6 +35,17 @@ public class AbstractTestSetup {
 		tmpPage = loginPage.loginUser();
 	}
 	
+	protected FirefoxProfile createProfileForAutoTextFileToTempDirDownload() {
+		String tmpDir = System.getProperty("java.io.tmpdir");
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setPreference("browser.download.folderList", 2);
+		profile.setPreference("browser.helperApps.alwaysAsk.force", false);
+		profile.setPreference("browser.download.manager.showWhenStarting",false);
+		profile.setPreference("browser.download.dir", tmpDir);
+		profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/plain");
+		return profile;
+	}
+		
 	@After
 	public void teardown(){
 		driver.quit();
