@@ -27,11 +27,6 @@ import at.fhj.swd.data.entity.helper.TableGeneratorHelper;
 @Entity
 public class Topic {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.TABLE)
-//	@Column(name = "id", updatable = false, nullable = false)
-//	private Long id = null;
-
 	public static final String TABLE_GEN_NAME = "topicTableGen";
 	public static final String PK_COL_VALUE = "topicPk";
 	
@@ -44,8 +39,7 @@ public class Topic {
  									valueColumnName = TableGeneratorHelper.VALUE_COL_NAME,
 									allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_GEN_NAME)
-	//@Column(name = "id", updatable = false, nullable = false)
-	private Long id = null;
+	private long id;
 	
 	@Column
 	private Date date;
@@ -86,21 +80,16 @@ public class Topic {
 	public Community getCommunity() {
 	return community;
 	}
+	
 	public void setCommunity(Community community) {
 	this.community = community;
-	}
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	@PrePersist
 	public void onCreate(){
 		this.date = new Date();
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -112,25 +101,22 @@ public class Topic {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		if (id != null) {
-			return id.equals(((Topic) obj).id);
-		}
-		return super.equals(obj);
+		
+		Long boxedId = Long.valueOf(id);
+		return boxedId.equals(((Topic) obj).id);
 	}
 
 	@Override
 	public int hashCode() {
-		if (id != null) {
-			return id.hashCode();
-		}
-		return super.hashCode();
+		Long boxedId = Long.valueOf(id);
+		return boxedId.hashCode();
 	}
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.getClass().getName()).append(
 				String.format(
-						": Id='%s', name='%s', text='%s' !",
+						": Id='%s', name='%s', text='%s'!",
 						id, name, text));
 		return sb.toString();
 	}
