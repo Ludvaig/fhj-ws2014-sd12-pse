@@ -14,7 +14,7 @@ View the News
    template="/template/main.xhtml">
    <ui:define name="content">
 	    <h:form id="newsViewer">
-	    	<h1>News</h1>
+	    	<h1>#{locale.menuNewsLabel}</h1>
 			<p:dataTable var="news" value="#{dtNewsView.allNews}" id="news"
 				paginator="true" rows="6"
                	paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
