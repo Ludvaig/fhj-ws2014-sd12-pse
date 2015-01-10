@@ -61,7 +61,7 @@
 		        </h:commandLink>        
 		    </p:dataList>
 		
-			<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" auto="true"/>
+			<p:fileUpload rendered="#{dtDocumentView.administrationAllowed}" update="@form" mode="advanced" fileUploadListener="#{dtDocumentView.handleFileUpload}" allowTypes="/(\.|\/)(pdf|PDF|txt|TXT|doc|DOC|docx|DOCX)$/" id="button" auto="true" accept="text/*"/>
 		</h:form>
           </div>
           

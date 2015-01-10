@@ -28,12 +28,7 @@ public class TmpPage extends PageObjectBase{
 	}
 	
 
-	public MainPage goToMainPage() {
-		driver.findElement(By.cssSelector("a[href*='#']")).click();
-		driver.findElement(By.cssSelector("a[href*='index.jsf']")).click();
-		
-		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
-		
+	public MainPage goToMainPage() {		
 		return new MainPage(driver);
 	}
 	
