@@ -34,8 +34,8 @@
 
 ===Main-Page===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Add document library to main page||done||Ascher, Haberl||2||
-||Add news to main page||done||Ascher, Haberl||2||
+||Add document library to main page||done||Haberl||2||
+||Add news to main page||done||Haberl||2||
 
 ===Refactoring===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
