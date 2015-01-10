@@ -28,7 +28,7 @@
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabetter,Reitner,Seidl==
 ===General issues=== 
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Fix document upload||to do||Kranabetter||3||
+||Fix document upload||done||Ascher||3||
 ||Fix document download||to do||Kranabetter||3||
 ||Maven environment||to do||Kranabetter||2||
 
