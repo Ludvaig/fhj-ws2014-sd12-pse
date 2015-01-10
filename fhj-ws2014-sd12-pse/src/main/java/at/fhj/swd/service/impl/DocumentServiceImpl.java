@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import at.fhj.swd.data.entity.Document;
@@ -24,7 +26,8 @@ import at.fhj.swd.service.UserService;
  * 
  * @author Group1
  * */
-@Stateless
+@ManagedBean(name = "documentService")
+@ApplicationScoped
 public class DocumentServiceImpl implements DocumentService {
 	
 	private static String globalContext = "global";
