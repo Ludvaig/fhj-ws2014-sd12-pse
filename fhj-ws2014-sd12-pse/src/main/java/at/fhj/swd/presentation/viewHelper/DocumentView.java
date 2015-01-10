@@ -85,7 +85,7 @@ public class DocumentView implements Serializable {
     
     //TODO: Upload not working. Before security script everything was working fine. Needs to be checked!
     //Also tried to use HandleUserFileUpload as function name ==> also not working
-    public void setHandleUserFileUpload(FileUploadEvent event) throws IOException {
+    public void handleUserFileUpload(FileUploadEvent event) throws IOException {
     	String username = getLoggedInUsername();
 	    if (username != null) {
 	    	this.service.uploadUserDocument(username, event.getFile().getInputstream(), event.getFile().getFileName());
