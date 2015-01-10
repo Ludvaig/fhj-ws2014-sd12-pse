@@ -99,8 +99,6 @@ public class MainPage extends PageObjectBase {
 		WebElement row = fileLink.findElement(By.xpath(".."));
 		WebElement deleteButton = row.findElement(By.linkText("Delete"));
 		
-		//deleteButton.click();
-		
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", deleteButton);
 		
