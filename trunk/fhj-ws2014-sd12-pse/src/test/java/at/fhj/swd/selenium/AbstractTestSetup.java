@@ -20,8 +20,16 @@ public class AbstractTestSetup {
 	public void setup(){
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
+	protected void loginAdmin() {
 		driver.get("http://127.0.0.1:8080/fhj-ws2014-sd12-pse/login.jsf");
-		
+		loginPage = new LoginPage(driver);
+		tmpPage = loginPage.loginAdminPa();
+	}
+	
+	protected void loginUser() {
+		driver.get("http://127.0.0.1:8080/fhj-ws2014-sd12-pse/login.jsf");
 		loginPage = new LoginPage(driver);
 		tmpPage = loginPage.loginUser();
 	}

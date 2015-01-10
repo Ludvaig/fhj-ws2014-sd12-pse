@@ -15,6 +15,7 @@ public class TopicPageTest extends AbstractTestSetup{
 	@Before
 	public void setup(){
 		super.setup();
+		loginUser();
 		communityPage = tmpPage.goToCommunityPage();
 		topicPage = communityPage.goToTopicPage();
 	}
