@@ -103,4 +103,30 @@ public class DocumentServiceRemoteFacade implements DocumentService {
 	public void deleteGlobalDocuments() {
 		service.deleteGlobalDocuments();
 	}
+
+	@Override
+	public List<Document> getAdminDocuments() {
+		return service.getAdminDocuments();
+	}
+
+	@Override
+	public void uploadAdminDocument(InputStream source, String name) throws IOException {
+		service.uploadAdminDocument(source, name);
+	}
+
+	@Override
+	public InputStream downloadAdminDocument(String name) throws IOException {
+		return service.downloadAdminDocument(name);
+	}
+
+	@Override
+	public void deleteAdminDocument(String name) {
+		service.deleteAdminDocument(name);
+		
+	}
+
+	@Override
+	public boolean getIsAdministrator(String token) {
+		return service.getIsAdministrator(token);
+	}
 }
