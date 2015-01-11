@@ -20,14 +20,14 @@ public class MainPageTest extends AbstractTestSetup {
 	
 	@Test
 	public void uploadAsAdminDownloadAsAdminAndUserDeleteAsAdmin() throws Exception {
-		loginAdmin();
+		loginAdminPa();
 		mainPage = tmpPage.goToMainPage();
 		String testFile = mainPage.uploadTestFile();
 		mainPage.downloadTestFile(testFile);
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
 		mainPage.downloadTestFile(testFile);
-		loginAdmin();
+		loginAdminPa();
 		mainPage = tmpPage.goToMainPage();
 		mainPage.deleteTestFile(testFile);
 	}
@@ -41,7 +41,7 @@ public class MainPageTest extends AbstractTestSetup {
 	
 	@Test(expected=NoSuchElementException.class)
 	public void uploadAsAdminTryToDeleteAsUser() throws Exception {
-		loginAdmin();
+		loginAdminPa();
 		mainPage = tmpPage.goToMainPage();
 		String testFile = mainPage.uploadTestFile();
 		loginUser();
@@ -58,7 +58,7 @@ public class MainPageTest extends AbstractTestSetup {
 
 	@Test
 	public void areNewsDisplayed4Admin() throws InterruptedException {
-		loginAdmin();
+		loginAdminPa();
 		mainPage = tmpPage.goToMainPage();
 		mainPage.checkTestNews("news 1");
 	}
