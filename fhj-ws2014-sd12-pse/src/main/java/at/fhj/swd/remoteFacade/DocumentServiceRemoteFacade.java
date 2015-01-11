@@ -98,4 +98,9 @@ public class DocumentServiceRemoteFacade implements DocumentService {
 	public boolean getUserAdministrationAllowed(String token) {
 		return service.getUserAdministrationAllowed(token);
 	}
+
+	@Override
+	public void deleteGlobalDocuments() {
+		service.deleteGlobalDocuments();
+	}
 }
