@@ -28,7 +28,7 @@ public class LoginController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	private FacesContext facesContext;

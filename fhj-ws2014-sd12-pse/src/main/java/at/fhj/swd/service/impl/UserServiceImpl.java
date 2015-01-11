@@ -26,7 +26,7 @@ import javax.inject.Named;
 public class UserServiceImpl implements UserService {
 
 	@Inject
-	private Logger log;
+	private transient Logger log;
 
 	@Inject
 	@Named("userDAOImpl")

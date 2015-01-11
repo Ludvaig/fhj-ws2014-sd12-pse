@@ -24,7 +24,7 @@ import at.fhj.swd.service.exceptions.ServiceLayerException;
 public class CommunityServiceImpl implements CommunityService {
 	
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	private CommunityDAO communityDao;
