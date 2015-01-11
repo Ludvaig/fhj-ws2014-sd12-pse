@@ -8,8 +8,6 @@ import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import org.hibernate.validator.internal.util.logging.LoggerFactory;
-
 import at.fhj.swd.data.NewsDAO;
 import at.fhj.swd.data.entity.News;
 import at.fhj.swd.data.exceptions.DataSourceLayerException;
