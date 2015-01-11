@@ -41,7 +41,7 @@ public class Community implements Serializable {
 	private Collection<User> users;
 
 	@OneToMany(mappedBy = "community")
-	private List<Topic> topics;
+	private transient List<Topic> topics;
 
 	public Community() {
 		users = new ArrayList<User>();
