@@ -108,14 +108,13 @@ public class MainPage extends PageObjectBase {
 		assertNull("Document must be deleted!", getTestFileLink(testFile));
 	}
 	
-	public void checkTestNews(String newsTitle) throws InterruptedException {
-		WebElement newsTable = driver.findElement(By.id("newsViewer:news"));
-		List<WebElement> newsLines = newsTable.findElements(By.tagName("tr"));
-		assertEquals(2, newsLines.size());
+	public void checkTestNews(String newsTitle, String newsContent) throws InterruptedException {
+		WebElement newsTable = driver.findElement(By.id("newsViewer:news_list"));
+		List<WebElement> newsLines = newsTable.findElements(By.tagName("li"));
+		assertEquals(1, newsLines.size());
 		
-		WebElement newsTitleElement = newsLines.get(1).findElement(By.tagName("td"));
-		assertEquals(newsTitle, newsTitleElement.getText());
-		
-		newsTitleElement.click();
+		WebElement newsElement = newsLines.get(0);
+		assertTrue(newsElement.getText().startsWith(newsTitle));
+		assertTrue(newsElement.getText().endsWith(newsContent));
 	}
 }
