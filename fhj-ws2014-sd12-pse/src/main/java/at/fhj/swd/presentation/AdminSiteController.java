@@ -68,7 +68,7 @@ public class AdminSiteController implements Serializable {
 			// user is not signed in.
 			System.out.println("user is not logged in");
 			facesContext.addMessage(null, 
-					new FacesMessage(FacesMessage.SEVERITY_WARN, "Please sign in as Administrator", "Failure"));
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "Please sign in as Administrator first.", "Failure"));
 		}
 	}	
 }
