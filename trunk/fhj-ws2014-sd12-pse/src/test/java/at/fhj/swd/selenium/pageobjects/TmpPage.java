@@ -47,11 +47,17 @@ public class TmpPage extends PageObjectBase{
 	}
 	
 	public AdminPage goToAdminNewsPage() {
-		//driver.get("http://localhost:8080/fhj-ws2014-sd12-pse/admin/news_list.jsf");
 		driver.findElement(By.cssSelector("a[href*='news_list.jsf']")).click();
 		
 		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
 		return new AdminPage(driver);
 	}
+	
+	public AdminPage goToAdminCommunitiesPage() {
+		driver.findElement(By.cssSelector("a[href*='community_list.jsf']")).click();
+		
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+		return new AdminPage(driver);
+	}	
 	
 }

@@ -22,14 +22,14 @@
 			<h1>Communities</h1>
 		</div>
 		
-		<h:form>
+		<h:form id="community">
 		    <div class="form-group community-form">
 		        <label>#{locale.adminComunitiesComunityNameLabel}</label>
-		        <h:inputText value="#{dtCommunitiesAdminView.createCommunity}" type="text" class="form-control"/>
+		        <h:inputText id="communityName" value="#{dtCommunitiesAdminView.createCommunity}" type="text" class="form-control"/>
 		    </div>
 		    <div class="form-buttons">			
 				<button type="button" class="btn btn-default button-cancel" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/community_list.jsf'">Abbrechen</button>   
-				<h:commandButton action="#{dtCommunitiesAdminView.create()}" value="#{locale.adminCommunitySaveLabel}" class="btn btn-primary"></h:commandButton>
+				<h:commandButton id="save" action="#{dtCommunitiesAdminView.create()}" value="#{locale.adminCommunitySaveLabel}" class="btn btn-primary"></h:commandButton>
 			</div>
 		</h:form>
 	</ui:define>
