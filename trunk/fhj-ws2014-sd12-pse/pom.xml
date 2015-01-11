@@ -109,7 +109,8 @@
     <version.primefaces>5.1</version.primefaces>
     <version.picketbox>4.0.19.Final</version.picketbox>
     <version.log4j>1.2.17</version.log4j> 
-    <version.selenium>2.44.0</version.selenium>     
+    <version.selenium>2.44.0</version.selenium>
+    <version.weld-se>2.1.0.CR1</version.weld-se>     
     
   </properties>
   
@@ -299,6 +300,13 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>${version.selenium}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se</artifactId>
+			<version>${version.weld-se}</version>
 			<scope>test</scope>
 		</dependency>
 		
