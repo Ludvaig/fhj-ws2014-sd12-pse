@@ -34,7 +34,7 @@ public class NewsAdminView implements Serializable{
 	private static final long serialVersionUID = 6330672338108028518L;
 	
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	private FacesContext facesContext;

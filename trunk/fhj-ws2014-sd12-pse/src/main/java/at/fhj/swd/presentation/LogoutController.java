@@ -25,7 +25,7 @@ import at.fhj.swd.service.UserService;
 @RequestScoped
 public class LogoutController {
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	private FacesContext facesContext;

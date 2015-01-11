@@ -31,7 +31,7 @@ public class UserSiteController implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	UserService userService;

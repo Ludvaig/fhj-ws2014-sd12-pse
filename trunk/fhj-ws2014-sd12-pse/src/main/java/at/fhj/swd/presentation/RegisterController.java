@@ -21,7 +21,7 @@ import at.fhj.swd.service.UserService;
 public class RegisterController 
 {
 	@Inject
-	private Logger _log;
+	private transient Logger _log;
 	
 	@Inject
 	private UserService _userService;

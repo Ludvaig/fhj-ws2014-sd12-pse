@@ -16,7 +16,7 @@ import at.fhj.swd.service.TopicService;
 public class TopicServiceImpl implements TopicService{
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	private TopicDAO topicDao;

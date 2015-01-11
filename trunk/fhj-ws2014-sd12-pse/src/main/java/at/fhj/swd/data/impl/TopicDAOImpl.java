@@ -15,7 +15,7 @@ import at.fhj.swd.data.entity.Topic;
 public class TopicDAOImpl implements TopicDAO{
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	EntityManager em;	

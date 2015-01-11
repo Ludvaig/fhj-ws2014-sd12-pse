@@ -21,7 +21,7 @@ import at.fhj.swd.data.exceptions.DAOUpdateFailedException;
 public class CommunityDAOImpl implements CommunityDAO {
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	public EntityManager em;
