@@ -1,6 +1,10 @@
 Version history:
 ----------------
 
+v1.3:
+Add Selenium UI Tests. Prepare the project for Jenkins CI, alle build, test and report goals must be 
+available by command line maven tool. Some final refactoring.
+
 v1.2:
 Refactoring for: Layered enterprise architectures, Logging, Business and technical code encapsulation,
 Persistence and Entities, View usability, Exception handling. 
@@ -161,6 +165,13 @@ wildfly:run runs the application server and deploys your application.
 wildfly:start starts the application server and shuts it down at last when the maven process ends unless an explicit shutdown from a management client or the shutdown goal is executed.
 wildfly:shutdown shuts down a running application server.
 wildfly:execute-commands executes commands on the running server.
+
+Maven Site Plugin
+-----------------
+
+http://maven.apache.org/plugins/maven-site-plugin/
+
+site:site is used generate a site for a single project. Note that links between module sites in a multi module build will not work, since local build directory structure doesn't match deployed site.
 
 Maven Project Info Reports Plugin
 ---------------------------------
