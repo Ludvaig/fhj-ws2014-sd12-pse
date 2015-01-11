@@ -94,3 +94,30 @@ So, 04.01., 20:00 - 23:00, Unit-Test Post-Entity abgeschlossen
 Summe - bisheriger Aufwand: 17,5 Stunden
 
 Summe - geschätzter offener Aufwand: 23 Stunden
+
+==Group 3: Frech, Hösele, Kotremba, Mayer, Tot, Viehberger==
+
+===REFACTORING===
+
+||Task/Story||Status||Assigned To||SP||
+||Refactoring CommunityService (Architecture)||TODO||Michael Mayer||3||
+||Admin/PortalAdmin validation in presentation layer||TODO||Michael Mayer||2||
+||Refactoring NewsService (Architecture)||TODO||Michael Mayer||2||
+
+===IMPLEMENTATIONS===
+
+||Task/Story||Status||Assigned To||SP||
+||US5.1 Einfacher Upload für Dateien / Fertigstellung 1)||TODO||Achim Kotremba||5||
+||Remote Facade CommunityService/NewsService||TODO||Michael Mayer||1||
+||Logging||TODO||Bojan Tot||2||
+||Überarbeitung CI||TODO||Daniel Frech||2||
+
+===TESTS===
+||Task/Story||Status||Assigned To||SP||
+||Unit Tests CommunityService||TODO||Julia Viehberger||3||
+||Unit Tests NewsService||TODO||Bojan Tot||3||
+||Blackbox Test CommunityService (In-Container)||TODO||Michael Mayer||2||
+||Blackbox Test NewsService (In-Container)||TODO||Michael Mayer||2||
+||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
+||1 Selenium Test for US26||TODO||Daniel Hösele||2||
+||1 Selenium Test for US25||TODO||Daniel Frech||2||
