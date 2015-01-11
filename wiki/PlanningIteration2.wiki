@@ -63,12 +63,12 @@
 ||US5.1 Einfacher Upload für Dateien / Fertigstellung 1)||TODO||Achim Kotremba||5||
 ||Remote Facade CommunityService/NewsService||Done||Michael Mayer||1||
 ||Logging||TODO||Bojan Tot||2||
-||Überarbeitung CI||TODO||Daniel Frech||2||
+||Überarbeitung UI||done||Daniel Frech||2||
 
 ===TESTS===
 ||Task/Story||Status||Assigned To||SP||
 ||Unit Tests CommunityService||TODO||Julia Viehberger||3||
-||Unit Tests NewsService||TODO||Bojan Tot||3||
+||Unit Tests NewsService||done||Bojan Tot||3||
 ||Blackbox Test CommunityService (In-Container)||Done||Michael Mayer||2||
 ||Blackbox Test NewsService (In-Container)||Done||Michael Mayer||2||
 ||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
