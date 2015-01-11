@@ -30,11 +30,11 @@ public class TopicServiceImpl implements TopicService{
 	}
 
 	@Override
-	public void createNewTopic(String communityId, String newTopicName, String topicText) {
+	public void createNewTopic(Long communityId, String newTopicName, String topicText) {
 		logger.log(Level.INFO, "Called " + this.getClass().getName() + "::createNewTopic()!");
 		
 		Topic topic = new Topic();
-		topic.setCommunity(communityDao.findCommunityById(Long.valueOf(communityId).longValue()));
+		topic.setCommunity(communityDao.findCommunityById(communityId));
 		topic.setName(newTopicName);
 		topic.setText(topicText);
 		topicDao.insert(topic);
