@@ -112,7 +112,7 @@ public class TopicView implements Serializable{
 	}
 	
 	public void createNewTopic() {
-		service.createNewTopic(communityId, createFieldText, createTopicText);
+		service.createNewTopic(Long.parseLong(communityId), createFieldText, createTopicText);
 		this.existingTopics = service.getExistingTopics(communityId, "");
 	}
 }
