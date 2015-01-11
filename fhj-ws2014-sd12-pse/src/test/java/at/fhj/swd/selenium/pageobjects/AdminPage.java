@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * AdminPage
- * @author D.Hoesele
+ * @author D.Hoesele, D.Frech
  */
 public class AdminPage extends PageObjectBase {
 
@@ -26,5 +26,17 @@ public class AdminPage extends PageObjectBase {
 		
 		return new AdminPage(driver);		
 	}
+	
+	public AdminPage createCommunity(String communityName) {
+		driver.findElement(By.id("newCommunityButton")).click();
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+		
+		driver.findElement(By.xpath(".//*[@id='community:communityName']")).clear();
+		driver.findElement(By.xpath(".//*[@id='community:communityName']")).sendKeys(communityName);
+		driver.findElement(By.xpath(".//*[@id='community:save']")).click();
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);	
+		
+		return new AdminPage(driver);		
+	}	
 	
 }

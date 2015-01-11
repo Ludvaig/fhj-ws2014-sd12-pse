@@ -3,22 +3,21 @@ $( document ).ready(function() {
 	
 	// set list items active
 	if ( locationPath.indexOf("community_list.jsf") > 0 ) {
-		console.log("in communities");
 		$("#list_communities").addClass("active");
-		$("#list_documents").addClass("active");
+		$("#list_documents").removeClass("active");
 		$("#list_news").removeClass("active");
 	}
 	else if ( locationPath.indexOf("news_list.jsf") > 0 ) {
 		console.log("in news");
 		$("#list_communities").removeClass("active");
-		$("#list_documents").addClass("active");
+		$("#list_documents").removeClass("active");
 		$("#list_news").addClass("active");
 	}
 	else if ( locationPath.indexOf("documents_list.jsf") > 0 ) {
 		console.log("in documents");
-		$("#list_documents").removeClass("active");
-		$("#list_communities").addClass("active");
-		$("#list_news").addClass("active");
+		$("#list_documents").addClass("active");
+		$("#list_communities").removeClass("active");
+		$("#list_news").removeClass("active");
 	}
 	else {
 		console.log("on main");
