@@ -15,8 +15,6 @@ import at.fhj.swd.data.entity.User;
 import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.exceptions.UserLoginException;
 
-import at.fhj.swd.remoteFacade.RemoteFactory;
-
 public final class UserServiceRemoteFacadeTest {
 
 	private User user;
@@ -27,8 +25,8 @@ public final class UserServiceRemoteFacadeTest {
 
 	@Before
 	public void setUp() throws NamingException {
-		service = (UserService)RemoteFactory.create("UserServiceRemoteFacade", UserService.class.getName());
-
+		service = RemoteServiceLocator.getUserService();
+		
 		user = new User();
 		user.setUsername(userName);
 		user.setPassword(password);
