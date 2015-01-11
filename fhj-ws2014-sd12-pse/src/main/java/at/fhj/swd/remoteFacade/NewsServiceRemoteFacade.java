@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.enterprise.inject.Any;
 import javax.inject.Inject;
 
@@ -11,6 +12,7 @@ import at.fhj.swd.data.entity.News;
 import at.fhj.swd.service.NewsService;
 
 @Any
+@Stateless
 @Remote(NewsService.class)
 public class NewsServiceRemoteFacade implements NewsService {
 
