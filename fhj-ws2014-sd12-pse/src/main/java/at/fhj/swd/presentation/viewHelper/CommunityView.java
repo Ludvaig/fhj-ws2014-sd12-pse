@@ -33,13 +33,13 @@ public class CommunityView implements Serializable{
 	private static final long serialVersionUID = 6330672338108028518L;
 
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
-	private List<Community> subscribedCommunities = null;
+	private transient List<Community> subscribedCommunities = null;
 	
 	private String searchFieldText = "";
 	
-	private Community selectedCommunity = null;
+	private transient Community selectedCommunity = null;
 
 	@Inject
     private CommunityService service;

@@ -30,14 +30,14 @@ import at.fhj.swd.service.exceptions.ServiceLayerException;
 
 @ManagedBean(name="dtCommunitiesAdminView")
 @ViewScoped
-public class CommunityAdminView implements Serializable{
+public class CommunityAdminView implements Serializable {
 
 	private static final long serialVersionUID = 6330672338108028518L;
 
-	private List<Community> communities = null;
+	private transient List<Community> communities = null;
 	
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
     private CommunityService communityService;
