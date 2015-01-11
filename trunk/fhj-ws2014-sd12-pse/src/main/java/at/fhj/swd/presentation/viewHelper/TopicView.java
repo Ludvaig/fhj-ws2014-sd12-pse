@@ -23,7 +23,7 @@ public class TopicView implements Serializable{
 
 	private static final long serialVersionUID = 5308381287611038438L;
 	
-	private List<Topic> existingTopics = null;
+	private transient List<Topic> existingTopics = null;
 	private String searchFieldText = null;
 	private String createFieldText = null;
 	private String createTopicText = null;
@@ -31,7 +31,7 @@ public class TopicView implements Serializable{
 	private String communityId = null;
 	
 	@Inject
-	private Logger logger;
+	private transient Logger logger;
 	
 	@Inject
 	TopicService service;
