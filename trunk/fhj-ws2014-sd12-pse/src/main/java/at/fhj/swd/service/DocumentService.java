@@ -19,6 +19,8 @@ public interface DocumentService {
 	public void uploadGlobalDocument(InputStream source, final String name) throws IOException;
 
 	public void deleteGlobalDocument(final String name);
+
+	public void deleteGlobalDocuments();	
 	
 	public InputStream downloadGlobalDocument(final String name) throws IOException;
 	

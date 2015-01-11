@@ -193,5 +193,13 @@ public class DocumentServiceImpl implements DocumentService {
 		}
 		User user = userService.getRegisteredUser(token);
 		return user;
+	}
+
+	@Override
+	public void deleteGlobalDocuments() {
+		List<Document> documents = this.getGlobalDocuments();
+		for (Document document : documents) {
+			this.deleteGlobalDocument(document.getName());
+		}
 	}		
 }
