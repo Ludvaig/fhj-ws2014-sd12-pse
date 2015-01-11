@@ -2,15 +2,26 @@ package at.fhj.swd.selenium;
 
 import static org.junit.Assert.*;
 
+import javax.naming.NamingException;
+
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
 
+import at.fhj.swd.remoteFacade.RemoteServiceLocator;
 import at.fhj.swd.selenium.pageobjects.MainPage;
+import at.fhj.swd.service.DocumentService;
 
 public class MainPageTest extends AbstractTestSetup {
 
 	private MainPage mainPage;
+	
+	@Before
+	public void setUp() throws NamingException {
+		DocumentService ds = RemoteServiceLocator.getDocumentService();
+		ds.deleteGlobalDocuments();
+	}
 	
 	@After
 	public void teardown() {

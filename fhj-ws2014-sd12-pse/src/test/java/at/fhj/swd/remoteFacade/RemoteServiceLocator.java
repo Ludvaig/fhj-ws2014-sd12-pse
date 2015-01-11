@@ -6,11 +6,11 @@ import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.DocumentService;
 
 public class RemoteServiceLocator {
-	static UserService getUserService() throws NamingException {
+	public static UserService getUserService() throws NamingException {
 		return (UserService)RemoteFactory.create("UserServiceRemoteFacade", UserService.class.getName());	
 	}
 	
-	static DocumentService getDocumentService() throws NamingException {
+	public static DocumentService getDocumentService() throws NamingException {
 		return (DocumentService)RemoteFactory.create("DocumentServiceRemoteFacade", DocumentService.class.getName());	
 	}	
 }
