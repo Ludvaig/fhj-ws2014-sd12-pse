@@ -3,7 +3,6 @@ package at.fhj.swd.selenium;
 import static org.junit.Assert.*;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -53,13 +52,13 @@ public class MainPageTest extends AbstractTestSetup {
 	public void areNewsDisplayed4User() throws InterruptedException {
 		loginUser();
 		mainPage = tmpPage.goToMainPage();
-		mainPage.checkTestNews("news 1");
+		mainPage.checkTestNews("news 1", "content 1");
 	}
 
 	@Test
 	public void areNewsDisplayed4Admin() throws InterruptedException {
 		loginAdminPa();
 		mainPage = tmpPage.goToMainPage();
-		mainPage.checkTestNews("news 1");
+		mainPage.checkTestNews("news 1", "content 1");
 	}
 }
