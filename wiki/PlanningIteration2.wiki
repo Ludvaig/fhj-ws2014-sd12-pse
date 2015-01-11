@@ -72,7 +72,7 @@
 ||Blackbox Test CommunityService (In-Container)||TODO||Michael Mayer||2||
 ||Blackbox Test NewsService (In-Container)||TODO||Michael Mayer||2||
 ||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
-||1 Selenium Test for US26||TODO||Daniel Hösele||2||
+||1 Selenium Test for US26||done||Daniel Hösele||2||
 ||1 Selenium Test for US25||TODO||Daniel Frech||2||
 
 ==Group 4: Dulzky, Lindlbauer, Mitteregger, Temmel, Siharath, Wendl==
