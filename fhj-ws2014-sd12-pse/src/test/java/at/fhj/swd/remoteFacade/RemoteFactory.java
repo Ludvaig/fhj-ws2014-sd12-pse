@@ -42,7 +42,7 @@ public class RemoteFactory {
 
 	public static Object create(final String beanName, final String interfaceName) throws NamingException {
 		Context context = createContext();
-		final String jndiName = "ejb:/fhj-ws2014-sd12-pse//" + beanName + "!" + interfaceName;
+		final String jndiName = "ejb:/fhj-ws2014-sd12-pse/" + beanName + "!" + interfaceName;
 		return context.lookup(jndiName);			
 	}
 	
