@@ -18,6 +18,14 @@ public class LoginPage extends PageObjectBase{
 		return loginUser("Herbert", "vergessen");
 	}
 	
+	/**
+	 * @author Daniel Hoesele
+	 * @return logged in as admin
+	 */
+	public TmpPage loginAdmin() {
+		return loginUser("admin_a", "1");
+	}
+	
 	public TmpPage loginAdminPa() {
 		return loginUser("padmin_pa", "1");
 	}

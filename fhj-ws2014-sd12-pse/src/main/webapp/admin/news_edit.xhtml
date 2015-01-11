@@ -22,20 +22,20 @@
 			<h1>News</h1>
 		</div>
 			
-	<h:form>
+	<h:form id="news">
 	    <div class="form-group news-form">
 	    
 	        <label>#{locale.adminNewsTitelLabel}</label>	
-			<h:inputText value="#{dtNewsAdminView.selectedNews.title}" type="text" class="form-control"/>
+			<h:inputText id="title" value="#{dtNewsAdminView.selectedNews.title}" type="text" class="form-control"/>
 			
 			<label>#{locale.adminNewsContentLabel}</label>
-		    <h:inputTextarea value="#{dtNewsAdminView.selectedNews.content}" type="textarea" class="form-control"/>
+		    <h:inputTextarea id="content" value="#{dtNewsAdminView.selectedNews.content}" type="textarea" class="form-control"/>
 		    
 		</div>		
 		
 	    <div class="form-buttons">			
 			<button type="button" class="btn btn-default button-cancel" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/news_list.jsf'">Abbrechen</button>   
-			<h:commandButton action="#{dtNewsAdminView.save()}" value="#{locale.adminNewsSaveLabel}" class="btn btn-primary"></h:commandButton>
+			<h:commandButton id="save" action="#{dtNewsAdminView.save()}" value="#{locale.adminNewsSaveLabel}" class="btn btn-primary"></h:commandButton>
 		</div>		
 	</h:form>
 	</ui:define>

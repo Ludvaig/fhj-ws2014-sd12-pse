@@ -31,5 +31,27 @@ public class TmpPage extends PageObjectBase{
 	public MainPage goToMainPage() {		
 		return new MainPage(driver);
 	}
+
+
+	/**
+	 * @author Daniel Hoesele
+	 * @return AdminPage
+	 */
+
+	public AdminPage goToAdminPage() {
+		driver.findElement(By.cssSelector("a[href*='#']")).click();
+		driver.findElement(By.cssSelector("a[href*='adminsite.jsf']")).click();
+		
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+		return new AdminPage(driver);
+	}
+	
+	public AdminPage goToAdminNewsPage() {
+		//driver.get("http://localhost:8080/fhj-ws2014-sd12-pse/admin/news_list.jsf");
+		driver.findElement(By.cssSelector("a[href*='news_list.jsf']")).click();
+		
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+		return new AdminPage(driver);
+	}
 	
 }
