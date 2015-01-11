@@ -1,30 +1,3 @@
-==Group 2: Fritz, Hagelmüller, Huber, Marcher, Palade, Schuberth und Spörk==
-===User-Page===	
-	
-||Selenium tests for User-Pages||To Do||Sandra Marcher||2||
-||Email-address are not changeable on User-Pages||To Do||Michael Spörk||1||
-||Information of validation directly on input field||To Do||Michael Spörk||1||
-
-
-===Login===		
-||Login old/new merging||To Do||Ionut Palade||1||
-||Selenium tests for Login-Page||To Do||Ionut Palade||2||
-
-
-===Refactoring===		
-||UserService RemoteFaced tests||To Do||Michael Spörk||4||
-||UserDAO tests||To Do||Jörg Huber||5||
-||UserService tests||To Do||Schuberth Jürgen||3||
-||Delete controller logic from Service-Layer||To Do||Schuberth Jürgen||1||
-||Logging||To Do||Steven Hagelmüller||2||
-||Delete comment out code||To Do||Sandra Marcher||2||
-||Check Enitity||To Do||Eva Fritz||2||
-||Delete DAO-Logic from Service-Layer||To Do||Steven Hagelmüller||2||
-||Update DAO method names||To Do||Eva Fritz||2||
-||Exception Handling||To Do||Ionut Palade||3||
-
-
-
 ==Group 1: Ascher,Lamb,Kamper,Haberl,Kranabetter,Reitner,Seidl==
 ===General issues=== 
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
@@ -52,6 +25,55 @@
 ||Document download||to do||Ascher, Haberl||3||
 ||News feed for user||to do||Ascher, Haberl||3||
 
+==Group 2: Fritz, Hagelmüller, Huber, Marcher, Palade, Schuberth und Spörk==
+===User-Page===	
+	
+||Selenium tests for User-Pages||To Do||Sandra Marcher||2||
+||Email-address are not changeable on User-Pages||To Do||Michael Spörk||1||
+||Information of validation directly on input field||To Do||Michael Spörk||1||
+
+===Login===		
+||Login old/new merging||To Do||Ionut Palade||1||
+||Selenium tests for Login-Page||To Do||Ionut Palade||2||
+
+===Refactoring===		
+||UserService RemoteFaced tests||To Do||Michael Spörk||4||
+||UserDAO tests||To Do||Jörg Huber||5||
+||UserService tests||To Do||Schuberth Jürgen||3||
+||Delete controller logic from Service-Layer||To Do||Schuberth Jürgen||1||
+||Logging||To Do||Steven Hagelmüller||2||
+||Delete comment out code||To Do||Sandra Marcher||2||
+||Check Enitity||To Do||Eva Fritz||2||
+||Delete DAO-Logic from Service-Layer||To Do||Steven Hagelmüller||2||
+||Update DAO method names||To Do||Eva Fritz||2||
+||Exception Handling||To Do||Ionut Palade||3||
+
+==Group 3: Frech, Hösele, Kotremba, Mayer, Tot, Viehberger==
+
+===REFACTORING===
+
+||Task/Story||Status||Assigned To||SP||
+||Refactoring CommunityService (Architecture)||TODO||Michael Mayer||3||
+||Admin/PortalAdmin validation in presentation layer||TODO||Michael Mayer||2||
+||Refactoring NewsService (Architecture)||TODO||Michael Mayer||2||
+
+===IMPLEMENTATIONS===
+
+||Task/Story||Status||Assigned To||SP||
+||US5.1 Einfacher Upload für Dateien / Fertigstellung 1)||TODO||Achim Kotremba||5||
+||Remote Facade CommunityService/NewsService||TODO||Michael Mayer||1||
+||Logging||TODO||Bojan Tot||2||
+||Überarbeitung CI||TODO||Daniel Frech||2||
+
+===TESTS===
+||Task/Story||Status||Assigned To||SP||
+||Unit Tests CommunityService||TODO||Julia Viehberger||3||
+||Unit Tests NewsService||TODO||Bojan Tot||3||
+||Blackbox Test CommunityService (In-Container)||TODO||Michael Mayer||2||
+||Blackbox Test NewsService (In-Container)||TODO||Michael Mayer||2||
+||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
+||1 Selenium Test for US26||TODO||Daniel Hösele||2||
+||1 Selenium Test for US25||TODO||Daniel Frech||2||
 
 ==Group 4: Dulzky, Lindlbauer, Mitteregger, Temmel, Siharath, Wendl==
 
@@ -94,30 +116,3 @@ So, 04.01., 20:00 - 23:00, Unit-Test Post-Entity abgeschlossen
 Summe - bisheriger Aufwand: 17,5 Stunden
 
 Summe - geschätzter offener Aufwand: 23 Stunden
-
-==Group 3: Frech, Hösele, Kotremba, Mayer, Tot, Viehberger==
-
-===REFACTORING===
-
-||Task/Story||Status||Assigned To||SP||
-||Refactoring CommunityService (Architecture)||TODO||Michael Mayer||3||
-||Admin/PortalAdmin validation in presentation layer||TODO||Michael Mayer||2||
-||Refactoring NewsService (Architecture)||TODO||Michael Mayer||2||
-
-===IMPLEMENTATIONS===
-
-||Task/Story||Status||Assigned To||SP||
-||US5.1 Einfacher Upload für Dateien / Fertigstellung 1)||TODO||Achim Kotremba||5||
-||Remote Facade CommunityService/NewsService||TODO||Michael Mayer||1||
-||Logging||TODO||Bojan Tot||2||
-||Überarbeitung CI||TODO||Daniel Frech||2||
-
-===TESTS===
-||Task/Story||Status||Assigned To||SP||
-||Unit Tests CommunityService||TODO||Julia Viehberger||3||
-||Unit Tests NewsService||TODO||Bojan Tot||3||
-||Blackbox Test CommunityService (In-Container)||TODO||Michael Mayer||2||
-||Blackbox Test NewsService (In-Container)||TODO||Michael Mayer||2||
-||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
-||1 Selenium Test for US26||TODO||Daniel Hösele||2||
-||1 Selenium Test for US25||TODO||Daniel Frech||2||
