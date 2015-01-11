@@ -1,5 +1,6 @@
 package at.fhj.swd.data.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,11 +16,16 @@ import javax.persistence.OneToMany;
 /**
  * DB-Entity for Communities.
  * 
- * @author Group4, Michael Mayer
+ * @author Group4, Group3
  * */
 
 @Entity
-public class Community {
+public class Community implements Serializable {
+
+	/**
+	 * Serial version UID for community entity.
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

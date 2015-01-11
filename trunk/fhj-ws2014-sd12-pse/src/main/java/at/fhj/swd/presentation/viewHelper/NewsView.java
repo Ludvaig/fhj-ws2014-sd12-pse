@@ -34,7 +34,7 @@ public class NewsView implements Serializable{
 	@Inject
 	private FacesContext facesContext;
 
-	@EJB
+	@Inject
     private NewsService service;
     
     @PostConstruct

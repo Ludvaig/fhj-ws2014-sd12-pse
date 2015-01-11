@@ -3,6 +3,7 @@ package at.fhj.swd.remoteFacade;
 import java.util.List;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.enterprise.inject.Any;
 import javax.inject.Inject;
 
@@ -12,6 +13,7 @@ import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.service.CommunityService;
 
 @Any
+@Stateless
 @Remote(CommunityService.class)
 public class CommunityServiceRemoteFacade implements CommunityService {
 
@@ -33,11 +35,6 @@ public class CommunityServiceRemoteFacade implements CommunityService {
 	public List<Community> getSubscribedCommunitiesForUser(
 			String searchfieldText, String authUserToken) {
 		return communityService.getSubscribedCommunitiesForUser(searchfieldText, authUserToken);
-	}
-
-	@Override
-	public boolean isUserIsLoggedIn() {
-		return communityService.isUserIsLoggedIn();
 	}
 
 	@Override

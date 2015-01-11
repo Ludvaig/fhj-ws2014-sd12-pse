@@ -15,8 +15,10 @@ import javax.inject.Inject;
 import org.primefaces.event.SelectEvent;
 
 import at.fhj.swd.data.entity.Community;
+import at.fhj.swd.data.entity.User;
 import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.CommunityService;
+import at.fhj.swd.service.UserService;
 
 /**
  * Community-ViewHelper.
@@ -42,15 +44,19 @@ public class CommunityView implements Serializable{
 	@Inject
     private CommunityService service;
     
+	@Inject
+	private UserService userService;
     
     @PostConstruct
     public void init() {
     	logger.log(Level.INFO, "Initiliazing " + this.getClass().getName() + " in @PostConstruct!");
-    	
+        	
+    	// refactored part for community service (layer violation)
+    	User user = userService.getRegisteredUser(CookieHelper.getAuthTokenValue());
+		if(user == null) {
+			RedirectionTargetHelper.redirectTo(RedirectionTarget.LOGIN);
+		}    	
     	subscribedCommunities = service.getAllSubscribedCommunitiesForUser(CookieHelper.getAuthTokenValue());
-    	if (!service.isUserIsLoggedIn()) {
-    		RedirectionTargetHelper.redirectTo(RedirectionTarget.LOGIN);
-    	}
     	
     	logger.log(Level.INFO, "Successfully nitiliazed " + this.getClass().getName() + " in @PostConstruct!");
     }

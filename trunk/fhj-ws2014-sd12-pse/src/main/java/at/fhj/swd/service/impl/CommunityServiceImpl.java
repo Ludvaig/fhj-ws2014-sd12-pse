@@ -11,13 +11,13 @@ import at.fhj.swd.data.CommunityDAO;
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.data.entity.User;
-import at.fhj.swd.presentation.helper.CookieHelper;
 import at.fhj.swd.service.CommunityService;
+import at.fhj.swd.service.exceptions.ServiceLayerException;
 
 /**
  * Community service implementation.
  * 
- * @author Group4, Michael Mayer
+ * @author Group4, Group3
  * */
 
 @Stateless
@@ -36,53 +36,56 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<Community> getAllSubscribedCommunitiesForUser(String authUserToken) {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::getAllSubscribedCommunitiesForUser()!");
 		
-		User user = userDao.findByToken(authUserToken);
-		
-		List<Community> communities = null;
-		if(user != null){
-			communities = communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+		try {
+			User user = userDao.findByToken(authUserToken);
+			List<Community> communities = null;
+			if(user != null){
+				communities = communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser("", user);
+			}		
+			logger.log(Level.INFO, "Retrieved communities: " + communities);
+			return communities;
+		} catch (Exception e) {
+			throw new ServiceLayerException("service failed to get all subscribed communities for user token " + authUserToken, e);
 		}
-		
-		logger.log(Level.INFO, "Retrieved communities: " + communities);
-		
-		return communities;
 	}
 	
 	public List<Community> getSubscribedCommunitiesForUser(String searchFieldText, String authUserToken) {
 		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::getAllSubscribedCommunitiesForUser()!");
 		
-		User user = userDao.findByToken(authUserToken);
-		
-		logger.log(Level.INFO, "Loaded user [username='" + user.getUsername() + "']!");
-		
-		return communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
-	}
-	
-	public boolean isUserIsLoggedIn() {
-		logger.log(Level.INFO, "Calling " + this.getClass().getName() + "::isUserIsLoggedIn()!");
-		
-		String authToken = CookieHelper.getAuthTokenValue();
-		User user = userDao.findByToken(authToken);
-		
-		if(user == null) {
-			return false;
+		try {
+			User user = userDao.findByToken(authUserToken);
+			
+			logger.log(Level.INFO, "Loaded user [username='" + user.getUsername() + "']!");
+			
+			return communityDao.findSubscribedCommunitiesForSearchTextOfCurrentUser(searchFieldText, user);
 		}
-		
-		logger.log(Level.INFO, "Found user [username='" + user.getUsername() + "']!");
-		return true;
+		catch(Exception e) {
+			logger.log(Level.SEVERE, "failed to get subscribed communities for user", e);
+			throw new ServiceLayerException("service failed to get subscribed communities for user", e);
+		}
 	}
 	
 	public Community getCommunityById(long id) {
-		Community community = communityDao.findCommunityById(id);
-		if (community != null) {
-			return community;
+		
+		try {
+			Community community = communityDao.findCommunityById(id);
+			if (community != null) {
+				return community;
+			}
+			return null;
 		}
-		return null;
+		catch(Exception e) {
+			throw new ServiceLayerException("service failed to get community by id " + id, e);
+		}
 	}
 
 	@Override
 	public List<Community> getAllCommunities() {
-		return communityDao.findAllCommunities();
+		try {
+			return communityDao.findAllCommunities();
+		} catch(Exception e) {
+			throw new ServiceLayerException("service failed to get all communities", e);
+		}
 	}
 
 	@Override
@@ -97,7 +100,7 @@ public class CommunityServiceImpl implements CommunityService {
 			logger.log(Level.INFO, "Creating community [communityName = '" + community.getName() + "']!");
 		} catch(Exception e) {
 			logger.log(Level.SEVERE, "failed to create community", e);
-			throw e;
+			throw new ServiceLayerException("service failed to create community", e);
 		}		
 	}
 
@@ -112,7 +115,7 @@ public class CommunityServiceImpl implements CommunityService {
 			logger.log(Level.INFO, "Released community [" + community + "]!");
 		} catch(Exception e) {
 			logger.log(Level.SEVERE, "failed to release community", e);
-			throw e;
+			throw new ServiceLayerException("service failed to release community", e);
 		}
 	}
 	
