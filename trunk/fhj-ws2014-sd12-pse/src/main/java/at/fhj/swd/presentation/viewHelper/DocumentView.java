@@ -30,12 +30,12 @@ public class DocumentView implements Serializable {
 
 	private static final long serialVersionUID = 6219023243007670413L;
 	
-	private String selectedDocument;
+	protected String selectedDocument;
 	
 	private String selectedUserDocument;
 	
 	@EJB(beanName="DocumentServiceImpl")
-    private DocumentService service;
+	protected DocumentService service;
     
     @PostConstruct
     public void init() {

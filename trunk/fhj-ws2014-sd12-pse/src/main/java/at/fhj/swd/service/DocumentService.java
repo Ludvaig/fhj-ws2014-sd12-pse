@@ -11,6 +11,7 @@ import at.fhj.swd.data.entity.User;
  * Interface to service which handles all requests to documents.
  * 
  * @author Group1
+ * editet Group3
  * */
 public interface DocumentService {
 	public List<Document> getGlobalDocuments();
@@ -42,6 +43,15 @@ public interface DocumentService {
 	
 	public void deleteUserDocument(final String user, final String name);
 	
+	//User
+	public List<Document> getAdminDocuments();
+		
+	public void uploadAdminDocument(InputStream source, final String name) throws IOException;	
+
+	public InputStream downloadAdminDocument(final String name) throws IOException;
+	
+	public void deleteAdminDocument(final String name);
+	
 	/**
 	 * checks if user is logged in.
 	 * 
@@ -53,4 +63,6 @@ public interface DocumentService {
 	public User getUserByToken(String token);
 
 	boolean getUserAdministrationAllowed(String token);
+	
+	public boolean getIsAdministrator(String token);
 }

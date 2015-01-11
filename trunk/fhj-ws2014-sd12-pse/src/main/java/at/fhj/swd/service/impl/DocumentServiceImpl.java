@@ -23,6 +23,7 @@ import at.fhj.swd.service.UserService;
  * context (global, community, user).
  * 
  * @author Group1
+ * edited Group3
  * */
 @Stateless
 public class DocumentServiceImpl implements DocumentService {
@@ -32,6 +33,8 @@ public class DocumentServiceImpl implements DocumentService {
 	private static String communityContext = "community";
 	
 	private static String userContext = "user";
+	
+	private static String adminContext = "admin";
 	
 	@EJB(beanName="UserServiceImpl")
 	private UserService userService;
@@ -96,6 +99,26 @@ public class DocumentServiceImpl implements DocumentService {
 		this.deleteDocument(name, this.getUserPath(user));	
 	}	
 	
+	@Override
+	public List<Document> getAdminDocuments() {
+		return this.getDocuments(this.getAdminPath());
+	}
+
+	@Override
+	public void uploadAdminDocument(InputStream source, String name) throws IOException {
+		this.uploadDocument(source, name, this.getAdminPath());	
+	}
+
+	@Override
+	public InputStream downloadAdminDocument(String name) throws IOException {
+		return this.downloadDocument(name, this.getAdminPath());
+	}
+
+	@Override
+	public void deleteAdminDocument(String name) {
+		this.deleteDocument(name, this.getAdminPath());
+	}		
+	
 	private List<Document> getDocuments(final String path) {
 		this.ensurePath(path);
 		
@@ -127,6 +150,10 @@ public class DocumentServiceImpl implements DocumentService {
 	
 	private String getUserPath(final String user) {
 		return this.concatPath(this.concatPath(this.getDocumentHome(), userContext), user);
+	}
+	
+	private String getAdminPath() {
+		return this.concatPath(this.getDocumentHome(), adminContext);
 	}
 	
 	private String concatPath(final String prefix, final String postfix) {
@@ -201,5 +228,17 @@ public class DocumentServiceImpl implements DocumentService {
 		for (Document document : documents) {
 			this.deleteGlobalDocument(document.getName());
 		}
-	}		
+	}
+	
+	@Override
+	public boolean getIsAdministrator(String token) {
+		if(token == null) {
+			return false;
+		}
+		User user = userService.getRegisteredUser(token);
+		if(user == null) {
+			return false;
+		}
+		return userService.userIsAdmin(user);
+	}
 }
