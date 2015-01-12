@@ -3,6 +3,8 @@ package at.fhj.swd.presentation.viewHelper;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -26,6 +28,9 @@ import at.fhj.swd.service.NewsService;
 public class NewsView implements Serializable{
 
 	private static final long serialVersionUID = 6330672338108028518L;
+	
+	@Inject
+	private transient Logger logger;
 
 	private List<News> allNews = null;
 	
@@ -39,15 +44,18 @@ public class NewsView implements Serializable{
     
     @PostConstruct
     public void init() {
+		logger.log(Level.INFO, "Initiliazing " + this.getClass().getName() + " in @PostConstruct!");
     	try {
     		allNews = service.getAllNews();    		
     		if (allNews.size() != 0) {
     			selectedNews = allNews.get(0);
+    		logger.log(Level.INFO, "Successfully initiliazed " + this.getClass().getName() + " in @PostConstruct!");
     		}
 		} catch (Exception e) {
 			allNews = new ArrayList<News>();
 			String errorMessage = e.getLocalizedMessage();
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, ""));
+			logger.log(Level.INFO, "NOT Successfully initiliazed " + this.getClass().getName() + " in @PostConstruct!");
 		}
     }
     
