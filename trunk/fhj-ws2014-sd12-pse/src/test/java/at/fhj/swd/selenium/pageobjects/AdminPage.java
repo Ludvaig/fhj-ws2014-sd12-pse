@@ -39,4 +39,19 @@ public class AdminPage extends PageObjectBase {
 		return new AdminPage(driver);		
 	}	
 	
+	public AdminPage createNews(String newsTitle, String newsContent) {
+		driver.findElement(By.xpath(".//*[@id='createnews']")).click();
+		//IDs vergeben, um auf die Felder referenzieren zu können
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);
+
+		driver.findElement(By.xpath(".//*[@id='j_idt12:cnt']")).clear();
+		driver.findElement(By.xpath(".//*[@id='j_idt12:cnc']")).clear();
+		driver.findElement(By.xpath(".//*[@id='j_idt12:cnt']")).sendKeys(newsTitle);
+		driver.findElement(By.xpath(".//*[@id='j_idt12:cnc']")).sendKeys(newsContent);
+		driver.findElement(By.xpath(".//*[@id='j_idt12:create']")).click();
+		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);	
+		
+		return new AdminPage(driver);		
+	}
+	
 }
