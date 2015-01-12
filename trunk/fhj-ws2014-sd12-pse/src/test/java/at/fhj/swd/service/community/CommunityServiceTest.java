@@ -24,7 +24,7 @@ import at.fhj.swd.service.impl.CommunityServiceImpl;
 import at.fhj.swd.util.JdbcTestHelper;
 import at.fhj.swd.util.WeldJUnit4Runner;
 
-@RunWith(WeldJUnit4Runner.class)
+//@RunWith(WeldJUnit4Runner.class)
 public class CommunityServiceTest {
 	
 	private CommunityDAO communityDao;
@@ -54,7 +54,7 @@ public class CommunityServiceTest {
 		jndiNameForUser = userBuilder.append("fhj-ws2014-sd12-pse").append("/").append("UserDAOTestFacade").append("/").append(UserDAO.class.getName()).toString();
 		logger.log(Level.INFO, "Created jndi-Lookup for UserDAO: " + jndiNameForUser);
 		
-		JDBC_HELPER.executeSqlScript("sql/createCommunities.sql");
+//		JDBC_HELPER.executeSqlScript("sql/createCommunities.sql");
 	}
 	
 	@Before
