@@ -13,9 +13,11 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 import at.fhj.swd.data.entity.Document;
 import at.fhj.swd.data.entity.User;
+import at.fhj.swd.data.exceptions.DataSourceLayerException;
 import at.fhj.swd.service.DocumentService;
 import at.fhj.swd.service.UserService;
 import at.fhj.swd.service.exceptions.ServiceLayerException;
