@@ -26,16 +26,16 @@
 	    <div class="form-group news-form">
 	    
 	        <label>#{locale.adminNewsTitelLabel}</label>	
-			<h:inputText value="#{dtNewsAdminView.createTitle}" type="text" class="form-control"/>
+			<h:inputText id="cnt" value="#{dtNewsAdminView.createTitle}" type="text" class="form-control"/>
 			
 			<label>#{locale.adminNewsContentLabel}</label>
-		    <h:inputTextarea value="#{dtNewsAdminView.createContent}" type="textarea" class="form-control"/>        
+		    <h:inputTextarea id="cnc" value="#{dtNewsAdminView.createContent}" type="textarea" class="form-control"/>        
 		    
 		</div>		
 		
 	    <div class="form-buttons">			
 			<button type="button" class="btn btn-default button-cancel" onclick="window.location.href='/fhj-ws2014-sd12-pse/admin/news_list.jsf'">Abbrechen</button>   
-			<h:commandButton action="#{dtNewsAdminView.create()}" value="#{locale.adminNewsSaveLabel}" class="btn btn-primary"></h:commandButton>
+			<h:commandButton id="create" action="#{dtNewsAdminView.create()}" value="#{locale.adminNewsSaveLabel}" class="btn btn-primary"></h:commandButton>
 		</div>		
 	</h:form>
 	</ui:define>
