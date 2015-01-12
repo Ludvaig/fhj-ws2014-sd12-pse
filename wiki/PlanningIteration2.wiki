@@ -67,11 +67,11 @@
 
 ===TESTS===
 ||Task/Story||Status||Assigned To||SP||
-||Unit Tests CommunityService||TODO||Julia Viehberger||3||
+||Unit Tests CommunityService||done||Julia Viehberger||3||
 ||Unit Tests NewsService||done||Bojan Tot||3||
 ||Blackbox Test CommunityService (In-Container)||Done||Michael Mayer||2||
 ||Blackbox Test NewsService (In-Container)||Done||Michael Mayer||2||
-||1 Selenium Test for US5.1||TODO||Julia Viehberger||2||
+||1 Selenium Test for US5.1||done||Julia Viehberger||2||
 ||1 Selenium Test for US26||done||Daniel Hösele||2||
 ||1 Selenium Test for US25||TODO||Daniel Frech||2||
 
