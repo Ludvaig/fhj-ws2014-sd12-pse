@@ -40,14 +40,14 @@ public class CommunityAdminView implements Serializable {
 	private transient Logger logger;
 	
 	@Inject
-    private CommunityService communityService;
+    private transient CommunityService communityService;
 	
 	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
-	private UserService userService;
+	private transient UserService userService;
 	
 	@Inject
-	private FacesContext facesContext;
+	private transient FacesContext facesContext;
 	
 	private String createCommunity;
 	private long releaseCommunity;

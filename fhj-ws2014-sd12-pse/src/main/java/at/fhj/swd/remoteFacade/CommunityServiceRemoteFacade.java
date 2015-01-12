@@ -18,7 +18,7 @@ import at.fhj.swd.service.CommunityService;
 public class CommunityServiceRemoteFacade implements CommunityService {
 
 	@Inject
-	private CommunityService communityService;
+	private transient CommunityService communityService;
 	
 	@Override
 	public List<Community> getAllCommunities() {

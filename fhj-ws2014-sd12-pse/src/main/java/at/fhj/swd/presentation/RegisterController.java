@@ -24,7 +24,7 @@ public class RegisterController
 	private transient Logger _log;
 	
 	@Inject
-	private UserService _userService;
+	private transient UserService _userService;
 	
 	private String _username;
 	private String _password;

@@ -34,9 +34,9 @@ public class UserSiteController implements Serializable
 	private transient Logger logger;
 	
 	@Inject
-	UserService userService;
+	private transient UserService userService;
 
-	User user;
+	private User user;
 
 	private List<User> contacts;
 	private User selectedUser;

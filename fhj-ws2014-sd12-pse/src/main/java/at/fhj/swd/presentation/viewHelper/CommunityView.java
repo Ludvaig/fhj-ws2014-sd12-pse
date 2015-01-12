@@ -42,10 +42,10 @@ public class CommunityView implements Serializable{
 	private transient Community selectedCommunity = null;
 
 	@Inject
-    private CommunityService service;
+    private transient CommunityService service;
     
 	@Inject
-	private UserService userService;
+	private transient UserService userService;
     
     @PostConstruct
     public void init() {

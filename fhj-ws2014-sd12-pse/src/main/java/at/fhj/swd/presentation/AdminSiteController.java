@@ -30,10 +30,10 @@ public class AdminSiteController implements Serializable {
 	 * Injected members.
 	 */
 	@Inject
-    private FacesContext facesContext;
+    private transient FacesContext facesContext;
 	
 	@Inject
-	private UserService userService;
+	private transient UserService userService;
 	
 	
 	/**

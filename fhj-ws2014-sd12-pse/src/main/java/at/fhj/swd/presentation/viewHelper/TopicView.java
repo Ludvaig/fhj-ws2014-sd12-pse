@@ -34,10 +34,10 @@ public class TopicView implements Serializable{
 	private transient Logger logger;
 	
 	@Inject
-	TopicService service;
+	private transient TopicService service;
 	
 	@Inject
-	CommunityService comService;
+	private transient CommunityService comService;
 	
 	private String communityName = null;
 	

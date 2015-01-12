@@ -45,7 +45,7 @@ public class DocumentServiceImpl implements DocumentService {
 	private static String adminContext = "admin";
 	
 	@EJB(beanName="UserServiceImpl")
-	private UserService userService;
+	private transient UserService userService;
 	
 	@Override
 	public List<Document> getGlobalDocuments() {
