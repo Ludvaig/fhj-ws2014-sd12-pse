@@ -154,13 +154,24 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-        
+
+
+
+      <dependency>
+      	<groupId>org.mockito</groupId>
+      	<artifactId>mockito-all</artifactId>
+      	<version>1.9.5</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   
   <!-- Note: Provided scope is used because the dependency is included in JBoss. -->
   <dependencies>
-  
+          <dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-all</artifactId>
+		<scope>test</scope>
+		</dependency>  
     <!-- BOM dependencies need no version declaration. -->
     
 		<!-- Import the CDI API. -->

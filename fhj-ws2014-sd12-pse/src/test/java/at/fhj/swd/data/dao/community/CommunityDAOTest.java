@@ -81,7 +81,7 @@ public class CommunityDAOTest {
 		
 	}
 	
-	@Ignore
+	@Test
 	public void testInsertCommunity() {
 		dao.insertCommunity(comHerbert);
 		

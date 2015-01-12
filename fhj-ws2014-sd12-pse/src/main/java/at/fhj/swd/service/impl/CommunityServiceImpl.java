@@ -134,4 +134,8 @@ public class CommunityServiceImpl implements CommunityService {
 	public UserDAO getUserDAO() {
 		return this.userDao;
 	}
+
+	public void setLogger(Logger logger) {
+		this.logger = logger;
+	}
 }
