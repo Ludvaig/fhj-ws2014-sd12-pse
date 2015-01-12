@@ -12,8 +12,8 @@
 
 ===Refactoring===
 || *To Do* || *Status* || *Responsible person* || *Story points* ||
-||Logging||to do||Kamper||2||
-||Exception handling||to do||Kamper||2||
+||Logging||done||Kamper||2||
+||Exception handling||done||Kamper||2||
 ||Document service including unit test||to do||Lamb, Reitner||4||
 ||Implement hashcodes and Equals||to do||Lamb, Reitner||1||
 ||Unify naming of variables and classes etc.||to do||Lamb, Reitner||1||
