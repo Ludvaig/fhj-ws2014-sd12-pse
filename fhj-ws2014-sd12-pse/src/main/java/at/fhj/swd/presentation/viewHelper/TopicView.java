@@ -53,6 +53,10 @@ public class TopicView implements Serializable{
 			} catch (Exception e) {
 				RedirectionTargetHelper.redirectTo(RedirectionTarget.COMMUNITIES);
 			}
+			/* Important: FindBugs suppression could not be used here since findBugs dependencies are missing in this project in order to do so!
+			 * @SuppressFBWarnings(value="NP_NULL_ON_SOME_PATH_EXCEPTION", justification="The container is responsible to inject the logger instance and this is no issue here!")
+			 * (see http://findbugs.sourceforge.net/api/edu/umd/cs/findbugs/annotations/SuppressFBWarnings.html)
+			 */
 			logger.log(Level.INFO, "Retrieved community [communityName = '" + community.getName() + "']!");
 			
 			this.existingTopics = service.getExistingTopics(communityId, "");

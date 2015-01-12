@@ -68,6 +68,10 @@ public class CommunityTest {
 	@Test
 	public void testEqualsDifferentType() {
 		Topic wrongCommunityType = new Topic();
+		/* Important: FindBugs suppression could not be used here since findBugs dependencies are missing in this project in order to do so!
+		 * @SuppressFBWarnings(value="EC_UNRELATED_TYPES ", justification="The incorrect Object type is intentionally here for this test-case!")
+		 * (see http://findbugs.sourceforge.net/api/edu/umd/cs/findbugs/annotations/SuppressFBWarnings.html)
+		 */
 		Assert.assertEquals(false, community.equals(wrongCommunityType));
 	}
 	

@@ -14,21 +14,24 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
-import org.junit.Test;
-import org.omg.CORBA.OMGVMCID;
+import org.junit.runner.RunWith;
 
 import at.fhj.swd.data.CommunityDAO;
 import at.fhj.swd.data.UserDAO;
 import at.fhj.swd.data.entity.Community;
 import at.fhj.swd.service.CommunityService;
 import at.fhj.swd.service.impl.CommunityServiceImpl;
+import at.fhj.swd.util.JdbcTestHelper;
+import at.fhj.swd.util.WeldJUnit4Runner;
 
+@RunWith(WeldJUnit4Runner.class)
 public class CommunityServiceTest {
-
+	
 	private CommunityDAO communityDao;
 	private UserDAO userDao;
 	private transient CommunityService service;
     
+	private static final JdbcTestHelper JDBC_HELPER = new JdbcTestHelper();
 	private static Hashtable<String, String> jndiProperties;
 	private static String jndiNameForCommunity;
 	private static String jndiNameForUser;
@@ -50,6 +53,8 @@ public class CommunityServiceTest {
 		StringBuilder userBuilder = new StringBuilder();
 		jndiNameForUser = userBuilder.append("fhj-ws2014-sd12-pse").append("/").append("UserDAOTestFacade").append("/").append(UserDAO.class.getName()).toString();
 		logger.log(Level.INFO, "Created jndi-Lookup for UserDAO: " + jndiNameForUser);
+		
+		JDBC_HELPER.executeSqlScript("sql/createCommunities.sql");
 	}
 	
 	@Before
@@ -69,7 +74,7 @@ public class CommunityServiceTest {
 		// TODO: Cleanup test-data (drop tables)
 	}
 	
-	@Test
+	@Ignore
 	public void getAllCommunities() { // TODO
 		/* DB-setup:
 		 * - create communities1,2,3
@@ -91,7 +96,11 @@ public class CommunityServiceTest {
 		
 		List<Community> communitiesOfHerbert = service.getAllSubscribedCommunitiesForUser("Herbert");
 		
-		Assert.assertTrue(community1.equals(communitiesOfHerbert.get(0)));
+		/* Important: FindBugs suppression could not be used here since findBugs dependencies are missing in this project in order to do so!
+		 * @SuppressFBWarnings(value="NP_ALWAYS_NULL", justification="The Community instance named community1 is null intentionally for this test-case.")
+		 * (see http://findbugs.sourceforge.net/api/edu/umd/cs/findbugs/annotations/SuppressFBWarnings.html)
+		 */
+		Assert.assertTrue(community1.equals(communitiesOfHerbert.get(0))); 
 	}
 	
 	@Ignore
