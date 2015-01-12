@@ -25,7 +25,7 @@ public class CommunityServiceTest {
 
 	private CommunityDAO communityDao;
 	private UserDAO userDao;
-	private CommunityService service;
+	private transient CommunityService service;
     
 	private static Hashtable<String, String> jndiProperties;
 	private static String jndiNameForCommunity;

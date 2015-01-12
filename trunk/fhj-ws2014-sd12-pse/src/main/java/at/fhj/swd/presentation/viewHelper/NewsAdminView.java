@@ -37,14 +37,14 @@ public class NewsAdminView implements Serializable{
 	private transient Logger logger;
 	
 	@Inject
-	private FacesContext facesContext;
+	private transient FacesContext facesContext;
 	
 	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject 
-	private UserService userService;
+	private transient UserService userService;
 	
 	@Inject
-    private NewsService newsService;
+    private transient NewsService newsService;
 	
 	private News selectedNews;
 	private String createTitle;

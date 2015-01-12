@@ -18,7 +18,7 @@ import at.fhj.swd.service.exceptions.ServiceLayerException;
 
 public class CommunityServiceRemoteFacadeTest {
 
-	private CommunityService service;
+	private transient CommunityService service;
 
 	// The JNDI lookup name for a stateless session bean has the syntax of:
 	// ejb:<appName>/<moduleName>/<distinctName>/<beanName>!<viewClassName>

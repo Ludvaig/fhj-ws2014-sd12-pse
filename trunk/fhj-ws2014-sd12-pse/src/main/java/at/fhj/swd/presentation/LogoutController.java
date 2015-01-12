@@ -28,10 +28,10 @@ public class LogoutController {
 	private transient Logger logger;
 	
 	@Inject
-	private FacesContext facesContext;
+	private transient FacesContext facesContext;
 
 	@Inject
-	private UserService userService;
+	private transient UserService userService;
 
 	public void logout() throws IOException {
 		logger.info("Entering LogoutController.logout() method.");

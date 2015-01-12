@@ -37,10 +37,10 @@ public class NewsView implements Serializable{
 	private News selectedNews = null;
 	
 	@Inject
-	private FacesContext facesContext;
+	private transient FacesContext facesContext;
 
 	@Inject
-    private NewsService service;
+    private transient NewsService service;
     
     @PostConstruct
     public void init() {

@@ -12,7 +12,7 @@ import at.fhj.swd.service.UserService;
 public class UserServiceRemoteFacade implements UserService{
 	
 	@EJB(beanName="UserServiceImpl")
-	private UserService service;
+	private transient UserService service;
 
 	@Override
 	public String registerUser(String userName, String password) {

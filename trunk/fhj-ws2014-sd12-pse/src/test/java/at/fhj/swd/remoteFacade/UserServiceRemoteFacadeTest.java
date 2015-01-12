@@ -21,7 +21,7 @@ public final class UserServiceRemoteFacadeTest {
 	private String userName = "Herbert";
 	private String password = "vergessen";
 
-	private UserService service;
+	private transient UserService service;
 
 	@Before
 	public void setUp() throws NamingException {

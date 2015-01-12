@@ -41,7 +41,7 @@ public class DocumentView implements Serializable {
 	private String selectedUserDocument;
 	
 	@EJB(beanName="DocumentServiceImpl")
-	protected DocumentService service;
+	protected transient DocumentService service;
     
     @PostConstruct
     public void init() {
