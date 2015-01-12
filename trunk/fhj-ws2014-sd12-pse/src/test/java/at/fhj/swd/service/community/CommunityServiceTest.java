@@ -14,6 +14,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.omg.CORBA.OMGVMCID;
 
 import at.fhj.swd.data.CommunityDAO;
 import at.fhj.swd.data.UserDAO;
@@ -31,7 +33,7 @@ public class CommunityServiceTest {
 	private static String jndiNameForCommunity;
 	private static String jndiNameForUser;
 	private static Context context;
-	private static Logger logger;
+	private static Logger logger = Logger.getLogger(CommunityServiceTest.class.getName());
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws NamingException {
@@ -67,11 +69,12 @@ public class CommunityServiceTest {
 		// TODO: Cleanup test-data (drop tables)
 	}
 	
-	@Ignore
+	@Test
 	public void getAllCommunities() { // TODO
 		/* DB-setup:
 		 * - create communities1,2,3
 		 * */
+		
 		
 		List<Community> allCommunities = service.getAllCommunities();
 	}
