@@ -30,8 +30,8 @@ public class NewsPageTest extends AbstractTestSetup{
 		String newNewsContent = "NewNewsContent";	
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		adminPage = adminPage.createNews(newNewsTitle, newNewsContent);
 		
 		assertTrue(driver.getPageSource().contains(newNewsTitle));
@@ -40,9 +40,9 @@ public class NewsPageTest extends AbstractTestSetup{
 	@Test
 	public void openAdminNewsPage(){
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
+		adminPage = indexPage.goToAdminPage();
 
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		String expected = "News";
 		Assert.assertEquals(expected, adminPage.GetTextOfxPathElement(".//*[@id='newstitle']/h1"));
 	}
@@ -53,8 +53,8 @@ public class NewsPageTest extends AbstractTestSetup{
 		String newNewsContent = "NewsContentChanged";	
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		adminPage = adminPage.editNews(newNewsTitle, newNewsContent);
 		
 		assertTrue(driver.getPageSource().contains(newNewsTitle));

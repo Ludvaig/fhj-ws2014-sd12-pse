@@ -31,45 +31,45 @@ public class MainPageTest extends AbstractTestSetup {
 	@Test
 	public void uploadAsAdminDownloadAsAdminAndUserDeleteAsAdmin() throws Exception {
 		loginAdminPa();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		String testFile = mainPage.uploadTestFile();
 		mainPage.downloadTestFile(testFile);
 		loginUser();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		mainPage.downloadTestFile(testFile);
 		loginAdminPa();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		mainPage.deleteTestFile(testFile);
 	}
 
 	@Test
 	public void tryToUploadAsUser() {
 		loginUser();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		assertFalse(mainPage.findUploadButton());
 	}
 	
 	@Test(expected=NoSuchElementException.class)
 	public void uploadAsAdminTryToDeleteAsUser() throws Exception {
 		loginAdminPa();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		String testFile = mainPage.uploadTestFile();
 		loginUser();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		mainPage.deleteTestFile(testFile);
 	}
 	
 	@Test
 	public void areNewsDisplayed4User() throws InterruptedException {
 		loginUser();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		mainPage.checkTestNews("news 1", "content 1");
 	}
 
 	@Test
 	public void areNewsDisplayed4Admin() throws InterruptedException {
 		loginAdminPa();
-		mainPage = tmpPage.goToMainPage();
+		mainPage = indexPage.goToMainPage();
 		mainPage.checkTestNews("news 1", "content 1");
 	}
 }

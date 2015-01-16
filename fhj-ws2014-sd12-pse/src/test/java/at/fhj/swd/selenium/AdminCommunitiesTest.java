@@ -33,8 +33,8 @@ public class AdminCommunitiesTest extends AbstractTestSetup{
 	public void testCreateNewCommunity() {
 
 	loginAdmin();
-	adminPage = tmpPage.goToAdminPage();
-	adminPage = tmpPage.goToAdminCommunitiesPage();
+	adminPage = indexPage.goToAdminPage();
+	adminPage = indexPage.goToAdminCommunitiesPage();
 	adminPage = adminPage.createCommunity(communityName);
 	
 	assertTrue(driver.getPageSource().contains(communityName));
@@ -45,8 +45,8 @@ public class AdminCommunitiesTest extends AbstractTestSetup{
 	public void teardown(){
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		
 		driver.quit();
 	}
