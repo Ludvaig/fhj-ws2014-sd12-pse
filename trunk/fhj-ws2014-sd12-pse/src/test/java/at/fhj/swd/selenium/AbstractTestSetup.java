@@ -9,13 +9,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 import at.fhj.swd.selenium.pageobjects.LoginPage;
-import at.fhj.swd.selenium.pageobjects.TmpPage;
+import at.fhj.swd.selenium.pageobjects.IndexPage;
 
 public class AbstractTestSetup {
 
 	WebDriver driver;   
 	LoginPage loginPage;
-	TmpPage tmpPage;
+	IndexPage indexPage;
 	
 	@Before
 	public void setup(){
@@ -26,19 +26,19 @@ public class AbstractTestSetup {
 	protected void loginAdmin() {
 		driver.get("http://127.0.0.1:8080/fhj-ws2014-sd12-pse/login.jsf");
 		loginPage = new LoginPage(driver);
-		tmpPage = loginPage.loginAdmin();
+		indexPage = loginPage.loginAdmin();
 	}
 	
 	protected void loginAdminPa() {
 		driver.get("http://127.0.0.1:8080/fhj-ws2014-sd12-pse/login.jsf");
 		loginPage = new LoginPage(driver);
-		tmpPage = loginPage.loginAdminPa();
+		indexPage = loginPage.loginAdminPa();
 	}
 	
 	protected void loginUser() {
 		driver.get("http://127.0.0.1:8080/fhj-ws2014-sd12-pse/login.jsf");
 		loginPage = new LoginPage(driver);
-		tmpPage = loginPage.loginUser();
+		indexPage = loginPage.loginUser();
 	}
 	
 	protected FirefoxProfile createProfileForAutoTextFileToTempDirDownload() {

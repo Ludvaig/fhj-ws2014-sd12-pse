@@ -3,9 +3,9 @@ package at.fhj.swd.selenium.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TmpPage extends PageObjectBase{
+public class IndexPage extends PageObjectBase{
 
-	public TmpPage(WebDriver driver) {
+	public IndexPage(WebDriver driver) {
 		super(driver, "Index");
 	}
 	

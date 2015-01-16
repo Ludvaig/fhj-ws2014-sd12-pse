@@ -27,7 +27,7 @@ public class AdminPageTest extends AbstractTestSetup{
 		String expected = "You are not signed in as Administrator";
 		
 		loginUser();
-		adminPage = tmpPage.goToAdminPage();
+		adminPage = indexPage.goToAdminPage();
 		assertTrue(driver.getPageSource().contains(expected));
 	}
 	
@@ -36,8 +36,8 @@ public class AdminPageTest extends AbstractTestSetup{
 		String expected = "You are not signed in as Administrator";
 		
 		loginUser();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		assertTrue(driver.getPageSource().contains(expected));
 	}
 	
@@ -46,7 +46,7 @@ public class AdminPageTest extends AbstractTestSetup{
 		String expected = "admin_a";
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
+		adminPage = indexPage.goToAdminPage();
 		assertTrue(driver.getPageSource().contains(expected));
 	}
 	
@@ -56,8 +56,8 @@ public class AdminPageTest extends AbstractTestSetup{
 		String newNewsContent = "NewsContentChanged";	
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		adminPage = adminPage.editNews(newNewsTitle, newNewsContent);
 		
 		assertTrue(driver.getPageSource().contains(newNewsTitle));
@@ -69,8 +69,8 @@ public class AdminPageTest extends AbstractTestSetup{
 		String resetNewsContent = "NewsContent";
 		
 		loginAdmin();
-		adminPage = tmpPage.goToAdminPage();
-		adminPage = tmpPage.goToAdminNewsPage();
+		adminPage = indexPage.goToAdminPage();
+		adminPage = indexPage.goToAdminNewsPage();
 		adminPage = adminPage.editNews(resetNewsTitle, resetNewsContent);
 		
 		driver.quit();

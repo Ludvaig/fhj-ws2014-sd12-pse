@@ -12,12 +12,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import at.fhj.swd.selenium.pageobjects.LoginPage;
-import at.fhj.swd.selenium.pageobjects.TmpPage;
+import at.fhj.swd.selenium.pageobjects.IndexPage;
 
 public class LoginPageTest {
 	WebDriver driver;   
 	LoginPage loginPage;
-	TmpPage tmpPage;
+	IndexPage indexPage;
 	
 	@Before
 	public void setup(){

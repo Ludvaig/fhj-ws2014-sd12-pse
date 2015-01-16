@@ -14,7 +14,7 @@ public class LoginPage extends PageObjectBase{
 		super(driver, "Login");
 	}
 
-	public TmpPage loginUser()  {
+	public IndexPage loginUser()  {
 		return loginUser("Herbert", "vergessen");
 	}
 	
@@ -22,16 +22,16 @@ public class LoginPage extends PageObjectBase{
 	 * @author Daniel Hoesele
 	 * @return logged in as admin
 	 */
-	public TmpPage loginAdmin() {
+	public IndexPage loginAdmin() {
 		return loginUser("admin_a", "1");
 	}
 	
-	public TmpPage loginAdminPa() {
+	public IndexPage loginAdminPa() {
 		return loginUser("padmin_pa", "1");
 	}
 	
 	
-	public TmpPage loginUser(String user, String password){
+	public IndexPage loginUser(String user, String password){
 		driver.findElement(By.xpath(".//*[@id='login:username']")).clear();
 		driver.findElement(By.xpath(".//*[@id='login:password']")).clear();
 		driver.findElement(By.xpath(".//*[@id='login:username']")).sendKeys(user);
@@ -41,7 +41,7 @@ public class LoginPage extends PageObjectBase{
 		// note: click does not wait for page to load, so wait
 		WaitForNewPageToLoad(PageObjectBase.DEFAULT_TIMEOUT_SECONDS);	
 		
-		return new TmpPage(driver);		
+		return new IndexPage(driver);		
 	}
 	
 }
